@@ -12,11 +12,11 @@
       "dev": "stencil build --dev --watch --serve",
       "build": "npm run lint && stencil build --prod --docs --no-cache && copyfiles -E -u 3 ./node_modules/@ptp-us/power-the-polls-form/**/* ../dist/www/assets/scripts/",
       "clean": "rimraf ../dist/www",
-      "link-form": "npm link ../power-the-polls-form && npm link @ptp-us/power-the-polls-form",
+      "link:form": "npm link ../power-the-polls-form && npm link @ptp-us/power-the-polls-form",
       "lint": "tslint --project .",
       "lint:fix": "tslint --fix --force --project .",
       "generate": "stencil generate",
-      "unlink-form": "npm unlink --no-save @ptp-us/power-the-polls-form && npm unlink ../power-the-polls-form",
+      "unlink:form": "npm unlink --no-save @ptp-us/power-the-polls-form && npm unlink ../power-the-polls-form",
       "util:check-updates": "npm-check-updates",
       "util:perform-updates": "npm-check-updates -u"
    },
