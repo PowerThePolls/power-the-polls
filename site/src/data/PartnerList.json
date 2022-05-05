@@ -19,9 +19,7 @@
    {
       "partnerId": "ACLUGeorgia",
       "name": "ACLU Georgia",
-      "additionalVanityUrls": [
-         "acluga"
-      ]
+      "additionalVanityUrls": ["acluga"]
    },
    {
       "partnerId": "ACLUMI",
@@ -75,9 +73,7 @@
    {
       "partnerId": "american-constitution-society",
       "name": "American Constitution Society",
-      "additionalVanityUrls": [
-         "acs"
-      ],
+      "additionalVanityUrls": ["acs"],
       "logo": "acs.png"
    },
    {
@@ -341,9 +337,7 @@
    {
       "partnerId": "civic-georgia",
       "name": "Civic Georgia",
-      "additionalVanityUrls": [
-         "civicgeorgia"
-      ],
+      "additionalVanityUrls": ["civicgeorgia"],
       "logo": "civi-georgia.png"
    },
    {
@@ -373,11 +367,7 @@
    {
       "partnerId": "CollectiveImpact",
       "name": "Collective Impact",
-      "additionalVanityUrls": [
-         "2020",
-         "hero",
-         "now"
-      ]
+      "additionalVanityUrls": ["2020", "hero", "now"]
    },
    {
       "partnerId": "colorfarmmedia",
@@ -394,9 +384,7 @@
       "partnerId": "ComedyCentral",
       "name": "Comedy Central",
       "isFoundingPartner": true,
-      "additionalVanityUrls": [
-         "cc"
-      ],
+      "additionalVanityUrls": ["cc"],
       "logo": "comedy-central.png"
    },
    {
@@ -551,9 +539,7 @@
    {
       "partnerId": "expediagroup",
       "name": "Expedia",
-      "additionalVanityUrls": [
-         "expediagroupvotes2020"
-      ],
+      "additionalVanityUrls": ["expediagroupvotes2020"],
       "logo": "expedia-group.png"
    },
    {
@@ -610,9 +596,7 @@
    {
       "partnerId": "floridavotes",
       "name": "Florida Votes",
-      "additionalVanityUrls": [
-         "florida"
-      ]
+      "additionalVanityUrls": ["florida"]
    },
    {
       "partnerId": "ForOurFuture",
@@ -689,9 +673,7 @@
    {
       "partnerId": "HRC",
       "name": "Human Rights Campaign Foundation",
-      "additionalVanityUrls": [
-         "HRCFoundation"
-      ],
+      "additionalVanityUrls": ["HRCFoundation"],
       "logo": "hrc.png",
       "logoAppearsOnLandingPage": true,
       "excludeFromPartnerList": true
@@ -757,9 +739,7 @@
    {
       "partnerId": "IsiahThomas",
       "name": "IsiahThomas",
-      "additionalVanityUrls": [
-         "thomas"
-      ],
+      "additionalVanityUrls": ["thomas"],
       "logo": "isiahthomas.png",
       "logoIsDark": true,
       "logoAppearsOnLandingPage": true
@@ -802,9 +782,7 @@
    {
       "partnerId": "labor-aflcio",
       "name": "AFL-CIO",
-      "additionalVanityUrls": [
-         "aflcio"
-      ],
+      "additionalVanityUrls": ["aflcio"],
       "logo": "aflcio.svg",
       "logoAppearsOnLandingPage": true,
       "optUserOutOfChase": true,
@@ -813,9 +791,7 @@
    {
       "partnerId": "labor-afscme",
       "name": "AFSCME",
-      "additionalVanityUrls": [
-         "afscme"
-      ],
+      "additionalVanityUrls": ["afscme"],
       "logo": "afscme.png",
       "logoAppearsOnLandingPage": true,
       "optUserOutOfChase": true
@@ -823,25 +799,19 @@
    {
       "partnerId": "labor-aft",
       "name": "AFT",
-      "additionalVanityUrls": [
-         "aft"
-      ],
+      "additionalVanityUrls": ["aft"],
       "optUserOutOfChase": true
    },
    {
       "partnerId": "labor-nea",
       "name": "NEA",
-      "additionalVanityUrls": [
-         "nea"
-      ],
+      "additionalVanityUrls": ["nea"],
       "optUserOutOfChase": true
    },
    {
       "partnerId": "labor-seiu",
       "name": "SEIU",
-      "additionalVanityUrls": [
-         "seiu"
-      ],
+      "additionalVanityUrls": ["seiu"],
       "logo": "seiu.jpg",
       "logoAppearsOnLandingPage": true,
       "optUserOutOfChase": true,
@@ -1136,9 +1106,7 @@
    {
       "partnerId": "NRDCA",
       "name": "Natural Resources Defense Council",
-      "additionalVanityUrls": [
-         "nrdcactionfund"
-      ],
+      "additionalVanityUrls": ["nrdcactionfund"],
       "logo": "nrdc.jpg",
       "logoIsDark": true,
       "logoAppearsOnLandingPage": true
@@ -1234,6 +1202,10 @@
       "partnerId": "PondLehocky",
       "name": "Pond Lehocky",
       "logo": "pond-lehocky.png"
+   },
+   {
+      "partnerId": "powerthepeach",
+      "name": "Power The Peach"
    },
    {
       "partnerId": "Premier-Lacrosse-League",
@@ -1369,9 +1341,7 @@
    {
       "partnerId": "skimm",
       "name": "theSkimm",
-      "additionalVanityUrls": [
-         "theSkimm"
-      ],
+      "additionalVanityUrls": ["theSkimm"],
       "logo": "the-skimm.png"
    },
    {
@@ -1399,9 +1369,7 @@
    {
       "partnerId": "socially-driven-music",
       "name": "Socially Driven Music",
-      "additionalVanityUrls": [
-         "SociallyDrivenMusic"
-      ],
+      "additionalVanityUrls": ["SociallyDrivenMusic"],
       "logo": "socially-driven-music.png",
       "customSignupFormField": "Name of Local Artist that Referred You"
    },
@@ -1508,9 +1476,7 @@
    {
       "partnerId": "TheDailyShow",
       "name": "The Daily Show",
-      "additionalVanityUrls": [
-         "tds"
-      ]
+      "additionalVanityUrls": ["tds"]
    },
    {
       "partnerId": "TheFlow",
