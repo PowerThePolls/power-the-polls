@@ -2,8 +2,8 @@
 // This file is injected into all scss files -- global and component. See stencil.config.js
 //
 
-@mixin on-mobile()
-{
-   @media only screen and (max-width: $max-width) { @content; }
+@mixin on-mobile() {
+   @media only screen and (max-width: $max-width) {
+      @content;
+   }
 }
-

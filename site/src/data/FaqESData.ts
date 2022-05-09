@@ -1,7 +1,7 @@
 /**
  * Ordered list of questions and answers for page-faq.tsx, see also app-root.tsx
  */
-const data: { question: string, answer: string }[] = [
+const data: { question: string; answer: string }[] = [
    {
       question: "¿Quién puede ser un trabajador electoral?",
       answer: `
@@ -16,7 +16,8 @@ const data: { question: string, answer: string }[] = [
       `,
    },
    {
-      question: "¿Puedo trabajar en los centros de votación si soy residente permanente?",
+      question:
+         "¿Puedo trabajar en los centros de votación si soy residente permanente?",
       answer: `
       En algunas jurisdicciones, puede trabajar en los centros de votación si
       es residente permanente. Encuentre el reglamento de su oficina electoral
@@ -62,7 +63,8 @@ const data: { question: string, answer: string }[] = [
       `,
    },
    {
-      question: "¿Se les proporcionará a los trabajadores electorales equipo de protección personal (es decir, máscaras, guantes, etc.)?",
+      question:
+         "¿Se les proporcionará a los trabajadores electorales equipo de protección personal (es decir, máscaras, guantes, etc.)?",
       answer: `
       Power the Polls está trabajando con organizaciones y aliados locales para
       ayudar a los funcionarios electorales a proporcionar EPP. Si tiene
@@ -93,7 +95,8 @@ const data: { question: string, answer: string }[] = [
       `,
    },
    {
-      question: "¿Puedo viajar a un nuevo centro de votación y trabajar en las urnas en una jurisdicción donde no estoy registrado para votar?",
+      question:
+         "¿Puedo viajar a un nuevo centro de votación y trabajar en las urnas en una jurisdicción donde no estoy registrado para votar?",
       answer: `
       Los reglamentos varían a través del país y algunas jurisdicciones permiten
       que las personas viajen y trabajen en las urnas aunque no estén
@@ -103,7 +106,8 @@ const data: { question: string, answer: string }[] = [
       `,
    },
    {
-      question: "Soy un trabajador electoral con experiencia, pero no me siento cómodo sirviendo este año debido a COVID. ¿Cómo puedo ayudar?",
+      question:
+         "Soy un trabajador electoral con experiencia, pero no me siento cómodo sirviendo este año debido a COVID. ¿Cómo puedo ayudar?",
       answer: `
       Es posible que pueda ayudar virtualmente, pero lo más importante que puede
       hacer es reclutar a alguien para que lo reemplace este año y ayude a

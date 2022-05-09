@@ -1,9 +1,6 @@
 # component-list
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Dependencies
 
@@ -17,6 +14,7 @@
 - [ui-partner-image](../ui-partner-image)
 
 ### Graph
+
 ```mermaid
 graph TD;
   component-list --> ui-menu-button
@@ -28,6 +26,4 @@ graph TD;
   style component-list fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
-
-
+---

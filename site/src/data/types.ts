@@ -69,7 +69,6 @@ export interface SocialInfo {
    readonly eventKey: string;
 }
 
-
 export interface VideoGroup {
    category?: string;
    videos: VideoInfo[];
@@ -89,5 +88,5 @@ export interface VideoInfo {
    /**
     * Link to related information about the video
     */
-   additionalInfoLink?: {text: string, link: string };
+   additionalInfoLink?: { text: string; link: string };
 }

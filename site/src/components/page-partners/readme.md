@@ -1,16 +1,12 @@
 # page-partners
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
 | Property   | Attribute | Description                              | Type                     | Default     |
 | ---------- | --------- | ---------------------------------------- | ------------------------ | ----------- |
 | `partners` | --        | List of all the partner logos to display | `Partner[] \| undefined` | `undefined` |
-
 
 ## Dependencies
 
@@ -20,6 +16,7 @@
 - [ui-partner-image](../ui-partner-image)
 
 ### Graph
+
 ```mermaid
 graph TD;
   page-partners --> ui-h3-bar
@@ -27,6 +24,4 @@ graph TD;
   style page-partners fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
-
-
+---

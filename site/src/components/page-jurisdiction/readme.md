@@ -1,16 +1,12 @@
 # page-jurisdiction
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
 | Property | Attribute | Description | Type                        | Default     |
 | -------- | --------- | ----------- | --------------------------- | ----------- |
 | `match`  | --        |             | `MatchResults \| undefined` | `undefined` |
-
 
 ## Dependencies
 
@@ -20,6 +16,7 @@
 - ptp-info-poll-worker
 
 ### Graph
+
 ```mermaid
 graph TD;
   page-jurisdiction --> stencil-router-redirect
@@ -33,6 +30,4 @@ graph TD;
   style page-jurisdiction fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
-
-
+---

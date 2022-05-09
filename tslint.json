@@ -1,8 +1,5 @@
 {
    "defaultSeverity": "error",
-   "linterOptions": {
-      "formatter": "stylish"
-   },
    "rules": {
       "class-name": true,
       "comment-format": [
@@ -86,13 +83,6 @@
          true,
          "always"
       ],
-      "trailing-comma": [
-         true,
-         {
-            "singleline": "never",
-            "multiline": "always"
-         }
-      ],
       "triple-equals": [
          true,
          "allow-null-check"
@@ -124,5 +114,8 @@
          "named-imports-order": "case-insensitive",
          "module-source-path": "full"
       }
+   ],
+   "extends": [
+      "tslint-config-prettier"
    ]
 }

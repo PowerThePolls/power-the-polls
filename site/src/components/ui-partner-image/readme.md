@@ -1,9 +1,6 @@
 # ui-partner-image
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -14,16 +11,16 @@
 | `partner`             | `partner`                | A `Partner` object or partnerID string                                                                                                                                                 | `Partner \| string`   | `undefined` |
 | `sourceFromDevBranch` | `source-from-dev-branch` | If `true` the image will not be loaded from the deployed assets but from the `partner-updates` branch on GitHub                                                                        | `boolean`             | `undefined` |
 
-
 ## Dependencies
 
 ### Used by
 
- - [component-list](../component-list)
- - [page-partners](../page-partners)
- - [page-partners-table](../page-partners-table)
+- [component-list](../component-list)
+- [page-partners](../page-partners)
+- [page-partners-table](../page-partners-table)
 
 ### Graph
+
 ```mermaid
 graph TD;
   component-list --> ui-partner-image
@@ -32,6 +29,4 @@ graph TD;
   style ui-partner-image fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
-
-
+---

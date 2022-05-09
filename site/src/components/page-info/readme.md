@@ -1,9 +1,6 @@
 # page-info
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Dependencies
 
@@ -13,6 +10,7 @@
 - ptp-info-poll-worker
 
 ### Graph
+
 ```mermaid
 graph TD;
   page-info --> stencil-router-redirect
@@ -26,6 +24,4 @@ graph TD;
   style page-info fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
-
-
+---

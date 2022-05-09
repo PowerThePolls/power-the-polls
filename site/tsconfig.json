@@ -7,11 +7,7 @@
       "target": "es2017",
       "module": "esnext",
       "moduleResolution": "node",
-      "lib": [
-         "dom",
-         "dom.iterable",
-         "es2017"
-      ],
+      "lib": ["dom", "dom.iterable", "es2017"],
       "sourceMap": true,
       "declaration": false,
       "resolveJsonModule": true,
@@ -24,10 +20,6 @@
       "jsx": "react",
       "jsxFactory": "h"
    },
-   "include": [
-      "src",
-   ],
-   "exclude": [
-      "node_modules"
-   ]
+   "include": ["src"],
+   "exclude": ["node_modules"]
 }

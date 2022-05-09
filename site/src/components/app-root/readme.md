@@ -1,9 +1,6 @@
 # app-root
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Dependencies
 
@@ -18,6 +15,7 @@
 - stencil-route
 
 ### Graph
+
 ```mermaid
 graph TD;
   app-root --> page-partners-table
@@ -32,6 +30,4 @@ graph TD;
   style app-root fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
-
-
+---

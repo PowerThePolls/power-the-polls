@@ -1,40 +1,39 @@
-
 // @include form-defaults();
 form {
-    display: grid;
-    input {
-        display: block; 
-        width: 100%;
-        height: 2.5rem;
-    }
+   display: grid;
+   input {
+      display: block;
+      width: 100%;
+      height: 2.5rem;
+   }
 
-    label {
-        margin-bottom: .5rem;
-    }
+   label {
+      margin-bottom: 0.5rem;
+   }
 
-    textarea {
-        width: 100%;
-    }
+   textarea {
+      width: 100%;
+   }
 
-    select {
-        display: block;
-        width: 100%;
-        height: 2.5rem;
-    }
+   select {
+      display: block;
+      width: 100%;
+      height: 2.5rem;
+   }
 }
 
 .valid {
-    margin-bottom: 18px;
+   margin-bottom: 18px;
 }
 
 .input-error {
-    color: $color-accent;
+   color: $color-accent;
 }
 
 .button-container {
-    display: grid;
+   display: grid;
 
-    & button {
+   & button {
       border: 0;
       background-color: $color-highlight;
       color: $color-font-highlight-contrast;
@@ -45,10 +44,9 @@ form {
       cursor: pointer;
 
       &:disabled {
-        border-color: #ccc;
-        background-color: #aaa;
-        color: #444;
+         border-color: #ccc;
+         background-color: #aaa;
+         color: #444;
       }
-    }
-  }
-
+   }
+}

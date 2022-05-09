@@ -1,15 +1,12 @@
 # page-partners-table
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Dependencies
 
 ### Used by
 
- - [app-root](../app-root)
+- [app-root](../app-root)
 
 ### Depends on
 
@@ -17,6 +14,7 @@
 - ui-loading-spinner
 
 ### Graph
+
 ```mermaid
 graph TD;
   page-partners-table --> ui-partner-image
@@ -25,6 +23,4 @@ graph TD;
   style page-partners-table fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
-
-
+---

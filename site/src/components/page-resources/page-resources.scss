@@ -1,15 +1,15 @@
 page-resources {
    h2 {
-      padding-top: .5em;
+      padding-top: 0.5em;
    }
 
    .checklist {
       & > h4 {
-         margin-bottom: .5em;
+         margin-bottom: 0.5em;
       }
 
       &-item {
-         display: flex; 
+         display: flex;
 
          .number {
             margin: 0 1em 1.5em 0;

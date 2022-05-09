@@ -3,16 +3,15 @@ import { Component, h, Host, Prop } from "@stencil/core";
 import { SocialInfo } from "../../data/types";
 import analytics from "../../util/Analytics";
 
-@Component( {
+@Component({
    tag: "ui-social-share",
    styleUrl: "ui-social-share.scss",
    shadow: false,
-} )
+})
 /**
  * Simple button and image used for social network buttons
  */
 export class SocialShare implements Partial<SocialInfo> {
-
    /**
     * The full name of the social network. Used as the link title text.
     */
@@ -44,22 +43,30 @@ export class SocialShare implements Partial<SocialInfo> {
    @Prop() public invertColors?: boolean;
 
    public render() {
-      return ( <Host class={{ "invert": this.invertColors || false }}>
-         <a
-            href={this.url}
-            title={`Share on ${this.name}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => !!this.eventKey ? null : analytics.socialShare( this.eventKey )}
-         >
-            <img
-               alt={this.name}
-               src={this.invertColors ? `/assets/images/social/invert-${this.image}` : `/assets/images/social/${this.image}`}
-               width="41"
-               height="41"
-            />
-            <span>{this.cta}</span>
-         </a>
-      </Host> );
+      return (
+         <Host class={{ invert: this.invertColors || false }}>
+            <a
+               href={this.url}
+               title={`Share on ${this.name}`}
+               target="_blank"
+               rel="noopener noreferrer"
+               onClick={() =>
+                  !!this.eventKey ? null : analytics.socialShare(this.eventKey)
+               }
+            >
+               <img
+                  alt={this.name}
+                  src={
+                     this.invertColors
+                        ? `/assets/images/social/invert-${this.image}`
+                        : `/assets/images/social/${this.image}`
+                  }
+                  width="41"
+                  height="41"
+               />
+               <span>{this.cta}</span>
+            </a>
+         </Host>
+      );
    }
 }

@@ -1,16 +1,14 @@
 import { Partner } from "../../data/types";
 
-
 export type PartnerTableData = {
    master: Partner;
    /**
-   * Concatenated `data` fields that are used for searching and filtering
-   */
+    * Concatenated `data` fields that are used for searching and filtering
+    */
    search: string;
    branch?: Partner;
    local?: Partner;
 };
-
 
 export type GitCreateTreeTreeItem = {
    path?: string;

@@ -1,9 +1,6 @@
 # ui-social-share
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -16,15 +13,15 @@
 | `name`         | `name`          | The full name of the social network. Used as the link title text. | `string \| undefined`  | `undefined` |
 | `url`          | `url`           | href for anchor (will open in a new window)                       | `string \| undefined`  | `undefined` |
 
-
 ## Dependencies
 
 ### Used by
 
- - [app-root](../app-root)
- - [component-list](../component-list)
+- [app-root](../app-root)
+- [component-list](../component-list)
 
 ### Graph
+
 ```mermaid
 graph TD;
   app-root --> ui-social-share
@@ -32,6 +29,4 @@ graph TD;
   style ui-social-share fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
-
-
+---

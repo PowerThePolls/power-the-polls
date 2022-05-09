@@ -1,92 +1,186 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+   <head>
+      <!-- Google Tag Manager -->
+      <script>
+         (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+               j = d.createElement(s),
+               dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+         })(window, document, "script", "dataLayer", "GTM-K27N6B8");
+      </script>
 
-<head>
-   <!-- Google Tag Manager -->
-   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-   })(window,document,'script','dataLayer','GTM-K27N6B8');</script>
+      <meta charset="utf-8" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+      />
+      <meta http-equiv="x-ua-compatible" content="IE=Edge" />
 
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-   <meta http-equiv="x-ua-compatible" content="IE=Edge">
+      <title>Power the Polls</title>
+      <meta name="application-name" content="Power the Polls" />
+      <meta property="og:title" content="Power the Polls" />
+      <meta property="og:site_name" content="Power the Polls" />
 
-   <title>Power the Polls</title>
-   <meta name="application-name" content="Power the Polls" />
-   <meta property="og:title" content="Power the Polls" />
-   <meta property="og:site_name" content="Power the Polls" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@PowerThePolls" />
 
-   <meta name="twitter:card" content="summary" />
-   <meta name="twitter:site" content="@PowerThePolls" />
+      <meta property="og:url" content="https://powerthepolls.org" />
 
-   <meta property="og:url" content="https://powerthepolls.org" />
+      <meta
+         name="description"
+         content="Poll workers power democracy. We help recruit them! Sign up now to make sure we have safe, fair, efficient elections for all!"
+      />
+      <meta
+         property="og:description"
+         content="Poll workers power democracy. We help recruit them! Sign up now to make sure we have safe, fair, efficient elections for all!"
+      />
 
-   <meta name="description"
-      content="Poll workers power democracy. We help recruit them! Sign up now to make sure we have safe, fair, efficient elections for all!">
-   <meta property="og:description"
-      content="Poll workers power democracy. We help recruit them! Sign up now to make sure we have safe, fair, efficient elections for all!" />
+      <meta
+         property="og:image"
+         content="https://powerthepolls.org/assets/images/logo-brand.png"
+      />
+      <meta
+         property="og:image:secure_url"
+         content="https://powerthepolls.org/assets/images/logo-brand.png"
+      />
+      <meta name="theme-color" content="#FF5554" />
 
-   <meta property="og:image" content="https://powerthepolls.org/assets/images/logo-brand.png" />
-   <meta property="og:image:secure_url" content="https://powerthepolls.org/assets/images/logo-brand.png" />
-   <meta name="theme-color" content="#FF5554">
+      <script type="module" src="/build/app.esm.js"></script>
+      <script nomodule src="/build/app.js"></script>
+      <link href="/build/app.css" rel="stylesheet" />
 
-   <script type="module" src="/build/app.esm.js"></script>
-   <script nomodule src="/build/app.js"></script>
-   <link href="/build/app.css" rel="stylesheet">
+      <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-   <link rel="icon" type="image/x-icon" href="favicon.ico">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <link
+         rel="apple-touch-icon"
+         sizes="57x57"
+         href="/assets/images/icon-57x57.png"
+      />
+      <link
+         rel="apple-touch-icon"
+         sizes="60x60"
+         href="/assets/images/icon-60x60.png"
+      />
+      <link
+         rel="apple-touch-icon"
+         sizes="72x72"
+         href="/assets/images/icon-72x72.png"
+      />
+      <link
+         rel="apple-touch-icon"
+         sizes="76x76"
+         href="/assets/images/icon-76x76.png"
+      />
+      <link
+         rel="apple-touch-icon"
+         sizes="114x114"
+         href="/assets/images/icon-114x114.png"
+      />
+      <link
+         rel="apple-touch-icon"
+         sizes="120x120"
+         href="/assets/images/icon-120x120.png"
+      />
+      <link
+         rel="apple-touch-icon"
+         sizes="144x144"
+         href="/assets/images/icon-144x144.png"
+      />
+      <link
+         rel="apple-touch-icon"
+         sizes="152x152"
+         href="/assets/images/icon-152x152.png"
+      />
+      <link
+         rel="apple-touch-icon"
+         sizes="180x180"
+         href="/assets/images/icon-180x180.png"
+      />
 
-   <meta name="apple-mobile-web-app-capable" content="yes">
-   <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/icon-57x57.png">
-   <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/icon-60x60.png">
-   <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/icon-72x72.png">
-   <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/icon-76x76.png">
-   <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/icon-114x114.png">
-   <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/icon-120x120.png">
-   <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/icon-144x144.png">
-   <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/icon-152x152.png">
-   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icon-180x180.png">
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="192x192"
+         href="/assets/images/icon-192x192.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="32x32"
+         href="/assets/images/icon-32x32.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="96x96"
+         href="/assets/images/icon-96x96.png"
+      />
+      <link
+         rel="icon"
+         type="image/png"
+         sizes="16x16"
+         href="/assets/images/icon-16x16.png"
+      />
 
-   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icon-192x192.png">
-   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icon-32x32.png">
-   <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/icon-96x96.png">
-   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icon-16x16.png">
+      <meta name="msapplication-TileColor" content="#1C1834" />
+      <meta
+         name="msapplication-TileImage"
+         content="/assets/images/ms-icon-144x144.png"
+      />
 
-   <meta name="msapplication-TileColor" content="#1C1834">
-   <meta name="msapplication-TileImage" content="/assets/images/ms-icon-144x144.png">
+      <link rel="manifest" href="/manifest.json" />
 
-   <link rel="manifest" href="/manifest.json">
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+   </head>
 
-   <link rel="preconnect" href="https://www.google-analytics.com">
-</head>
+   <body>
+      <app-root></app-root>
 
-<body>
+      <noscript>
+         <!-- Google Tag Manager (noscript) -->
+         <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K27N6B8"
+            height="0"
+            width="0"
+            style="display: none; visibility: hidden"
+         ></iframe>
+         <!-- End Google Tag Manager (noscript) -->
 
-   <app-root></app-root>
+         <h1>Help staff your local polling place</h1>
+         <p>
+            America is facing a record shortage of poll workers this year due to
+            the coronavirus. Our democracy depends on ordinary people who make
+            sure elections run smoothly and everyone's vote is counted. You can
+            make sure we have a safe, fair, efficient election for all.
+         </p>
+         <p>
+            <strong>Power the Polls</strong> requires Javascript enabled in your
+            browser in order to sign-up. If you are having issues, general
+            inquiries can be submitted by emailing
+            <a href="mailto:info@powerthepolls.org">info@powerthepolls.org</a>.
+            Although we can’t guarantee a response to every email due to volume,
+            we will try our best to reply.
+         </p>
+      </noscript>
 
-   <noscript>
-      <!-- Google Tag Manager (noscript) -->
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K27N6B8" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-      <!-- End Google Tag Manager (noscript) -->
-
-      <h1>Help staff your local polling place</h1>
-      <p>
-         America is facing a record shortage of poll workers this year due to the coronavirus. Our democracy depends on
-         ordinary people who make sure elections run smoothly and everyone's vote is counted. You can make sure we have
-         a safe, fair, efficient election for all.
-      </p>
-      <p>
-         <strong>Power the Polls</strong> requires Javascript enabled in your browser in order to sign-up. If you are
-         having issues, general inquiries can be submitted by emailing <a href="mailto:info@powerthepolls.org">info@powerthepolls.org</a>.
-         Although we can’t guarantee a response to every email due to volume, we will try our best to reply.
-      </p>
-   </noscript>
-
-   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170710177-1"></script>
-   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-170710177-1');</script>
-
-</body>
-
+      <script
+         async
+         src="https://www.googletagmanager.com/gtag/js?id=UA-170710177-1"
+      ></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag() {
+            dataLayer.push(arguments);
+         }
+         gtag("js", new Date());
+         gtag("config", "UA-170710177-1");
+      </script>
+   </body>
 </html>

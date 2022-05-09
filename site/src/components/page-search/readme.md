@@ -1,16 +1,12 @@
 # page-search
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
 | Property               | Attribute | Description | Type            | Default     |
 | ---------------------- | --------- | ----------- | --------------- | ----------- |
 | `history` _(required)_ | --        |             | `RouterHistory` | `undefined` |
-
 
 ## Dependencies
 
@@ -20,6 +16,7 @@
 - input-address
 
 ### Graph
+
 ```mermaid
 graph TD;
   page-search --> stencil-route-link
@@ -28,6 +25,4 @@ graph TD;
   style page-search fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
-
-
+---

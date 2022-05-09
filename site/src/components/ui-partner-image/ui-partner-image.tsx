@@ -1,4 +1,12 @@
-import { Component, Element, h, Listen, Prop, State, Watch } from "@stencil/core";
+import {
+   Component,
+   Element,
+   h,
+   Listen,
+   Prop,
+   State,
+   Watch,
+} from "@stencil/core";
 
 import { PartnerList } from "../../data";
 import { Partner } from "../../data/types";
@@ -12,13 +20,12 @@ const SCROLL_BUFFER = 200;
 /**
  * Lazily-loaded partner image with a loading animation. Adds a white background if partner logo is dark.
  */
-@Component( {
+@Component({
    tag: "ui-partner-image",
    styleUrl: "ui-partner-image.scss",
    shadow: false,
-} )
+})
 export class UiPartnerImage {
-
    public static readonly InvalidPartner: Partner = {
       partnerId: "invalid",
       name: "Invalid",
@@ -73,12 +80,12 @@ export class UiPartnerImage {
       setTimeout(() => this.checkForViewportIntersection(), 100);
    }
 
-   @Watch( "partner" )
-   public onPartnerChange( newVal: Partner | string ) {
-      this.setPartnerData( newVal );
+   @Watch("partner")
+   public onPartnerChange(newVal: Partner | string) {
+      this.setPartnerData(newVal);
    }
 
-   @Listen( "scroll", { target: "window" } )
+   @Listen("scroll", { target: "window" })
    public onScroll() {
       this.checkForViewportIntersection();
    }
@@ -90,60 +97,78 @@ export class UiPartnerImage {
          excludeAnchor,
          chosenPartnerId,
          passedThroughViewport,
-         sourceFromDevBranch } = this;
+         sourceFromDevBranch,
+      } = this;
 
-      if( partnerData === null ) {
-         return ( <div class="loading">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-         </div> );
+      if (partnerData === null) {
+         return (
+            <div class="loading">
+               <div class="double-bounce1"></div>
+               <div class="double-bounce2"></div>
+            </div>
+         );
       }
 
       return (
          <div
             class={{
-               "background": partnerData.logoIsDark ?? false,
+               background: partnerData.logoIsDark ?? false,
                "chosen-partner": chosenPartnerId === partnerData.partnerId,
             }}
          >
-            {!excludeAnchor &&
+            {!excludeAnchor && (
                <span id={partnerData.partnerId} class="anchor"></span>
-            }
-            {passedThroughViewport &&
+            )}
+            {passedThroughViewport && (
                <img
-                  src={partnerData.logo?.startsWith( "data:" )
-                     ? partnerData.logo
-                     // allow sourcing from git repo for page-partners-table
-                     : ( sourceFromDevBranch ? `https://raw.githubusercontent.com/${REPO_ORG}/${REPO_NAME}/partner-updates/site/public` : "" ) + `/assets/images/partners/${partnerData.logo}`}
+                  src={
+                     partnerData.logo?.startsWith("data:")
+                        ? partnerData.logo
+                        : // allow sourcing from git repo for page-partners-table
+                          (sourceFromDevBranch
+                             ? `https://raw.githubusercontent.com/${REPO_ORG}/${REPO_NAME}/partner-updates/site/public`
+                             : "") +
+                          `/assets/images/partners/${partnerData.logo}`
+                  }
                   title={partnerData.name}
-                  onLoad={() => this.loading = false}
+                  onLoad={() => (this.loading = false)}
                />
-            }
-            {loading &&
-               <div class={{ "loading": true, "dark": partnerData.logoIsDark ?? false }}>
+            )}
+            {loading && (
+               <div
+                  class={{
+                     loading: true,
+                     dark: partnerData.logoIsDark ?? false,
+                  }}
+               >
                   <div class="double-bounce1"></div>
                   <div class="double-bounce2"></div>
                </div>
-            }
+            )}
          </div>
       );
    }
 
    private checkForViewportIntersection() {
-      if( this.passedThroughViewport ) {
+      if (this.passedThroughViewport) {
          return;
       }
       const rect = this.el.getBoundingClientRect();
-      if( this.el.offsetHeight + rect.top > 0 && rect.bottom < ( window.innerHeight || document.documentElement.clientHeight ) + SCROLL_BUFFER ) {
+      if (
+         this.el.offsetHeight + rect.top > 0 &&
+         rect.bottom <
+            (window.innerHeight || document.documentElement.clientHeight) +
+               SCROLL_BUFFER
+      ) {
          this.passedThroughViewport = true;
       }
    }
 
-   private setPartnerData( data?: string | Partner ) {
+   private setPartnerData(data?: string | Partner) {
       data = data || this.partner;
-      this.partnerData = typeof data === "string"
-         ? [...PartnerList.filter( x => x.partnerId === data ), null][0]
-         : data;
+      this.partnerData =
+         typeof data === "string"
+            ? [...PartnerList.filter((x) => x.partnerId === data), null][0]
+            : data;
    }
-
 }

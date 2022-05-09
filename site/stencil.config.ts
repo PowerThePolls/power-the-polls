@@ -2,9 +2,9 @@ import replace from "@rollup/plugin-replace";
 import { Config } from "@stencil/core";
 import { sass } from "@stencil/sass";
 declare var process: any;
-declare var require: ( pkg: string ) => any;
+declare var require: (pkg: string) => any;
 
-require( "dotenv" ).config();
+require("dotenv").config();
 
 // see: https://stenciljs.com/docs/config
 
@@ -14,17 +14,17 @@ export const config: Config = {
    srcDir: "src", // "src" is the default; just here for clarity
    sourceMap: true,
    plugins: [
-      replace( {
+      replace({
          exclude: "node_modules/**",
          values: {},
-      } ),
-      sass( {
+      }),
+      sass({
          // scss files will automatically have these added
          injectGlobalPaths: [
             "styles/include/variables.scss",
             "styles/include/mixins.scss",
          ],
-      } ),
+      }),
    ],
    outputTargets: [
       {
