@@ -1593,6 +1593,10 @@
       "logoIsDark": true
    },
    {
+      "partnerId": "vetthevote",
+      "name": "We The Veterans"
+   },
+   {
       "partnerId": "ViacomCBS",
       "name": "ViacomCBS",
       "isFoundingPartner": true,
