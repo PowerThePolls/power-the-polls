@@ -1,4 +1,4 @@
-# Power the Polls
+# [Power the Polls](https://powerthepolls.org) ![GitHub](https://img.shields.io/github/license/PowerThePolls/power-the-polls) ![npm](https://img.shields.io/npm/v/@ptp-us/power-the-polls-form)
 
 There are two projects in this repository:
 
@@ -49,11 +49,11 @@ This is currently done manually
 
 #### Developing the site and form in tandem
 
-1. In `/site`, remove the npm version and reference the local version with `npm uninstall @ptp-us/power-the-polls-form` and then `npm install ../power-the-polls-form`
-2. In `page-form.tsx` change the import from `import "@ptp-us/power-the-polls-form";` to `import "@ptp-us/power-the-polls-form/dist";`
-3. In `/power-the-polls-form` Use `npm run build` which will build the form and then  in `/site` run `npm run dev`
+1. In `/site`, run `npm run link:form`
+2. In `/power-the-polls-form` Use `npm run build` which will build the form and then  in `/site` run `npm run dev`
    > NOTE: Watch doesn't work across the projects atm. So you'll still have to kill the process and re-run `npm run dev` if you change the form.
-4. Make sure you don't commit this `package.json` or `page-form.tsx`
+3. Don't commit the modified `package.json`!
+4. Make sure you run `npm run unlink:form` when you are done to fix the `package.json`.
 
 ### Deploying
 
@@ -66,3 +66,5 @@ Currently, commits to the `master` branch and opened pull requests trigger autom
 [Deploy settings](https://app.netlify.com/sites/powerthepolls/settings/deploys) should look like:  
 command: `cd site && npm install && npm run release`  
 publish directory: `/dist/www`
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7b1345e9-242b-4e34-bcef-3f57b3d6a6f0/deploy-status)](https://app.netlify.com/sites/powerthepolls/deploys)
