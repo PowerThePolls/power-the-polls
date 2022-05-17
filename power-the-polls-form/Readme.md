@@ -35,13 +35,6 @@ Include the latest version of the scripts (use module and non-module to support 
 </html>
 ```
 
-> NOTE: If you aren't able to include Javascript from unpkg.com for security policy reasons, you can reference it from the powerthepolls.org domain:
-> 
-> ```html
-> <script type="module" src="https://src.powerthepolls.org/assets/scripts/power-the-polls-form/power-the-polls-form.esm.js"></script>
-> <script nomodule src="https://src.powerthepolls.org/assets/scripts/power-the-polls-form/power-the-polls-form.js"></script>
-> ```
-
 ### How to embed in React
 
 Add to your project:
