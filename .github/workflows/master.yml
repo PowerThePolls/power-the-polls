@@ -1,0 +1,65 @@
+#name: pull latest full jurisdictions
+#
+#on:
+#  schedule:
+#    - cron: "0 0 * * *" #run once a day
+#
+## A workflow run is made up of one or more jobs that can run sequentially or in parallel
+#jobs:
+#  # This workflow contains a single job called "build"
+#  build:
+#    # The type of runner that the job will run on
+#    runs-on: ubuntu-latest
+#    # Steps represent a sequence of tasks that will be executed as part of the job
+#    steps:
+#      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+#      - uses: actions/checkout@v2
+#        with:
+#          ref: ${{ github.head_ref }}
+#
+#      - name: Fetch Full Jurisdictions
+#        uses: actions/setup-node@v1
+#        with:
+#          node-version: '12.x'
+#          working-directory: ./scripts/github-actions/
+#      - run: npm install
+#      - run: npm run fetchFullJurisdictions --if-present
+#
+#      - name: check if any changes
+#        id: changes
+#        uses: UnicornGlobal/has-changes-action@v1.0.11
+#
+#
+#      - name: bump forms beta version and release
+#        uses: actions/setup-node@v1
+#        with:
+#          node-version: '12.x'
+#          working-directory: ./power-the-polls-form/
+#        if: steps.changes.outputs.changed == 1 # run if there are changes
+#      - run: npm version prerelease --preid beta
+#      - run: npm run release:beta
+#        env:
+#          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+#
+#      - name: bump forms version in site
+#        uses: actions/setup-node@v1
+#        if: steps.changes.outputs.changed == 1
+#        with:
+#          node-version: '12.x'
+#          working-directory: ./site/
+#      - run: npm install @ptp-us/power-the-polls-form@beta
+#
+#      - name: Create commits
+#        uses: actions/setup-node@v1
+#        if: steps.changes.outputs.changed == 1
+#      - run: npm install
+#      - run: npm lint:fix
+#      - run: |
+#            git config user.name 'Sam Behrens'
+#            git config user.email 'samcbehrens@gmail.com'
+#            git add .
+#            git commit -m "automated: update full jurisdiction data"
+#
+#      - name: submit pull request
+#        if: steps.changes.outputs.changed == 1
+#        uses: peter-evans/create-pull-request@v3
