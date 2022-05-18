@@ -60,7 +60,7 @@ export class JurisdictionInfoComponent {
       this.isMailToFormComplete = false;
       this.showNextSteps = false;
       // we are post-election, so setting additional info state to "submitted" so the form doesn't show up
-      this.additionalInfoFormStatus = "submitted";
+      this.additionalInfoFormStatus = "pending";
    }
 
    public componentWillLoad() {
