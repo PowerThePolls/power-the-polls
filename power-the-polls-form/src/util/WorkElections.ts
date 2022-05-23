@@ -7,13 +7,7 @@ import { JurisdictionInfo, JurisdictionShort, Slugs, StateInfo } from "../data/S
  * Asynchronous function for returning data from WE
  */
 const fetchFromWE = async (path: string) => {
-   const data = await fetch(
-      "https" + `://workelections.powerthepolls.org${path}`,
-      {
-         method: "GET",
-         mode: "cors",
-      },
-   );
+   const data = await fetch(`https://workelections.powerthepolls.org${path}`);
    return await data.json();
 };
 

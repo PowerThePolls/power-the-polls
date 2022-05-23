@@ -1,4 +1,6 @@
-# [Power the Polls](https://powerthepolls.org) [![GitHub](https://img.shields.io/github/license/PowerThePolls/power-the-polls)](https://github.com/PowerThePolls/power-the-polls/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/@ptp-us/power-the-polls-form)](https://www.npmjs.com/package/@ptp-us/power-the-polls-form)
+# [Power the Polls](https://powerthepolls.org)  
+[![GitHub](https://img.shields.io/github/license/PowerThePolls/power-the-polls)](https://github.com/PowerThePolls/power-the-polls/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/@ptp-us/power-the-polls-form)](https://www.npmjs.com/package/@ptp-us/power-the-polls-form)
 
 There are two projects in this repository:
 

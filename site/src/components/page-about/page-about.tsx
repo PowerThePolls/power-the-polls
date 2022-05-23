@@ -15,16 +15,26 @@ export class PageAbout {
                     recruit a new wave of poll workers ahead of the 2020 election. America was in the midst of a
                     nationwide poll worker shortage, and the consequences had already been felt in primary elections
                     with reduced polling locations, long lines, and voters waiting to cast their ballot for several
-                    hours. Historically, most poll workers are over the age of 60, and in the era of uncertainty caused
-                    by the coronavirus, fewer were signing up for the job.
+                    hours. In the era of uncertainty caused by the coronavirus, fewer poll workers were signing up for
+                    the job.
                 </p>
                 <p>
                     Power the Polls had an original goal of recruiting 250,000 new prospective poll workers. In less
-                    than 100 days, Power the Polls harnessed the energy of individuals interested in ensuring a fair,
-                    safe and secure election, and was able to recruit over 700,000 prospective poll workers across the
+                    than 100 days, Power the Polls harnessed the energy of individuals interested in ensuring a fair and
+                    safe election, and was able to recruit over 700,000 prospective poll workers across the
                     United States. Consequently, the shortages we saw during the 2020 primaries were limited in the
                     general election: little to no poll worker shortages were reported during states’ early voting
                     period and on Tuesday, November 3, 2020.
+                </p>
+                <p>
+                    We’re already seeing the need for large scale poll worker recruitment in 2022. Poll worker shortages
+                    have already affected voters this year, as polling places in some states across the country have
+                    closed due to shortages during primary elections.
+                </p>
+                <p>
+                    When polling places close, it becomes more difficult for voters to access the ballot box. That’s why
+                    Power the Polls is continuing its work to recruit a new generation of poll workers who can ensure
+                    safe and fair access to the ballot box in 2022 and in elections to come.
                 </p>
                 <h3>Providing Accurate Poll Worker Information</h3>
                 <p>
