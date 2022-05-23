@@ -65,14 +65,14 @@ export class PageForm {
                     <h1 class={{"partner": partner?.logoAppearsOnLandingPage ?? false}}>Help staff your local polling
                         place</h1>
                     <p>
-                        In 2020, America faced a record shortage of poll workers due to the coronavirus, and over
-                        700,000 people stepped up via Power the Polls to help meet that challenge. That was just the
-                        beginning.
+                        In 2020, America faced a record shortage of poll workers, and over 700,000 people stepped up
+                        via Power the Polls to help meet that challenge. That was just the beginning.
                     </p>
                     <p>
-                        Our democracy depends on ordinary people who make sure every election runs smoothly and
-                        everyone's vote is counted. You can make sure we have safe, fair, and efficient elections for
-                        all. Step up and become a poll worker in your community this year.
+                        In 2022, we’re already seeing the need for more poll workers. Our democracy depends on ordinary
+                        people who make sure every election runs smoothly and everyone's vote is counted. You can make
+                        sure we have safe, fair, and efficient elections for all. Step up and become a poll worker in
+                        your community this year.
                     </p>
 
                     <div class="incentive-container">

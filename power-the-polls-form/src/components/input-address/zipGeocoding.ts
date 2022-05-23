@@ -14,7 +14,7 @@ export interface ZipGeocodingError {
 export default async (
    zipcode: string,
 ): Promise<ZipGeocodingResult | ZipGeocodingError> => {
-   const url = new URL("https" + "://smartystreet.powerthepolls.org/dev/zip");
+   const url = new URL("https://smartystreet.powerthepolls.org/dev/zip");
    url.searchParams.append("zipcode", zipcode);
    return fetch(url.toString())
       .then(
