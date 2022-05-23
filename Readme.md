@@ -67,7 +67,7 @@ Currently, commits to the `master` branch and opened pull requests trigger autom
 
 [Deploy settings](https://app.netlify.com/sites/powerthepolls/settings/deploys) should look like:  
 base directory: `site`
-command: `npm install && npm run release`  
+command: `npm install && npm run build`  
 publish directory: `site/../dist/www`
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7b1345e9-242b-4e34-bcef-3f57b3d6a6f0/deploy-status)](https://app.netlify.com/sites/powerthepolls/deploys)

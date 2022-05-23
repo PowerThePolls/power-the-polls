@@ -1,0 +1,4 @@
+[build]
+	base = "site"
+	publish = "../dist/www"
+	command = "npm install && npm run build"
