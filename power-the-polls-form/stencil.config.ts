@@ -5,6 +5,7 @@ import { sass } from "@stencil/sass";
 export const config: Config = {
    namespace: "power-the-polls-form",
    srcDir: "src", // "src" is the default; just here for clarity
+   sourceMap: true,
    plugins: [
       sass( {
          // scss files will automatically have these added
