@@ -59,7 +59,33 @@ export class PollWorkerInfo {
          jurisdictionId != null ? jurisdictionId + "" : null,
       );
 
-      return stateInfo?.notSupported === true ? (
+       function isMailOnlyState(stateAbbreviation: string | undefined): boolean {
+           return stateAbbreviation === "HI" || stateAbbreviation === "OR" || stateAbbreviation === "WA";
+       }
+
+       if (isMailOnlyState(this.state)) {
+           return (
+               <Fragment>
+                   <h1>Thanks for signing up to Power the Polls!</h1>
+                   <p>
+                       Thank you so much for your interest in being a poll worker.
+                   </p>
+                   <p>
+                       {stateInfo?.name} conducts elections by mail, meaning that the need for poll workers is generally
+                       lower than many other states. However, there still may be ways that you can support election
+                       administrators in your area. We encourage you to contact your county election office directly to
+                       find out about any opportunities to get involved.
+                   </p>
+                   <p>
+                       You can still help power the polls by voting in this upcoming election, and encouraging your
+                       friends and family who live in other states to sign up to be poll workers.
+                   </p>
+               </Fragment>
+           );
+       }
+
+
+       return stateInfo?.notSupported === true ? (
          <Fragment>
             <h1>Thank you so much for your interest in being a poll worker!</h1>
             <p>
