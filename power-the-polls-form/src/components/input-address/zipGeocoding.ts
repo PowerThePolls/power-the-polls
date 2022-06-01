@@ -35,9 +35,9 @@ export default async (
          let defaultCityState = (result.zipcodes as USZipCode.ZipCode[])[0];
 
          if (result.city_states) {
-            result.city_states.forEach((city: USZipCode.CityState) =>
-               cities.add(city.city),
-            );
+            result.city_states
+                .filter((city: USZipCode.CityState) => (city.mailable_city)) // only include mailable cities
+                .forEach((city: USZipCode.CityState) => cities.add(city.city));
          }
 
          counties.add(defaultCityState.county_name);
