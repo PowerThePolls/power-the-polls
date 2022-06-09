@@ -133,6 +133,10 @@ export class AppRoot {
             url: "/search",
             component: "page-search",
          },
+         {
+            url: "/testimonial",
+            component: "page-testimonial",
+         },
 
          /*
           * legacy routes
