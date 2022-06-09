@@ -230,7 +230,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 answer: () => <p>
                     Thank you for your interest in partnering with Power the Polls! Please let us know you are
                     interested in partnering by emailing us at <a
-                    href="mailto:partnerships@powerthepolls.org">partnerships@powerthepolls.org</a> and we will reach
+                    href="mailto:partners@powerthepolls.org">partners@powerthepolls.org</a> and we will reach
                     out to share more information with you.
                 </p>,
             },

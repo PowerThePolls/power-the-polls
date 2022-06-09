@@ -61,7 +61,7 @@ export class PageFaq {
                 </p>
                 <p>
                     To inquire about partnering with us, please contact <a
-                    href="mailto:partnerships@powerthepolls.org">partnerships@powerthepolls.org</a>
+                    href="mailto:partners@powerthepolls.org">partners@powerthepolls.org</a>
                 </p>
             </Host>
         );
