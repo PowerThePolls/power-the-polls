@@ -39,7 +39,7 @@ export class PagePartners {
             <li>Activating businesses to give their workers Election Day off so they can serve.</li>
          </ul>
          <p>
-            If you’d like to become a campaign partner, please reach out to: <a href="mailto:partnerships@powerthepolls.org">partnerships@powerthepolls.org</a>.
+            If you’d like to become a campaign partner, please reach out to: <a href="mailto:partners@powerthepolls.org">partners@powerthepolls.org</a>.
          </p>
 
          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
