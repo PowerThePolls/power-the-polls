@@ -67,6 +67,8 @@ export namespace Components {
     interface PageSearch {
         "history": RouterHistory;
     }
+    interface PageTestimonial {
+    }
     interface QuestionSection {
         "questions"?: { question: string, answer: () => string }[];
         "sectionTitle"?: string;
@@ -219,6 +221,12 @@ declare global {
         prototype: HTMLPageSearchElement;
         new (): HTMLPageSearchElement;
     };
+    interface HTMLPageTestimonialElement extends Components.PageTestimonial, HTMLStencilElement {
+    }
+    var HTMLPageTestimonialElement: {
+        prototype: HTMLPageTestimonialElement;
+        new (): HTMLPageTestimonialElement;
+    };
     interface HTMLQuestionSectionElement extends Components.QuestionSection, HTMLStencilElement {
     }
     var HTMLQuestionSectionElement: {
@@ -271,6 +279,7 @@ declare global {
         "page-privacy": HTMLPagePrivacyElement;
         "page-resources": HTMLPageResourcesElement;
         "page-search": HTMLPageSearchElement;
+        "page-testimonial": HTMLPageTestimonialElement;
         "question-section": HTMLQuestionSectionElement;
         "ui-h3-bar": HTMLUiH3BarElement;
         "ui-impact-box": HTMLUiImpactBoxElement;
@@ -339,6 +348,8 @@ declare namespace LocalJSX {
     }
     interface PageSearch {
         "history": RouterHistory;
+    }
+    interface PageTestimonial {
     }
     interface QuestionSection {
         "questions"?: { question: string, answer: () => string }[];
@@ -417,6 +428,7 @@ declare namespace LocalJSX {
         "page-privacy": PagePrivacy;
         "page-resources": PageResources;
         "page-search": PageSearch;
+        "page-testimonial": PageTestimonial;
         "question-section": QuestionSection;
         "ui-h3-bar": UiH3Bar;
         "ui-impact-box": UiImpactBox;
@@ -444,6 +456,7 @@ declare module "@stencil/core" {
             "page-privacy": LocalJSX.PagePrivacy & JSXBase.HTMLAttributes<HTMLPagePrivacyElement>;
             "page-resources": LocalJSX.PageResources & JSXBase.HTMLAttributes<HTMLPageResourcesElement>;
             "page-search": LocalJSX.PageSearch & JSXBase.HTMLAttributes<HTMLPageSearchElement>;
+            "page-testimonial": LocalJSX.PageTestimonial & JSXBase.HTMLAttributes<HTMLPageTestimonialElement>;
             "question-section": LocalJSX.QuestionSection & JSXBase.HTMLAttributes<HTMLQuestionSectionElement>;
             "ui-h3-bar": LocalJSX.UiH3Bar & JSXBase.HTMLAttributes<HTMLUiH3BarElement>;
             "ui-impact-box": LocalJSX.UiImpactBox & JSXBase.HTMLAttributes<HTMLUiImpactBoxElement>;
