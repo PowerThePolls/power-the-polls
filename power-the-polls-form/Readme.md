@@ -6,7 +6,7 @@ This is a custom web component that allows our partners to embed the Power the P
 
 ## America is facing a record shortage of poll workers
 
-As coronavirus continues to impact Americans across the country, we are also seeing a staggering decrease in poll workers &mdash; which could mean closed polling places and **long delays for elections in 2020**.
+As coronavirus continues to impact Americans across the country, we are also seeing a staggering decrease in poll workers &mdash; which could mean closed polling places and **long delays for elections in 2022**.
 
 **You can help** make sure we have a safe, fair, efficient election for all voters, and potentially get paid to do it!
 
