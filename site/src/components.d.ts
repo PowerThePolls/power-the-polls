@@ -21,6 +21,8 @@ export namespace Components {
     }
     interface PageAbout {
     }
+    interface PageElectionOfficials {
+    }
     interface PageFaq {
         /**
           * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
@@ -161,6 +163,12 @@ declare global {
         prototype: HTMLPageAboutElement;
         new (): HTMLPageAboutElement;
     };
+    interface HTMLPageElectionOfficialsElement extends Components.PageElectionOfficials, HTMLStencilElement {
+    }
+    var HTMLPageElectionOfficialsElement: {
+        prototype: HTMLPageElectionOfficialsElement;
+        new (): HTMLPageElectionOfficialsElement;
+    };
     interface HTMLPageFaqElement extends Components.PageFaq, HTMLStencilElement {
     }
     var HTMLPageFaqElement: {
@@ -269,6 +277,7 @@ declare global {
         "contact-form": HTMLContactFormElement;
         "contact-modal": HTMLContactModalElement;
         "page-about": HTMLPageAboutElement;
+        "page-election-officials": HTMLPageElectionOfficialsElement;
         "page-faq": HTMLPageFaqElement;
         "page-faq-es": HTMLPageFaqEsElement;
         "page-form": HTMLPageFormElement;
@@ -302,6 +311,8 @@ declare namespace LocalJSX {
         "onClose"?: (event: CustomEvent<any>) => void;
     }
     interface PageAbout {
+    }
+    interface PageElectionOfficials {
     }
     interface PageFaq {
         /**
@@ -418,6 +429,7 @@ declare namespace LocalJSX {
         "contact-form": ContactForm;
         "contact-modal": ContactModal;
         "page-about": PageAbout;
+        "page-election-officials": PageElectionOfficials;
         "page-faq": PageFaq;
         "page-faq-es": PageFaqEs;
         "page-form": PageForm;
@@ -446,6 +458,7 @@ declare module "@stencil/core" {
             "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
             "contact-modal": LocalJSX.ContactModal & JSXBase.HTMLAttributes<HTMLContactModalElement>;
             "page-about": LocalJSX.PageAbout & JSXBase.HTMLAttributes<HTMLPageAboutElement>;
+            "page-election-officials": LocalJSX.PageElectionOfficials & JSXBase.HTMLAttributes<HTMLPageElectionOfficialsElement>;
             "page-faq": LocalJSX.PageFaq & JSXBase.HTMLAttributes<HTMLPageFaqElement>;
             "page-faq-es": LocalJSX.PageFaqEs & JSXBase.HTMLAttributes<HTMLPageFaqEsElement>;
             "page-form": LocalJSX.PageForm & JSXBase.HTMLAttributes<HTMLPageFormElement>;

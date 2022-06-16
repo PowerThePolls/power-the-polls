@@ -81,6 +81,14 @@ export class AppRoot {
             component: "component-list",
          },
          {
+            url: "/electionofficial",
+            component: "page-election-officials",
+         },
+         {
+            url: "/electionofficials",
+            component: "page-election-officials",
+         },
+         {
             url: "/faq",
             component: "page-faq",
             componentProps: {
