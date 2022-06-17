@@ -34,6 +34,9 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
             >Partners</stencil-route-link>
          </li>
          <li>
+            <stencil-route-link url="/electionofficials" onClick={onSelectNavItem}>Election Officials</stencil-route-link>
+         </li>
+         <li>
             <stencil-route-link url="/resources" onClick={onSelectNavItem}>Resources</stencil-route-link>
          </li>
       </ul>
