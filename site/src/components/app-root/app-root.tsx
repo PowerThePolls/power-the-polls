@@ -27,14 +27,14 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
             >FAQ &amp; Contact</stencil-route-link>
          </li>
          <li>
+            <stencil-route-link url="/electionofficials" onClick={onSelectNavItem}>Election Officials</stencil-route-link>
+         </li>
+         <li>
             <stencil-route-link
                url={`/partners${partnerId != null ? "#" + partnerId : ""}`}
                urlMatch={["/partners", "/partners#*"]}
                onClick={onSelectNavItem}
             >Partners</stencil-route-link>
-         </li>
-         <li>
-            <stencil-route-link url="/electionofficials" onClick={onSelectNavItem}>Election Officials</stencil-route-link>
          </li>
          <li>
             <stencil-route-link url="/resources" onClick={onSelectNavItem}>Resources</stencil-route-link>
