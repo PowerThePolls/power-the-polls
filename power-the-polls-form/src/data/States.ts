@@ -1,96 +1,96 @@
 export interface StateInfo {
-   id: number;
-   noPollWorkersNeeded?: boolean;
-   /**
-    * We do not support this jurisdiction.
-    * (Make sure`noPollWorkersNeeded` is also set to true for these states)
-    */
-   notSupported?: boolean;
-   partner?: boolean;
-   /**
-    * For Maine. see: EmailApplicationForm.tsx
-    */
-   usePhoneInsteadOfEmailForFormFallback?: boolean;
-   name?: string;
-   alpha?: string;
-   pollworker_website?: string;
-   is_active?: boolean;
-   subdivision_name?: string;
-   notes?: string | null;
-   topojson_id?: number;
-   jurisdictions: { [jurisdiction: string]: JurisdictionShort };
+    id: number;
+    noPollWorkersNeeded?: boolean;
+    /**
+     * We do not support this jurisdiction.
+     * (Make sure`noPollWorkersNeeded` is also set to true for these states)
+     */
+    notSupported?: boolean;
+    partner?: boolean;
+    /**
+     * For Maine. see: EmailApplicationForm.tsx
+     */
+    usePhoneInsteadOfEmailForFormFallback?: boolean;
+    name?: string;
+    alpha?: string;
+    pollworker_website?: string;
+    is_active?: boolean;
+    subdivision_name?: string;
+    notes?: string | null;
+    topojson_id?: number;
+    jurisdictions: { [jurisdiction: string]: JurisdictionShort };
 }
 
 export interface JurisdictionShort {
-   id: number;
-   name: string;
-   slug: string;
+    id: number;
+    name: string;
+    slug: string;
 }
 
 export interface JurisdictionInfo extends JurisdictionShort {
-   state: { alpha: string; };
-   disambiguation_notice?: string;
-   disambiguation_link?: string;
-   info_website: string;
-   student_website?: string;
-   online_application: string;
-   telephone: string;
-   email: string;
-   office_address: string;
-   mailing_address_if_different: string;
-   registration_status: string;
-   minimum_age: string;
-   has_student_pollworkers: boolean;
-   hours_start: string;
-   hours_end: string;
-   full_day_required: string;
-   compensation_for_the_day: string;
-   training_required: boolean;
-   training_note?: string;
-   must_have_email: string;
-   further_notes: string;
-   notes: string;
+    state: { alpha: string; };
+    disambiguation_notice?: string;
+    disambiguation_link?: string;
+    info_website: string;
+    student_website?: string;
+    online_application: string;
+    telephone: string;
+    email: string;
+    office_address: string;
+    mailing_address_if_different: string;
+    registration_status: string;
+    minimum_age: string;
+    has_student_pollworkers: boolean;
+    hours_start: string;
+    hours_end: string;
+    full_day_required: string;
+    compensation_for_the_day: string;
+    training_required: boolean;
+    training_note?: string;
+    must_have_email: string;
+    further_notes: string;
+    notes: string;
 }
 
 const data: { [state: string]: StateInfo } = {
-   // Territories
-   "AS": {
-      "id": -1,
-      "name": "American Samoa",
-      "noPollWorkersNeeded": true,
-      "notSupported": true,
-      "jurisdictions": {},
-   },
-   "GU": {
-      "id": -1,
-      "name": "Guam",
-      "noPollWorkersNeeded": true,
-      "notSupported": true,
-      "jurisdictions": {},
-   },
-   "MP": {
-      "id": -1,
-      "name": "Northern Mariana Islands",
-      "noPollWorkersNeeded": true,
-      "notSupported": true,
-      "jurisdictions": {},
-   },
-   "PR": {
-      "id": -1,
-      "name": "Puerto Rico",
-      "noPollWorkersNeeded": true,
-      "notSupported": true,
-      "jurisdictions": {},
-   },
-   "VI": {
-      "id": -3,
-      "name": "Virgin Islands",
-      "noPollWorkersNeeded": true,
-      "notSupported": true,
-      "jurisdictions": {},
-   },
-   // States - scrape mapping from WE using
-   // https://gist.github.com/mojowen/f0ccd76ece41bd76b7d6809faaa61319
+    // Territories
+    "AS": {
+        "id": -1,
+        "name": "American Samoa",
+        "noPollWorkersNeeded": true,
+        "notSupported": true,
+        "jurisdictions": {},
+    },
+    "GU": {
+        "id": -1,
+        "name": "Guam",
+        "noPollWorkersNeeded": true,
+        "notSupported": true,
+        "jurisdictions": {},
+    },
+    "MP": {
+        "id": -1,
+        "name": "Northern Mariana Islands",
+        "noPollWorkersNeeded": true,
+        "notSupported": true,
+        "jurisdictions": {},
+    },
+    "PR": {
+        "id": -1,
+        "name": "Puerto Rico",
+        "noPollWorkersNeeded": true,
+        "notSupported": true,
+        "jurisdictions": {},
+    },
+    "VI": {
+        "id": -3,
+        "name": "Virgin Islands",
+        "noPollWorkersNeeded": true,
+        "notSupported": true,
+        "jurisdictions": {},
+    },
+    // States - scrape mapping from WE using
+    // https://gist.github.com/mojowen/f0ccd76ece41bd76b7d6809faaa61319
     "AL": {
         "id": 30,
         "name": "Alabama",
@@ -24546,9 +24546,14 @@ const data: { [state: string]: StateInfo } = {
                 "name": "Falls Church",
                 "slug": "falls-church",
             },
-            "Fairfax": {
+            "Fairfax County": {
+                "id": 10387,
+                "name": "Fairfax County",
+                "slug": "fairfax-3",
+            },
+            "Fairfax City": {
                 "id": 10386,
-                "name": "Fairfax",
+                "name": "Fairfax (City)",
                 "slug": "fairfax-2",
             },
             "Essex": {
@@ -26973,15 +26978,17 @@ const data: { [state: string]: StateInfo } = {
         },
     },
 };
-export const Slugs: {[slug: string]: number } = Object.values(data).reduce(
-   (comb: {[slug: string]: number }, { jurisdictions }: StateInfo) => {
-      Object.values(jurisdictions).forEach(
-         ({id, slug}: { id: number, slug: string }) => {
-            if( slug ) { comb[slug] = id; }
-         },
-      );
-      return comb;
-   },
-   {},
+export const Slugs: { [slug: string]: number } = Object.values(data).reduce(
+    (comb: { [slug: string]: number }, {jurisdictions}: StateInfo) => {
+        Object.values(jurisdictions).forEach(
+            ({id, slug}: { id: number, slug: string }) => {
+                if (slug) {
+                    comb[slug] = id;
+                }
+            },
+        );
+        return comb;
+    },
+    {},
 );
 export default data;
