@@ -38,13 +38,10 @@ export class PageAbout {
                 </p>
                 <h3>Providing Accurate Poll Worker Information</h3>
                 <p>
-                    Power the Polls uses data on poll worker requirements researched and collected by the nonpartisan
-                    Fair Elections Center, creators of the unique <a href="https://www.workelections.org"
-                                                                     target="_blank" rel="noopener"
-                                                                     title="Open workelections.org in a new window">workelections.org</a>&nbsp;
-                    web portal. Information is available on poll worker compensation, hours, application links, and
-                    training
-                    and voter registration requirements for more than 4,000 jurisdictions in states across the country.
+                    Power the Polls relies on objective data about poll worker requirements and applications collected
+                    from over 5,000 jurisdictions assembled by the non-partisan Fair Elections Center. Information is
+                    available on poll worker compensation, hours, application links, and training and voter registration
+                    requirements.
                 </p>
             </Host>
         );
