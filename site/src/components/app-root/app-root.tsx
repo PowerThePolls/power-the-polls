@@ -27,6 +27,9 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
             >FAQ &amp; Contact</stencil-route-link>
          </li>
          <li>
+            <stencil-route-link url="/electionofficials" onClick={onSelectNavItem}>Election Officials</stencil-route-link>
+         </li>
+         <li>
             <stencil-route-link
                url={`/partners${partnerId != null ? "#" + partnerId : ""}`}
                urlMatch={["/partners", "/partners#*"]}
@@ -79,6 +82,14 @@ export class AppRoot {
             // display all the components in the app in one pace
             url: "/dev",
             component: "component-list",
+         },
+         {
+            url: "/electionofficial",
+            component: "page-election-officials",
+         },
+         {
+            url: "/electionofficials",
+            component: "page-election-officials",
          },
          {
             url: "/faq",
