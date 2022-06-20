@@ -94,6 +94,20 @@ export class PageElectionOfficials {
                         href={"mailto:electionofficials@powerthepolls.org"}>electionofficials@powerthepolls.org</a>.
                     </b>
                 </p>
+                <h3>About our Poll Worker Application Information</h3>
+                <p>
+                    Power the Polls uses data on poll worker requirements researched and collected by the nonpartisan
+                    Fair Elections Center, as part of their WorkElections project. Information is available on poll
+                    worker compensation, hours, application links, and training and voter registration requirements for
+                    thousands of jurisdictions in states across the country.
+                </p>
+                <p>
+                    <b>If you see any information on Power the Polls that is inaccurate or needs
+                        to be updated, please email <a
+                            href={"mailto:electionofficials@powerthepolls.org"}>electionofficials@powerthepolls.org</a> so
+                        we can update this information ASAP!
+                    </b>
+                </p>
             </Host>
         );
     }
