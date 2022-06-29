@@ -1,0 +1,37 @@
+name: update partner list json
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # run once a day
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Update Partner List JSON
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+          working-directory: ./scripts/compile-source-codes
+      - run: npm install
+      - run: npm run start
+
+      - name: Check for Changes
+        id: changes
+        uses: UnicornGlobal/has-changes-action@v1.0.11
+
+      - name: create commits
+        if: steps.changes.outputs.changed == 1
+        run: |
+          git config user.name 'Billy Laing'
+          git config user.email 'billy@powerthepolls.org'
+          git add .
+          git commit -m "automated: update partner list"
+
+      - name: submit pull request
+        if: steps.changes.outputs.changed == 1
+        uses: peter-evans/create-pull-request@v4
