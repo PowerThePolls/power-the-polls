@@ -2,7 +2,7 @@ name: update partner list json
 
 on:
   schedule:
-    - cron: "0 0 * * *" # run once a day
+    - cron: "0 * * * *" # run every hour
 
 jobs:
   build:
