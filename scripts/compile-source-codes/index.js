@@ -49,4 +49,4 @@ const run = async () => {
   // add new source codes to JSON
 };
 
-run().catch((err => console.log(err)));
+run().catch((err => console.error(err)));
