@@ -24,7 +24,7 @@ jobs:
         id: changes
         uses: UnicornGlobal/has-changes-action@v1.0.11
 
-      - name: create commits
+      - name: Create Commits
         if: steps.changes.outputs.changed == 1
         run: |
           git config user.name 'Billy Laing'
@@ -32,6 +32,6 @@ jobs:
           git add .
           git commit -m "automated: update partner list"
 
-      - name: submit pull request
+      - name: Submit Pull Request
         if: steps.changes.outputs.changed == 1
         uses: peter-evans/create-pull-request@v4
