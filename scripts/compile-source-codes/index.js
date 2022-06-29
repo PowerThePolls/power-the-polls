@@ -28,6 +28,7 @@ const removeDuplicates = (records, duplicates) => {
     }).length === 0
   })
 }
+
 const run = async () => {
   // get approved source codes from AirTable
   const approvedRecords = await getApprovedRecords()
