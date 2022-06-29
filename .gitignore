@@ -33,3 +33,4 @@ tsconfig.tsbuildinfo
 /scripts/github-actions/*.js
 
 /scripts/**/*.csv
+.envrc
