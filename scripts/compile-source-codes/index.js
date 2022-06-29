@@ -2,9 +2,18 @@ const Airtable = require("airtable");
 const base = new Airtable().base("appc14jHeQ2v7FhU9");
 
 const getApprovedRecords = async () => {
-  const filterByFormula = "{status} = 'Approved'"
-  const fields = ["organization", "source_code", "status"];
-  return base("Partners").select({ filterByFormula, fields }).all();
+  // const filterByFormula = "{status} = 'Approved'"
+  // const fields = ["organization", "source_code", "status"];
+  // return base("Partners").select({ filterByFormula, fields }).all();
+  return Promise.resolve(
+    [{
+      fields: {
+        organization: "billy test org",
+        source_code: "billy",
+        status: "Approved"
+      }
+    }]
+  )
 }
 
 const getSourceCodes = (partner) => {
@@ -15,17 +24,17 @@ const getSourceCodes = (partner) => {
 
 const findDuplicates = (records, partnerList) => {
   return records.reduce((result, record) => {
-    return [
-      ...result, partnerList.find((partner) => getSourceCodes(partner).includes(record.fields.source_code))
-    ]
+    const duplicate = partnerList.find((partner) => getSourceCodes(partner).includes(record.fields.source_code))
+    return duplicate ? [
+      ...result,
+      duplicate,
+    ] : result
   }, []);
 }
 
 const removeDuplicates = (records, duplicates) => {
   return records.filter((record) => {
-    return duplicates.find((duplicate) => {
-      return getSourceCodes(duplicate).includes(record.fields.source_code)
-    }).length === 0
+    return !duplicates.find((duplicate) => getSourceCodes(duplicate).includes(record.fields.source_code))
   })
 }
 
