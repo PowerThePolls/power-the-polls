@@ -15,10 +15,9 @@ jobs:
       - name: Update Partner List JSON
         uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
-          working-directory: ./scripts/compile-source-codes
-      - run: npm install
-      - run: npm run start
+          node-version: 14
+      - run: cd scripts/compile-source-codes && npm install
+      - run: cd scripts/compile-source-codes && npm run start
 
       - name: Check for Changes
         id: changes
