@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14
+        env:
+          AIRTABLE_API_KEY: ${{ env.AIRTABLE_API_KEY }}
       - run: cd scripts/compile-source-codes && npm install
       - run: cd scripts/compile-source-codes && npm run start
 
