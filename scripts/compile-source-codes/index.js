@@ -57,7 +57,7 @@ const run = async () => {
    const newRecords = removeDuplicates(approvedRecords, duplicates);
    if (newRecords.length) {
       console.log("New records:");
-      newRecords.forEach((record) => console.log(record.fields));
+      console.log(newRecords.map(({fields}) => fields))
 
       // add new source codes to JSON
       const newPartnerList = [

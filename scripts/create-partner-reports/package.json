@@ -8,8 +8,10 @@
    },
    "author": "",
    "license": "MIT",
+   "dependencies": {
+      "airtable": "^0.11.4"
+   },
    "devDependencies": {
-      "airtable": "^0.11.4",
       "prettier": "^2.7.1"
    }
 }
