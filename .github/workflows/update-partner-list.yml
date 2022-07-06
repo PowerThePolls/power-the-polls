@@ -36,3 +36,10 @@ jobs:
       - name: Submit Pull Request
         if: steps.changes.outputs.changed != 0
         uses: peter-evans/create-pull-request@v4
+        with:
+          title: Update Partner List
+          commit-message: "[update-partner-list] add new partners"
+          assignees: billylaing
+          reviewers: billylaing
+          branch: update-partner-list
+          delete-branch: true
