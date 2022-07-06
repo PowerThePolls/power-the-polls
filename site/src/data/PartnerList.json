@@ -1760,5 +1760,37 @@
     "partnerId": "zuora",
     "name": "zuora",
     "logo": "zuora.png"
+  },
+  {
+    "partnerId": "NationBuilder",
+    "name": "NationBuilder"
+  },
+  {
+    "partnerId": "arizona",
+    "name": "Arizona Democracy Resource Center"
+  },
+  {
+    "partnerId": "ProtectWIElections",
+    "name": "RepresentUs"
+  },
+  {
+    "partnerId": "resistbot",
+    "name": "Resistbot"
+  },
+  {
+    "partnerId": "publiccitizen",
+    "name": "Public Citizen"
+  },
+  {
+    "partnerId": "motivote",
+    "name": "Motivote"
+  },
+  {
+    "partnerId": "ndrn",
+    "name": "National Disability Rights Network (NDRN)"
+  },
+  {
+    "partnerId": "slsv",
+    "name": "Students Learn Students Vote Coalition"
   }
 ]
