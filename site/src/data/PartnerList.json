@@ -1792,5 +1792,41 @@
   {
     "partnerId": "slsv",
     "name": "Students Learn Students Vote Coalition"
+  },
+  {
+    "partnerId": "lcv",
+    "name": "League of Conservation Voters"
+  },
+  {
+    "partnerId": "naspa",
+    "name": "NASPA"
+  },
+  {
+    "partnerId": "its-on-us",
+    "name": "Independent Sector"
+  },
+  {
+    "partnerId": "kos",
+    "name": "Daily Kos"
+  },
+  {
+    "partnerId": "fluency",
+    "name": "Fluency"
+  },
+  {
+    "partnerId": "EmpowerProject",
+    "name": "Empower Project"
+  },
+  {
+    "partnerId": "climatechangemakers",
+    "name": "Climate Changemakers"
+  },
+  {
+    "partnerId": "nacdd2022",
+    "name": "National Association of Councils on Developmental Disabilities"
+  },
+  {
+    "partnerId": "APIAVOTE",
+    "name": "Asian and Pacific Islander American Vote (APIAVote)"
   }
 ]
