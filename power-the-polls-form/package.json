@@ -54,7 +54,7 @@
       "dotenv": "^8.2.0",
       "jest": "26.4.2",
       "jest-cli": "26.4.2",
-      "npm-check-updates": "^9.0.1",
+      "npm-check-updates": "^15.0.5",
       "puppeteer": "^13.6.0",
       "replace": "^1.2.0",
       "rimraf": "^3.0.2",

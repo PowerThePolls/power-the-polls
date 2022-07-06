@@ -3,7 +3,7 @@ const Airtable = require("airtable");
 const base = new Airtable().base("appc14jHeQ2v7FhU9");
 
 const getApprovedRecords = async () => {
-   const filterByFormula = "{status} = 'Approved'"
+   const filterByFormula = "{status} = 'BLAH'"
    const fields = ["organization", "source_code", "status"];
    return base("Partners").select({ filterByFormula, fields }).all();
 };
@@ -56,20 +56,21 @@ const run = async () => {
    // find new records
    const newRecords = removeDuplicates(approvedRecords, duplicates);
    if (newRecords.length) {
+
       console.log("New records:");
-      console.log(newRecords);
+      newRecords.forEach(record => console.log(record.fields))
+
+      // add new source codes to JSON
+      const newPartnerList = [
+         ...partnerList,
+         ...newRecords.map((record) => ({
+            partnerId: record.fields.source_code,
+            name: record.fields.organization,
+         })),
+      ];
+
+      await writeFile(JSON.stringify(newPartnerList, null, 2));
    }
-
-   // add new source codes to JSON
-   const newPartnerList = [
-      ...partnerList,
-      ...newRecords.map((record) => ({
-         partnerId: record.fields.source_code,
-         name: record.fields.organization,
-      })),
-   ];
-
-   await writeFile(JSON.stringify(newPartnerList, null, 2));
 };
 
 run().catch((err) => console.error(err));
