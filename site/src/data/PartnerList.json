@@ -1832,5 +1832,9 @@
   {
     "partnerId": "edenhealth",
     "name": "Eden Health"
+  },
+  {
+    "partnerId": "microsoftint",
+    "name": "Microsoft (internal) "
   }
 ]
