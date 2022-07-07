@@ -1836,5 +1836,49 @@
   {
     "partnerId": "microsoftint",
     "name": "Microsoft (internal) "
+  },
+  {
+    "partnerId": "theASBN",
+    "name": "American Sustainable Business Network"
+  },
+  {
+    "partnerId": "sisterdistrict",
+    "name": "Sister District Action Network"
+  },
+  {
+    "partnerId": "justiceunites",
+    "name": "Justice Unites Us"
+  },
+  {
+    "partnerId": "equitynow",
+    "name": "Equity Now Inc."
+  },
+  {
+    "partnerId": "representus",
+    "name": "RepresentUs"
+  },
+  {
+    "partnerId": "ProctorPowerthePolls",
+    "name": "Samuel DeWitt Proctor Conference"
+  },
+  {
+    "partnerId": "603FWD",
+    "name": "603 Forward"
+  },
+  {
+    "partnerId": "PoderLatinx",
+    "name": "Poder Latinx"
+  },
+  {
+    "partnerId": "allintovote",
+    "name": "ALL IN Campus Democracy Challenge"
+  },
+  {
+    "partnerId": "PAyouthvote",
+    "name": "PA Youth Vote"
+  },
+  {
+    "partnerId": "apala",
+    "name": "Asian Pacific American Labor Alliance, AFL-CIO"
   }
 ]
