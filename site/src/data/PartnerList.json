@@ -795,7 +795,7 @@
   },
   {
     "partnerId": "KiteString",
-    "name": "KiteString",
+    "name": "KiteString Technical Services",
     "logo": "kitestring.png",
     "logoIsDark": true
   },
@@ -1814,10 +1814,6 @@
     "name": "Eden Health"
   },
   {
-    "partnerId": "microsoftint",
-    "name": "Microsoft (internal) "
-  },
-  {
     "partnerId": "theASBN",
     "name": "American Sustainable Business Network"
   },
@@ -1858,20 +1854,8 @@
     "name": "PA Youth Vote"
   },
   {
-    "partnerId": "apala",
-    "name": "Asian Pacific American Labor Alliance, AFL-CIO"
-  },
-  {
-    "partnerId": "bearaby",
-    "name": "Bearaby"
-  },
-  {
     "partnerId": "hoteltangodistillery",
     "name": "Hotel Tango Distillery "
-  },
-  {
-    "partnerId": "kitestring",
-    "name": "Kitestring Technical Services"
   },
   {
     "partnerId": "levis ",
