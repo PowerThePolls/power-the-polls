@@ -795,7 +795,7 @@
   },
   {
     "partnerId": "KiteString",
-    "name": "KiteString",
+    "name": "KiteString Technical Services",
     "logo": "kitestring.png",
     "logoIsDark": true
   },
@@ -1778,26 +1778,6 @@
     "name": "Resistbot"
   },
   {
-    "partnerId": "publiccitizen",
-    "name": "Public Citizen"
-  },
-  {
-    "partnerId": "motivote",
-    "name": "Motivote"
-  },
-  {
-    "partnerId": "ndrn",
-    "name": "National Disability Rights Network (NDRN)"
-  },
-  {
-    "partnerId": "slsv",
-    "name": "Students Learn Students Vote Coalition"
-  },
-  {
-    "partnerId": "lcv",
-    "name": "League of Conservation Voters"
-  },
-  {
     "partnerId": "naspa",
     "name": "NASPA"
   },
@@ -1832,10 +1812,6 @@
   {
     "partnerId": "edenhealth",
     "name": "Eden Health"
-  },
-  {
-    "partnerId": "microsoftint",
-    "name": "Microsoft (internal) "
   },
   {
     "partnerId": "theASBN",
@@ -1878,20 +1854,8 @@
     "name": "PA Youth Vote"
   },
   {
-    "partnerId": "apala",
-    "name": "Asian Pacific American Labor Alliance, AFL-CIO"
-  },
-  {
-    "partnerId": "bearaby",
-    "name": "Bearaby"
-  },
-  {
     "partnerId": "hoteltangodistillery",
     "name": "Hotel Tango Distillery "
-  },
-  {
-    "partnerId": "kitestring",
-    "name": "Kitestring Technical Services"
   },
   {
     "partnerId": "levis ",

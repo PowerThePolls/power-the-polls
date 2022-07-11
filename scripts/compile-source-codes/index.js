@@ -9,15 +9,15 @@ const getApprovedRecords = async () => {
 };
 
 const getSourceCodes = (partner) => {
-   return partner.additionalVanityUrls
+   return (partner.additionalVanityUrls
       ? [partner.partnerId, ...partner.additionalVanityUrls]
-      : [partner.partnerId];
+      : [partner.partnerId]).map(code => code.toLowerCase());
 };
 
 const findDuplicates = (records, partnerList) => {
    return records.reduce((result, record) => {
       const duplicate = partnerList.find((partner) =>
-         getSourceCodes(partner).includes(record.fields.source_code)
+         getSourceCodes(partner).includes(record.fields.source_code.toLowerCase())
       );
       return duplicate ? [...result, duplicate] : result;
    }, []);
@@ -26,7 +26,7 @@ const findDuplicates = (records, partnerList) => {
 const removeDuplicates = (records, duplicates) => {
    return records.filter((record) => {
       return !duplicates.find((duplicate) =>
-         getSourceCodes(duplicate).includes(record.fields.source_code)
+         getSourceCodes(duplicate).includes(record.fields.source_code.toLowerCase())
       );
    });
 };
@@ -57,7 +57,7 @@ const run = async () => {
    const newRecords = removeDuplicates(approvedRecords, duplicates);
    if (newRecords.length) {
       console.log("New records:");
-      newRecords.forEach((record) => console.log(record.fields));
+      console.log(newRecords.map(({fields}) => fields))
 
       // add new source codes to JSON
       const newPartnerList = [

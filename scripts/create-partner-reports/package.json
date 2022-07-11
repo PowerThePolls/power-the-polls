@@ -1,20 +1,17 @@
 {
-   "name": "compile-source-codes",
+   "name": "create-partner-reports",
    "version": "1.0.0",
    "description": "",
-   "main": "index.js",
    "scripts": {
       "start": "node index.js",
-      "test": "jest",
       "prettier": "prettier --write ."
    },
-   "author": "blaing@blaing.io",
+   "author": "",
    "license": "MIT",
    "dependencies": {
       "airtable": "^0.11.4"
    },
    "devDependencies": {
-      "jest": "^28.1.2",
       "prettier": "^2.7.1"
    }
 }
