@@ -25,7 +25,7 @@ const getPartnerReportList = async () => {
    ).toString("base64");
    headers.set("Authorization", `Basic ${encodedCredentials}`);
 
-   const url = `${actionKitURL}/rest/v1/queryreport?categories__name=partners&_limit=1`;
+   const url = `${actionKitURL}/rest/v1/queryreport?categories__name=partners&_limit=100`;
    let res = await fetch(url, { headers });
 
    if (!res.ok) {
@@ -65,6 +65,7 @@ const run = async () => {
    const reportList = await getPartnerReportList();
 
    // find new partners
+
 
    // create report for new partners
 };
