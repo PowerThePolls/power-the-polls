@@ -2,7 +2,7 @@ import fetch, { Headers } from "node-fetch";
 import Airtable from "airtable";
 
 const base = new Airtable().base("appc14jHeQ2v7FhU9");
-const actionKitURL = "https://ptp.actionkit.com/rest";
+const actionKitURL = "https://ptp.actionkit.com";
 const { ACTION_KIT_USERNAME, ACTION_KIT_PASSWORD } = process.env;
 
 const getApprovedRecords = async () => {
@@ -18,43 +18,51 @@ const getApprovedRecords = async () => {
    return base("Partners").select({ filterByFormula, fields }).all();
 };
 
-const getActionKitReportList = async () => {
+const getPartnerReportList = async () => {
    const headers = new Headers();
-   headers.set(
-      "Authorization",
-      `Basic ${Buffer.from(
-         `${ACTION_KIT_USERNAME}:${ACTION_KIT_PASSWORD}`
-      ).toString("base64")}`
-   );
+   const encodedCredentials = Buffer.from(
+      `${ACTION_KIT_USERNAME}:${ACTION_KIT_PASSWORD}`
+   ).toString("base64");
+   headers.set("Authorization", `Basic ${encodedCredentials}`);
 
-   const res = await fetch(
-      `${actionKitURL}/v1/queryreport?categories__name=partners&_limit=100`,
-      {
-         headers,
-      }
-   );
+   const url = `${actionKitURL}/rest/v1/queryreport?categories__name=partners&_limit=1`;
+   let res = await fetch(url, { headers });
 
    if (!res.ok) {
       throw new Error(
-         `HTTP Error Response: ${response.status} ${response.statusText}`
+         `HTTP Error Response: ${res.status} ${res.statusText}`
       );
    }
 
-   const response = await res.json();
-   if (response.meta.next) {
-      throw new Error("More than 100 reports returned!!!");
+   let jsonResponse = await res.json();
+   let reportList = jsonResponse.objects;
+
+   while (jsonResponse.meta.next) {
+      res = await fetch(`${actionKitURL}${jsonResponse.meta.next}`, {
+         headers,
+      });
+      if (!res.ok) {
+         throw new Error(
+            `HTTP Error Response: ${res.status} ${res.statusText}`
+         );
+      }
+      jsonResponse = await res.json();
+      reportList = reportList.concat(jsonResponse.objects);
    }
 
-   return response.objects;
+   return reportList;
 };
 
 const run = async () => {
    // get all approved partners
-   // const approvedRecords = await getApprovedRecords();
-   // console.log(approvedRecords.map(({ fields }) => fields));
+   const approvedRecords = await getApprovedRecords();
+
+   // approvedRecords.forEach(({ fields }) =>
+   //    console.log(JSON.stringify(fields, null, 2))
+   // );
 
    // get partner reports from ActionKit
-   const reportList = await getActionKitReportList();
+   const reportList = await getPartnerReportList();
 
    // find new partners
 
