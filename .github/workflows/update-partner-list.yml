@@ -1,6 +1,9 @@
 name: update partner list json
 
 on:
+  pull_request:
+    branches:
+      - master
   schedule:
     - cron: "0 * * * *" # run every hour
 
@@ -20,6 +23,7 @@ jobs:
       - run: cd scripts/compile-source-codes && npm run start
         env:
           AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+      - run: cd scripts/compile-source-codes && npm run test
 
       - name: Check if there is any change
         id: changes

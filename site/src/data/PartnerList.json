@@ -1778,22 +1778,6 @@
     "name": "Resistbot"
   },
   {
-    "partnerId": "publiccitizen",
-    "name": "Public Citizen"
-  },
-  {
-    "partnerId": "motivote",
-    "name": "Motivote"
-  },
-  {
-    "partnerId": "ndrn",
-    "name": "National Disability Rights Network (NDRN)"
-  },
-  {
-    "partnerId": "slsv",
-    "name": "Students Learn Students Vote Coalition"
-  },
-  {
     "partnerId": "naspa",
     "name": "NASPA"
   },
@@ -1824,5 +1808,85 @@
   {
     "partnerId": "APIAVOTE",
     "name": "Asian and Pacific Islander American Vote (APIAVote)"
+  },
+  {
+    "partnerId": "edenhealth",
+    "name": "Eden Health"
+  },
+  {
+    "partnerId": "microsoftint",
+    "name": "Microsoft (internal) "
+  },
+  {
+    "partnerId": "theASBN",
+    "name": "American Sustainable Business Network"
+  },
+  {
+    "partnerId": "sisterdistrict",
+    "name": "Sister District Action Network"
+  },
+  {
+    "partnerId": "justiceunites",
+    "name": "Justice Unites Us"
+  },
+  {
+    "partnerId": "equitynow",
+    "name": "Equity Now Inc."
+  },
+  {
+    "partnerId": "representus",
+    "name": "RepresentUs"
+  },
+  {
+    "partnerId": "ProctorPowerthePolls",
+    "name": "Samuel DeWitt Proctor Conference"
+  },
+  {
+    "partnerId": "603FWD",
+    "name": "603 Forward"
+  },
+  {
+    "partnerId": "PoderLatinx",
+    "name": "Poder Latinx"
+  },
+  {
+    "partnerId": "allintovote",
+    "name": "ALL IN Campus Democracy Challenge"
+  },
+  {
+    "partnerId": "PAyouthvote",
+    "name": "PA Youth Vote"
+  },
+  {
+    "partnerId": "apala",
+    "name": "Asian Pacific American Labor Alliance, AFL-CIO"
+  },
+  {
+    "partnerId": "bearaby",
+    "name": "Bearaby"
+  },
+  {
+    "partnerId": "hoteltangodistillery",
+    "name": "Hotel Tango Distillery "
+  },
+  {
+    "partnerId": "kitestring",
+    "name": "Kitestring Technical Services"
+  },
+  {
+    "partnerId": "levis ",
+    "name": "Levis Strauss & Co. "
+  },
+  {
+    "partnerId": "dow",
+    "name": "Dow"
+  },
+  {
+    "partnerId": "DFA",
+    "name": "League of Conservation Voters Education Fund"
+  },
+  {
+    "partnerId": "LeadershipNowProject",
+    "name": "Leadership Now Project"
   }
 ]
