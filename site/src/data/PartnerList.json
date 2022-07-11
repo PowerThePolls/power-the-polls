@@ -1892,5 +1892,9 @@
   {
     "partnerId": "thecivicscenter",
     "name": "The Civics Center"
+  },
+  {
+    "partnerId": "wetheaction",
+    "name": "We The Action"
   }
 ]
