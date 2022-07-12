@@ -124,7 +124,7 @@ const createReport = async (
    const headers = getActionKitHeaders();
 
    const body = {
-      name: organization,
+      name: `Power The Polls Report: ${organization}`,
       short_name: sourceCodes[0],
       description: sourceCodes[0],
       sql: getSQL(sourceCodes, isAggregate),
