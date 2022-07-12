@@ -1872,5 +1872,29 @@
   {
     "partnerId": "LeadershipNowProject",
     "name": "Leadership Now Project"
+  },
+  {
+    "partnerId": "CivicNation",
+    "name": "Civic Nation"
+  },
+  {
+    "partnerId": "voteearlyday",
+    "name": "Vote Early Day"
+  },
+  {
+    "partnerId": "AmericanPromise",
+    "name": "American Promise"
+  },
+  {
+    "partnerId": "goodforyouth",
+    "name": "Good for Youth"
+  },
+  {
+    "partnerId": "thecivicscenter",
+    "name": "The Civics Center"
+  },
+  {
+    "partnerId": "wetheaction",
+    "name": "We The Action"
   }
 ]
