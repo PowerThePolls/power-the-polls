@@ -59,9 +59,22 @@ const getPartnerReportList = async () => {
 const convertArray = (array) => array.map((code) => `'${code}'`).join(",");
 
 const getSQL = (sourceCodes, isAggregate) => {
-   // TODO: add aggregate report
    return isAggregate
-      ? ``
+      ? `SELECT count(1) AS "signups"
+              , core_user.state
+              , core_user.city
+              , sign_ups.source
+         FROM core_user
+         JOIN (SELECT user_id
+                    , source
+                    , min(created_at) AS created_at
+               FROM core_action
+               WHERE lower(source) IN (${convertArray(sourceCodes)})
+                 AND created_at > date('2020-12-31')
+               GROUP BY user_id, SOURCE) sign_ups
+         ON core_user.id = sign_ups.user_id
+         GROUP BY state, city
+         ORDER BY state, city`
       : `SELECT sign_ups.created_at AS date_joined
               , core_user.first_name
               , core_user.last_name
@@ -146,9 +159,9 @@ const run = async () => {
    // create report for new partners
    try {
       await createReport(
-         "billy2",
-         ["billy2"],
-         false,
+         "billy3",
+         ["billy3"],
+         true,
          "daily",
          "billy.laing@trestle.us, blaing@blaing.io"
       );
