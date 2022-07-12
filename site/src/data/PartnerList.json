@@ -1646,7 +1646,9 @@
     "name": "League of Women Voters",
     "logo": "lwv.jpg",
     "logoIsDark": true,
-    "additionalVanityUrls": ["Vote411"]
+    "additionalVanityUrls": [
+       "Vote411"
+    ]
   },
   {
     "partnerId": "votunteer",
