@@ -1642,10 +1642,13 @@
     "logoIsDark": true
   },
   {
-    "partnerId": "Vote411",
+    "partnerId": "LWV",
     "name": "League of Women Voters",
     "logo": "lwv.jpg",
-    "logoIsDark": true
+    "logoIsDark": true,
+    "additionalVanityUrls": [
+       "Vote411"
+    ]
   },
   {
     "partnerId": "votunteer",
@@ -1896,5 +1899,9 @@
   {
     "partnerId": "wetheaction",
     "name": "We The Action"
+  },
+  {
+    "partnerId": "NewLeadersCouncil",
+    "name": "New Leaders Council"
   }
 ]
