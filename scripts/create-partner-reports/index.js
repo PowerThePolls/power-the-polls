@@ -56,9 +56,10 @@ const getPartnerReportList = async () => {
    return reportList;
 };
 
-const getSQL = (sourceCode, isAggregate) => {
+const convertArray = (array) => array.map((code) => `'${code}'`).join(",");
+
+const getSQL = (sourceCodes, isAggregate) => {
    // TODO: add aggregate report
-   // TODO: support multiple source codes
    return isAggregate
       ? ``
       : `SELECT sign_ups.created_at AS date_joined
@@ -92,7 +93,7 @@ const getSQL = (sourceCode, isAggregate) => {
                       , source
                       , min(created_at) AS created_at
                  FROM core_action
-                 WHERE lower(source) = '${sourceCode}'
+                 WHERE lower(source) in (${convertArray(sourceCodes)})
                    AND created_at > date('2020-12-31')
                  GROUP BY user_id, source) sign_ups
            ON core_user.id = sign_ups.user_id
@@ -101,7 +102,7 @@ const getSQL = (sourceCode, isAggregate) => {
 
 const createReport = async (
    organization,
-   sourceCode,
+   sourceCodes,
    isAggregate,
    frequency,
    emails
@@ -110,12 +111,13 @@ const createReport = async (
 
    const body = {
       name: organization,
-      short_name: sourceCode,
-      sql: getSQL(sourceCode, isAggregate),
+      short_name: sourceCodes[0],
+      description: sourceCodes[0],
+      sql: getSQL(sourceCodes, isAggregate),
       categories: ["/rest/v1/reportcategory/18/"],
       email_always_csv: true,
       run_every: frequency,
-      to_emails: emails,
+      to_emails: emails.replace(" ", ""),
    };
 
    const res = await fetch(`${actionKitURL}/rest/v1/queryreport/`, {
@@ -134,16 +136,24 @@ const run = async () => {
    // get partner reports from ActionKit
    const reportList = await getPartnerReportList();
 
+   // the reports use the primary source code in the description,
+   // so we know which reports have already been created and avoid
+   // duplicate reports.
+
    // TODO: find new partners
 
    // create report for new partners
-   await createReport(
-      "billy",
-      "billy",
-      false,
-      "daily",
-      "billy.laing@trestle.us, blaing@blaing.io"
-   );
+   try {
+      await createReport(
+         "billy2",
+         ["billy2"],
+         false,
+         "daily",
+         "billy.laing@trestle.us, blaing@blaing.io"
+      );
+   } catch (e) {
+      console.error(e);
+   }
 
    console.log("done!");
 };
