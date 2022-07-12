@@ -1896,5 +1896,13 @@
   {
     "partnerId": "wetheaction",
     "name": "We The Action"
+  },
+  {
+    "partnerId": "LWV",
+    "name": "League of Women Voters"
+  },
+  {
+    "partnerId": "NewLeadersCouncil",
+    "name": "New Leaders Council"
   }
 ]
