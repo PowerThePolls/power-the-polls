@@ -63,41 +63,42 @@ const getSQL = (sourceCodes, isAggregate) => {
    return isAggregate
       ? ``
       : `SELECT sign_ups.created_at AS date_joined
-                , core_user.first_name
-                , core_user.last_name
-                , core_user.email
-                , (SELECT coalesce(
-                                  group_concat(
-                                          phone ORDER BY core_phone.id DESC SEPARATOR ', '
-                                      ),
-                                  ''
-                              )
-                   FROM core_phone
-                   WHERE core_phone.user_id = core_user.id) AS phone
-                , core_user.city
-                , if(core_user.zip,
-                     concat_ws('-', core_user.zip,
-                               if(length(core_user.plus4), core_user.plus4, NULL)),
-                     core_user.postal) AS zip
-                , (SELECT group_concat(core_userfield.value SEPARATOR ', ')
-                   FROM core_userfield
-                   WHERE core_userfield.parent_id = core_user.id
-                     AND core_userfield.name = 'county') AS county
-                , sign_ups.source
-                , (SELECT group_concat(core_userfield.value SEPARATOR ', ')
-                   FROM core_userfield
-                   WHERE core_userfield.parent_id = core_user.id
-                     AND core_userfield.name = 'partner_field') AS partner_field
-           FROM core_user
-           JOIN (SELECT user_id
-                      , source
-                      , min(created_at) AS created_at
-                 FROM core_action
-                 WHERE lower(source) in (${convertArray(sourceCodes)})
-                   AND created_at > date('2020-12-31')
-                 GROUP BY user_id, source) sign_ups
-           ON core_user.id = sign_ups.user_id
-           ORDER BY date_joined ASC`;
+              , core_user.first_name
+              , core_user.last_name
+              , core_user.email
+              , (SELECT coalesce(
+                                group_concat(
+                                        phone ORDER BY core_phone.id DESC SEPARATOR ', '
+                                    ),
+                                ''
+                            )
+                 FROM core_phone
+                 WHERE core_phone.user_id = core_user.id) AS phone
+              , core_user.city
+              , core_user.state
+              , if(core_user.zip,
+                   concat_ws('-', core_user.zip,
+                             if(length(core_user.plus4), core_user.plus4, NULL)),
+                   core_user.postal) AS zip
+              , (SELECT group_concat(core_userfield.value SEPARATOR ', ')
+                 FROM core_userfield
+                 WHERE core_userfield.parent_id = core_user.id
+                   AND core_userfield.name = 'county') AS county
+              , sign_ups.source
+              , (SELECT group_concat(core_userfield.value SEPARATOR ', ')
+                 FROM core_userfield
+                 WHERE core_userfield.parent_id = core_user.id
+                   AND core_userfield.name = 'partner_field') AS partner_field
+         FROM core_user
+         JOIN (SELECT user_id
+                    , source
+                    , min(created_at) AS created_at
+               FROM core_action
+               WHERE lower(source) IN (${convertArray(sourceCodes)})
+                 AND created_at > date('2020-12-31')
+               GROUP BY user_id, source) sign_ups
+         ON core_user.id = sign_ups.user_id
+         ORDER BY date_joined ASC`;
 };
 
 const createReport = async (
