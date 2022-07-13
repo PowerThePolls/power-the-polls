@@ -42,6 +42,5 @@ jobs:
           title: Update Partner List
           commit-message: "[update-partner-list] add new partners"
           assignees: billylaing
-          reviewers: billylaing
           branch: update-partner-list
           delete-branch: true

@@ -57,7 +57,8 @@ const getPartnerReportList = async () => {
    return reportList;
 };
 
-const convertArray = (array) => array.map((code) => `'${code.toLowerCase()}'`).join(",");
+const convertArray = (array) =>
+   array.map((code) => `'${code.toLowerCase()}'`).join(",");
 
 const getSQL = (sourceCodes, isAggregate) => {
    return isAggregate
@@ -145,8 +146,9 @@ const createReport = async (
       sql: getSQL(sourceCodes, isAggregate),
       categories: ["/rest/v1/reportcategory/18/"],
       email_always_csv: true,
+      send_if_no_rows: false,
       run_every: frequency,
-      to_emails: emails.replace(" ", ""),
+      to_emails: emails.replace(/ /g, ""),
    };
 
    const res = await fetch(`${actionKitURL}/rest/v1/queryreport/`, {
@@ -157,6 +159,13 @@ const createReport = async (
 
    checkStatus(res);
 };
+
+const isAggregate = (partner) => !partner.get("report_type").startsWith("List");
+
+const getFrequency = (partner) => partner.get("report_frequency").toLowerCase();
+
+const hasReportEmails = (partner) =>
+   partner.get("report_emails").replace(/ /g, "").length;
 
 const run = async () => {
    // get all approved partners from airtable
@@ -169,20 +178,41 @@ const run = async () => {
    // so we know which reports have already been created and avoid
    // duplicate reports.
 
-   // TODO: find new partners
+   const newPartners = approvedRecords.filter((record) => {
+      const found = reportList.find(
+         (report) => report.description === record.get("source_code")
+      );
+      return !found;
+   });
+
+   console.log(
+      JSON.stringify(
+         newPartners.map((partner) => partner.get("organization")),
+         null,
+         2
+      )
+   );
+
+   const partner = newPartners[0];
 
    // create report for new partners
-   // try {
-   //    await createReport(
-   //       "billy3",
-   //       ["billy3"],
-   //       true,
-   //       "daily",
-   //       "billy.laing@trestle.us, blaing@blaing.io"
-   //    );
-   // } catch (e) {
-   //    console.error(e);
-   // }
+   if (hasReportEmails(partner)) {
+      try {
+         await createReport(
+            partner.get("organization"),
+            [partner.get("source_code")],
+            isAggregate(partner),
+            getFrequency(partner),
+            partner.get("report_emails")
+         );
+         console.log("Report created for: ", partner.get("organization"));
+      } catch (e) {
+         console.log("Error processing: ", partner.get("organization"));
+         console.error(e);
+      }
+   } else {
+      console.log("No report emails found for: ", partner.get("organization"));
+   }
 
    console.log("done!");
 };
