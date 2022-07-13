@@ -1926,5 +1926,9 @@
   {
     "partnerId": "twt",
     "name": "Internal PTP link: Twitter"
+  },
+  {
+    "partnerId": "li",
+    "name": "Internal PTP link: Linkedin"
   }
 ]
