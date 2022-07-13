@@ -1220,9 +1220,12 @@
     "logo": "paypal.png"
   },
   {
-    "partnerId": "philadelphia-eagles",
+    "partnerId": "eagles",
     "name": "Philadelphia Eagles",
-    "logo": "eagles.png"
+    "logo": "eagles.png",
+    "additionalVanityUrls": [
+      "philadelphia-eagles"
+    ]
   },
   {
     "partnerId": "Pizza",
