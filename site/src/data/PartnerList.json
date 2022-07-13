@@ -1647,7 +1647,7 @@
     "logo": "lwv.jpg",
     "logoIsDark": true,
     "additionalVanityUrls": [
-       "Vote411"
+      "Vote411"
     ]
   },
   {
@@ -1903,5 +1903,9 @@
   {
     "partnerId": "NewLeadersCouncil",
     "name": "New Leaders Council"
+  },
+  {
+    "partnerId": "lwvwi",
+    "name": "League of Women Voters of Wisconsin"
   }
 ]
