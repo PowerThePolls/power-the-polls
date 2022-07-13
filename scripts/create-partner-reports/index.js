@@ -57,13 +57,13 @@ const getPartnerReportList = async () => {
    return reportList;
 };
 
-const convertArray = (array) => array.map((code) => `'${code}'`).join(",");
+const convertArray = (array) => array.map((code) => `'${code.toLowerCase()}'`).join(",");
 
 const getSQL = (sourceCodes, isAggregate) => {
    return isAggregate
       ? `SELECT count(1) AS "signups"
-              , core_user.state
-              , core_user.city
+              , "ALL" as "state"
+              , "ALL" as "city"
               , sign_ups.source
          FROM core_user
          JOIN (SELECT user_id
@@ -71,11 +71,25 @@ const getSQL = (sourceCodes, isAggregate) => {
                     , min(created_at) AS created_at
                FROM core_action
                WHERE lower(source) IN (${convertArray(sourceCodes)})
-                 AND created_at > date('2020-12-31')
+                 AND created_at > DATE ('2020-12-31')
                GROUP BY user_id, SOURCE) sign_ups
          ON core_user.id = sign_ups.user_id
-         GROUP BY state, city
-         ORDER BY state, city`
+         UNION
+         (SELECT count(1) AS "signups"
+               , core_user.state
+               , core_user.city
+               , sign_ups.source
+          FROM core_user
+          JOIN (SELECT user_id
+                     , source
+                     , min(created_at) AS created_at
+                FROM core_action
+                WHERE lower(source) IN (${convertArray(sourceCodes)})
+                  AND created_at > DATE ('2020-12-31')
+                GROUP BY user_id, SOURCE) sign_ups
+          ON core_user.id = sign_ups.user_id
+          GROUP BY state, city, source
+          ORDER BY state, city, source)`
       : `SELECT sign_ups.created_at AS date_joined
               , core_user.first_name
               , core_user.last_name
