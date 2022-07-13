@@ -61,9 +61,9 @@ const convertArray = (array) => array.map((code) => `'${code.toLowerCase()}'`).j
 
 const getSQL = (sourceCodes, isAggregate) => {
    return isAggregate
-      ? `SELECT count(1) AS "signups"
-              , "ALL" as "state"
-              , "ALL" as "city"
+      ? `SELECT count(1) AS signups
+              , 'ALL' AS state
+              , 'ALL' AS city
               , sign_ups.source
          FROM core_user
          JOIN (SELECT user_id
@@ -71,11 +71,11 @@ const getSQL = (sourceCodes, isAggregate) => {
                     , min(created_at) AS created_at
                FROM core_action
                WHERE lower(source) IN (${convertArray(sourceCodes)})
-                 AND created_at > DATE ('2020-12-31')
-               GROUP BY user_id, SOURCE) sign_ups
+                 AND created_at > date ('2020-12-31')
+               GROUP BY user_id, source) sign_ups
          ON core_user.id = sign_ups.user_id
          UNION
-         (SELECT count(1) AS "signups"
+         (SELECT count(1) AS signups
                , core_user.state
                , core_user.city
                , sign_ups.source
@@ -85,11 +85,11 @@ const getSQL = (sourceCodes, isAggregate) => {
                      , min(created_at) AS created_at
                 FROM core_action
                 WHERE lower(source) IN (${convertArray(sourceCodes)})
-                  AND created_at > DATE ('2020-12-31')
-                GROUP BY user_id, SOURCE) sign_ups
+                  AND created_at > date ('2020-12-31')
+                GROUP BY user_id, source) sign_ups
           ON core_user.id = sign_ups.user_id
-          GROUP BY state, city, source
-          ORDER BY state, city, source)`
+          GROUP BY core_user.state, core_user.city, sign_ups.source
+          ORDER BY core_user.state, core_user.city, sign_ups.source)`
       : `SELECT sign_ups.created_at AS date_joined
               , core_user.first_name
               , core_user.last_name
