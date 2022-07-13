@@ -1914,5 +1914,17 @@
   {
     "partnerId": "thirtymadison",
     "name": "Thirty Madison"
+  },
+  {
+    "partnerId": "insta",
+    "name": "Internal PTP link: Instagram"
+  },
+  {
+    "partnerId": "fb",
+    "name": "Internal PTP link: Facebook"
+  },
+  {
+    "partnerId": "twt",
+    "name": "Internal PTP link: Twitter"
   }
 ]
