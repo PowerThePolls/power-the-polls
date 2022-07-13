@@ -23,7 +23,7 @@ const findDuplicates = (records, partnerList) => {
    return records.reduce((result, record) => {
       const duplicate = partnerList.find((partner) =>
          getSourceCodes(partner).includes(
-            record.fields.source_code.toLowerCase()
+            record.get("source_code").toLowerCase()
          )
       );
       return duplicate ? [...result, duplicate] : result;
@@ -34,7 +34,7 @@ const removeDuplicates = (records, duplicates) => {
    return records.filter((record) => {
       return !duplicates.find((duplicate) =>
          getSourceCodes(duplicate).includes(
-            record.fields.source_code.toLowerCase()
+            record.get("source_code").toLowerCase()
          )
       );
    });
@@ -72,8 +72,8 @@ const run = async () => {
       const newPartnerList = [
          ...partnerList,
          ...newRecords.map((record) => ({
-            partnerId: record.fields.source_code,
-            name: record.fields.organization,
+            partnerId: record.get("source_code"),
+            name: record.get("organization"),
          })),
       ];
 
