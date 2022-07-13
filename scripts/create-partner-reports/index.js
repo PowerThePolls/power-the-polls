@@ -126,7 +126,7 @@ const getSQL = (sourceCodes, isAggregate) => {
                  AND created_at > date('2020-12-31')
                GROUP BY user_id, source) sign_ups
          ON core_user.id = sign_ups.user_id
-         ORDER BY date_joined ASC`;
+         ORDER BY date_joined`;
 };
 
 const createReport = async (
