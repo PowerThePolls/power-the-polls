@@ -2,7 +2,8 @@ import fetch, { Headers } from "node-fetch";
 import Airtable from "airtable";
 
 const getApprovedRecords = async () => {
-   const base = new Airtable().base("appc14jHeQ2v7FhU9");
+   const { AIRTABLE_PARTNERS_BASE } = process.env;
+   const base = new Airtable().base(AIRTABLE_PARTNERS_BASE);
    const filterByFormula = "{status} = 'Approved'";
    const fields = [
       "organization",
@@ -16,9 +17,9 @@ const getApprovedRecords = async () => {
 };
 
 const actionKitURL = "https://ptp.actionkit.com";
-const { ACTION_KIT_USERNAME, ACTION_KIT_PASSWORD } = process.env;
 
 const getActionKitHeaders = () => {
+   const { ACTION_KIT_USERNAME, ACTION_KIT_PASSWORD } = process.env;
    const headers = new Headers();
    const encodedCredentials = Buffer.from(
       `${ACTION_KIT_USERNAME}:${ACTION_KIT_PASSWORD}`
@@ -157,17 +158,17 @@ const run = async () => {
    // TODO: find new partners
 
    // create report for new partners
-   try {
-      await createReport(
-         "billy3",
-         ["billy3"],
-         true,
-         "daily",
-         "billy.laing@trestle.us, blaing@blaing.io"
-      );
-   } catch (e) {
-      console.error(e);
-   }
+   // try {
+   //    await createReport(
+   //       "billy3",
+   //       ["billy3"],
+   //       true,
+   //       "daily",
+   //       "billy.laing@trestle.us, blaing@blaing.io"
+   //    );
+   // } catch (e) {
+   //    console.error(e);
+   // }
 
    console.log("done!");
 };
