@@ -20,6 +20,7 @@ jobs:
       - run: cd scripts/compile-source-codes && npm run start
         env:
           AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_PARTNERS_BASE: ${{ secrets.AIRTABLE_PARTNERS_BASE }}
       - run: cd scripts/compile-source-codes && npm run test
 
       - name: Check if there is any change
