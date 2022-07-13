@@ -214,7 +214,7 @@ const run = async () => {
       console.log("No report emails found for: ", partner.get("organization"));
    }
 
-   console.log("done!");
+   console.log("Done creating reports!");
 };
 
 run().catch((err) => console.error(err));
