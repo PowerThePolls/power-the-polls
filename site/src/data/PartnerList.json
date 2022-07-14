@@ -1969,5 +1969,9 @@
   {
     "partnerId": "taketheleadwomen",
     "name": "Take The Lead"
+  },
+  {
+    "partnerId": "snap",
+    "name": "Snap"
   }
 ]
