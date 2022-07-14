@@ -1945,5 +1945,17 @@
   {
     "partnerId": "SumOfUs",
     "name": "SumOfUs"
+  },
+  {
+    "partnerId": "Scholars",
+    "name": "Scholars Strategy Network"
+  },
+  {
+    "partnerId": "aotl",
+    "name": "All on the Line"
+  },
+  {
+    "partnerId": "trekthevote22",
+    "name": "Trek the Vote for Fair Elections"
   }
 ]
