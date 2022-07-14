@@ -1441,9 +1441,12 @@
     "logoIsDark": true
   },
   {
-    "partnerId": "StandUpAmerica",
+    "partnerId": "sua",
     "name": "Stand Up America",
-    "logo": "sua.png"
+    "logo": "sua.png",
+    "additionalVanityUrls": [
+      "StandUpAmerica"
+    ]
   },
   {
     "partnerId": "starbucks",
@@ -1930,9 +1933,5 @@
   {
     "partnerId": "li",
     "name": "Internal PTP link: Linkedin"
-  },
-  {
-    "partnerId": "/sua",
-    "name": "Stand Up America"
   }
 ]
