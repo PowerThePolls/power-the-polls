@@ -1930,5 +1930,9 @@
   {
     "partnerId": "li",
     "name": "Internal PTP link: Linkedin"
+  },
+  {
+    "partnerId": "/sua",
+    "name": "Stand Up America"
   }
 ]
