@@ -4,14 +4,13 @@ import Airtable from "airtable";
 const getApprovedRecords = async () => {
    const { AIRTABLE_PARTNERS_BASE } = process.env;
    const base = new Airtable().base(AIRTABLE_PARTNERS_BASE);
-   const filterByFormula = "{status} = 'Approved'";
+   const filterByFormula = "{report_status} = 'Approved'";
    const fields = [
       "organization",
       "report_type",
       "report_emails",
       "report_frequency",
       "source_code",
-      "status",
    ];
    return base("Partners").select({ filterByFormula, fields }).all();
 };
@@ -61,6 +60,7 @@ const convertArray = (array) =>
    array.map((code) => `'${code.toLowerCase()}'`).join(",");
 
 const getSQL = (sourceCodes, isAggregate) => {
+   // language=MySQL
    return isAggregate
       ? `SELECT count(1) AS signups
               , 'ALL' AS state
