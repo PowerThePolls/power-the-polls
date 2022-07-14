@@ -1957,5 +1957,13 @@
   {
     "partnerId": "trekthevote22",
     "name": "Trek the Vote for Fair Elections"
+  },
+  {
+    "partnerId": "BridgeAlliance",
+    "name": "Bridge Alliance"
+  },
+  {
+    "partnerId": "DFAD",
+    "name": "Declaration for American Democracy Coalition"
   }
 ]
