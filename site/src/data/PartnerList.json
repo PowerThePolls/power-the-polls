@@ -1973,5 +1973,13 @@
   {
     "partnerId": "snap",
     "name": "Snap"
+  },
+  {
+    "partnerId": "NCAINativeVote",
+    "name": "National Congress of American Indians"
+  },
+  {
+    "partnerId": "ndncollective",
+    "name": "NDN Collective"
   }
 ]
