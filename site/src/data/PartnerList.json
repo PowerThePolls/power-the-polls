@@ -1989,5 +1989,13 @@
   {
     "partnerId": "zioness",
     "name": "Zioness Movement"
+  },
+  {
+    "partnerId": "supermajority",
+    "name": "Supermajority"
+  },
+  {
+    "partnerId": "UUS",
+    "name": "UnidosUS"
   }
 ]
