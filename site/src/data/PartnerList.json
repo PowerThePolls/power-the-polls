@@ -2013,5 +2013,9 @@
   {
     "partnerId": "demcastusa",
     "name": "DemCast USA"
+  },
+  {
+    "partnerId": "nonprofitvote",
+    "name": "Nonprofit VOTE"
   }
 ]
