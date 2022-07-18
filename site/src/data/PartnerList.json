@@ -2001,5 +2001,9 @@
   {
     "partnerId": "diversability",
     "name": "Diversability"
+  },
+  {
+    "partnerId": "fontbonne",
+    "name": "Fontbonne University"
   }
 ]
