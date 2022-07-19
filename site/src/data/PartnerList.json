@@ -2017,5 +2017,9 @@
   {
     "partnerId": "nonprofitvote",
     "name": "Nonprofit VOTE"
+  },
+  {
+    "partnerId": "stanfordvotes",
+    "name": "StanfordVotes"
   }
 ]
