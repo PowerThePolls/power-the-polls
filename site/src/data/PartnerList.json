@@ -2021,5 +2021,17 @@
   {
     "partnerId": "stanfordvotes",
     "name": "StanfordVotes"
+  },
+  {
+    "partnerId": "LiftOurVote",
+    "name": "Lift Our Vote"
+  },
+  {
+    "partnerId": "ml",
+    "name": "Movement Labs"
+  },
+  {
+    "partnerId": "mpv",
+    "name": "Muslims for Progressive Values"
   }
 ]
