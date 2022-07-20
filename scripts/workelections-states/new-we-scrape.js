@@ -1,8 +1,8 @@
 // Paste this into your browser while on workelections.com and the bearer token as the first arg
 // e.g. copy(await scrapeSite('my-token-here'));
-const scrapeSite = async (token) => {
+let scrapeSite = async (token) => {
   const fetchWe = async (path) => {
-    const base = "https://workelections.com/wp-json/wp/v2";
+    const base = "https://workelections.org/wp-json/wp/v2";
     const headers = new Headers({
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
