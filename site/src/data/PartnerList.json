@@ -2033,5 +2033,9 @@
   {
     "partnerId": "mpv",
     "name": "Muslims for Progressive Values"
+  },
+  {
+    "partnerId": "bfl",
+    "name": "Black Futures Lab"
   }
 ]
