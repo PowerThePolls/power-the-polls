@@ -2,9 +2,11 @@ import fetch, { Headers } from "node-fetch";
 
 const scrapeSite = async () => {
    const fetchWe = async (path) => {
-      const base = "https://workelections.powerthepolls.org/wp-json/wp/v2";
+      const { WORK_ELECTIONS_TOKEN } = process.env;
+      const base = "https://workelections.org/wp-json/wp/v2";
       const headers = new Headers({
          "Content-Type": "application/json",
+         Authorization: `Bearer ${WORK_ELECTIONS_TOKEN}`,
       });
       const resp = await fetch(`${base}${path}`, { headers });
 
