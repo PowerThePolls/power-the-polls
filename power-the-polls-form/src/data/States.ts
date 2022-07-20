@@ -2034,7 +2034,7 @@ const data: { [state: string]: StateInfo } = {
             "Lisbon": {
                 "id": 5957,
                 "name": "Lisbon",
-                "slug": "lisbon__trashed",
+                "slug": "lisbon",
             },
             "Ledyard": {
                 "id": 5956,
