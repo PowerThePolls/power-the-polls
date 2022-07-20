@@ -1,13 +1,13 @@
-// Paste this into your browser while on workelections.com and the bearer token as the first arg
-// e.g. copy(await scrapeSite('my-token-here'));
-let scrapeSite = async (token) => {
+import fetch, { Headers } from "node-fetch";
+
+const scrapeSite = async () => {
    const fetchWe = async (path) => {
-      const base = "https://workelections.org/wp-json/wp/v2";
+      const base = "https://workelections.powerthepolls.org/wp-json/wp/v2";
       const headers = new Headers({
          "Content-Type": "application/json",
-         Authorization: `Bearer ${token}`,
       });
       const resp = await fetch(`${base}${path}`, { headers });
+
       return await resp.json();
    };
 
@@ -50,3 +50,7 @@ let scrapeSite = async (token) => {
          return collected;
       }, {});
 };
+
+scrapeSite()
+   .then(states => console.log(JSON.stringify(states, null, 2)))
+   .catch((err) => console.error(err));
