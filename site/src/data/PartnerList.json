@@ -73,11 +73,8 @@
     "logoIsDark": true
   },
   {
-    "partnerId": "american-constitution-society",
+    "partnerId": "acs",
     "name": "American Constitution Society",
-    "additionalVanityUrls": [
-      "acs"
-    ],
     "logo": "acs.png"
   },
   {
@@ -297,7 +294,6 @@
   {
     "partnerId": "campusvote",
     "name": "Campus Vote Project",
-    "additionalVanityUrls": [],
     "logo": "campus-vote-project.png"
   },
   {
@@ -811,11 +807,8 @@
     "customSignupFormField": "Union Name"
   },
   {
-    "partnerId": "labor-afscme",
+    "partnerId": "afscme",
     "name": "AFSCME",
-    "additionalVanityUrls": [
-      "afscme"
-    ],
     "logo": "afscme.png",
     "logoAppearsOnLandingPage": true,
     "optUserOutOfChase": true
@@ -1222,10 +1215,7 @@
   {
     "partnerId": "eagles",
     "name": "Philadelphia Eagles",
-    "logo": "eagles.png",
-    "additionalVanityUrls": [
-      "philadelphia-eagles"
-    ]
+    "logo": "eagles.png"
   },
   {
     "partnerId": "Pizza",
@@ -1374,11 +1364,8 @@
     "logo": "simondata.png"
   },
   {
-    "partnerId": "skimm",
+    "partnerId": "theskimm",
     "name": "theSkimm",
-    "additionalVanityUrls": [
-      "theSkimm"
-    ],
     "logo": "the-skimm.png"
   },
   {
@@ -1443,10 +1430,7 @@
   {
     "partnerId": "sua",
     "name": "Stand Up America",
-    "logo": "sua.png",
-    "additionalVanityUrls": [
-      "StandUpAmerica"
-    ]
+    "logo": "sua.png"
   },
   {
     "partnerId": "starbucks",
@@ -1651,10 +1635,7 @@
     "partnerId": "LWV",
     "name": "League of Women Voters",
     "logo": "lwv.jpg",
-    "logoIsDark": true,
-    "additionalVanityUrls": [
-      "Vote411"
-    ]
+    "logoIsDark": true
   },
   {
     "partnerId": "votunteer",
@@ -1875,10 +1856,6 @@
     "name": "Dow"
   },
   {
-    "partnerId": "DFA",
-    "name": "League of Conservation Voters Education Fund"
-  },
-  {
     "partnerId": "LeadershipNowProject",
     "name": "Leadership Now Project"
   },
@@ -2021,5 +1998,21 @@
   {
     "partnerId": "stanfordvotes",
     "name": "StanfordVotes"
+  },
+  {
+    "partnerId": "LiftOurVote",
+    "name": "Lift Our Vote"
+  },
+  {
+    "partnerId": "ml",
+    "name": "Movement Labs"
+  },
+  {
+    "partnerId": "mpv",
+    "name": "Muslims for Progressive Values"
+  },
+  {
+    "partnerId": "bfl",
+    "name": "Black Futures Lab"
   }
 ]
