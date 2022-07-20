@@ -2014,5 +2014,13 @@
   {
     "partnerId": "bfl",
     "name": "Black Futures Lab"
+  },
+  {
+    "partnerId": "ECULAV",
+    "name": "End Citizens United//Let America Vote Action Fund"
+  },
+  {
+    "partnerId": "northridgeindivisible",
+    "name": "Northridge Indivisible"
   }
 ]
