@@ -2022,5 +2022,33 @@
   {
     "partnerId": "northridgeindivisible",
     "name": "Northridge Indivisible"
+  },
+  {
+    "partnerId": "americavotes-nc",
+    "name": "America Votes - NC"
+  },
+  {
+    "partnerId": "americavotes-wi",
+    "name": "America Votes - WI"
+  },
+  {
+    "partnerId": "travelers",
+    "name": "Travelers"
+  },
+  {
+    "partnerId": "americavotes",
+    "name": "America Votes"
+  },
+  {
+    "partnerId": "americavotes-nh",
+    "name": "America Votes - NH"
+  },
+  {
+    "partnerId": "americavotes-mi",
+    "name": "America Votes - MI"
+  },
+  {
+    "partnerId": "americavotes-fl",
+    "name": "America Votes - FL"
   }
 ]
