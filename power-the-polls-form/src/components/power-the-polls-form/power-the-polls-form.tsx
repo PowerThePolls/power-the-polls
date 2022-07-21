@@ -225,14 +225,6 @@ export class PowerThePollsForm {
                      />
 
 
-                     <label key="is_registered" class="checkbox">
-                        <input
-                            type="checkbox"
-                            name="user_is_registered"
-                            value="Are you registered to vote?"
-                        /> Are you registered to vote?
-                     </label>
-
                      <label key="available_full_day" class="checkbox">
                         <input
                             type="checkbox"
