@@ -96,11 +96,10 @@ export class PowerThePollsForm {
    public render() {
       const source = this.partnerId;
       const chase =
-         this.optUserOutOfChase === true ||
-         (this.optUserOutOfChase as any) === "true"
-            ? false
-            : true;
+         !(this.optUserOutOfChase === true ||
+             (this.optUserOutOfChase as any) === "true");
       const partnerField = this.customFormFieldLabel;
+
       // Adapted from https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s02.html
       const phoneValidationRegex =
          "(?:\\+1)?[-.\\s]?\\(?([0-9]{3})\\)?[-.\\s]?[0-9]{3}[-.\\s]?[0-9]{4}";
@@ -119,7 +118,11 @@ export class PowerThePollsForm {
                ...form.getElementsByTagName("select"),
             ];
             const data: any = elements.reduce((x, el) => {
-               x[el.name] = el.value;
+               if (el instanceof HTMLInputElement && el.type === "checkbox") {
+                  x[el.name] = el.checked ? "true" : "false";
+               } else {
+                  x[el.name] = el.value;
+               }
                return x;
             }, {} as any);
             // hacky way to get the data from input-address without wiring up events or callbacks
@@ -220,6 +223,26 @@ export class PowerThePollsForm {
                                  : "incomplete")
                         }
                      />
+
+
+                     <label key="is_registered" class="checkbox">
+                        <input
+                            type="checkbox"
+                            name="user_is_registered"
+                            value="Are you registered to vote?"
+                        />{" "}
+                        Are you registered to vote?
+                     </label>
+
+                     <label key="available_full_day" class="checkbox">
+                        <input
+                            type="checkbox"
+                            name="user_available_full_day"
+                            value="Are you available to work a full day as a poll worker?"
+                        />{" "}
+                        Are you available to work a full day as a poll worker?
+                     </label>
+
 
                      <input
                         type="hidden"

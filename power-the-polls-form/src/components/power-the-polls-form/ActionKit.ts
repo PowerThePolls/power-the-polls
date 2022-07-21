@@ -11,7 +11,7 @@ export const submitToActionKit = async (data: {
      }
 > => {
    const response = await fetch(
-      "https" + "://ptp.actionkit.com/rest/v1/action/",
+      "https://ptp.actionkit.com/rest/v1/action/",
       {
          method: "POST",
          body: toQueryString(data),
