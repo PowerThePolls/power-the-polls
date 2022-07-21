@@ -230,8 +230,7 @@ export class PowerThePollsForm {
                             type="checkbox"
                             name="user_is_registered"
                             value="Are you registered to vote?"
-                        />{" "}
-                        Are you registered to vote?
+                        /> Are you registered to vote?
                      </label>
 
                      <label key="available_full_day" class="checkbox">
@@ -239,8 +238,7 @@ export class PowerThePollsForm {
                             type="checkbox"
                             name="user_available_full_day"
                             value="Are you available to work a full day as a poll worker?"
-                        />{" "}
-                        Are you available to work a full day as a poll worker?
+                        /> Are you available to work a full day as a poll worker?
                      </label>
 
 
