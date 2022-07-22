@@ -95,10 +95,8 @@
       }
 
       gtag('js', new Date());
-      gtag('config', 'UA-170710177-1', {
-         'custom_map': { 'dimension1': 'variant' }
-      });
-      gtag('event', 'variant_dimension', { 'variant': 'available_full_day_checkbox' });
+      gtag('set', { 'dimension1': 'available_full_day_checkbox'})
+      gtag('config', 'UA-170710177-1');
    </script>
 
 </body>
