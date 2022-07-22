@@ -95,11 +95,8 @@
       }
 
       gtag('js', new Date());
-      gtag('config', 'UA-170710177-1', {
-         'custom_map': { 'dimension1': 'branch' }
-      });
-      gtag('event', 'branch_dimension', { 'branch': 'main' });
-      console.log('is this working?');
+      gtag('set', { 'dimension1': 'main' })
+      gtag('config', 'UA-170710177-1');
    </script>
 
 </body>
