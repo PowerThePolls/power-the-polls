@@ -2058,5 +2058,17 @@
   {
     "partnerId": "Unity22campaign",
     "name": "National Coalition on Black Civic Participation"
+  },
+  {
+    "partnerId": "TCRP",
+    "name": "Texas Civil Rights Project"
+  },
+  {
+    "partnerId": "dosomething",
+    "name": "DoSomething.org"
+  },
+  {
+    "partnerId": "defendingdemocracytogether",
+    "name": "Defending Democracy Together"
   }
 ]
