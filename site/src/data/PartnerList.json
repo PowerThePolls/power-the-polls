@@ -2086,5 +2086,13 @@
   {
     "partnerId": "rac",
     "name": "Religious Action Center of Reform Judaism"
+  },
+  {
+    "partnerId": "tripgives",
+    "name": "TripAdvisor"
+  },
+  {
+    "partnerId": "ballotready",
+    "name": "BallotReady"
   }
 ]
