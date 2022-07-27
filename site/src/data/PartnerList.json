@@ -2070,5 +2070,17 @@
   {
     "partnerId": "defendingdemocracytogether",
     "name": "Defending Democracy Together"
+  },
+  {
+    "partnerId": "NCoC",
+    "name": "National Conference on Citizenship"
+  },
+  {
+    "partnerId": "civicga",
+    "name": "CivicGeorgia"
+  },
+  {
+    "partnerId": "BGCA22",
+    "name": "Boys & Girls Clubs of America"
   }
 ]
