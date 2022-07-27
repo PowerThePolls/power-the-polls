@@ -2082,5 +2082,9 @@
   {
     "partnerId": "BGCA22",
     "name": "Boys & Girls Clubs of America"
+  },
+  {
+    "partnerId": "rac",
+    "name": "Religious Action Center of Reform Judaism"
   }
 ]
