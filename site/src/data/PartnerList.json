@@ -2106,5 +2106,9 @@
   {
     "partnerId": "VotoLatino",
     "name": "Voto Latino"
+  },
+  {
+    "partnerId": "ingoodcompany",
+    "name": "IGC (In Good Company)"
   }
 ]
