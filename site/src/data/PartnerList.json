@@ -2098,5 +2098,13 @@
   {
     "partnerId": "OPOV",
     "name": "Kentucky Civic Engagement Table"
+  },
+  {
+    "partnerId": "cfcg",
+    "name": "Center for Common Ground"
+  },
+  {
+    "partnerId": "VotoLatino",
+    "name": "Voto Latino"
   }
 ]
