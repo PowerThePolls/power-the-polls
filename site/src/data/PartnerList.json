@@ -2094,5 +2094,9 @@
   {
     "partnerId": "ballotready",
     "name": "BallotReady"
+  },
+  {
+    "partnerId": "OPOV",
+    "name": "Kentucky Civic Engagement Table"
   }
 ]
