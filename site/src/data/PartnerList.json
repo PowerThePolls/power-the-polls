@@ -2118,5 +2118,9 @@
   {
     "partnerId": "TWE",
     "name": "Together We Elect"
+  },
+  {
+    "partnerId": "courier",
+    "name": "Courier Newsroom"
   }
 ]
