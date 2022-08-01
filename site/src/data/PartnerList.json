@@ -2122,5 +2122,9 @@
   {
     "partnerId": "courier",
     "name": "Courier Newsroom"
+  },
+  {
+    "partnerId": "OBBMedia",
+    "name": "OBB Media"
   }
 ]
