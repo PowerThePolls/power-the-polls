@@ -28,9 +28,10 @@ const getActionKitHeaders = () => {
    return headers;
 };
 
-const checkStatus = (res) => {
+const checkStatus = async (res) => {
    if (!res.ok) {
-      throw new Error(`HTTP Error Response: ${res.status} ${res.statusText}`);
+      const body = await res.text()
+      throw new Error(`HTTP Error Response: ${res.status} ${res.statusText}. Body: ${body}`);
    }
 };
 
@@ -39,7 +40,7 @@ const getPartnerReportList = async () => {
    const url = `${actionKitURL}/rest/v1/queryreport?categories__name=partners&_limit=100`;
    let res = await fetch(url, { headers });
 
-   checkStatus(res);
+   await checkStatus(res);
 
    let jsonResponse = await res.json();
    let reportList = jsonResponse.objects;
@@ -48,7 +49,7 @@ const getPartnerReportList = async () => {
       res = await fetch(`${actionKitURL}${jsonResponse.meta.next}`, {
          headers,
       });
-      checkStatus(res);
+      await checkStatus(res);
       jsonResponse = await res.json();
       reportList = reportList.concat(jsonResponse.objects);
    }
@@ -141,7 +142,7 @@ const createReport = async (
 
    const body = {
       name: `Power The Polls Report: ${organization}`,
-      short_name: sourceCodes[0],
+      short_name: `PowerThePolls-${sourceCodes[0]}`,
       description: sourceCodes[0],
       sql: getSQL(sourceCodes, isAggregate),
       categories: ["/rest/v1/reportcategory/18/"],
@@ -157,7 +158,7 @@ const createReport = async (
       body: JSON.stringify(body),
    });
 
-   checkStatus(res);
+   await checkStatus(res);
 };
 
 const isAggregate = (partner) => !partner.get("report_type").startsWith("List");
@@ -185,6 +186,7 @@ const run = async () => {
       return !found;
    });
 
+   console.log("New Partners:")
    console.log(
       JSON.stringify(
          newPartners.map((partner) => partner.get("organization")),
@@ -193,25 +195,25 @@ const run = async () => {
       )
    );
 
-   const partner = newPartners[0];
-
-   // create report for new partners
-   if (hasReportEmails(partner)) {
-      try {
-         await createReport(
-            partner.get("organization"),
-            [partner.get("source_code")],
-            isAggregate(partner),
-            getFrequency(partner),
-            partner.get("report_emails")
-         );
-         console.log("Report created for: ", partner.get("organization"));
-      } catch (e) {
-         console.log("Error processing: ", partner.get("organization"));
-         console.error(e);
+   for (const partner of newPartners) {
+      // create report for new partners
+      if (hasReportEmails(partner)) {
+         try {
+            await createReport(
+               partner.get("organization"),
+               [partner.get("source_code")],
+               isAggregate(partner),
+               getFrequency(partner),
+               partner.get("report_emails")
+            );
+            console.log("Report created for: ", partner.get("organization"));
+         } catch (e) {
+            console.log("Error processing: ", partner.get("organization"));
+            console.error(e);
+         }
+      } else {
+         console.log("No report emails found for: ", partner.get("organization"));
       }
-   } else {
-      console.log("No report emails found for: ", partner.get("organization"));
    }
 
    console.log("Done creating reports!");
