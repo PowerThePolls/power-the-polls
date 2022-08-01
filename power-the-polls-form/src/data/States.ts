@@ -456,10 +456,10 @@ const data: { [state: string]: StateInfo } = {
                 "name": "Region 2 &#8211; Anchorage (Municipality of Anchorage)",
                 "slug": "region-2-anchorage-municipality-of-anchorage",
             },
-            "Region 2 - Matanuska-Susitna Borough": {
+            "Region 5 - Matanuska-Susitna Borough": {
                 "id": 5668,
-                "name": "Region 2 &#8211; Matanuska-Susitna Borough",
-                "slug": "region-2-matanuska-susitna-borough",
+                "name": "Region 5 &#8211; Matanuska-Susitna Borough",
+                "slug": "region-5-matanuska-susitna-borough",
             },
         },
     },
@@ -6809,6 +6809,16 @@ const data: { [state: string]: StateInfo } = {
         "id": 49,
         "name": "Maine",
         "jurisdictions": {
+            "Unity": {
+                "id": 12474,
+                "name": "Unity",
+                "slug": "unity-2",
+            },
+            "Beals": {
+                "id": 12472,
+                "name": "Beals",
+                "slug": "beals",
+            },
             "York": {
                 "id": 7286,
                 "name": "York",
@@ -6858,11 +6868,6 @@ const data: { [state: string]: StateInfo } = {
                 "id": 7277,
                 "name": "Winslow",
                 "slug": "winslow",
-            },
-            "Winn": {
-                "id": 7276,
-                "name": "Winn",
-                "slug": "winn-2",
             },
             "Windsor": {
                 "id": 7275,
@@ -8248,11 +8253,6 @@ const data: { [state: string]: StateInfo } = {
                 "id": 6998,
                 "name": "Cumberland",
                 "slug": "cumberland-3",
-            },
-            "Crystal": {
-                "id": 6997,
-                "name": "Crystal",
-                "slug": "crystal",
             },
             "Cornville": {
                 "id": 6996,
@@ -11167,9 +11167,9 @@ const data: { [state: string]: StateInfo } = {
                 "name": "Marquette Charter Township, Marquette County",
                 "slug": "marquette-charter-township-marquette-county",
             },
-            "Marine, St. Clair County": {
+            "Marine City, St. Clair County": {
                 "id": 8219,
-                "name": "Marine, St. Clair County",
+                "name": "Marine City, St. Clair County",
                 "slug": "marine-city-st-clair-county",
             },
             "Marathon Township, Lapeer County": {
@@ -24631,9 +24631,9 @@ const data: { [state: string]: StateInfo } = {
                 "name": "Charlotte",
                 "slug": "charlotte-3",
             },
-            "Charles City": {
+            "Charles City County": {
                 "id": 10370,
-                "name": "Charles City",
+                "name": "Charles City County",
                 "slug": "charles-city",
             },
             "Carroll": {
