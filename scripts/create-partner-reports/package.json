@@ -2,6 +2,7 @@
    "name": "create-partner-reports",
    "version": "1.0.0",
    "description": "",
+   "type": "module",
    "scripts": {
       "start": "node index.js",
       "prettier": "prettier --write ."
@@ -9,7 +10,8 @@
    "author": "",
    "license": "MIT",
    "dependencies": {
-      "airtable": "^0.11.4"
+      "airtable": "^0.11.4",
+      "node-fetch": "^3.2.6"
    },
    "devDependencies": {
       "prettier": "^2.7.1"
