@@ -30,8 +30,10 @@ const getActionKitHeaders = () => {
 
 const checkStatus = async (res) => {
    if (!res.ok) {
-      const body = await res.text()
-      throw new Error(`HTTP Error Response: ${res.status} ${res.statusText}. Body: ${body}`);
+      const body = await res.text();
+      throw new Error(
+         `HTTP Error Response: ${res.status} ${res.statusText}. Body: ${body}`
+      );
    }
 };
 
@@ -186,7 +188,7 @@ const run = async () => {
       return !found;
    });
 
-   console.log("New Partners:")
+   console.log("New Partners:");
    console.log(
       JSON.stringify(
          newPartners.map((partner) => partner.get("organization")),
@@ -212,7 +214,10 @@ const run = async () => {
             console.error(e);
          }
       } else {
-         console.log("No report emails found for: ", partner.get("organization"));
+         console.log(
+            "No report emails found for: ",
+            partner.get("organization")
+         );
       }
    }
 
