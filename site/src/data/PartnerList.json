@@ -73,11 +73,8 @@
     "logoIsDark": true
   },
   {
-    "partnerId": "american-constitution-society",
+    "partnerId": "acs",
     "name": "American Constitution Society",
-    "additionalVanityUrls": [
-      "acs"
-    ],
     "logo": "acs.png"
   },
   {
@@ -297,7 +294,6 @@
   {
     "partnerId": "campusvote",
     "name": "Campus Vote Project",
-    "additionalVanityUrls": [],
     "logo": "campus-vote-project.png"
   },
   {
@@ -811,11 +807,8 @@
     "customSignupFormField": "Union Name"
   },
   {
-    "partnerId": "labor-afscme",
+    "partnerId": "afscme",
     "name": "AFSCME",
-    "additionalVanityUrls": [
-      "afscme"
-    ],
     "logo": "afscme.png",
     "logoAppearsOnLandingPage": true,
     "optUserOutOfChase": true
@@ -1220,7 +1213,7 @@
     "logo": "paypal.png"
   },
   {
-    "partnerId": "philadelphia-eagles",
+    "partnerId": "eagles",
     "name": "Philadelphia Eagles",
     "logo": "eagles.png"
   },
@@ -1371,11 +1364,8 @@
     "logo": "simondata.png"
   },
   {
-    "partnerId": "skimm",
+    "partnerId": "theskimm",
     "name": "theSkimm",
-    "additionalVanityUrls": [
-      "theSkimm"
-    ],
     "logo": "the-skimm.png"
   },
   {
@@ -1438,7 +1428,7 @@
     "logoIsDark": true
   },
   {
-    "partnerId": "StandUpAmerica",
+    "partnerId": "sua",
     "name": "Stand Up America",
     "logo": "sua.png"
   },
@@ -1645,10 +1635,7 @@
     "partnerId": "LWV",
     "name": "League of Women Voters",
     "logo": "lwv.jpg",
-    "logoIsDark": true,
-    "additionalVanityUrls": [
-       "Vote411"
-    ]
+    "logoIsDark": true
   },
   {
     "partnerId": "votunteer",
@@ -1869,10 +1856,6 @@
     "name": "Dow"
   },
   {
-    "partnerId": "DFA",
-    "name": "League of Conservation Voters Education Fund"
-  },
-  {
     "partnerId": "LeadershipNowProject",
     "name": "Leadership Now Project"
   },
@@ -1903,5 +1886,245 @@
   {
     "partnerId": "NewLeadersCouncil",
     "name": "New Leaders Council"
+  },
+  {
+    "partnerId": "lwvwi",
+    "name": "League of Women Voters of Wisconsin"
+  },
+  {
+    "partnerId": "thirtymadison",
+    "name": "Thirty Madison"
+  },
+  {
+    "partnerId": "insta",
+    "name": "Internal PTP link: Instagram"
+  },
+  {
+    "partnerId": "fb",
+    "name": "Internal PTP link: Facebook"
+  },
+  {
+    "partnerId": "twt",
+    "name": "Internal PTP link: Twitter"
+  },
+  {
+    "partnerId": "li",
+    "name": "Internal PTP link: Linkedin"
+  },
+  {
+    "partnerId": "jewishdemocracy",
+    "name": "A More Perfect Union"
+  },
+  {
+    "partnerId": "Indivisible",
+    "name": "Indivisible"
+  },
+  {
+    "partnerId": "SumOfUs",
+    "name": "SumOfUs"
+  },
+  {
+    "partnerId": "Scholars",
+    "name": "Scholars Strategy Network"
+  },
+  {
+    "partnerId": "aotl",
+    "name": "All on the Line"
+  },
+  {
+    "partnerId": "trekthevote22",
+    "name": "Trek the Vote for Fair Elections"
+  },
+  {
+    "partnerId": "BridgeAlliance",
+    "name": "Bridge Alliance"
+  },
+  {
+    "partnerId": "DFAD",
+    "name": "Declaration for American Democracy Coalition"
+  },
+  {
+    "partnerId": "taketheleadwomen",
+    "name": "Take The Lead"
+  },
+  {
+    "partnerId": "snap",
+    "name": "Snap"
+  },
+  {
+    "partnerId": "NCAINativeVote",
+    "name": "National Congress of American Indians"
+  },
+  {
+    "partnerId": "ndncollective",
+    "name": "NDN Collective"
+  },
+  {
+    "partnerId": "vfai",
+    "name": "Veterans for American Ideals"
+  },
+  {
+    "partnerId": "zioness",
+    "name": "Zioness Movement"
+  },
+  {
+    "partnerId": "supermajority",
+    "name": "Supermajority"
+  },
+  {
+    "partnerId": "UUS",
+    "name": "UnidosUS"
+  },
+  {
+    "partnerId": "diversability",
+    "name": "Diversability"
+  },
+  {
+    "partnerId": "fontbonne",
+    "name": "Fontbonne University"
+  },
+  {
+    "partnerId": "whenweallvote",
+    "name": "When We All Vote"
+  },
+  {
+    "partnerId": "demcastusa",
+    "name": "DemCast USA"
+  },
+  {
+    "partnerId": "nonprofitvote",
+    "name": "Nonprofit VOTE"
+  },
+  {
+    "partnerId": "stanfordvotes",
+    "name": "StanfordVotes"
+  },
+  {
+    "partnerId": "LiftOurVote",
+    "name": "Lift Our Vote"
+  },
+  {
+    "partnerId": "ml",
+    "name": "Movement Labs"
+  },
+  {
+    "partnerId": "mpv",
+    "name": "Muslims for Progressive Values"
+  },
+  {
+    "partnerId": "bfl",
+    "name": "Black Futures Lab"
+  },
+  {
+    "partnerId": "ECULAV",
+    "name": "End Citizens United//Let America Vote Action Fund"
+  },
+  {
+    "partnerId": "northridgeindivisible",
+    "name": "Northridge Indivisible"
+  },
+  {
+    "partnerId": "americavotes-nc",
+    "name": "America Votes - NC"
+  },
+  {
+    "partnerId": "americavotes-wi",
+    "name": "America Votes - WI"
+  },
+  {
+    "partnerId": "travelers",
+    "name": "Travelers"
+  },
+  {
+    "partnerId": "americavotes",
+    "name": "America Votes"
+  },
+  {
+    "partnerId": "americavotes-nh",
+    "name": "America Votes - NH"
+  },
+  {
+    "partnerId": "americavotes-mi",
+    "name": "America Votes - MI"
+  },
+  {
+    "partnerId": "americavotes-fl",
+    "name": "America Votes - FL"
+  },
+  {
+    "partnerId": "lululincolnpark",
+    "name": "Lululemon - Lincoln Park "
+  },
+  {
+    "partnerId": "Unity22campaign",
+    "name": "National Coalition on Black Civic Participation"
+  },
+  {
+    "partnerId": "TCRP",
+    "name": "Texas Civil Rights Project"
+  },
+  {
+    "partnerId": "dosomething",
+    "name": "DoSomething.org"
+  },
+  {
+    "partnerId": "defendingdemocracytogether",
+    "name": "Defending Democracy Together"
+  },
+  {
+    "partnerId": "NCoC",
+    "name": "National Conference on Citizenship"
+  },
+  {
+    "partnerId": "civicga",
+    "name": "CivicGeorgia"
+  },
+  {
+    "partnerId": "BGCA22",
+    "name": "Boys & Girls Clubs of America"
+  },
+  {
+    "partnerId": "rac",
+    "name": "Religious Action Center of Reform Judaism"
+  },
+  {
+    "partnerId": "tripgives",
+    "name": "TripAdvisor"
+  },
+  {
+    "partnerId": "ballotready",
+    "name": "BallotReady"
+  },
+  {
+    "partnerId": "OPOV",
+    "name": "Kentucky Civic Engagement Table"
+  },
+  {
+    "partnerId": "cfcg",
+    "name": "Center for Common Ground"
+  },
+  {
+    "partnerId": "VotoLatino",
+    "name": "Voto Latino"
+  },
+  {
+    "partnerId": "ingoodcompany",
+    "name": "IGC (In Good Company)"
+  },
+  {
+    "partnerId": "DisabilityRightsFlorida",
+    "name": "Disability Rights Florida"
+  },
+  {
+    "partnerId": "TWE",
+    "name": "Together We Elect"
+  },
+  {
+    "partnerId": "courier",
+    "name": "Courier Newsroom"
+  },
+  {
+    "partnerId": "OBBMedia",
+    "name": "OBB Media"
   }
 ]

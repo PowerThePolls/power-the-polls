@@ -1,0 +1,19 @@
+{
+   "name": "workelections-states",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "type": "module",
+   "scripts": {
+      "start": "node index.js",
+      "prettier": "prettier --write ."
+   },
+   "author": "",
+   "license": "MIT",
+   "dependencies": {
+      "node-fetch": "^3.2.9"
+   },
+   "devDependencies": {
+      "prettier": "^2.7.1"
+   }
+}

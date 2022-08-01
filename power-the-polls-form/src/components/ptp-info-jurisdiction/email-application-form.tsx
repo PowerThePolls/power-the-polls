@@ -287,7 +287,7 @@ export class EmailApplicationForm {
                href={`mailto:${j.email}?subject=Becoming%20a%20Poll%20Worker`}
                target="_blank"
             >
-               Email your poll administrator directly
+               Email your election office directly
             </a>
 
             <hr />
