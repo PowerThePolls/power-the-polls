@@ -2126,5 +2126,13 @@
   {
     "partnerId": "OBBMedia",
     "name": "OBB Media"
+  },
+  {
+    "partnerId": "peoplefor",
+    "name": "People For the American Way"
+  },
+  {
+    "partnerId": "bfa",
+    "name": "Business for America"
   }
 ]
