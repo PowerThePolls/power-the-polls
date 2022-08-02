@@ -197,6 +197,8 @@ const run = async () => {
       )
    );
 
+   let errorThrown = false;
+
    for (const partner of newPartners) {
       // create report for new partners
       if (hasReportEmails(partner)) {
@@ -210,6 +212,7 @@ const run = async () => {
             );
             console.log("Report created for: ", partner.get("organization"));
          } catch (e) {
+            errorThrown = true;
             console.log("Error processing: ", partner.get("organization"));
             console.error(e);
          }
@@ -221,7 +224,10 @@ const run = async () => {
       }
    }
 
+   if (errorThrown) {
+      throw new Error("Error during report creation!");
+   }
    console.log("Done creating reports!");
 };
 
-run().catch((err) => console.error(err));
+run();
