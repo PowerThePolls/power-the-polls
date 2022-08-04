@@ -1,7 +1,8 @@
 {
-   "name": "create-partner-reports",
+   "name": "workelections-states",
    "version": "1.0.0",
    "description": "",
+   "main": "index.js",
    "type": "module",
    "scripts": {
       "start": "node index.js",
@@ -10,8 +11,7 @@
    "author": "",
    "license": "MIT",
    "dependencies": {
-      "airtable": "^0.11.4",
-      "node-fetch": "^3.2.6"
+      "node-fetch": "^3.2.9"
    },
    "devDependencies": {
       "prettier": "^2.7.1"

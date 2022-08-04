@@ -2022,5 +2022,125 @@
   {
     "partnerId": "northridgeindivisible",
     "name": "Northridge Indivisible"
+  },
+  {
+    "partnerId": "americavotes-nc",
+    "name": "America Votes - NC"
+  },
+  {
+    "partnerId": "americavotes-wi",
+    "name": "America Votes - WI"
+  },
+  {
+    "partnerId": "travelers",
+    "name": "Travelers"
+  },
+  {
+    "partnerId": "americavotes",
+    "name": "America Votes"
+  },
+  {
+    "partnerId": "americavotes-nh",
+    "name": "America Votes - NH"
+  },
+  {
+    "partnerId": "americavotes-mi",
+    "name": "America Votes - MI"
+  },
+  {
+    "partnerId": "americavotes-fl",
+    "name": "America Votes - FL"
+  },
+  {
+    "partnerId": "lululincolnpark",
+    "name": "Lululemon - Lincoln Park "
+  },
+  {
+    "partnerId": "Unity22campaign",
+    "name": "National Coalition on Black Civic Participation"
+  },
+  {
+    "partnerId": "TCRP",
+    "name": "Texas Civil Rights Project"
+  },
+  {
+    "partnerId": "dosomething",
+    "name": "DoSomething.org"
+  },
+  {
+    "partnerId": "defendingdemocracytogether",
+    "name": "Defending Democracy Together"
+  },
+  {
+    "partnerId": "NCoC",
+    "name": "National Conference on Citizenship"
+  },
+  {
+    "partnerId": "civicga",
+    "name": "CivicGeorgia"
+  },
+  {
+    "partnerId": "BGCA22",
+    "name": "Boys & Girls Clubs of America"
+  },
+  {
+    "partnerId": "rac",
+    "name": "Religious Action Center of Reform Judaism"
+  },
+  {
+    "partnerId": "tripgives",
+    "name": "TripAdvisor"
+  },
+  {
+    "partnerId": "ballotready",
+    "name": "BallotReady"
+  },
+  {
+    "partnerId": "OPOV",
+    "name": "Kentucky Civic Engagement Table"
+  },
+  {
+    "partnerId": "cfcg",
+    "name": "Center for Common Ground"
+  },
+  {
+    "partnerId": "VotoLatino",
+    "name": "Voto Latino"
+  },
+  {
+    "partnerId": "ingoodcompany",
+    "name": "IGC (In Good Company)"
+  },
+  {
+    "partnerId": "DisabilityRightsFlorida",
+    "name": "Disability Rights Florida"
+  },
+  {
+    "partnerId": "TWE",
+    "name": "Together We Elect"
+  },
+  {
+    "partnerId": "courier",
+    "name": "Courier Newsroom"
+  },
+  {
+    "partnerId": "OBBMedia",
+    "name": "OBB Media"
+  },
+  {
+    "partnerId": "peoplefor",
+    "name": "People For the American Way"
+  },
+  {
+    "partnerId": "bfa",
+    "name": "Business for America"
+  },
+  {
+    "partnerId": "SikhVOTE",
+    "name": "Sikh American Legal Defense and Education Fund (SALDEF)"
+  },
+  {
+    "partnerId": "tampabayraysteam",
+    "name": "Tampa Bay Rays (staff)"
   }
 ]
