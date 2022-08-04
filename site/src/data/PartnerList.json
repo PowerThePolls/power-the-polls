@@ -2146,5 +2146,13 @@
   {
     "partnerId": "deltas",
     "name": "Delta Sigma Theta Sorority, Incorporated"
+  },
+  {
+    "partnerId": "NextGenAmerica",
+    "name": "NextGen America"
+  },
+  {
+    "partnerId": "wakeupnvote",
+    "name": "Wake Up & Vote"
   }
 ]
