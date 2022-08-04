@@ -2154,5 +2154,9 @@
   {
     "partnerId": "wakeupnvote",
     "name": "Wake Up & Vote"
+  },
+  {
+    "partnerId": "MitzVote2022",
+    "name": "Hillel International"
   }
 ]
