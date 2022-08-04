@@ -20,7 +20,10 @@ namespace analytics {
    };
 
    export const signup = ( partnerId?: string ) => {
-      google( "event", "signup", { "event_category": "signup", "event_label": partnerId || "Homepage" } );
+      google( "event", "signup", {
+         event_category: "signup",
+         event_label: partnerId || "Homepage",
+      });
       facebook( "track", "CompleteRegistration" );
    };
 
