@@ -2134,5 +2134,13 @@
   {
     "partnerId": "bfa",
     "name": "Business for America"
+  },
+  {
+    "partnerId": "SikhVOTE",
+    "name": "Sikh American Legal Defense and Education Fund (SALDEF)"
+  },
+  {
+    "partnerId": "tampabayraysteam",
+    "name": "Tampa Bay Rays (staff)"
   }
 ]
