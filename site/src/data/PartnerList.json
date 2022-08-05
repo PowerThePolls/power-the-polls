@@ -2162,5 +2162,21 @@
   {
     "partnerId": "BusinessForward",
     "name": "Business Forward Foundation"
+  },
+  {
+    "partnerId": "28208",
+    "name": "Freedom Fighting Missionaries"
+  },
+  {
+    "partnerId": "TeamIC",
+    "name": "Team Influence Change (Kerry Washington)"
+  },
+  {
+    "partnerId": "SwingLeft",
+    "name": "Swing Left"
+  },
+  {
+    "partnerId": "votefwd",
+    "name": "Vote Forward"
   }
 ]
