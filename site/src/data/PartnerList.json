@@ -2178,5 +2178,25 @@
   {
     "partnerId": "votefwd",
     "name": "Vote Forward"
+  },
+  {
+    "partnerId": "whenweallvote-eb",
+    "name": "When We All Vote - EB"
+  },
+  {
+    "partnerId": "VampTheVote",
+    "name": "Vampire Court of Dallas®"
+  },
+  {
+    "partnerId": "driowa",
+    "name": "Disability Rights Iowa"
+  },
+  {
+    "partnerId": "whenweallvote-eh",
+    "name": "When We All Vote - EH"
+  },
+  {
+    "partnerId": "whenweallvote-zd",
+    "name": "When We All Vote - ZD"
   }
 ]
