@@ -2206,5 +2206,13 @@
   {
     "partnerId": "arena",
     "name": "Arena"
+  },
+  {
+    "partnerId": "jewishdemocracy-jcrcatl",
+    "name": "Jewish Community Relations Council of Atlanta"
+  },
+  {
+    "partnerId": "colorofchange2022",
+    "name": "Color Of Change"
   }
 ]
