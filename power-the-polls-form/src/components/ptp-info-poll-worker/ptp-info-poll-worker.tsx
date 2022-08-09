@@ -56,7 +56,6 @@ export class PollWorkerInfo {
       const stateInfo = (state && state in States && States[state]) || null;
       const [isFull, nameIfFull] = isJurisdictionFilled(
          state || null,
-         jurisdictionId != null ? jurisdictionId + "" : null,
       );
 
        function isMailOnlyState(stateAbbreviation: string | undefined): boolean {
