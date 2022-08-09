@@ -61,30 +61,13 @@ export const findJurisdictionId = (
 ): number | null => {
    const stateData = States[state];
    if (stateData) {
-      const found = [
-         `${city} charter township, ${county} County`,
-         `${city} township, ${county} County`,
-         `${city} town, ${county} County`,
-         `${city} village, ${county} County`,
-         `${city} city, ${county} County`,
-         `${city} (City)`,
-         `${city} (Town)`,
-         `${city} (Township)`,
-         `${city} City`,
-         `${city}, ${county} County`,
-         `${city} Village, ${county} County`,
-         `${city} Township, ${county} County`,
-         `${city} (City), ${county} County`,
-         `${city} (Town), ${county} County`,
-         `${county} County`,
-         `${county} Parish`,
-         `${county} Plantation`,
-         `${city}`,
-         `${county}`,
-      ].find((type) => stateData.jurisdictions[type]);
-
-      if (found) {
-         return stateData.jurisdictions[found].id;
+      if (city) {
+         const cityInfo = stateData.jurisdictions.cities[`${city}`];
+         if (cityInfo) { return cityInfo.id; }
+      }
+      if (county) {
+         const countyInfo = stateData.jurisdictions.counties[`${county}`];
+         if (countyInfo) { return countyInfo.id; }
       }
    }
    return null;

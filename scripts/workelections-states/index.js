@@ -35,24 +35,49 @@ const scrapeSite = async () => {
    return states
       .reverse()
       .reduce((collected, { acf, id, title: { rendered } }) => {
-         collected[acf["alpha-2_code"]] = {
+         const state_alpha_code = acf["alpha-2_code"];
+         collected[state_alpha_code] = {
             id,
             name: rendered,
             jurisdictions: jurisdictions
                .filter(({ acf: { state } }) => state === id)
-               .reduce((mapped, { title: { rendered }, id: juriId, slug }) => {
-                  mapped[fixTitle(rendered)] = {
-                     id: juriId,
-                     name: rendered,
-                     slug,
-                  };
-                  return mapped;
-               }, {}),
+               .reduce(
+                  (mapped, jurisdiction) => {
+                     const {
+                        title: { rendered },
+                        acf: { is_the_jurisdiction_a_city: city },
+                        id,
+                        slug,
+                     } = jurisdiction;
+                     const name = fixTitle(rendered);
+                     if (city && !mapped.cities[fixTitle(name)]) {
+                        mapped.cities[fixTitle(name)] = {
+                           id,
+                           name,
+                           slug,
+                        };
+                     } else if (!city && !mapped.counties[fixTitle(name)]) {
+                        mapped.counties[fixTitle(name)] = {
+                           id,
+                           name,
+                           slug,
+                        };
+                     } else {
+                        console.log(
+                           `found dupe ${
+                              city ? "city" : "county"
+                           }: ${name}, ${state_alpha_code}`
+                        );
+                     }
+                     return mapped;
+                  },
+                  { cities: {}, counties: {} }
+               ),
          };
          return collected;
       }, {});
 };
 
 scrapeSite()
-   .then(states => console.log(JSON.stringify(states, null, 2)))
+   .then((states) => console.log(JSON.stringify(states, null, 2)))
    .catch((err) => console.error(err));

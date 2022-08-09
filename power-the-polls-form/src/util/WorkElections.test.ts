@@ -3,7 +3,7 @@ import {findJurisdictionId} from "./WorkElections";
 // To find jurisdiction IDs for expect use https://workelections.org
 // and find the jurisdiction you are looking for, then in chrome debugger
 // look at source for the main page (like austin or austin-2) and then
-// search for `post_id`. It should be a 4 digit number.
+// search for `post_id`. It should be a 4-5 digit number.
 
 test("Austin, TX, Travis County", () => {
     const actual = findJurisdictionId("TX", "Travis", "Austin");
