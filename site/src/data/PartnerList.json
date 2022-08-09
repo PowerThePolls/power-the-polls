@@ -2214,5 +2214,17 @@
   {
     "partnerId": "colorofchange2022",
     "name": "Color Of Change"
+  },
+  {
+    "partnerId": "mfol",
+    "name": "March for Our Lives"
+  },
+  {
+    "partnerId": "citizenconnect",
+    "name": "Citizen Connect"
+  },
+  {
+    "partnerId": "BRvotes",
+    "name": "Bad Robot (internal)"
   }
 ]
