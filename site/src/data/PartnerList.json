@@ -500,8 +500,8 @@
     "logoIsDark": true
   },
   {
-    "partnerId": "Eden-Health",
-    "name": "Eden-Health",
+    "partnerId": "edenhealth",
+    "name": "Eden Health",
     "logo": "eden-health.png",
     "logoIsDark": true
   },
@@ -678,7 +678,7 @@
     "logoIsDark": true
   },
   {
-    "partnerId": "hoteltango",
+    "partnerId": "hoteltangodistillery",
     "name": "Hotel Tango",
     "logo": "hotel-tango.png"
   },
@@ -1799,13 +1799,11 @@
     "partnerId": "APIAVOTE",
     "name": "Asian and Pacific Islander American Vote (APIAVote)"
   },
-  {
-    "partnerId": "edenhealth",
-    "name": "Eden Health"
-  },
+
   {
     "partnerId": "theASBN",
-    "name": "American Sustainable Business Network"
+    "name": "American Sustainable Business Network",
+    "logo": "ASBN.png"
   },
   {
     "partnerId": "sisterdistrict",
@@ -1833,7 +1831,8 @@
   },
   {
     "partnerId": "PoderLatinx",
-    "name": "Poder Latinx"
+    "name": "Poder Latinx",
+    "logo": "poder-latinx.png"
   },
   {
     "partnerId": "allintovote",
@@ -1844,16 +1843,9 @@
     "name": "PA Youth Vote"
   },
   {
-    "partnerId": "hoteltangodistillery",
-    "name": "Hotel Tango Distillery "
-  },
-  {
-    "partnerId": "levis ",
-    "name": "Levis Strauss & Co. "
-  },
-  {
     "partnerId": "dow",
-    "name": "Dow"
+    "name": "Dow",
+    "logo": "dow.png"
   },
   {
     "partnerId": "LeadershipNowProject",
@@ -2053,7 +2045,8 @@
   },
   {
     "partnerId": "lululincolnpark",
-    "name": "Lululemon - Lincoln Park "
+    "name": "Lululemon - Lincoln Park ",
+    "logo": "lululemon.png"
   },
   {
     "partnerId": "Unity22campaign",
@@ -2125,7 +2118,8 @@
   },
   {
     "partnerId": "OBBMedia",
-    "name": "OBB Media"
+    "name": "OBB Media",
+    "logo": "obb.png"
   },
   {
     "partnerId": "peoplefor",
