@@ -10,50 +10,53 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
             {
                 question: "What are the requirements for being a poll worker?",
                 answer: () => <p>
-                    Qualifications vary by jurisdictions. Most states require poll workers to be registered to vote in
-                    the state or their local jurisdiction. Some local elections offices have student poll worker
-                    programs for younger people who aren’t yet eligible to vote but would like to play an important part
-                    of the democratic process
+                    Qualifications vary by jurisdictions. Most states require poll workers to live in or be registered
+                    to vote in the state or their local jurisdiction. Some local election offices have student poll
+                    worker programs for younger people who aren’t yet eligible to vote but would like to play an
+                    important part of the democratic process.
                 </p>,
             },
             {
-                question: "Can I be a poll worker in a state I don’t live in/am not registered in?",
+                question: "Can I be a poll worker in another state?",
                 answer: () => <p>
-                    Individuals are generally only allowed to serve in the state where they reside though
-                    there may be exceptions to this in select jurisdictions.
+                    Individuals are generally only allowed to serve in the state where they reside/vote, though there
+                    may be exceptions to this in select jurisdictions.
                 </p>,
             },
             {
-                question: "I’m not a U.S. citizen / I’m a permanent resident. Can I serve as a poll worker?",
+                question: "Are there citizenship requirements to be a poll worker?",
                 answer: () => <p>
                     Most states require that poll workers are U.S. citizens. The best place to find guidance is with
-                    your local administrator.
+                    your local election office.
                 </p>,
             },
             {
                 question: "I’m under 18. Can I still help?",
                 answer: () => <p>
                     Many states allow individuals under 18 to be poll workers, but each state has its own requirements,
-                    and this can vary between different cities and counties. Some states also have additional
-                    requirements for students like permission slips, a certain GPA, etc. The best place to find this
-                    information is by reaching out to your local election administrator.
+                    and sometimes these can vary depending on which part of the state you are in. The best way to find
+                    this information is by reaching out to your local election office.
                 </p>,
             },
             {
-                question: "Do I have to work the full day, or can I sign up for a shift?",
-                answer: () => <div>
-                    <p>
-                        Some jurisdictions allow workers to sign up for shifts, while others require you to work full
-                        days. Hours also often vary for early voting work versus Election Day. If you’re concerned about
-                        the hours, you should submit your application and let your election officials know about your
-                        availability.
-                    </p>
-                    <p>
-                        If your jurisdiction requires a full day of work and you can’t make those hours but still want
-                        to help, think about recruiting other people you know to be a poll worker and can serve for the
-                        full time needed.
-                    </p>
-                </div>,
+                question: "Do i really have to work the full day or can i sign up for shorter shift?",
+                answer: () => <p>
+                    Some jurisdictions allow workers to sign up for shifts, while others require you to work full
+                    days. Hours also often vary for early voting work versus Election Day. If you’re concerned about
+                    the hours, you should submit your application and let your election officials know about your
+                    availability. If your jurisdiction requires a full day of work and you can’t make those hours
+                    but still want to help, think about recruiting other people you know to be a poll worker and can
+                    serve for the full time needed.
+                </p>,
+            },
+            {
+                question: "Does it matter if i’m a Republican, Democrat, or Independent?",
+                answer: () => <p>
+                    Poll working is usually a non-partisan activity and your party affiliation does not matter, but in
+                    some states poll workers are matched to locations in pairs based on their party registration. This
+                    is sometimes done to ensure party balance among poll workers at every polling location. Applications
+                    in some jurisdictions may ask you for party registration information for this purpose.
+                </p>,
             },
         ],
     },
