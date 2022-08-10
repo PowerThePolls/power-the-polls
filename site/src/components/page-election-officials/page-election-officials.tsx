@@ -37,59 +37,50 @@ export class PageElectionOfficials {
                 </p>
                 <h3>We Would Love to Hear From You</h3>
                 <p>
-                    Our team at Power the Polls is eager to serve our hardworking elections administrators. Email us
+                    Our team at Power the Polls is eager to serve our hardworking elections administrators. <b><a
+                    href="https://powerthepolls.typeform.com/EASupport">Click here
+                    to inform us of your poll worker needs with a quick and easy survey</a>, or email us
                     at <a href="mailto:electionofficials@powerthepolls.org">electionofficials@powerthepolls.org</a> to
-                    get connected with our Poll Worker Engagement Manager. <b>When election administrators flag a poll
+                    get connected with our Poll Worker Engagement Manager.</b> When election administrators flag a poll
                     worker need, Power the Polls can boost recruitment through all of our recruitment channels - earned
-                    media, social media, partners, businesses, and paid media.</b> To best fill any recruitment needs,
-                    it is helpful to have the following information:
+                    media, social media, partners, businesses, and paid media.
+                </p>
+                <p>
+                    To best fill your recruitment needs, it is helpful to have the following information:
                 </p>
                 <ul>
-                    <h3>
-                        <li>Contact Information</li>
-                    </h3>
-                    Please provide your name, title, local office, phone number, and email.
-                    <h3>
-                        <li>Where do you need more poll workers (jurisdiction-wise)?</li>
-                    </h3>
-                    <p>
-                        Be ready to indicate which jurisdictions need additional poll workers or recruitment support.
-                    </p>
-                    <h3>
-                        <li>Approximately how many people are needed?</li>
-                    </h3>
-                    <p>
-                        This will allow us to target the right number of people to reach out to so we don’t overwhelm a
-                        local office.
-                    </p>
-                    <h3>
-                        <li>Are there any particular needs for certain skills or for availability on key dates?</li>
-                    </h3>
-                    <p>
+                    <li>
+                        Contact Information - Please provide your name, title, local office, phone number, and email.
+                    </li>
+                    <li>
+                        Approximately how many people are needed? This will allow us to target the right number of
+                        people to reach out to so we don’t overwhelm a local office.
+                    </li>
+                    <li>
+                        Are there any particular needs for certain skills or for availability on key dates?
+                    </li>
+                    <li>
                         Are you looking for individuals with particular language or tech skills? Do you need people with
                         experience in customer service? Are you looking to fill gaps for one date or one role
                         specifically? The more information our team has about your jurisdiction’s particular needs, the
                         better we can recruit the best suited neighbors to serve.
-                    </p>
-                    <h3>
-                        <li>
-                            In addition to completing their application, is there another way potential poll workers
-                            should contact your office?
-                        </li>
-                    </h3>
-                    <p>
-                        Power the Polls encourages potential poll workers to complete their local jurisdiction’s
-                        official online application. (If the local jurisdiction does not have its own online
-                        application, we direct them to submit an online application with the state election office, in
-                        states where one is available.) If you notice any issue with the information provided on our
-                        website, please let us know so we can update and provide better instructions for potential poll
-                        workers to reach you.
-                    </p>
+                    </li>
+                    <li>
+                        In addition to completing their application, is there another way potential poll workers should
+                        contact your office?
+                    </li>
                 </ul>
+                <p>
+                    Power the Polls encourages potential poll workers to complete their local jurisdiction’s official
+                    online application. (If the local jurisdiction does not have its own online application, we direct
+                    them to submit an online application with the state election office, in states where one is
+                    available.) If you notice any issue with the information provided on our website, please let us know
+                    so we can update and provide better instructions for potential poll workers to reach you.
+                </p>
                 <h3>Thank you again for your incredible service.</h3>
                 <p>
                     <b>
-                        For more information and to learn more about working with PowerthePolls.org to help with your
+                        For more information and to learn more about working with Power The Polls to help with your
                         poll worker recruitment needs, please contact <a
                         href={"mailto:electionofficials@powerthepolls.org"}>electionofficials@powerthepolls.org</a>.
                     </b>
