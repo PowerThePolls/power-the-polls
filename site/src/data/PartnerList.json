@@ -1089,7 +1089,7 @@
     "logoIsDark": true
   },
   {
-    "partnerId": "ncbcp",
+    "partnerId": "Unity22campaign",
     "name": "National Coalition On Black Civic Participation",
     "logo": "ncbcp.png",
     "logoIsDark": true
@@ -2047,10 +2047,6 @@
     "partnerId": "lululincolnpark",
     "name": "Lululemon - Lincoln Park ",
     "logo": "lululemon.png"
-  },
-  {
-    "partnerId": "Unity22campaign",
-    "name": "National Coalition on Black Civic Participation"
   },
   {
     "partnerId": "TCRP",
