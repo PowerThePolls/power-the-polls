@@ -2226,5 +2226,13 @@
   {
     "partnerId": "BRvotes",
     "name": "Bad Robot (internal)"
+  },
+  {
+    "partnerId": "billie",
+    "name": "BE"
+  },
+  {
+    "partnerId": "finneas",
+    "name": "FO"
   }
 ]
