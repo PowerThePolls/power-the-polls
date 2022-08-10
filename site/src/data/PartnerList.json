@@ -2242,5 +2242,9 @@
   {
     "partnerId": "baef",
     "name": "Bridge Alliance Education Fund"
+  },
+  {
+    "partnerId": "workerscircle",
+    "name": "The Workers Circle"
   }
 ]
