@@ -271,8 +271,8 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
             {
                 question: "I’m experiencing a technical error while trying to access your site/I found an error on your site!",
                 answer: () => <p>
-                    Please email <a href="mailto:info@powerthepolls.org">info@powerthepolls.org</a> to report the issue. Be sure to include a screenshot and the zip
-                    code you used to sign up.
+                    Please email <a href="mailto:info@powerthepolls.org">info@powerthepolls.org</a> to report the issue.
+                    Be sure to include a screenshot and the zip code you used to sign up.
                 </p>,
             },
         ],
