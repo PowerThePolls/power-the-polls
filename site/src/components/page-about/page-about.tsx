@@ -21,10 +21,10 @@ export class PageAbout {
                 <p>
                     Power the Polls had an original goal of recruiting 250,000 new prospective poll workers. In less
                     than 100 days, Power the Polls harnessed the energy of individuals interested in ensuring a fair and
-                    safe election, and was able to recruit over 700,000 prospective poll workers across the
-                    United States. Consequently, the shortages we saw during the 2020 primaries were limited in the
-                    general election: little to no poll worker shortages were reported during states’ early voting
-                    period and on Tuesday, November 3, 2020.
+                    safe election, recruiting over 700,000 prospective poll workers across the United States.
+                    Consequently, the shortages we saw during the 2020 primaries were limited in the general election:
+                    little to no poll worker shortages were reported during states’ early voting period and on Tuesday,
+                    November 3, 2020.
                 </p>
                 <p>
                     We’re already seeing the need for large scale poll worker recruitment in 2022. Poll worker shortages
