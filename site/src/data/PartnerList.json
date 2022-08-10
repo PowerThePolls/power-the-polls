@@ -2234,5 +2234,13 @@
   {
     "partnerId": "finneas",
     "name": "FO"
+  },
+  {
+    "partnerId": "aotl-jld",
+    "name": "All on the Line - JLD"
+  },
+  {
+    "partnerId": "baef",
+    "name": "Bridge Alliance Education Fund"
   }
 ]
