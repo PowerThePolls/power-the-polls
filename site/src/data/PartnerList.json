@@ -1800,7 +1800,6 @@
     "partnerId": "APIAVOTE",
     "name": "Asian and Pacific Islander American Vote (APIAVote)"
   },
-
   {
     "partnerId": "theASBN",
     "name": "American Sustainable Business Network",
@@ -2237,5 +2236,9 @@
   {
     "partnerId": "workerscircle",
     "name": "The Workers Circle"
+  },
+  {
+    "partnerId": "rfs",
+    "name": "Run for Something"
   }
 ]
