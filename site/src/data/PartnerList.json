@@ -2240,5 +2240,21 @@
   {
     "partnerId": "rfs",
     "name": "Run for Something"
+  },
+  {
+    "partnerId": "Karlie",
+    "name": "Karlie Kloss"
+  },
+  {
+    "partnerId": "Camila",
+    "name": "Camila Cabello"
+  },
+  {
+    "partnerId": "SSV_NV",
+    "name": "Silver State Voices"
+  },
+  {
+    "partnerId": "Legend",
+    "name": "John Legend"
   }
 ]
