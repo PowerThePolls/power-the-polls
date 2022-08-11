@@ -1469,7 +1469,8 @@
   },
   {
     "partnerId": "target",
-    "name": "Target"
+    "name": "Target",
+    "logo": "target.png"
   },
   {
     "partnerId": "TCGplayer",
