@@ -2260,5 +2260,9 @@
   {
     "partnerId": "uuthevote",
     "name": "Unitarian Universalist Association"
+  },
+  {
+    "partnerId": "playerscoalition",
+    "name": "Players Coalition"
   }
 ]
