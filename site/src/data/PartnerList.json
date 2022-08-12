@@ -2264,5 +2264,9 @@
   {
     "partnerId": "playerscoalition",
     "name": "Players Coalition"
+  },
+  {
+    "partnerId": "NAAPIMHA",
+    "name": "National Asian American Pacific Islander Mental Health Association"
   }
 ]
