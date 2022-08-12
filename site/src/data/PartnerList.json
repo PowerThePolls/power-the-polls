@@ -2268,5 +2268,13 @@
   {
     "partnerId": "NAAPIMHA",
     "name": "National Asian American Pacific Islander Mental Health Association"
+  },
+  {
+    "partnerId": "gwv",
+    "name": "Girls Who Vote"
+  },
+  {
+    "partnerId": "UCC",
+    "name": "United Church of Christ"
   }
 ]
