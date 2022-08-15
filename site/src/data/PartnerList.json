@@ -2284,5 +2284,13 @@
   {
     "partnerId": "compact",
     "name": "Campus Compact"
+  },
+  {
+    "partnerId": "citizentravelers",
+    "name": "Travelers"
+  },
+  {
+    "partnerId": "HarvardVotes",
+    "name": "Harvard Votes Challenge"
   }
 ]
