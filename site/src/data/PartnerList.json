@@ -2296,5 +2296,17 @@
   {
     "partnerId": "vot",
     "name": "Voters of Tomorrow"
+  },
+  {
+    "partnerId": "Lemonada",
+    "name": "Lemonada Media"
+  },
+  {
+    "partnerId": "shipt-team",
+    "name": "Shipt (internal)"
+  },
+  {
+    "partnerId": "shipt",
+    "name": "Shipt "
   }
 ]
