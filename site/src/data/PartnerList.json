@@ -2308,5 +2308,9 @@
   {
     "partnerId": "shipt",
     "name": "Shipt "
+  },
+  {
+    "partnerId": "IRG",
+    "name": "Center for Secure and Modern Elections (CSME)"
   }
 ]
