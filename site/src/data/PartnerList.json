@@ -2276,5 +2276,13 @@
   {
     "partnerId": "UCC",
     "name": "United Church of Christ"
+  },
+  {
+    "partnerId": "NAACPjvark_6289",
+    "name": "Jacksonville NAACP Branch #6289"
+  },
+  {
+    "partnerId": "compact",
+    "name": "Campus Compact"
   }
 ]
