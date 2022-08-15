@@ -2292,5 +2292,9 @@
   {
     "partnerId": "HarvardVotes",
     "name": "Harvard Votes Challenge"
+  },
+  {
+    "partnerId": "vot",
+    "name": "Voters of Tomorrow"
   }
 ]
