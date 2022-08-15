@@ -2312,5 +2312,9 @@
   {
     "partnerId": "IRG",
     "name": "Center for Secure and Modern Elections (CSME)"
+  },
+  {
+    "partnerId": "tnovsa",
+    "name": "Tnovsa Global Commons"
   }
 ]
