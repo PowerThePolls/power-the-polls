@@ -2332,5 +2332,9 @@
   {
     "partnerId": "Scrutineers",
     "name": "Scrutineers.org"
+  },
+  {
+    "partnerId": "democracydocket",
+    "name": "Democracy Docket"
   }
 ]
