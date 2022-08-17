@@ -2324,5 +2324,17 @@
   {
     "partnerId": "tonys",
     "name": "Tony's Chocolonely "
+  },
+  {
+    "partnerId": "YoungInvincibles",
+    "name": "Young Invincibles"
+  },
+  {
+    "partnerId": "Scrutineers",
+    "name": "Scrutineers.org"
+  },
+  {
+    "partnerId": "democracydocket",
+    "name": "Democracy Docket"
   }
 ]
