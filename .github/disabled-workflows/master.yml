@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-          working-directory: ./scripts/github-actions/
+          working-directory: ./scripts/fetch-full-jurisdictions/
       - run: npm install
       - run: npm run fetchFullJurisdictions --if-present
 
