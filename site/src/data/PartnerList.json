@@ -2356,5 +2356,13 @@
   {
     "partnerId": "notimetofaildoc",
     "name": "No Time To Fail"
+  },
+  {
+    "partnerId": "aotl-bcs",
+    "name": "All on the Line - BCS"
+  },
+  {
+    "partnerId": "aotl-mob",
+    "name": "All on the Line - MOB"
   }
 ]
