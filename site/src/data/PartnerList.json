@@ -2364,5 +2364,9 @@
   {
     "partnerId": "aotl-mob",
     "name": "All on the Line - MOB"
+  },
+  {
+    "partnerId": "publiccitizen-campus",
+    "name": "Public Citizen - Campus"
   }
 ]
