@@ -2368,5 +2368,9 @@
   {
     "partnerId": "publiccitizen-campus",
     "name": "Public Citizen - Campus"
+  },
+  {
+    "partnerId": "newsinmotion",
+    "name": "News in Motion / Ready Magazine"
   }
 ]
