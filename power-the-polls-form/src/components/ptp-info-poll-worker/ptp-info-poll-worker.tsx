@@ -1,7 +1,7 @@
 import {Component, Fragment, h, Prop} from "@stencil/core";
 
 import {States} from "../../data";
-import {isJurisdictionFilled, PtpFormData} from "../../util";
+import {PtpFormData} from "../../util";
 import {findJurisdictionId, idFromSlug} from "../../util/WorkElections";
 
 /**
@@ -54,9 +54,6 @@ export class PollWorkerInfo {
             (state && findJurisdictionId(state, county, city)) ||
             undefined;
         const stateInfo = (state && state in States && States[state]) || null;
-        const [isFull, nameIfFull] = isJurisdictionFilled(
-            state || null,
-        );
 
         function isMailOnlyState(stateAbbreviation: string | undefined): boolean {
             return stateAbbreviation === "HI" || stateAbbreviation === "OR" || stateAbbreviation === "WA";
@@ -95,27 +92,6 @@ export class PollWorkerInfo {
                         across the country to register to vote and &mdash; for those who
                         live in other parts of the U.S. &mdash; signing up to be poll
                         workers.
-                    </p>
-                </Fragment>
-            );
-        }
-
-        // disabled
-        if (isFull) {
-            return (
-                <Fragment>
-                    <h1>Thank you so much for your interest in being a poll worker!</h1>
-                    <p>
-                        Good news:{" "}
-                        <strong>
-                            {nameIfFull || "Your jurisdiction"} has indicated that they
-                            have all the election workers they need this year!
-                        </strong>
-                    </p>
-                    <p>
-                        <strong>You can still help power the polls</strong> by voting in
-                        this upcoming election, and encouraging your friends and family
-                        across the country to register to vote!
                     </p>
                 </Fragment>
             );

@@ -326,7 +326,7 @@ export class JurisdictionInfoComponent {
                   </section>
 
                   {!isNullOrEmpty(j.registration_status) ? (
-                     <section>
+                      <section>
                         <h4>Voter Registration Requirements</h4>
                         <ul>
                            <li>
