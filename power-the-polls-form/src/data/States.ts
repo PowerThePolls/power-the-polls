@@ -55,6 +55,7 @@ export interface JurisdictionInfo extends JurisdictionShort {
     must_have_email: string;
     further_notes: string;
     notes: string;
+    jurisdiction_is_fully_recruited: string;
 }
 
 const data: { [state: string]: StateInfo } = {

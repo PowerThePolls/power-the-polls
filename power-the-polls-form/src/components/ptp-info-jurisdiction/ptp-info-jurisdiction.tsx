@@ -114,6 +114,25 @@ export class JurisdictionInfoComponent {
             </Host>
          );
       }
+      if (j.jurisdiction_is_fully_recruited) {
+         return(
+             <Host>
+                <h1>Thank you so much for your interest in being a poll worker!</h1>
+                <p>
+                   Good news:{" "}
+                   <strong>
+                      {j.name || "Your jurisdiction"} has indicated that they
+                      have all the election workers they need this year!
+                   </strong>
+                </p>
+                <p>
+                   <strong>You can still help power the polls</strong> by voting in
+                   this upcoming election, and encouraging your friends and family
+                   across the country to register to vote!
+                </p>
+             </Host>
+         );
+      }
       const stateInfo = States[j.state.alpha];
       const hasApplication = !(
          j?.online_application == null || j?.online_application === ""
