@@ -21,7 +21,7 @@
       "util:perform-updates": "npm-check-updates -u"
    },
    "dependencies": {
-      "@ptp-us/power-the-polls-form": "^1.1.33-beta.1"
+      "@ptp-us/power-the-polls-form": "^1.1.33"
    },
    "devDependencies": {
       "@octokit/request": "^5.4.9",
