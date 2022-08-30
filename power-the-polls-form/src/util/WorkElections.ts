@@ -79,6 +79,14 @@ export const findJurisdictionId = (
                 return countyInfo.id;
             }
         }
+
+        // special case for MI and WI where the county name is appended to the rendered name from Work Elections
+        if ((state === "MI" || state === "WI") && city && county) {
+            const cityInfo = stateData.jurisdictions.cities[`${city}, ${county} County`];
+            if (cityInfo) {
+                return cityInfo.id;
+            }
+        }
     }
     return null;
 };
