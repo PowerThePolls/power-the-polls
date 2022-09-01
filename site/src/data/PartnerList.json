@@ -2388,5 +2388,9 @@
   {
     "partnerId": "BCG",
     "name": "BCG"
+  },
+  {
+    "partnerId": "fcnl",
+    "name": "Friends Committe on National Legislation"
   }
 ]
