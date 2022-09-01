@@ -2384,5 +2384,9 @@
   {
     "partnerId": "NBA",
     "name": "NBA"
+  },
+  {
+    "partnerId": "BCG",
+    "name": "BCG"
   }
 ]
