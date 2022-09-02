@@ -19,19 +19,31 @@ export class PageResources {
                 </p>
 
 
-                <h2>You’ve signed up to be a poll worker—now what?</h2>
+                <h2>
+                    You’ve signed up to be a poll worker—now what? <a href="/assets/documents/now-what.pdf"
+                                                                      target="_blank"
+                                                                      rel="noopener noreferrer">(pdf)</a>
+                </h2>
                 <p>
                     You’ve signed up with Power the Polls—now what? Read here for an overview of your journey to
                     becoming a poll worker.
                 </p>
 
-                <h2>A Day in the Life of a Poll Worker</h2>
+                <h2>
+                    A Day in the Life of a Poll Worker <a href="/assets/documents/a-day-in-the-life.pdf"
+                                                          target="_blank"
+                                                          rel="noopener noreferrer">(pdf)</a>
+                </h2>
                 <p>
                     Want to learn a little bit more about what to expect on the average day of a poll worker? Read here
                     for more.
                 </p>
 
-                <h2>Questions to Ask in Your Official Poll Worker Training</h2>
+                <h2>
+                    Questions to Ask in Your Official Poll Worker Training <a href="/assets/documents/25-questions-to-ask.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer">(pdf)</a>
+                </h2>
                 <p>
                     Your local elections office will schedule an official training for you. Get ready to make the most
                     of this valuable training time.
@@ -42,7 +54,8 @@ export class PageResources {
                     and resources that your elections office provides. If you have specific questions related to your
                     service as a poll worker or the rules and resources in your jurisdiction,{" "}
                     <stencil-route-link url="/search">reach out to your local election
-                        administrator.</stencil-route-link>
+                        administrator.
+                    </stencil-route-link>
                 </p>
 
             </Host>
