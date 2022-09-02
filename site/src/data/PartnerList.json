@@ -2380,5 +2380,17 @@
   {
     "partnerId": "SierraClub",
     "name": "Sierra Club"
+  },
+  {
+    "partnerId": "NBA",
+    "name": "NBA"
+  },
+  {
+    "partnerId": "BCG",
+    "name": "BCG"
+  },
+  {
+    "partnerId": "fcnl",
+    "name": "Friends Committe on National Legislation"
   }
 ]
