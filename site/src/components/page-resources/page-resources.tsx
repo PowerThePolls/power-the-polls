@@ -20,35 +20,46 @@ export class PageResources {
 
 
                 <h2>
-                    You’ve signed up to be a poll worker—now what? <a href="/assets/documents/now-what.pdf"
-                                                                      target="_blank"
-                                                                      rel="noopener noreferrer">(pdf)</a>
+                    <a href="/assets/documents/now-what.pdf" target="_blank" rel="noopener noreferrer">You’ve signed up
+                        to be a poll worker—now what? - Download here</a>
                 </h2>
                 <p>
-                    You’ve signed up with Power the Polls—now what? Read here for an overview of your journey to
-                    becoming a poll worker.
+                    You’ve signed up with Power the Polls—now what? Read <a href="/assets/documents/now-what.pdf"
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer">here</a> for an
+                    overview of your journey to becoming a poll worker.
                 </p>
 
                 <h2>
-                    A Day in the Life of a Poll Worker <a href="/assets/documents/a-day-in-the-life.pdf"
-                                                          target="_blank"
-                                                          rel="noopener noreferrer">(pdf)</a>
+                    <a href="/assets/documents/a-day-in-the-life.pdf" target="_blank" rel="noopener noreferrer">A Day in
+                        the Life of a Poll Worker - Download here</a>
                 </h2>
                 <p>
-                    Want to learn a little bit more about what to expect on the average day of a poll worker? Read here
+                    Want to learn a little bit more about what to expect on the average day of a poll worker? Read <a
+                    href="/assets/documents/a-day-in-the-life.pdf" target="_blank" rel="noopener noreferrer">here</a>
                     for more.
                 </p>
 
                 <h2>
-                    Questions to Ask in Your Official Poll Worker Training <a href="/assets/documents/25-questions-to-ask.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer">(pdf)</a>
+                    <a href="/assets/documents/25-questions-to-ask.pdf" target="_blank" rel="noopener noreferrer">25
+                        Questions to Ask in Your Official Poll Worker Training - Download here</a>
                 </h2>
                 <p>
                     Your local elections office will schedule an official training for you. Get ready to make the most
-                    of this valuable training time.
+                    of this valuable training time by reviewing this checklist <a
+                    href="/assets/documents/25-questions-to-ask.pdf" target="_blank" rel="noopener noreferrer">here</a>.
                 </p>
-
+                <h2>
+                    <a href="/assets/documents/election-day-checklist.pdf" target="_blank" rel="noopener noreferrer">Election
+                        Day Checklist for Poll Workers - Download here</a>
+                </h2>
+                <p>
+                    Early voting and Election Day are right around the corner. <a
+                    href="/assets/documents/election-day-checklist.pdf" target="_blank" rel="noopener noreferrer">Print
+                    or save</a> this checklist to help you prepare.
+                </p>
+                <br />
+                <br />
                 <p>
                     Please note these supplemental resources do not take the place of the official poll worker training
                     and resources that your elections office provides. If you have specific questions related to your
