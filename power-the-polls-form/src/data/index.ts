@@ -1,1 +1,1 @@
-export { default as States } from "./States";
+export { default as States, duplicateJurisdictions } from "./States";

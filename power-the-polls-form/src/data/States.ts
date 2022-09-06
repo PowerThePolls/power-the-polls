@@ -59,7 +59,7 @@ export interface JurisdictionInfo extends JurisdictionShort {
     jurisdiction_is_fully_recruited: string;
 }
 
-export const duplicationJurisdictions: string[] = [
+export const duplicateJurisdictions: string[] = [
     "St. Albans",
     "Rutland",
     "Newport",

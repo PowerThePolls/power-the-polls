@@ -1,6 +1,6 @@
 import {MultiPolygon} from "geojson";
 
-import {States} from "../data";
+import {duplicateJurisdictions, States } from "../data";
 import {JurisdictionInfo, JurisdictionShort, Slugs, StateInfo} from "../data/States";
 
 /**
