@@ -21,7 +21,7 @@ export class PageResources {
 
                 <h2>
                     You’ve signed up to be a poll worker - now what? - <a href="/assets/documents/now-what.pdf"
-                                                                          target="_blank" rel="noopener noreferrer">Download
+                                                                          target="_blank" rel="noopener noreferrer">Click
                     here</a>
                 </h2>
                 <p>
@@ -34,7 +34,7 @@ export class PageResources {
                 <h2>
                     A Day in the Life of a Poll Worker - <a href="/assets/documents/a-day-in-the-life.pdf"
                                                             target="_blank"
-                                                            rel="noopener noreferrer">Download here</a>
+                                                            rel="noopener noreferrer">Click here</a>
                 </h2>
                 <p>
                     Want to learn a little bit more about what to expect on the average day of a poll worker? Read <a
@@ -44,7 +44,7 @@ export class PageResources {
 
                 <h2>
                     25 Questions to Ask in Your Official Poll Worker Training - <a
-                    href="/assets/documents/25-questions-to-ask.pdf" target="_blank" rel="noopener noreferrer">Download
+                    href="/assets/documents/25-questions-to-ask.pdf" target="_blank" rel="noopener noreferrer">Click
                     here</a>
                 </h2>
                 <p>
@@ -54,7 +54,7 @@ export class PageResources {
                 </p>
                 <h2>
                     Election Day Checklist for Poll Workers - <a href="/assets/documents/election-day-checklist.pdf"
-                                                                 target="_blank" rel="noopener noreferrer">Download
+                                                                 target="_blank" rel="noopener noreferrer">Click
                     here</a>
                 </h2>
                 <p>
