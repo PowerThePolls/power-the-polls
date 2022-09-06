@@ -20,8 +20,9 @@ export class PageResources {
 
 
                 <h2>
-                    <a href="/assets/documents/now-what.pdf" target="_blank" rel="noopener noreferrer">You’ve signed up
-                        to be a poll worker—now what? - Download here</a>
+                    You’ve signed up to be a poll worker - now what? - <a href="/assets/documents/now-what.pdf"
+                                                                          target="_blank" rel="noopener noreferrer">Download
+                    here</a>
                 </h2>
                 <p>
                     You’ve signed up with Power the Polls—now what? Read <a href="/assets/documents/now-what.pdf"
@@ -31,8 +32,9 @@ export class PageResources {
                 </p>
 
                 <h2>
-                    <a href="/assets/documents/a-day-in-the-life.pdf" target="_blank" rel="noopener noreferrer">A Day in
-                        the Life of a Poll Worker - Download here</a>
+                    A Day in the Life of a Poll Worker - <a href="/assets/documents/a-day-in-the-life.pdf"
+                                                            target="_blank"
+                                                            rel="noopener noreferrer">Download here</a>
                 </h2>
                 <p>
                     Want to learn a little bit more about what to expect on the average day of a poll worker? Read <a
@@ -41,8 +43,9 @@ export class PageResources {
                 </p>
 
                 <h2>
-                    <a href="/assets/documents/25-questions-to-ask.pdf" target="_blank" rel="noopener noreferrer">25
-                        Questions to Ask in Your Official Poll Worker Training - Download here</a>
+                    25 Questions to Ask in Your Official Poll Worker Training - <a
+                    href="/assets/documents/25-questions-to-ask.pdf" target="_blank" rel="noopener noreferrer">Download
+                    here</a>
                 </h2>
                 <p>
                     Your local elections office will schedule an official training for you. Get ready to make the most
@@ -50,8 +53,9 @@ export class PageResources {
                     href="/assets/documents/25-questions-to-ask.pdf" target="_blank" rel="noopener noreferrer">here</a>.
                 </p>
                 <h2>
-                    <a href="/assets/documents/election-day-checklist.pdf" target="_blank" rel="noopener noreferrer">Election
-                        Day Checklist for Poll Workers - Download here</a>
+                    Election Day Checklist for Poll Workers - <a href="/assets/documents/election-day-checklist.pdf"
+                                                                 target="_blank" rel="noopener noreferrer">Download
+                    here</a>
                 </h2>
                 <p>
                     Early voting and Election Day are right around the corner. <a
