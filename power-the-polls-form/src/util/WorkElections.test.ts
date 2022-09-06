@@ -49,3 +49,13 @@ test("Find Beaver Dam, Dodge County, WI variants", () => {
     const actual = findVariants("WI", "Dodge", "Beaver Dam");
     expect(actual).toEqual([10625, 10724]);
 });
+
+test("Grafton, Ozaukee County County, WI is a variant", () => {
+    const actual = hasTownVillageCityVariant("WI", "Ozaukee", "Grafton");
+    expect(actual).toBe(true);
+});
+
+test("Grafton, Ozaukee County, WI variants", () => {
+    const actual = findVariants("WI", "Ozaukee", "Grafton");
+    expect(actual).toEqual([10649, 10780]);
+});
