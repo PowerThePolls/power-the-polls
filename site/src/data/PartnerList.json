@@ -2392,5 +2392,13 @@
   {
     "partnerId": "fcnl",
     "name": "Friends Committe on National Legislation"
+  },
+  {
+    "partnerId": "BeautyCounter",
+    "name": "BeautyCounter"
+  },
+  {
+    "partnerId": "ThirdAct",
+    "name": "Third Act Initiative"
   }
 ]
