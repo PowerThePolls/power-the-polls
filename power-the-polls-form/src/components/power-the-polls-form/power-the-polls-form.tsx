@@ -165,7 +165,7 @@ export class PowerThePollsForm {
          } catch (e) {
             this.submitError.emit(e);
          } finally {
-            // make sure we cancel the submit so the browser doesn't do anything
+            // make sure we cancel submit so the browser doesn't do anything
             e.preventDefault();
             return false;
          }

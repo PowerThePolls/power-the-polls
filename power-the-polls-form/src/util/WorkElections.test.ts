@@ -1,4 +1,4 @@
-import {findJurisdictionId} from "./WorkElections";
+import {findJurisdictionId, findVariants, hasTownVillageCityVariant} from "./WorkElections";
 
 // To find jurisdiction IDs for expect use https://workelections.org
 // and find the jurisdiction you are looking for, then in chrome debugger
@@ -23,4 +23,29 @@ test("Lincoln, NE, Lancaster County", () => {
 test("Seminole, FL, Pinellas County", () => {
     const actual = findJurisdictionId("FL", "Pinellas", "Seminole");
     expect(actual).toBe(6109);
+});
+
+test("Atlanta, GA is not a variant", () => {
+    const actual = hasTownVillageCityVariant("GA", "Fulton", "Atlanta");
+    expect(actual).toBe(false);
+});
+
+test("St. Albans, VT is a variant", () => {
+    const actual = hasTownVillageCityVariant("VT", "", "St. Albans");
+    expect(actual).toBe(true);
+});
+
+test("Find St. Albans, VT variants", () => {
+    const actual = findVariants("VT", "", "St. Albans");
+    expect(actual).toEqual([10273, 10274]);
+});
+
+test("Beaver Dam, Dodge County, WI is a variant", () => {
+    const actual = hasTownVillageCityVariant("WI", "Dodge", "Beaver Dam");
+    expect(actual).toBe(true);
+});
+
+test("Find Beaver Dam, Dodge County, WI variants", () => {
+    const actual = findVariants("WI", "Dodge", "Beaver Dam");
+    expect(actual).toEqual([10625, 10724]);
 });

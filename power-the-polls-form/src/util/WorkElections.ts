@@ -1,6 +1,6 @@
 import {MultiPolygon} from "geojson";
 
-import {duplicateJurisdictions, States } from "../data";
+import {duplicateJurisdictions, States} from "../data";
 import {JurisdictionInfo, JurisdictionShort, Slugs, StateInfo} from "../data/States";
 
 /**
@@ -89,6 +89,54 @@ export const findJurisdictionId = (
         }
     }
     return null;
+};
+
+export const hasTownVillageCityVariant = (
+    state: string,
+    county?: string,
+    city?: string,
+): boolean => {
+    if (state === "WI") {
+        return duplicateJurisdictions.includes(`${city}, ${county} County`);
+    }
+    if (state === "VT") {
+        return duplicateJurisdictions.includes(city || "");
+    }
+    return false;
+};
+
+export const findVariants = (
+    state: string,
+    county?: string,
+    city?: string,
+): number[] => {
+    const stateData = States[state];
+    let jurisdictionIds: number[] = [];
+    if (state === "WI") {
+        [
+            `${city}, ${county} County (City)`,
+            `${city}, ${county} County (Town)`,
+            `${city}, ${county} County (Village)`,
+        ].forEach((variant: string) => {
+            const info = stateData.jurisdictions.cities[variant];
+            if (info) {
+                jurisdictionIds = [...jurisdictionIds, info.id];
+            }
+        });
+    }
+    if (state === "VT") {
+        [
+            `${city} (City)`,
+            `${city} (Town)`,
+            `${city} (Village)`,
+        ].forEach((variant: string) => {
+            const info = stateData.jurisdictions.cities[variant];
+            if (info) {
+                jurisdictionIds = [...jurisdictionIds, info.id];
+            }
+        });
+    }
+    return jurisdictionIds.sort();
 };
 
 /**
