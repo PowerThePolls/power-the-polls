@@ -2400,5 +2400,9 @@
   {
     "partnerId": "ThirdAct",
     "name": "Third Act Initiative"
+  },
+  {
+    "partnerId": "minorityvets",
+    "name": "Minority Veterans of America"
   }
 ]
