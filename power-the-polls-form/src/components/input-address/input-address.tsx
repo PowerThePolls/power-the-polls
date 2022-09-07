@@ -8,10 +8,12 @@ import {
    State,
 } from "@stencil/core";
 
+import {findVariants, hasTownVillageCityVariant} from "../../util/WorkElections";
+
 import ZipGeocode from "./zipGeocoding";
 
 /**
- * An input and (optional) select element for a US postal address and state which will lookup address values based on
+ * An input and (optional) select element for a US postal address and state which will look up address values based on
  * the user's input to allow the user to select from.
  */
 @Component({
@@ -27,10 +29,12 @@ export class AddressInput {
    public onLookup!: EventEmitter<"STARTED" | "COMPLETED">;
 
    @State() private cityValue: string;
+   @State() private cityTownVillageValue: string;
    @State() private countyValue: string;
    @State() private stateValue: string;
    @State() private zipValue: string;
    @State() private cityOptions: Set<string>;
+   @State() private cityTownVillageOptions: Set<string>;
    @State() private countyOptions: Set<string>;
    @State() private stateOptions: Map<string, string>;
    private m_state: "STARTED" | "COMPLETED" = "COMPLETED";
@@ -38,9 +42,11 @@ export class AddressInput {
    constructor() {
       this.zipValue = "";
       this.cityValue = "";
+      this.cityTownVillageValue = "";
       this.countyValue = "";
       this.stateValue = "";
       this.cityOptions = new Set();
+      this.cityTownVillageOptions = new Set();
       this.countyOptions = new Set();
       this.stateOptions = new Map();
    }
@@ -68,6 +74,13 @@ export class AddressInput {
                   this.countyValue = this.countyOptions.values().next().value;
                   this.stateOptions = result.states;
                   this.stateValue = this.stateOptions.keys().next().value;
+                  if (hasTownVillageCityVariant(this.stateValue, this.countyValue, this.cityValue)) {
+                     this.cityTownVillageOptions = new Set(findVariants(this.stateValue, this.countyValue, this.cityValue));
+                     this.cityTownVillageValue = this.cityTownVillageOptions.keys().next().value;
+                  } else {
+                     this.cityTownVillageOptions = new Set();
+                     this.cityTownVillageValue = "";
+                  }
                }
                this.m_state = "COMPLETED";
                this.onLookup.emit(this.m_state);
@@ -95,6 +108,13 @@ export class AddressInput {
                name="city"
                selected={this.cityValue}
                options={this.cityOptions}
+            />
+
+            <input-possibly-hidden-select
+                fieldLabel="City/Town/Village"
+                name="city_town_village"
+                selected={this.cityTownVillageValue}
+                options={this.cityTownVillageOptions}
             />
 
             <input-possibly-hidden-select

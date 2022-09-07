@@ -66,6 +66,7 @@ export namespace Components {
           * City for matching to location
          */
         "city"?: string;
+        "cityTownVillage"?: string;
         /**
           * County for matching to location
          */
@@ -231,6 +232,7 @@ declare namespace LocalJSX {
           * City for matching to location
          */
         "city"?: string;
+        "cityTownVillage"?: string;
         /**
           * County for matching to location
          */

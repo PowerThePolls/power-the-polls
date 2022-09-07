@@ -111,7 +111,7 @@ export class PowerThePollsForm {
          }
 
          try {
-            // gather up all the form data
+            // gather the form data
             const form = e.target as HTMLFormElement;
             const elements = [
                ...form.getElementsByTagName("input"),
@@ -127,6 +127,7 @@ export class PowerThePollsForm {
             }, {} as any);
             // hacky way to get the data from input-address without wiring up events or callbacks
             const city = data.city || "";
+            const cityTownVillage = data.city_town_village || "";
             const county = data.user_county || "";
             const state = data.state || "";
             const name = data.name || "";
@@ -145,6 +146,7 @@ export class PowerThePollsForm {
                         this.formData = {
                            ...this.formData,
                            city,
+                           cityTownVillage,
                            county,
                            state,
                            name,
@@ -152,7 +154,7 @@ export class PowerThePollsForm {
                            phone,
                            zip,
                            jurisdictionId:
-                              findJurisdictionId(state, county, city) + "",
+                              findJurisdictionId(state, county, city, cityTownVillage) + "",
                         };
                      }
                   } else {
@@ -177,6 +179,7 @@ export class PowerThePollsForm {
                <article>
                   <ptp-info-poll-worker
                      city={this.formData.city}
+                     cityTownVillage={this.formData.cityTownVillage}
                      county={this.formData.county}
                      state={this.formData.state}
                      formData={this.formData}

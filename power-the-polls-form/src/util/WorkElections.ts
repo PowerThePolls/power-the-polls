@@ -1,6 +1,6 @@
 import {MultiPolygon} from "geojson";
 
-import {duplicateJurisdictions, States} from "../data";
+import {DuplicateJurisdictions, States} from "../data";
 import {JurisdictionInfo, JurisdictionShort, Slugs, StateInfo} from "../data/States";
 
 /**
@@ -64,11 +64,13 @@ export const findJurisdictionId = (
     state: string,
     county?: string,
     city?: string,
+    cityTownVillage?: string,
 ): number | null => {
     const stateData = States[state];
     if (stateData) {
         if (city) {
-            const cityInfo = stateData.jurisdictions.cities[`${city}`];
+            const cityString = cityTownVillage ? `${city} (${cityTownVillage})` : city;
+            const cityInfo = stateData.jurisdictions.cities[cityString];
             if (cityInfo) {
                 return cityInfo.id;
             }
@@ -79,10 +81,11 @@ export const findJurisdictionId = (
                 return countyInfo.id;
             }
         }
-
         // special case for MI and WI where the county name is appended to the rendered name from Work Elections
         if ((state === "MI" || state === "WI") && city && county) {
-            const cityInfo = stateData.jurisdictions.cities[`${city}, ${county} County`];
+            const cityString = cityTownVillage ?
+                `${city}, ${county} County (${cityTownVillage})` : `${city}, ${county} County`;
+            const cityInfo = stateData.jurisdictions.cities[cityString];
             if (cityInfo) {
                 return cityInfo.id;
             }
@@ -97,21 +100,32 @@ export const hasTownVillageCityVariant = (
     city?: string,
 ): boolean => {
     if (state === "WI") {
-        return duplicateJurisdictions.includes(`${city}, ${county} County`);
+        return DuplicateJurisdictions.includes(`${city}, ${county} County`);
     }
     if (state === "VT") {
-        return duplicateJurisdictions.includes(city || "");
+        return DuplicateJurisdictions.includes(city || "");
     }
     return false;
+};
+
+const getCityTownVillage = (variant: string): string => {
+    if (variant.endsWith("(City)")) {
+        return "City";
+    } else if (variant.endsWith("(Town)")) {
+        return "Town";
+    } else if (variant.endsWith("(Village)")) {
+        return "Village";
+    }
+    return "";
 };
 
 export const findVariants = (
     state: string,
     county?: string,
     city?: string,
-): number[] => {
+): string[] => {
     const stateData = States[state];
-    let jurisdictionIds: number[] = [];
+    let cityTownVillage: string[] = [];
     if (state === "WI") {
         [
             `${city}, ${county} County (City)`,
@@ -120,7 +134,7 @@ export const findVariants = (
         ].forEach((variant: string) => {
             const info = stateData.jurisdictions.cities[variant];
             if (info) {
-                jurisdictionIds = [...jurisdictionIds, info.id];
+                cityTownVillage = [...cityTownVillage, getCityTownVillage(variant)];
             }
         });
     }
@@ -132,11 +146,11 @@ export const findVariants = (
         ].forEach((variant: string) => {
             const info = stateData.jurisdictions.cities[variant];
             if (info) {
-                jurisdictionIds = [...jurisdictionIds, info.id];
+                cityTownVillage = [...cityTownVillage, getCityTownVillage(variant)];
             }
         });
     }
-    return jurisdictionIds.sort();
+    return cityTownVillage.sort();
 };
 
 /**
