@@ -17,13 +17,18 @@ export class PageInfo {
             state,
             county,
             city,
-            city_town_village: cityTownVillage,
+            city_town_village_suffix,
         } = query;
 
         return !state
             // if we still have no state value provided, redirect to the search page
             ? <stencil-router-redirect url="/search" />
-            : <ptp-info-poll-worker city={city} county={county} state={state} cityTownVillage={cityTownVillage} />;
+            : <ptp-info-poll-worker
+                city={city}
+                county={county}
+                state={state}
+                cityTownVillageSuffix={city_town_village_suffix}
+            />;
     }
 
 }
