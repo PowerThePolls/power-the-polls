@@ -27,7 +27,7 @@ export class PollWorkerInfo {
      * City for matching to location
      */
     @Prop() public city?: string;
-    @Prop() public cityTownVillage?: string;
+    @Prop() public cityTownVillageSuffix?: string;
 
     /**
      * ID or Slug of jurisdiction for Work Elections. Use in place of `state`, `county`, and `city`
@@ -49,10 +49,10 @@ export class PollWorkerInfo {
     }
 
     public render() {
-        const {state, county, city, cityTownVillage} = this;
+        const {state, county, city, cityTownVillageSuffix} = this;
         const jurisdictionId =
             idFromSlug(this.jurisdictionIdOrSlug) ||
-            (state && findJurisdictionId(state, county, city, cityTownVillage)) ||
+            (state && findJurisdictionId(state, county, city, cityTownVillageSuffix)) ||
             undefined;
         const stateInfo = (state && state in States && States[state]) || null;
 
@@ -110,7 +110,7 @@ export class PollWorkerInfo {
                         initialFormData={
                             this.formData || {
                                 city,
-                                cityTownVillage,
+                                cityTownVillageSuffix,
                                 state,
                                 county,
                                 jurisdictionId: jurisdictionId + "",

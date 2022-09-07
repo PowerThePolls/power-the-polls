@@ -11,7 +11,7 @@ import {
 } from "@stencil/core";
 
 import { PtpFormData, PtpLink } from "../../util";
-import { findJurisdictionId } from "../../util/WorkElections";
+import { findJurisdictionId, getCityTownVillageSuffix } from "../../util/WorkElections";
 
 import { submitToActionKit } from "./ActionKit";
 
@@ -154,7 +154,7 @@ export class PowerThePollsForm {
                            phone,
                            zip,
                            jurisdictionId:
-                              findJurisdictionId(state, county, city, cityTownVillage) + "",
+                              findJurisdictionId(state, county, city, getCityTownVillageSuffix(cityTownVillage)) + "",
                         };
                      }
                   } else {
@@ -179,7 +179,7 @@ export class PowerThePollsForm {
                <article>
                   <ptp-info-poll-worker
                      city={this.formData.city}
-                     cityTownVillage={this.formData.cityTownVillage}
+                     cityTownVillageSuffix={getCityTownVillageSuffix(this.formData.cityTownVillage || "")}
                      county={this.formData.county}
                      state={this.formData.state}
                      formData={this.formData}

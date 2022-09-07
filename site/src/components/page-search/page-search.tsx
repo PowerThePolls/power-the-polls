@@ -23,7 +23,9 @@ export class PageSearch {
             return input ? input.value : null;
          } );
 
-         this.history.push( "/info?" + util.toQueryString( { city, city_town_village, county, state } ) );
+         const city_town_village_suffix = util.WorkElections.getCityTownVillageSuffix(city_town_village);
+
+         this.history.push( "/info?" + util.toQueryString( { city, city_town_village_suffix, county, state } ) );
 
          e.preventDefault();
          return false;

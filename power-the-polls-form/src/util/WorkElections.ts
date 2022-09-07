@@ -108,7 +108,7 @@ export const hasTownVillageCityVariant = (
     return false;
 };
 
-const getCityTownVillage = (variant: string): string => {
+export const getCityTownVillageSuffix = (variant: string): string => {
     if (variant.endsWith("(City)")) {
         return "City";
     } else if (variant.endsWith("(Town)")) {
@@ -134,7 +134,7 @@ export const findVariants = (
         ].forEach((variant: string) => {
             const info = stateData.jurisdictions.cities[variant];
             if (info) {
-                cityTownVillage = [...cityTownVillage, getCityTownVillage(variant)];
+                cityTownVillage = [...cityTownVillage, variant];
             }
         });
     }
@@ -146,7 +146,7 @@ export const findVariants = (
         ].forEach((variant: string) => {
             const info = stateData.jurisdictions.cities[variant];
             if (info) {
-                cityTownVillage = [...cityTownVillage, getCityTownVillage(variant)];
+                cityTownVillage = [...cityTownVillage, variant];
             }
         });
     }

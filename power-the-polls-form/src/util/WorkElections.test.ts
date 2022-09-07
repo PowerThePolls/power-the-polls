@@ -37,7 +37,10 @@ test("St. Albans, VT is a variant", () => {
 
 test("Find St. Albans, VT variants", () => {
     const actual = findVariants("VT", "", "St. Albans");
-    expect(actual).toEqual(["City", "Town"]);
+    expect(actual).toEqual([
+        "St. Albans (City)",
+        "St. Albans (Town)",
+    ]);
 });
 
 test("Beaver Dam, Dodge County, WI is a variant", () => {
@@ -47,7 +50,10 @@ test("Beaver Dam, Dodge County, WI is a variant", () => {
 
 test("Find Beaver Dam, Dodge County, WI variants", () => {
     const actual = findVariants("WI", "Dodge", "Beaver Dam");
-    expect(actual).toEqual(["City", "Town"]);
+    expect(actual).toEqual([
+        "Beaver Dam, Dodge County (City)",
+        "Beaver Dam, Dodge County (Town)",
+    ]);
 });
 
 test("Grafton, Ozaukee County County, WI is a variant", () => {
@@ -57,5 +63,8 @@ test("Grafton, Ozaukee County County, WI is a variant", () => {
 
 test("Grafton, Ozaukee County, WI variants", () => {
     const actual = findVariants("WI", "Ozaukee", "Grafton");
-    expect(actual).toEqual(["Town", "Village"]);
+    expect(actual).toEqual([
+        "Grafton, Ozaukee County (Town)",
+        "Grafton, Ozaukee County (Village)",
+    ]);
 });
