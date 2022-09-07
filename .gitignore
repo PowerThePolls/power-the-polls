@@ -33,4 +33,5 @@ tsconfig.tsbuildinfo
 /scripts/github-actions/*.js
 
 /scripts/**/*.csv
+/scripts/workelections-states/States*.json
 .envrc

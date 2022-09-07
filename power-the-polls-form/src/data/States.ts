@@ -16,6 +16,7 @@ export interface StateInfo {
     pollworker_website?: string;
     is_active?: boolean;
     subdivision_name?: string;
+    has_all_mail_elections?: boolean;
     notes?: string | null;
     topojson_id?: number;
     jurisdictions: Jurisdiction;
@@ -57,6 +58,49 @@ export interface JurisdictionInfo extends JurisdictionShort {
     notes: string;
     jurisdiction_is_fully_recruited: string;
 }
+
+export const DuplicateJurisdictions: string[] = [
+    "St. Albans",
+    "Rutland",
+    "Newport",
+    "Barre",
+    "Beaver Dam, Dodge County",
+    "Beloit, Rock County",
+    "Brookfield, Waukesha County",
+    "Cedarburg, Ozaukee County",
+    "Cottage Grove, Dane County",
+    "Delafield, Waukesha County",
+    "Delavan, Walworth County",
+    "East Troy, Walworth County",
+    "Fond du Lac, Fond du Lac County",
+    "Grafton, Ozaukee County",
+    "Hudson, St. Croix County",
+    "Jackson, Washington County",
+    "Janesville, Rock County",
+    "Lodi, Columbia County",
+    "Madison, Dane County",
+    "Medford, Taylor County",
+    "Menomonie, Dunn County",
+    "Merrill, Lincoln County",
+    "Merton, Waukesha County",
+    "Middleton, Dane County",
+    "Milton, Rock County",
+    "Neenahnnebago County",
+    "Oconomowoc, Waukesha County",
+    "Onalaska, La Crosse County",
+    "Oregon, Dane County",
+    "Osceola, Polk County",
+    "Peshtigo, Marinette County",
+    "Pewaukee, Waukesha County",
+    "Plymouth, Sheboygan County",
+    "Rice Lake, Barron County",
+    "Sheboygan, Sheboygan County",
+    "Somerset, St. Croix County",
+    "Sparta, Monroe County",
+    "Waterford, Racine County",
+    "Waukesha, Waukesha County",
+    "West Bend, Washington County",
+];
 
 const data: { [state: string]: StateInfo } = {
     // Territories
@@ -114,6 +158,8 @@ const data: { [state: string]: StateInfo } = {
     "AL": {
         "id": 30,
         "name": "Alabama",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -458,6 +504,8 @@ const data: { [state: string]: StateInfo } = {
     "AK": {
         "id": 31,
         "name": "Alaska",
+        "has_all_mail_elections": false,
+        "subdivision_name": "Region",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -492,6 +540,8 @@ const data: { [state: string]: StateInfo } = {
     "AZ": {
         "id": 32,
         "name": "Arizona",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -576,6 +626,8 @@ const data: { [state: string]: StateInfo } = {
     "AR": {
         "id": 33,
         "name": "Arkansas",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -960,6 +1012,8 @@ const data: { [state: string]: StateInfo } = {
     "CA": {
         "id": 34,
         "name": "California",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -1259,6 +1313,8 @@ const data: { [state: string]: StateInfo } = {
     "CO": {
         "id": 35,
         "name": "Colorado",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -1588,6 +1644,8 @@ const data: { [state: string]: StateInfo } = {
     "CT": {
         "id": 36,
         "name": "Connecticut",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Woodstock": {
@@ -2442,6 +2500,8 @@ const data: { [state: string]: StateInfo } = {
     "DE": {
         "id": 37,
         "name": "Delaware",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -2466,6 +2526,8 @@ const data: { [state: string]: StateInfo } = {
     "DC": {
         "id": 38,
         "name": "District of Columbia",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Washington": {
@@ -2480,6 +2542,8 @@ const data: { [state: string]: StateInfo } = {
     "FL": {
         "id": 39,
         "name": "Florida",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -2824,6 +2888,8 @@ const data: { [state: string]: StateInfo } = {
     "GA": {
         "id": 40,
         "name": "Georgia",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -3628,6 +3694,8 @@ const data: { [state: string]: StateInfo } = {
     "HI": {
         "id": 41,
         "name": "Hawaii",
+        "has_all_mail_elections": true,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -3662,6 +3730,8 @@ const data: { [state: string]: StateInfo } = {
     "ID": {
         "id": 42,
         "name": "Idaho",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -3891,6 +3961,8 @@ const data: { [state: string]: StateInfo } = {
     "IL": {
         "id": 43,
         "name": "Illinois",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Rockford": {
@@ -4441,6 +4513,8 @@ const data: { [state: string]: StateInfo } = {
     "IN": {
         "id": 44,
         "name": "Indiana",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -4910,6 +4984,8 @@ const data: { [state: string]: StateInfo } = {
     "IA": {
         "id": 45,
         "name": "Iowa",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -5268,9 +5344,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Ringgold",
                     "slug": "ringgold",
                 },
-                "O&#8217;Brien": {
+                "OBrien": {
                     "id": 6560,
-                    "name": "O&#8217;Brien",
+                    "name": "OBrien",
                     "slug": "obrien",
                 },
                 "Mitchell": {
@@ -5414,6 +5490,8 @@ const data: { [state: string]: StateInfo } = {
     "KS": {
         "id": 46,
         "name": "Kansas",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -5948,6 +6026,8 @@ const data: { [state: string]: StateInfo } = {
     "KY": {
         "id": 47,
         "name": "Kentucky",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -6557,6 +6637,8 @@ const data: { [state: string]: StateInfo } = {
     "LA": {
         "id": 48,
         "name": "Louisiana",
+        "has_all_mail_elections": false,
+        "subdivision_name": "Parish",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -6886,6 +6968,8 @@ const data: { [state: string]: StateInfo } = {
     "ME": {
         "id": 49,
         "name": "Maine",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Unity": {
@@ -8715,6 +8799,8 @@ const data: { [state: string]: StateInfo } = {
     "MD": {
         "id": 50,
         "name": "Maryland",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Baltimore": {
@@ -8734,14 +8820,14 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Kent",
                     "slug": "kent-3",
                 },
-                "Prince George&#8217;s": {
+                "Prince Georges": {
                     "id": 7307,
-                    "name": "Prince George&#8217;s",
+                    "name": "Prince Georges",
                     "slug": "prince-georges",
                 },
-                "Queen Anne&#8217;s": {
+                "Queen Annes": {
                     "id": 7306,
-                    "name": "Queen Anne&#8217;s",
+                    "name": "Queen Annes",
                     "slug": "queen-annes",
                 },
                 "Harford": {
@@ -8779,9 +8865,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Caroline",
                     "slug": "caroline",
                 },
-                "St. Mary&#8217;s": {
+                "St. Marys": {
                     "id": 7298,
-                    "name": "St. Mary&#8217;s",
+                    "name": "St. Marys",
                     "slug": "st-marys",
                 },
                 "Worcester": {
@@ -8845,6 +8931,8 @@ const data: { [state: string]: StateInfo } = {
     "MA": {
         "id": 51,
         "name": "Massachusetts",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Yarmouth": {
@@ -10609,6 +10697,8 @@ const data: { [state: string]: StateInfo } = {
     "MI": {
         "id": 52,
         "name": "Michigan",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Flat Rock": {
@@ -11406,9 +11496,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "La Salle Township, Monroe County",
                     "slug": "la-salle-township-monroe-county",
                 },
-                "L&#8217;Anse Township, Baraga County": {
+                "LAnse Township, Baraga County": {
                     "id": 8190,
-                    "name": "L&#8217;Anse Township, Baraga County",
+                    "name": "LAnse Township, Baraga County",
                     "slug": "lanse-township-baraga-county",
                 },
                 "Kochville Township, Saginaw County": {
@@ -14058,6 +14148,8 @@ const data: { [state: string]: StateInfo } = {
     "MN": {
         "id": 53,
         "name": "Minnesota",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -14502,6 +14594,8 @@ const data: { [state: string]: StateInfo } = {
     "MS": {
         "id": 54,
         "name": "Mississippi",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -14921,6 +15015,8 @@ const data: { [state: string]: StateInfo } = {
     "MO": {
         "id": 55,
         "name": "Missouri",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Kansas City": {
@@ -15511,6 +15607,8 @@ const data: { [state: string]: StateInfo } = {
     "MT": {
         "id": 56,
         "name": "Montana",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -15800,6 +15898,8 @@ const data: { [state: string]: StateInfo } = {
     "NE": {
         "id": 57,
         "name": "Nebraska",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -16274,6 +16374,8 @@ const data: { [state: string]: StateInfo } = {
     "NV": {
         "id": 58,
         "name": "Nevada",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -16368,6 +16470,8 @@ const data: { [state: string]: StateInfo } = {
     "NH": {
         "id": 59,
         "name": "New Hampshire",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Woodstock": {
@@ -17055,9 +17159,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Haverhill",
                     "slug": "haverhill-2",
                 },
-                "Hart&#8217;s Location": {
+                "Harts Location": {
                     "id": 8901,
-                    "name": "Hart&#8217;s Location",
+                    "name": "Harts Location",
                     "slug": "harts-location",
                 },
                 "Harrisville": {
@@ -17547,6 +17651,8 @@ const data: { [state: string]: StateInfo } = {
     "NJ": {
         "id": 60,
         "name": "New Jersey",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -17661,6 +17767,8 @@ const data: { [state: string]: StateInfo } = {
     "NM": {
         "id": 61,
         "name": "New Mexico",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -17835,6 +17943,8 @@ const data: { [state: string]: StateInfo } = {
     "NY": {
         "id": 62,
         "name": "New York",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -18154,6 +18264,8 @@ const data: { [state: string]: StateInfo } = {
     "NC": {
         "id": 63,
         "name": "North Carolina",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -18663,6 +18775,8 @@ const data: { [state: string]: StateInfo } = {
     "ND": {
         "id": 64,
         "name": "North Dakota",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -18937,6 +19051,8 @@ const data: { [state: string]: StateInfo } = {
     "OH": {
         "id": 65,
         "name": "Ohio",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -19386,6 +19502,8 @@ const data: { [state: string]: StateInfo } = {
     "OK": {
         "id": 66,
         "name": "Oklahoma",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -19780,6 +19898,8 @@ const data: { [state: string]: StateInfo } = {
     "OR": {
         "id": 67,
         "name": "Oregon",
+        "has_all_mail_elections": true,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -19969,6 +20089,8 @@ const data: { [state: string]: StateInfo } = {
     "PA": {
         "id": 68,
         "name": "Pennsylvania",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -20313,6 +20435,8 @@ const data: { [state: string]: StateInfo } = {
     "RI": {
         "id": 69,
         "name": "Rhode Island",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Woonsocket": {
@@ -20517,6 +20641,8 @@ const data: { [state: string]: StateInfo } = {
     "SC": {
         "id": 70,
         "name": "South Carolina",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -20756,6 +20882,8 @@ const data: { [state: string]: StateInfo } = {
     "SD": {
         "id": 71,
         "name": "South Dakota",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -21095,6 +21223,8 @@ const data: { [state: string]: StateInfo } = {
     "TN": {
         "id": 72,
         "name": "Tennessee",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -21579,6 +21709,8 @@ const data: { [state: string]: StateInfo } = {
     "TX": {
         "id": 73,
         "name": "Texas",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -22858,6 +22990,8 @@ const data: { [state: string]: StateInfo } = {
     "UT": {
         "id": 74,
         "name": "Utah",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -23012,6 +23146,8 @@ const data: { [state: string]: StateInfo } = {
     "VT": {
         "id": 75,
         "name": "Vermont",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Worcester": {
@@ -23384,20 +23520,30 @@ const data: { [state: string]: StateInfo } = {
                     "name": "St. George",
                     "slug": "saint-george-2",
                 },
-                "St. Albans": {
+                "St. Albans (Town)": {
                     "id": 10274,
-                    "name": "St. Albans",
+                    "name": "St. Albans (Town)",
                     "slug": "saint-albans-town",
+                },
+                "St. Albans (City)": {
+                    "id": 10273,
+                    "name": "St. Albans (City)",
+                    "slug": "saint-albans-city",
                 },
                 "Ryegate": {
                     "id": 10272,
                     "name": "Ryegate",
                     "slug": "ryegate",
                 },
-                "Rutland": {
+                "Rutland (Town)": {
                     "id": 10271,
-                    "name": "Rutland",
+                    "name": "Rutland (Town)",
                     "slug": "rutland-town",
+                },
+                "Rutland (City)": {
+                    "id": 10270,
+                    "name": "Rutland (City)",
+                    "slug": "rutland-city",
                 },
                 "Rupert": {
                     "id": 10269,
@@ -23549,10 +23695,15 @@ const data: { [state: string]: StateInfo } = {
                     "name": "North Hero",
                     "slug": "north-hero",
                 },
-                "Newport": {
+                "Newport (Town)": {
                     "id": 10239,
-                    "name": "Newport",
+                    "name": "Newport (Town)",
                     "slug": "newport-town",
+                },
+                "Newport (City)": {
+                    "id": 10238,
+                    "name": "Newport (City)",
+                    "slug": "newport-city",
                 },
                 "Newfane": {
                     "id": 10237,
@@ -24169,10 +24320,15 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Barton",
                     "slug": "barton-3",
                 },
-                "Barre": {
+                "Barre (Town)": {
                     "id": 10114,
-                    "name": "Barre",
+                    "name": "Barre (Town)",
                     "slug": "barre-town",
+                },
+                "Barre (City)": {
+                    "id": 10113,
+                    "name": "Barre (City)",
+                    "slug": "barre-city",
                 },
                 "Barnet": {
                     "id": 10112,
@@ -24231,6 +24387,8 @@ const data: { [state: string]: StateInfo } = {
     "VA": {
         "id": 76,
         "name": "Virginia",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Manassas Park": {
@@ -24906,6 +25064,8 @@ const data: { [state: string]: StateInfo } = {
     "WA": {
         "id": 77,
         "name": "Washington",
+        "has_all_mail_elections": true,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -25110,6 +25270,8 @@ const data: { [state: string]: StateInfo } = {
     "WV": {
         "id": 78,
         "name": "West Virginia",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
@@ -25394,6 +25556,8 @@ const data: { [state: string]: StateInfo } = {
     "WI": {
         "id": 79,
         "name": "Wisconsin",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {
                 "Lincoln, Vilas County": {
@@ -25466,9 +25630,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "West Milwaukee, Milwaukee County",
                     "slug": "west-milwaukee-milwaukee-county",
                 },
-                "West Bend, Washington County": {
+                "West Bend, Washington County (Town)": {
                     "id": 10922,
-                    "name": "West Bend, Washington County",
+                    "name": "West Bend, Washington County (Town)",
                     "slug": "west-bend-washington-county-2",
                 },
                 "Wescott, Shawano County": {
@@ -25486,10 +25650,15 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Waterloo, Jefferson County",
                     "slug": "waterloo-jefferson-county",
                 },
-                "Waterford, Racine County": {
+                "Waterford, Racine County (Town)": {
                     "id": 10918,
-                    "name": "Waterford, Racine County",
+                    "name": "Waterford, Racine County (Town)",
                     "slug": "waterford-racine-county-2",
+                },
+                "Waterford, Racine County (Village)": {
+                    "id": 10917,
+                    "name": "Waterford, Racine County (Village)",
+                    "slug": "waterford-racine-county",
                 },
                 "Washington, Eau Claire County": {
                     "id": 10916,
@@ -25611,15 +25780,20 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Spooner, Washburn County",
                     "slug": "spooner-washburn-county",
                 },
-                "Sparta, Monroe County": {
+                "Sparta, Monroe County (Town)": {
                     "id": 10892,
-                    "name": "Sparta, Monroe County",
+                    "name": "Sparta, Monroe County (Town)",
                     "slug": "sparta-monroe-county-2",
                 },
-                "Somerset, St. Croix County": {
+                "Somerset, St. Croix County (Town)": {
                     "id": 10891,
-                    "name": "Somerset, St. Croix County",
+                    "name": "Somerset, St. Croix County (Town)",
                     "slug": "somerset-st-croix-county-2",
+                },
+                "Somerset, St. Croix County (Village)": {
+                    "id": 10890,
+                    "name": "Somerset, St. Croix County (Village)",
+                    "slug": "somerset-st-croix-county",
                 },
                 "Slinger, Washington County": {
                     "id": 10889,
@@ -25701,9 +25875,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Richland Center, Richland County",
                     "slug": "richland-center-richland-county",
                 },
-                "Rice Lake, Barron County": {
+                "Rice Lake, Barron County (Town)": {
                     "id": 10873,
-                    "name": "Rice Lake, Barron County",
+                    "name": "Rice Lake, Barron County (Town)",
                     "slug": "rice-lake-barron-county-2",
                 },
                 "Rib Mountain, Marathon County": {
@@ -25751,9 +25925,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Polk, Washington County",
                     "slug": "polk-washington-county",
                 },
-                "Plymouth, Sheboygan County": {
+                "Plymouth, Sheboygan County (Town)": {
                     "id": 10863,
-                    "name": "Plymouth, Sheboygan County",
+                    "name": "Plymouth, Sheboygan County (Town)",
                     "slug": "plymouth-sheboygan-county-2",
                 },
                 "Pleasant Valley, Eau Claire County": {
@@ -25776,10 +25950,15 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Pine Lake, Oneida County",
                     "slug": "pine-lake-oneida-county",
                 },
-                "Peshtigo, Marinette County": {
+                "Peshtigo, Marinette County (Town)": {
                     "id": 10858,
-                    "name": "Peshtigo, Marinette County",
+                    "name": "Peshtigo, Marinette County (Town)",
                     "slug": "peshtigo-marinette-county-2",
+                },
+                "Peshtigo, Marinette County (City)": {
+                    "id": 10857,
+                    "name": "Peshtigo, Marinette County (City)",
+                    "slug": "peshtigo-marinette-county",
                 },
                 "Pelican, Oneida County": {
                     "id": 10856,
@@ -25801,14 +25980,19 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Ottawa, Waukesha County",
                     "slug": "ottawa-waukesha-county",
                 },
-                "Osceola, Polk County": {
+                "Osceola, Polk County (Village)": {
                     "id": 10852,
-                    "name": "Osceola, Polk County",
+                    "name": "Osceola, Polk County (Village)",
                     "slug": "osceola-polk-county-2",
                 },
-                "Oregon, Dane County": {
+                "Osceola, Polk County (Town)": {
+                    "id": 10851,
+                    "name": "Osceola, Polk County (Town)",
+                    "slug": "osceola-polk-county",
+                },
+                "Oregon, Dane County (Town)": {
                     "id": 10850,
-                    "name": "Oregon, Dane County",
+                    "name": "Oregon, Dane County (Town)",
                     "slug": "oregon-dane-county-2",
                 },
                 "Oostburg, Sheboygan County": {
@@ -25821,9 +26005,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Oneida, Outagamie County",
                     "slug": "oneida-outagamie-county",
                 },
-                "Onalaska, La Crosse County": {
+                "Onalaska, La Crosse County (Town)": {
                     "id": 10847,
-                    "name": "Onalaska, La Crosse County",
+                    "name": "Onalaska, La Crosse County (Town)",
                     "slug": "onalaska-la-crosse-county-2",
                 },
                 "Omro, Winnebago County": {
@@ -25881,9 +26065,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Nekoosa, Wood County",
                     "slug": "nekoosa-wood-county",
                 },
-                "Neenah, Winnebago County": {
+                "Neenah, Winnebago County (Town)": {
                     "id": 10835,
-                    "name": "Neenah, Winnebago County",
+                    "name": "Neenah, Winnebago County (Town)",
                     "slug": "neenah-winnebago-county-2",
                 },
                 "Mukwa, Waupaca County": {
@@ -25911,29 +26095,34 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Minocqua, Oneida County",
                     "slug": "minocqua-oneida-county",
                 },
-                "Milton, Rock County": {
+                "Milton, Rock County (Town)": {
                     "id": 10829,
-                    "name": "Milton, Rock County",
+                    "name": "Milton, Rock County (Town)",
                     "slug": "milton-rock-county-2",
                 },
-                "Middleton, Dane County": {
+                "Milton, Rock County (City)": {
+                    "id": 10828,
+                    "name": "Milton, Rock County (City)",
+                    "slug": "milton-rock-county",
+                },
+                "Middleton, Dane County (Town)": {
                     "id": 10827,
-                    "name": "Middleton, Dane County",
+                    "name": "Middleton, Dane County (Town)",
                     "slug": "middleton-dane-county-2",
                 },
-                "Merton, Waukesha County": {
+                "Merton, Waukesha County (Village)": {
                     "id": 10826,
-                    "name": "Merton, Waukesha County",
+                    "name": "Merton, Waukesha County (Village)",
                     "slug": "merton-waukesha-county-2",
                 },
-                "Merrill, Lincoln County": {
+                "Merrill, Lincoln County (Town)": {
                     "id": 10825,
-                    "name": "Merrill, Lincoln County",
+                    "name": "Merrill, Lincoln County (Town)",
                     "slug": "merrill-lincoln-county-2",
                 },
-                "Menomonie, Dunn County": {
+                "Menomonie, Dunn County (Town)": {
                     "id": 10824,
-                    "name": "Menomonie, Dunn County",
+                    "name": "Menomonie, Dunn County (Town)",
                     "slug": "menomonie-dunn-county-2",
                 },
                 "Menominee, Menominee County": {
@@ -25941,10 +26130,15 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Menominee, Menominee County",
                     "slug": "menominee-menominee-county",
                 },
-                "Medford, Taylor County": {
+                "Medford, Taylor County (Town)": {
                     "id": 10822,
-                    "name": "Medford, Taylor County",
+                    "name": "Medford, Taylor County (Town)",
                     "slug": "medford-taylor-county-2",
+                },
+                "Medford, Taylor County (City)": {
+                    "id": 10821,
+                    "name": "Medford, Taylor County (City)",
+                    "slug": "medford-taylor-county",
                 },
                 "Mayville, Dodge County": {
                     "id": 10820,
@@ -25966,9 +26160,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Maine, Marathon County",
                     "slug": "maine-marathon-county",
                 },
-                "Madison, Dane County": {
+                "Madison, Dane County (Town)": {
                     "id": 10816,
-                    "name": "Madison, Dane County",
+                    "name": "Madison, Dane County (Town)",
                     "slug": "madison-dane-county-2",
                 },
                 "Lyons, Walworth County": {
@@ -25986,10 +26180,15 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Lomira, Dodge County",
                     "slug": "lomira-dodge-county",
                 },
-                "Lodi, Columbia County": {
+                "Lodi, Columbia County (Town)": {
                     "id": 10812,
-                    "name": "Lodi, Columbia County",
+                    "name": "Lodi, Columbia County (Town)",
                     "slug": "lodi-columbia-county-2",
+                },
+                "Lodi, Columbia County (City)": {
+                    "id": 10811,
+                    "name": "Lodi, Columbia County (City)",
+                    "slug": "lodi-columbia-county",
                 },
                 "Little Suamico, Oconto County": {
                     "id": 10810,
@@ -26076,15 +26275,20 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Johnson Creek, Jefferson County",
                     "slug": "johnson-creek-jefferson-county",
                 },
-                "Janesville, Rock County": {
+                "Janesville, Rock County (Town)": {
                     "id": 10793,
-                    "name": "Janesville, Rock County",
+                    "name": "Janesville, Rock County (Town)",
                     "slug": "janesville-rock-county-2",
                 },
-                "Jackson, Washington County": {
+                "Jackson, Washington County (Town)": {
                     "id": 10792,
-                    "name": "Jackson, Washington County",
+                    "name": "Jackson, Washington County (Town)",
                     "slug": "jackson-washington-county-2",
+                },
+                "Jackson, Washington County (Village)": {
+                    "id": 10791,
+                    "name": "Jackson, Washington County (Village)",
+                    "slug": "jackson-washington-county",
                 },
                 "Ixonia, Jefferson County": {
                     "id": 10790,
@@ -26136,9 +26340,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Greenbush, Sheboygan County",
                     "slug": "greenbush-sheboygan-county",
                 },
-                "Grafton, Ozaukee County": {
+                "Grafton, Ozaukee County (Town)": {
                     "id": 10780,
-                    "name": "Grafton, Ozaukee County",
+                    "name": "Grafton, Ozaukee County (Town)",
                     "slug": "grafton-ozaukee-county-2",
                 },
                 "Genoa City": {
@@ -26176,9 +26380,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Fox Point, Milwaukee County",
                     "slug": "fox-point-milwaukee-county",
                 },
-                "Fond du Lac, Fond du Lac County": {
+                "Fond du Lac, Fond du Lac County (Town)": {
                     "id": 10772,
-                    "name": "Fond du Lac, Fond du Lac County",
+                    "name": "Fond du Lac, Fond du Lac County (Town)",
                     "slug": "fond-du-lac-fond-du-lac-county-2",
                 },
                 "Fennimore, Grant County": {
@@ -26231,10 +26435,15 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Edgerton",
                     "slug": "edgerton",
                 },
-                "East Troy, Walworth County": {
+                "East Troy, Walworth County (Town)": {
                     "id": 10761,
-                    "name": "East Troy, Walworth County",
+                    "name": "East Troy, Walworth County (Town)",
                     "slug": "east-troy-walworth-county-2",
+                },
+                "East Troy, Walworth County (Village)": {
+                    "id": 10760,
+                    "name": "East Troy, Walworth County (Village)",
+                    "slug": "east-troy-walworth-county",
                 },
                 "Eagle Point, Chippewa County": {
                     "id": 10759,
@@ -26261,14 +26470,14 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Dodgeville, Iowa County",
                     "slug": "dodgeville-iowa-county",
                 },
-                "Delavan, Walworth County": {
+                "Delavan, Walworth County (Town)": {
                     "id": 10754,
-                    "name": "Delavan, Walworth County",
+                    "name": "Delavan, Walworth County (Town)",
                     "slug": "delavan-walworth-county-2",
                 },
-                "Delafield, Waukesha County": {
+                "Delafield, Waukesha County (City)": {
                     "id": 10753,
-                    "name": "Delafield, Waukesha County",
+                    "name": "Delafield, Waukesha County (City)",
                     "slug": "delafield-waukesha-county-2",
                 },
                 "Dayton, Waupaca County": {
@@ -26286,10 +26495,15 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Cross Plains, Dane County",
                     "slug": "cross-plains-dane-county",
                 },
-                "Cottage Grove, Dane County": {
+                "Cottage Grove, Dane County (Town)": {
                     "id": 10749,
-                    "name": "Cottage Grove, Dane County",
+                    "name": "Cottage Grove, Dane County (Town)",
                     "slug": "cottage-grove-dane-county-2",
+                },
+                "Cottage Grove, Dane County (Village)": {
+                    "id": 10748,
+                    "name": "Cottage Grove, Dane County (Village)",
+                    "slug": "cottage-grove-dane-county",
                 },
                 "Combined Locks, Outagamie County": {
                     "id": 10747,
@@ -26326,9 +26540,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Center, Outagamie County",
                     "slug": "center-outagamie-county",
                 },
-                "Cedarburg, Ozaukee County": {
+                "Cedarburg, Ozaukee County (Town)": {
                     "id": 10740,
-                    "name": "Cedarburg, Ozaukee County",
+                    "name": "Cedarburg, Ozaukee County (Town)",
                     "slug": "cedarburg-ozaukee-county-2",
                 },
                 "Campbell, La Crosse County": {
@@ -26351,9 +26565,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Buchanan, Outagamie County",
                     "slug": "buchanan-outagamie-county",
                 },
-                "Brookfield, Waukesha County": {
+                "Brookfield, Waukesha County (Town)": {
                     "id": 10735,
-                    "name": "Brookfield, Waukesha County",
+                    "name": "Brookfield, Waukesha County (Town)",
                     "slug": "brookfield-waukesha-county-2",
                 },
                 "Brodhead": {
@@ -26406,9 +26620,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Berlin",
                     "slug": "berlin-5",
                 },
-                "Beaver Dam, Dodge County": {
+                "Beaver Dam, Dodge County (Town)": {
                     "id": 10724,
-                    "name": "Beaver Dam, Dodge County",
+                    "name": "Beaver Dam, Dodge County (Town)",
                     "slug": "beaver-dam-dodge-county-2",
                 },
                 "Bayside": {
@@ -26476,6 +26690,11 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Mukwonago",
                     "slug": "mukwonago",
                 },
+                "Brookfield, Waukesha County (City)": {
+                    "id": 10710,
+                    "name": "Brookfield, Waukesha County (City)",
+                    "slug": "brookfield-waukesha-county",
+                },
                 "Hobart, Brown County": {
                     "id": 10709,
                     "name": "Hobart, Brown County",
@@ -26501,9 +26720,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Altoona, Eau Claire County",
                     "slug": "altoona-eau-claire-county",
                 },
-                "Sheboygan, Sheboygan County": {
+                "Sheboygan, Sheboygan County (Town)": {
                     "id": 10704,
-                    "name": "Sheboygan, Sheboygan County",
+                    "name": "Sheboygan, Sheboygan County (Town)",
                     "slug": "sheboygan-sheboygan-county-2",
                 },
                 "Monona, Dane County": {
@@ -26526,9 +26745,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Lake Geneva, Walworth County",
                     "slug": "lake-geneva-walworth-county",
                 },
-                "Beloit, Rock County": {
+                "Beloit, Rock County (Town)": {
                     "id": 10699,
-                    "name": "Beloit, Rock County",
+                    "name": "Beloit, Rock County (Town)",
                     "slug": "beloit-rock-county-2",
                 },
                 "Hales Corners, Milwaukee County": {
@@ -26571,9 +26790,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Jefferson, Jefferson County",
                     "slug": "jefferson-jefferson-county",
                 },
-                "Pewaukee, Waukesha County": {
+                "Pewaukee, Waukesha County (Village)": {
                     "id": 10690,
-                    "name": "Pewaukee, Waukesha County",
+                    "name": "Pewaukee, Waukesha County (Village)",
                     "slug": "pewaukee-waukesha-county-2",
                 },
                 "Ashland": {
@@ -26586,20 +26805,45 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Antigo, Langlade County",
                     "slug": "antigo-langlade-county",
                 },
+                "Merton, Waukesha County (Town)": {
+                    "id": 10687,
+                    "name": "Merton, Waukesha County (Town)",
+                    "slug": "merton-waukesha-county",
+                },
                 "New Richmond, St. Croix County": {
                     "id": 10686,
                     "name": "New Richmond, St. Croix County",
                     "slug": "new-richmond-st-croix-county",
                 },
-                "Oconomowoc, Waukesha County": {
+                "Delafield, Waukesha County (Town)": {
+                    "id": 10685,
+                    "name": "Delafield, Waukesha County (Town)",
+                    "slug": "delafield-waukesha-county",
+                },
+                "Oconomowoc, Waukesha County (Town)": {
                     "id": 10684,
-                    "name": "Oconomowoc, Waukesha County",
+                    "name": "Oconomowoc, Waukesha County (Town)",
                     "slug": "oconomowoc-waukesha-county-2",
                 },
-                "Hudson, St. Croix County": {
+                "Rice Lake, Barron County (City)": {
+                    "id": 10683,
+                    "name": "Rice Lake, Barron County (City)",
+                    "slug": "rice-lake-barron-county",
+                },
+                "Plymouth, Sheboygan County (City)": {
+                    "id": 10682,
+                    "name": "Plymouth, Sheboygan County (City)",
+                    "slug": "plymouth-sheboygan-county",
+                },
+                "Hudson, St. Croix County (Town)": {
                     "id": 10681,
-                    "name": "Hudson, St. Croix County",
+                    "name": "Hudson, St. Croix County (Town)",
                     "slug": "hudson-st-croix-county-2",
+                },
+                "Delavan, Walworth County (City)": {
+                    "id": 10680,
+                    "name": "Delavan, Walworth County (City)",
+                    "slug": "delavan-walworth-county",
                 },
                 "DeForest, Dane County": {
                     "id": 10679,
@@ -26621,9 +26865,9 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Hartland, Waukesha County",
                     "slug": "hartland-waukesha-county",
                 },
-                "Waukesha, Waukesha County": {
+                "Waukesha, Waukesha County (Village)": {
                     "id": 10675,
-                    "name": "Waukesha, Waukesha County",
+                    "name": "Waukesha, Waukesha County (Village)",
                     "slug": "waukesha-waukesha-county-2",
                 },
                 "Sturgeon Bay, Door County": {
@@ -26636,6 +26880,11 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Reedsburg, Sauk County",
                     "slug": "reedsburg-sauk-county",
                 },
+                "Oregon, Dane County (Village)": {
+                    "id": 10672,
+                    "name": "Oregon, Dane County (Village)",
+                    "slug": "oregon-dane-county",
+                },
                 "Shawano, Shawano County": {
                     "id": 10671,
                     "name": "Shawano, Shawano County",
@@ -26646,10 +26895,20 @@ const data: { [state: string]: StateInfo } = {
                     "name": "St. Francis, Milwaukee County",
                     "slug": "st-francis-milwaukee-county",
                 },
+                "Sparta, Monroe County (City)": {
+                    "id": 10669,
+                    "name": "Sparta, Monroe County (City)",
+                    "slug": "sparta-monroe-county",
+                },
                 "Somers, Kenosha County": {
                     "id": 10668,
                     "name": "Somers, Kenosha County",
                     "slug": "somers-kenosha-county",
+                },
+                "Merrill, Lincoln County (City)": {
+                    "id": 10667,
+                    "name": "Merrill, Lincoln County (City)",
+                    "slug": "merrill-lincoln-county",
                 },
                 "Elkhorn, Walworth County": {
                     "id": 10666,
@@ -26731,6 +26990,16 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Suamico, Brown County",
                     "slug": "suamico-brown-county",
                 },
+                "Cedarburg, Ozaukee County (City)": {
+                    "id": 10650,
+                    "name": "Cedarburg, Ozaukee County (City)",
+                    "slug": "cedarburg-ozaukee-county",
+                },
+                "Grafton, Ozaukee County (Village)": {
+                    "id": 10649,
+                    "name": "Grafton, Ozaukee County (Village)",
+                    "slug": "grafton-ozaukee-county",
+                },
                 "Two Rivers, Manitowoc County": {
                     "id": 10648,
                     "name": "Two Rivers, Manitowoc County",
@@ -26771,6 +27040,11 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Stoughton, Dane County",
                     "slug": "stoughton-dane-county",
                 },
+                "Hudson, St. Croix County (City)": {
+                    "id": 10640,
+                    "name": "Hudson, St. Croix County (City)",
+                    "slug": "hudson-st-croix-county",
+                },
                 "Glendale, Milwaukee County": {
                     "id": 10639,
                     "name": "Glendale, Milwaukee County",
@@ -26780,6 +27054,11 @@ const data: { [state: string]: StateInfo } = {
                     "id": 10638,
                     "name": "Shorewood, Milwaukee County",
                     "slug": "shorewood-milwaukee-county",
+                },
+                "Pewaukee, Waukesha County (City)": {
+                    "id": 10637,
+                    "name": "Pewaukee, Waukesha County (City)",
+                    "slug": "pewaukee-waukesha-county",
                 },
                 "Chippewa Falls, Chippewa County": {
                     "id": 10636,
@@ -26831,6 +27110,21 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Kaukauna, Outagamie County",
                     "slug": "kaukauna-outagamie-county",
                 },
+                "Oconomowoc, Waukesha County (City)": {
+                    "id": 10626,
+                    "name": "Oconomowoc, Waukesha County (City)",
+                    "slug": "oconomowoc-waukesha-county",
+                },
+                "Beaver Dam, Dodge County (City)": {
+                    "id": 10625,
+                    "name": "Beaver Dam, Dodge County (City)",
+                    "slug": "beaver-dam-dodge-county",
+                },
+                "Menomonie, Dunn County (City)": {
+                    "id": 10624,
+                    "name": "Menomonie, Dunn County (City)",
+                    "slug": "menomonie-dunn-county",
+                },
                 "Ashwaubenon, Brown County": {
                     "id": 10623,
                     "name": "Ashwaubenon, Brown County",
@@ -26845,6 +27139,16 @@ const data: { [state: string]: StateInfo } = {
                     "id": 10621,
                     "name": "Howard",
                     "slug": "howard-8",
+                },
+                "Middleton, Dane County (City)": {
+                    "id": 10620,
+                    "name": "Middleton, Dane County (City)",
+                    "slug": "middleton-dane-county",
+                },
+                "Onalaska, La Crosse County (City)": {
+                    "id": 10619,
+                    "name": "Onalaska, La Crosse County (City)",
+                    "slug": "onalaska-la-crosse-county",
                 },
                 "Cudahy, Milwaukee County": {
                     "id": 10618,
@@ -26916,6 +27220,11 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Fitchburg, Dane County",
                     "slug": "fitchburg-dane-county",
                 },
+                "Neenah, Winnebago County (City)": {
+                    "id": 10604,
+                    "name": "Neenah, Winnebago County (City)",
+                    "slug": "neenah-winnebago-county",
+                },
                 "Mount Pleasant, Racine County": {
                     "id": 10603,
                     "name": "Mount Pleasant, Racine County",
@@ -26935,6 +27244,11 @@ const data: { [state: string]: StateInfo } = {
                     "id": 10600,
                     "name": "Sun Prairie, Dane County",
                     "slug": "sun-prairie-dane-county",
+                },
+                "West Bend, Washington County (City)": {
+                    "id": 10599,
+                    "name": "West Bend, Washington County (City)",
+                    "slug": "west-bend-washington-county",
                 },
                 "Manitowoc, Manitowoc County": {
                     "id": 10598,
@@ -26961,6 +27275,11 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Greenfield, Milwaukee County",
                     "slug": "greenfield-milwaukee-county",
                 },
+                "Beloit, Rock County (City)": {
+                    "id": 10593,
+                    "name": "Beloit, Rock County (City)",
+                    "slug": "beloit-rock-county",
+                },
                 "Wausau, Marathon County": {
                     "id": 10592,
                     "name": "Wausau, Marathon County",
@@ -26971,10 +27290,20 @@ const data: { [state: string]: StateInfo } = {
                     "name": "New Berlin, Waukesha County",
                     "slug": "new-berlin-waukesha-county",
                 },
+                "Fond du Lac, Fond du Lac County (City)": {
+                    "id": 10590,
+                    "name": "Fond du Lac, Fond du Lac County (City)",
+                    "slug": "fond-du-lac-fond-du-lac-county",
+                },
                 "Wauwatosa, Milwaukee County": {
                     "id": 10589,
                     "name": "Wauwatosa, Milwaukee County",
                     "slug": "wauwatosa-milwaukee-county",
+                },
+                "Sheboygan, Sheboygan County (City)": {
+                    "id": 10588,
+                    "name": "Sheboygan, Sheboygan County (City)",
+                    "slug": "sheboygan-sheboygan-county",
                 },
                 "La Crosse, La Crosse County": {
                     "id": 10587,
@@ -26986,6 +27315,11 @@ const data: { [state: string]: StateInfo } = {
                     "name": "West Allis, Milwaukee County",
                     "slug": "west-allis-milwaukee-county",
                 },
+                "Janesville, Rock County (City)": {
+                    "id": 10585,
+                    "name": "Janesville, Rock County (City)",
+                    "slug": "janesville-rock-county",
+                },
                 "Eau Claire": {
                     "id": 10584,
                     "name": "Eau Claire",
@@ -26995,6 +27329,11 @@ const data: { [state: string]: StateInfo } = {
                     "id": 10583,
                     "name": "Oshkosh, Winnebago County",
                     "slug": "oshkosh-winnebago-county",
+                },
+                "Waukesha, Waukesha County (City)": {
+                    "id": 10582,
+                    "name": "Waukesha, Waukesha County (City)",
+                    "slug": "waukesha-waukesha-county",
                 },
                 "Appleton": {
                     "id": 10581,
@@ -27016,6 +27355,11 @@ const data: { [state: string]: StateInfo } = {
                     "name": "Green Bay, Brown County",
                     "slug": "green-bay-brown-county",
                 },
+                "Madison, Dane County (City)": {
+                    "id": 10577,
+                    "name": "Madison, Dane County (City)",
+                    "slug": "madison-dane-county",
+                },
                 "Milwaukee, Milwaukee County": {
                     "id": 10576,
                     "name": "Milwaukee, Milwaukee County",
@@ -27028,6 +27372,8 @@ const data: { [state: string]: StateInfo } = {
     "WY": {
         "id": 80,
         "name": "Wyoming",
+        "has_all_mail_elections": false,
+        "subdivision_name": "County",
         "jurisdictions": {
             "cities": {},
             "counties": {
