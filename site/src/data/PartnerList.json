@@ -2404,5 +2404,9 @@
   {
     "partnerId": "minorityvets",
     "name": "Minority Veterans of America"
+  },
+  {
+    "partnerId": "moveon",
+    "name": "MoveOn"
   }
 ]
