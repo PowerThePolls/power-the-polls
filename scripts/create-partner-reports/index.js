@@ -200,26 +200,26 @@ const run = async () => {
    // get partner reports from ActionKit
    const reportList = await getPartnerReportList();
 
-   const modifiedPartners = approvedRecords.filter((record) => {
-      const found = reportList.find(
-         (report) => report.description === record.get("source_code")
-      );
-      // TODO: don't do async in the filter...
-      // if (isModified(found, record)) {
-      //    await updateReportEmails(found.id, record.get("report_emails"))
-      //    console.log("update needed...");
-      // }
-      return isModified(found, record);
-   });
+   // const modifiedPartners = approvedRecords.filter((record) => {
+   //    const found = reportList.find(
+   //       (report) => report.description === record.get("source_code")
+   //    );
+   //    // TODO: don't do async in the filter...
+   //    // if (isModified(found, record)) {
+   //    //    await updateReportEmails(found.id, record.get("report_emails"))
+   //    //    console.log("update needed...");
+   //    // }
+   //    return isModified(found, record);
+   // });
 
-   console.log("Modified emails:");
-   console.log(
-      JSON.stringify(
-         modifiedPartners.map((partner) => partner.get("source_code")),
-         null,
-         2
-      )
-   );
+   // console.log("Modified emails:");
+   // console.log(
+   //    JSON.stringify(
+   //       modifiedPartners.map((partner) => partner.get("source_code")),
+   //       null,
+   //       2
+   //    )
+   // );
    // the reports use the primary source code in the description,
    // so we know which reports have already been created and avoid
    // duplicate reports.
