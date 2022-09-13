@@ -114,6 +114,26 @@ export class JurisdictionInfoComponent {
                 </Host>
             );
         }
+        if (j.vote_by_mail_jurisdiction) {
+            return (
+                <Fragment>
+                    <h1>Thanks for signing up to Power the Polls!</h1>
+                    <p>
+                        Thank you so much for your interest in being a poll worker.
+                    </p>
+                    <p>
+                        {j.name} conducts elections by mail, meaning that the need for poll workers is
+                        generally lower than many other states. However, there still may be ways that you can support
+                        election administrators in your area. We encourage you to contact your county election office
+                        directly to find out about any opportunities to get involved.
+                    </p>
+                    <p>
+                        You can still help power the polls by voting in this upcoming election, and encouraging your
+                        friends and family who live in other states to sign up to be poll workers.
+                    </p>
+                </Fragment>
+            );
+        }
         if (j.jurisdiction_is_fully_recruited) {
             return (
                 <Host>
@@ -137,8 +157,10 @@ export class JurisdictionInfoComponent {
                     ) ? (
                         <section>
                             <p>
-                                If you are a current poll worker, or need to reach out to the office for an update on your
-                                application or for more information about your placement, please see below for their contact
+                                If you are a current poll worker, or need to reach out to the office for an update on
+                                your
+                                application or for more information about your placement, please see below for their
+                                contact
                                 information.
                             </p>
                             <h4>Contact Information</h4>

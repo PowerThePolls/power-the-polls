@@ -56,11 +56,7 @@ export class PollWorkerInfo {
             undefined;
         const stateInfo = (state && state in States && States[state]) || null;
 
-        function isMailOnlyState(stateAbbreviation: string | undefined): boolean {
-            return stateAbbreviation === "HI" || stateAbbreviation === "OR" || stateAbbreviation === "WA";
-        }
-
-        if (isMailOnlyState(this.state)) {
+        if (stateInfo?.has_all_mail_elections) {
             return (
                 <Fragment>
                     <h1>Thanks for signing up to Power the Polls!</h1>
