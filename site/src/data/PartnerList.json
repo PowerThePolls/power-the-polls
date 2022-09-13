@@ -2412,5 +2412,13 @@
   {
     "partnerId": "AEO",
     "name": "American Eagle Outfitters "
+  },
+  {
+    "partnerId": "primalscreen",
+    "name": "Primal Screen"
+  },
+  {
+    "partnerId": "COUNTRYFIRSTACADEMY",
+    "name": "Country First Academy"
   }
 ]
