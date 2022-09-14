@@ -126,12 +126,13 @@ export class AppRoot {
                partners: shuffle( PartnerList ),
             },
          },
-         {
-            // FYI this is short-circuited and rendered as the entire page, not used in the router switch, but it needs
-            // to be here so we know that it's a navigation route and not a partner's vanity URL
-            url: "/partners-table",
-            component: "page-partners-table",
-         },
+         // Disable page that exposes editable PartnerList.json
+         // {
+         //    // FYI this is short-circuited and rendered as the entire page, not used in the router switch, but it needs
+         //    // to be here so we know that it's a navigation route and not a partner's vanity URL
+         //    url: "/partners-table",
+         //    component: "page-partners-table",
+         // },
          {
             url: "/privacy",
             component: "page-privacy",
