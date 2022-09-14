@@ -69,18 +69,33 @@ export const findJurisdictionId = (
     const stateData = States[state];
     if (stateData) {
         if (city) {
-            const cityString = cityTownVillage ? `${city} (${cityTownVillage})` : city;
-            const cityInfo = stateData.jurisdictions.cities[cityString];
+            let cityString = cityTownVillage ? `${city} (${cityTownVillage})` : city;
+            let cityInfo = stateData.jurisdictions.cities[cityString];
+
+            // Smarty uses Saint but WorkElections uses St.
+            if (!cityInfo && cityString.includes("Saint ")) {
+                cityString = cityString.replace("Saint ", "St. ");
+                cityInfo = stateData.jurisdictions.cities[cityString];
+            }
+
             if (cityInfo) {
                 return cityInfo.id;
             }
         }
         if (county) {
-            const countyInfo = stateData.jurisdictions.counties[`${county}`];
+            let countyInfo = stateData.jurisdictions.counties[county];
+
+            // Smarty uses "Saint" but WorkElections uses "St."
+            if (!countyInfo && county.includes("Saint ")) {
+                county = county.replace("Saint ", "St. ");
+                countyInfo = stateData.jurisdictions.counties[county];
+            }
+
             if (countyInfo) {
                 return countyInfo.id;
             }
         }
+
         // special case for MI and WI where the county name is appended to the rendered name from Work Elections
         if ((state === "MI" || state === "WI") && city && county) {
             const cityString = cityTownVillage ?
