@@ -2424,5 +2424,13 @@
   {
     "partnerId": "76ers",
     "name": "76ers"
+  },
+  {
+    "partnerId": "AFN",
+    "name": "Arizona Faith Network"
+  },
+  {
+    "partnerId": "actorsequity",
+    "name": "Actors' Equity Association"
   }
 ]
