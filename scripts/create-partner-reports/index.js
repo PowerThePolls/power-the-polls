@@ -174,30 +174,35 @@ const createReport = async (reportConfig) => {
 };
 
 const getReportConfig = (partner) => ({
-   organization: partner.get("organization"),
-   sourceCodes: [partner.get("source_code")],
+   organization: partner.get("organization").trim(),
+   sourceCodes: [partner.get("source_code").trim()],
    isAggregate: isAggregate(partner),
    frequency: getFrequency(partner),
    emails: sanitizeEmails(partner.get("report_emails")),
 });
 
-const createNewReports = async (approvedRecords, reportList) => {
-   let errorThrown = false;
-   const newPartners = approvedRecords.filter((record) => {
-      const found = reportList.find(
-         (report) => report.description === record.get("source_code")
-      );
-      return !found;
-   });
-
-   console.log("New Partners:");
+const logPartners = (partners) => {
    console.log(
       JSON.stringify(
-         newPartners.map((partner) => partner.get("source_code")),
+         partners.map((partner) => partner.get("source_code")),
          null,
          2
       )
    );
+};
+
+const createNewReports = async (approvedPartners, reportList) => {
+   let errorThrown = false;
+
+   const newPartners = approvedPartners.filter((partner) => {
+      const found = reportList.find(
+         (report) => report.description === partner.get("source_code")
+      );
+      return !found;
+   });
+
+   console.log("New Reports:");
+   logPartners(newPartners);
 
    for (const partner of newPartners) {
       // create report for new partners
@@ -220,8 +225,56 @@ const createNewReports = async (approvedRecords, reportList) => {
    return errorThrown;
 };
 
-const updateModifiedReports = async (approvedRecords, reportList) => {
-   return false;
+const isModified = (partner, report) => {
+   const body = getBody(getReportConfig(partner));
+
+   const {
+      name,
+      short_name,
+      description,
+      sql,
+      run_every,
+      to_emails,
+      email_always_csv,
+      send_if_no_rows,
+      categories,
+   } = report;
+
+   const reportBody = {
+      name,
+      short_name,
+      description,
+      sql,
+      run_every,
+      to_emails,
+      email_always_csv,
+      send_if_no_rows,
+      categories,
+   };
+   return JSON.stringify(body) !== JSON.stringify(reportBody);
+}
+
+const updateModifiedReports = async (approvedPartners, reportList) => {
+   let errorThrown = false;
+
+   const modifiedPartners = approvedPartners.reduce((modified, partner) => {
+      const report = reportList.find(
+         (report) =>
+            report.description === partner.get("source_code")
+      );
+      if (!report || !isModified(partner, report)) {
+         return modified;
+      }
+      partner.report_id = report.id;
+      return [...modified, partner];
+   }, []);
+
+   console.log("Modified Reports:");
+   logPartners(modifiedPartners);
+
+   // TODO: modify reports!
+
+   return errorThrown;
 };
 
 const run = async () => {
