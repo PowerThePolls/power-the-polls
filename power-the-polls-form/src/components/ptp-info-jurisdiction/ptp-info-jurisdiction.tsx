@@ -199,6 +199,14 @@ export class JurisdictionInfoComponent {
             j?.online_application == null || j?.online_application === ""
         );
 
+        const getFullName = (jurisdictionInfo: JurisdictionInfo): string => {
+            if (!jurisdictionInfo.name.includes(stateInfo.subdivision_name as string)
+                && !j.is_the_jurisdiction_a_city && j.state.alpha !== "AK") {
+                return `${j.name} ${stateInfo.subdivision_name}, ${j.state.alpha}`;
+            }
+            return `${j.name}, ${j.state.alpha}`;
+        };
+
         return (
             <Host>
                 <div
@@ -216,7 +224,7 @@ export class JurisdictionInfoComponent {
                 </div>
 
                 <h2>
-                    {j.name}, {j.state.alpha}
+                    {getFullName(j)}
                 </h2>
 
                 {this.showNextSteps &&

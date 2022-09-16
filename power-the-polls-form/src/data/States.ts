@@ -56,6 +56,7 @@ export interface JurisdictionInfo extends JurisdictionShort {
     must_have_email: string;
     further_notes: string;
     notes: string;
+    is_the_jurisdiction_a_city: boolean;
     jurisdiction_is_fully_recruited: boolean;
     vote_by_mail_jurisdiction: boolean;
 }
