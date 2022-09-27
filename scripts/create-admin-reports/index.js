@@ -48,6 +48,7 @@ const createReport = async (body) => {
 
 const getSql = (State, Jurisdiction, JurisdictionType) => {
    if (JurisdictionType === "County") {
+      const county = Jurisdiction.replace(" County", "")
       return `SELECT u.first_name
      , u.last_name
      , u.email
@@ -86,13 +87,11 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
           AND page_id = 12) AS latest_signup
       FROM core_user AS u
       JOIN core_userfield uf ON u.id = uf.parent_id
-      WHERE lower(u.state) = lower('${State}') AND uf.name = 'county' AND lower(uf.value) = lower('${Jurisdiction.replace(
-         " County",
-         ""
-      )}')
+      WHERE lower(u.state) = lower('${State}') AND uf.name = 'county' AND lower(uf.value) = lower('${county}')
       ORDER BY latest_signup DESC`;
    }
-   if (JurisdictionType.replace(/ /g, "") === "City") {
+   if (JurisdictionType === "City") {
+      const city = Jurisdiction.replace(" (City)", "").replace(" (city)", "");
       return `SELECT u.first_name
      , u.last_name
      , u.email
@@ -131,9 +130,7 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
           AND page_id = 12) AS latest_signup
       FROM core_user AS u
       JOIN core_userfield uf ON u.id = uf.parent_id
-      WHERE uf.name = 'county' AND lower(u.state) = lower('${State}') AND lower(u.city) = lower('${Jurisdiction.replace(
-         " (City)"
-      )}') 
+      WHERE uf.name = 'county' AND lower(u.state) = lower('${State}') AND lower(u.city) = lower('${city}') 
       ORDER BY latest_signup DESC;`;
    }
    if (JurisdictionType === "State") {
@@ -188,7 +185,7 @@ const addEmail = (Emails) => `${sanitizeEmails(Emails)},kalynn@powerthepolls.org
 
 const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
    // unique key for report!
-   const slug = `${Jurisdiction.replace(/ /g, "")}${State}`;
+   const slug = `${Jurisdiction.replace("(City)", "").replace("(city)", "").replace(/ /g, "")}${State}`;
 
    // admin reports category
    const categories = ["/rest/v1/reportcategory/19/"];
