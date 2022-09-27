@@ -252,15 +252,14 @@ const isModified = (partner, report) => {
       categories,
    };
    return JSON.stringify(body) !== JSON.stringify(reportBody);
-}
+};
 
 const updateModifiedReports = async (approvedPartners, reportList) => {
    let errorThrown = false;
 
    const modifiedPartners = approvedPartners.reduce((modified, partner) => {
       const report = reportList.find(
-         (report) =>
-            report.description === partner.get("source_code")
+         (report) => report.description === partner.get("source_code")
       );
       if (!report || !isModified(partner, report)) {
          return modified;
