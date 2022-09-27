@@ -184,7 +184,7 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
 
 const getReportConfig = (report) => report.fields;
 
-const addEmail = (Emails) => `${sanitizeEmails(Emails)},kay@powerthepolls.org`;
+const addEmail = (Emails) => `${sanitizeEmails(Emails)},kalynn@powerthepolls.org`;
 
 const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
    // unique key for report!
