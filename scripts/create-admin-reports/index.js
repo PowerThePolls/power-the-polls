@@ -15,6 +15,7 @@ const getWeeklyReports = async () => {
 const actionKitURL = "https://ptp.actionkit.com";
 
 let AK_HEADERS_CACHE;
+
 const getActionKitHeaders = () => {
    if (!AK_HEADERS_CACHE) {
       AK_HEADERS_CACHE = new Headers();
@@ -39,15 +40,7 @@ const checkStatus = async (res) => {
 
 const sanitizeEmails = (emails) => emails.replace(/\n/g, "").replace(/ /g, "");
 
-const createReport = async (body) => {
-   const headers = getActionKitHeaders();
-   const res = await fetch(`${actionKitURL}/rest/v1/queryreport/`, {
-      body: JSON.stringify(body),
-      headers,
-      method: "post",
-   });
-   await checkStatus(res);
-};
+const addEmail = (Emails) => `${sanitizeEmails(Emails)},kalynn@powerthepolls.org`;
 
 const getSql = (State, Jurisdiction, JurisdictionType) => {
    if (JurisdictionType === "County") {
@@ -182,15 +175,11 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
    return "";
 };
 
-const getReportConfig = (report) => report.fields;
-
-const addEmail = (Emails) => `${sanitizeEmails(Emails)},kalynn@powerthepolls.org`;
-
 const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
    // unique key for report!
    const slug = `${Jurisdiction.replace("(City)", "").replace("(city)", "").replace(/ /g, "")}${State}`;
 
-   // admin reports category
+   // "admin reports" category
    const categories = ["/rest/v1/reportcategory/19/"];
 
    // sql for report
@@ -210,6 +199,18 @@ const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
       sql,
    };
 };
+
+const createReport = async (body) => {
+   const headers = getActionKitHeaders();
+   const res = await fetch(`${actionKitURL}/rest/v1/queryreport/`, {
+      body: JSON.stringify(body),
+      headers,
+      method: "post",
+   });
+   await checkStatus(res);
+};
+
+const getReportConfig = (report) => report.fields;
 
 const run = async () => {
    // get list of weekly reports
