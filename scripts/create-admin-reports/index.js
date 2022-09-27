@@ -14,15 +14,18 @@ const getWeeklyReports = async () => {
 
 const actionKitURL = "https://ptp.actionkit.com";
 
+let AK_HEADERS_CACHE;
 const getActionKitHeaders = () => {
-   const { ACTION_KIT_USERNAME, ACTION_KIT_PASSWORD } = process.env;
-   const headers = new Headers();
-   const encodedCredentials = Buffer.from(
-      `${ACTION_KIT_USERNAME}:${ACTION_KIT_PASSWORD}`
-   ).toString("base64");
-   headers.set("Authorization", `Basic ${encodedCredentials}`);
-   headers.set("Content-Type", "application/json");
-   return headers;
+   if (!AK_HEADERS_CACHE) {
+      AK_HEADERS_CACHE = new Headers();
+      const { ACTION_KIT_USERNAME, ACTION_KIT_PASSWORD } = process.env;
+      const encodedCredentials = Buffer.from(
+         `${ACTION_KIT_USERNAME}:${ACTION_KIT_PASSWORD}`
+      ).toString("base64");
+      AK_HEADERS_CACHE.set("Authorization", `Basic ${encodedCredentials}`);
+      AK_HEADERS_CACHE.set("Content-Type", "application/json");
+   }
+   return AK_HEADERS_CACHE;
 };
 
 const checkStatus = async (res) => {
