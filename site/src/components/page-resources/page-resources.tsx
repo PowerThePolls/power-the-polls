@@ -12,21 +12,12 @@ export class PageResources {
             <Host>
                 <h1>Resources</h1>
                 <p>
-                    Now that you've <stencil-route-link url={`/${formPath}#form`} onClick={onSelectNavItem}>
-                    signed up</stencil-route-link>
-                     with Power the Polls, here are some resources to help you get ready to serve.
+                    You've signed up with Power the Polls and completed the poll worker application through your local
+                    elections office—and now you're waiting to hear back. Or perhaps you've been selected as a poll
+                    worker! Maybe you’re still thinking about submitting an application and want to know more before you
+                    do. Wherever you are in the process, here are some resources to help you get ready to serve.
                 </p>
 
-                <div class="col-md-3 col-sm-4">
-                    <div class="wrimagecard wrimagecard-topimage">
-                        <a href="#">
-                        <div class="wrimagecard-topimage_header" style="background-color:  rgba(250, 188, 9, 0.1)">
-                        <center><i class="fa fa-info-circle" style="color:#fabc09"> </i></center>
-                    </div>
-                <div class="wrimagecard-topimage_title">
-                    <h4>Information
-                    <div class="pull-right badge" id="WrInformation"></div></h4>
-                </div>
 
                 <h2>
                     You’ve signed up to be a poll worker - now what? - <a href="/assets/documents/now-what.pdf"
@@ -70,6 +61,33 @@ export class PageResources {
                     Early voting and Election Day are right around the corner. <a
                     href="/assets/documents/election-day-checklist.pdf" target="_blank" rel="noopener noreferrer">Print
                     or save</a> this checklist to help you prepare.
+                </p>
+                <h2>
+                    Common Election Scenarios and Solutions at the Polls - <a href="/assets/documents/common-scenarios.pdf"
+                                                                 target="_blank" rel="noopener noreferrer">Click
+                    here</a>
+                </h2>
+                <p>
+                    Use this guide to preview some of the scenarios you’ll encounter with different voters and how to help them.
+                    Early voting and Election Day are right around the corner.
+                </p>
+                <h2>
+                    Accessibility at the Polls - <a href="/assets/documents/accessibility-at-the-polls.pdf"
+                                                                 target="_blank" rel="noopener noreferrer">Click
+                    here</a>
+                </h2>
+                <p>
+                    Making voting accessible is part of being a great poll worker. Review this resource to 
+                    help think about ways to make voting accessible for everyone.
+                </p>
+                <h2>
+                    Checking Our Biases at the Polls - <a href="/assets/documents/checking-biases.pdf"
+                                                                 target="_blank" rel="noopener noreferrer">Click
+                    here</a>
+                </h2>
+                <p>
+                    As a poll worker, your job is to help ensure that every eligible voter in 
+                    your community can cast their ballot. Learn how to identify and check your biases so you can best serve all voters. 
                 </p>
                 <br />
                 <br />
