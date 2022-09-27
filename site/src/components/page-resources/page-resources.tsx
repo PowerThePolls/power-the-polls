@@ -12,12 +12,21 @@ export class PageResources {
             <Host>
                 <h1>Resources</h1>
                 <p>
-                    You've signed up with Power the Polls and completed the poll worker application through your local
-                    elections office—and now you're waiting to hear back. Or perhaps you've been selected as a poll
-                    worker! Maybe you’re still thinking about submitting an application and want to know more before you
-                    do. Wherever you are in the process, here are some resources to help you get ready to serve.
+                    Now that you've <stencil-route-link url={`/${formPath}#form`} onClick={onSelectNavItem}>
+                    signed up</stencil-route-link>
+                     with Power the Polls, here are some resources to help you get ready to serve.
                 </p>
 
+                <div class="col-md-3 col-sm-4">
+                    <div class="wrimagecard wrimagecard-topimage">
+                        <a href="#">
+                        <div class="wrimagecard-topimage_header" style="background-color:  rgba(250, 188, 9, 0.1)">
+                        <center><i class="fa fa-info-circle" style="color:#fabc09"> </i></center>
+                    </div>
+                <div class="wrimagecard-topimage_title">
+                    <h4>Information
+                    <div class="pull-right badge" id="WrInformation"></div></h4>
+                </div>
 
                 <h2>
                     You’ve signed up to be a poll worker - now what? - <a href="/assets/documents/now-what.pdf"
