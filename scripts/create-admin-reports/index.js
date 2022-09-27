@@ -1,18 +1,7 @@
 import fetch, { Headers } from "node-fetch";
 import Airtable from "airtable";
 
-const getWeeklyReports = async () => {
-   const { AIRTABLE_PARTNERS_BASE } = process.env;
-   const base = new Airtable().base(AIRTABLE_PARTNERS_BASE);
-   return base("Admin Reports")
-      .select({
-         filterByFormula: "{ReportRequested}",
-         fields: ["State", "Jurisdiction", "JurisdictionType", "Emails"],
-      })
-      .all();
-};
-
-const actionKitURL = "https://ptp.actionkit.com";
+const ACTION_KIT_URL = "https://ptp.actionkit.com";
 
 let AK_HEADERS_CACHE;
 
@@ -202,7 +191,7 @@ const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
 
 const createReport = async (body) => {
    const headers = getActionKitHeaders();
-   const res = await fetch(`${actionKitURL}/rest/v1/queryreport/`, {
+   const res = await fetch(`${ACTION_KIT_URL}/rest/v1/queryreport/`, {
       body: JSON.stringify(body),
       headers,
       method: "post",
@@ -211,6 +200,17 @@ const createReport = async (body) => {
 };
 
 const getReportConfig = (report) => report.fields;
+
+const getWeeklyReports = async () => {
+   const { AIRTABLE_PARTNERS_BASE } = process.env;
+   const base = new Airtable().base(AIRTABLE_PARTNERS_BASE);
+   return base("Admin Reports")
+      .select({
+         filterByFormula: "{ReportRequested}",
+         fields: ["State", "Jurisdiction", "JurisdictionType", "Emails"],
+      })
+      .all();
+};
 
 const run = async () => {
    // get list of weekly reports
