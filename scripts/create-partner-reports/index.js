@@ -256,15 +256,12 @@ const isModified = (partner, report) => {
 
 const updateReport = async (reportId, reportConfig) => {
    const headers = getActionKitHeaders();
-   const body =getBody(reportConfig);
-   const res = await fetch(
-      `${actionKitURL}/rest/v1/queryreport/${reportId}`,
-      {
-         method: "patch",
-         headers,
-         body: JSON.stringify(body),
-      }
-   );
+   const body = getBody(reportConfig);
+   const res = await fetch(`${actionKitURL}/rest/v1/queryreport/${reportId}`, {
+      method: "patch",
+      headers,
+      body: JSON.stringify(body),
+   });
 
    await checkStatus(res);
 };
