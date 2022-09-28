@@ -254,6 +254,21 @@ const isModified = (partner, report) => {
    return JSON.stringify(body) !== JSON.stringify(reportBody);
 };
 
+const updateReport = async (reportId, reportConfig) => {
+   const headers = getActionKitHeaders();
+   const body =getBody(reportConfig);
+   const res = await fetch(
+      `${actionKitURL}/rest/v1/queryreport/${reportId}`,
+      {
+         method: "patch",
+         headers,
+         body: JSON.stringify(body),
+      }
+   );
+
+   await checkStatus(res);
+};
+
 const updateModifiedReports = async (approvedPartners, reportList) => {
    let errorThrown = false;
 
@@ -271,7 +286,14 @@ const updateModifiedReports = async (approvedPartners, reportList) => {
    console.log("Modified Reports:");
    logPartners(modifiedPartners);
 
-   // TODO: modify reports!
+   for (const partner of modifiedPartners) {
+      try {
+         await updateReport(partner.report_id, getReportConfig(partner));
+      } catch (e) {
+         errorThrown = true;
+         console.error(e);
+      }
+   }
 
    return errorThrown;
 };
@@ -302,6 +324,7 @@ run()
       console.log("Done creating reports");
       process.exit(0);
    })
-   .catch(() => {
+   .catch((err) => {
+      console.error(err);
       process.exit(11);
    });
