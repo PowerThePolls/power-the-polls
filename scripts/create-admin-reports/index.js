@@ -29,7 +29,7 @@ const checkStatus = async (res) => {
 
 const sanitizeEmails = (emails) => emails.replace(/\n/g, "").replace(/ /g, "");
 
-const addEmail = (Emails) => `${sanitizeEmails(Emails)},kalynn@powerthepolls.org`;
+const addEmail = (Emails) => `${sanitizeEmails(Emails)},kay@powerthepolls.org`;
 
 const getSql = (State, Jurisdiction, JurisdictionType) => {
    if (JurisdictionType === "County") {
