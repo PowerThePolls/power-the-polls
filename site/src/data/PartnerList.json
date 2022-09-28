@@ -2448,5 +2448,9 @@
   {
     "partnerId": "spotify",
     "name": "Spotify"
+  },
+  {
+    "partnerId": "orrick",
+    "name": "Orrick"
   }
 ]
