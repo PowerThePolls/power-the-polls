@@ -189,8 +189,9 @@ const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
    };
 };
 
-const createReport = async (body) => {
+const createReport = async (reportConfig) => {
    const headers = getActionKitHeaders();
+   const body = getBody(reportConfig);
    const res = await fetch(`${ACTION_KIT_URL}/rest/v1/queryreport/`, {
       body: JSON.stringify(body),
       headers,
@@ -221,7 +222,7 @@ const run = async () => {
    // iterate over reports and create in actionkit
    for (const report of reports) {
       try {
-         await createReport(getBody(report));
+         await createReport(report);
       } catch (e) {
          console.error(e);
       }
