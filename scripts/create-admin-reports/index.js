@@ -202,8 +202,8 @@ const createReport = async (body) => {
 const getReportConfig = (report) => report.fields;
 
 const getWeeklyReports = async () => {
-   const { AIRTABLE_PARTNERS_BASE } = process.env;
-   const base = new Airtable().base(AIRTABLE_PARTNERS_BASE);
+   const { AIRTABLE_ADMIN_REPORTS_BASE } = process.env;
+   const base = new Airtable().base(AIRTABLE_ADMIN_REPORTS_BASE);
    return base("Admin Reports")
       .select({
          filterByFormula: "{ReportRequested}",
