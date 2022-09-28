@@ -77,7 +77,7 @@ export class PageResources {
                     here</a>
                 </h2>
                 <p>
-                    Making voting accessible is part of being a great poll worker. Review this resource to 
+                    Making voting accessible is part of being a great poll worker. Review this resource to
                     help think about ways to make voting accessible for everyone.
                 </p>
                 <h2>
@@ -86,8 +86,8 @@ export class PageResources {
                     here</a>
                 </h2>
                 <p>
-                    As a poll worker, your job is to help ensure that every eligible voter in 
-                    your community can cast their ballot. Learn how to identify and check your biases so you can best serve all voters. 
+                    As a poll worker, your job is to help ensure that every eligible voter in
+                    your community can cast their ballot. Learn how to identify and check your biases so you can best serve all voters.
                 </p>
                 <br />
                 <br />
