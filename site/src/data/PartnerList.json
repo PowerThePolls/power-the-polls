@@ -2444,5 +2444,13 @@
   {
     "partnerId": "texasimpact",
     "name": "Texas Impact"
+  },
+  {
+    "partnerId": "spotify",
+    "name": "Spotify"
+  },
+  {
+    "partnerId": "orrick",
+    "name": "Orrick"
   }
 ]

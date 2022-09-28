@@ -62,6 +62,33 @@ export class PageResources {
                     href="/assets/documents/election-day-checklist.pdf" target="_blank" rel="noopener noreferrer">Print
                     or save</a> this checklist to help you prepare.
                 </p>
+                <h2>
+                    Common Election Scenarios and Solutions at the Polls - <a href="/assets/documents/common-scenarios.pdf"
+                                                                 target="_blank" rel="noopener noreferrer">Click
+                    here</a>
+                </h2>
+                <p>
+                    Use this guide to preview some of the scenarios you’ll encounter with different voters and how to help them.
+                    Early voting and Election Day are right around the corner.
+                </p>
+                <h2>
+                    Accessibility at the Polls - <a href="/assets/documents/accessibility-at-the-polls.pdf"
+                                                                 target="_blank" rel="noopener noreferrer">Click
+                    here</a>
+                </h2>
+                <p>
+                    Making voting accessible is part of being a great poll worker. Review this resource to
+                    help think about ways to make voting accessible for everyone.
+                </p>
+                <h2>
+                    Checking Our Biases at the Polls - <a href="/assets/documents/checking-biases.pdf"
+                                                                 target="_blank" rel="noopener noreferrer">Click
+                    here</a>
+                </h2>
+                <p>
+                    As a poll worker, your job is to help ensure that every eligible voter in
+                    your community can cast their ballot. Learn how to identify and check your biases so you can best serve all voters.
+                </p>
                 <br />
                 <br />
                 <p>
