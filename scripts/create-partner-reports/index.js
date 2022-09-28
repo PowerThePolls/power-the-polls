@@ -316,12 +316,11 @@ const run = async () => {
    }
 };
 
-run()
-   .then(() => {
-      console.log("Done creating reports");
-      process.exit(0);
-   })
-   .catch((err) => {
-      console.error(err);
-      process.exit(11);
-   });
+try {
+   await run();
+   console.log("Done creating reports");
+   process.exit(0);
+} catch (e) {
+   console.error(e);
+   process.exit(11);
+}
