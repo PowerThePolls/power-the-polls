@@ -29,7 +29,7 @@ const checkStatus = async (res) => {
 
 const sanitizeEmails = (emails) => emails.replace(/\n/g, "").replace(/ /g, "");
 
-const addEmail = (Emails) => `${sanitizeEmails(Emails)},kay@powerthepolls.org`;
+const addEmail = (Emails) => `${sanitizeEmails(Emails)},kay@powerthepolls.org,billy@powerthepolls.org`;
 
 const getSql = (State, Jurisdiction, JurisdictionType) => {
    if (JurisdictionType === "County") {
@@ -44,16 +44,6 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
      , uf.value AS county
      , u.state
      , u.zip
-     , if((SELECT DISTINCT user_id
-           FROM core_action
-           LEFT JOIN core_actionfield ca ON core_action.id = ca.parent_id
-           WHERE user_id = u.id AND (page_id = 72
-              OR (page_id = 80 AND ca.name = 'applied_2022' AND ca.value = 'I have completed my application'))) IS NOT NULL, 'Yes', '') AS applied_2022
-     , if((SELECT value
-           FROM core_userfield
-           WHERE name = 'applied_2020'
-             AND parent_id = u.id
-             AND value = 'true')='true', 'Yes', '') AS applied_2020
      , coalesce((SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
                  FROM core_action a
                  JOIN core_actionfield af ON a.id = af.parent_id
@@ -87,16 +77,6 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
      , uf.value AS county
      , u.state
      , u.zip
-     , if((SELECT DISTINCT user_id
-           FROM core_action
-           LEFT JOIN core_actionfield ca ON core_action.id = ca.parent_id
-           WHERE user_id = u.id AND (page_id = 72
-              OR (page_id = 80 AND ca.name = 'applied_2022' AND ca.value = 'I have completed my application'))) IS NOT NULL, 'Yes', '') AS applied_2022
-     , if((SELECT value
-           FROM core_userfield
-           WHERE name = 'applied_2020'
-             AND parent_id = u.id
-             AND value = 'true')='true', 'Yes', '') AS applied_2020
      , coalesce((SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
                  FROM core_action a
                  JOIN core_actionfield af ON a.id = af.parent_id
@@ -129,16 +109,6 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
      , uf.value AS county
      , u.state
      , u.zip
-     , if((SELECT DISTINCT user_id
-           FROM core_action
-           LEFT JOIN core_actionfield ca ON core_action.id = ca.parent_id
-           WHERE user_id = u.id AND (page_id = 72
-              OR (page_id = 80 AND ca.name = 'applied_2022' AND ca.value = 'I have completed my application'))) IS NOT NULL, 'Yes', '') AS applied_2022
-     , if((SELECT value
-           FROM core_userfield
-           WHERE name = 'applied_2020'
-             AND parent_id = u.id
-             AND value = 'true')='true', 'Yes', '') AS applied_2020
      , coalesce((SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
                  FROM core_action a
                  JOIN core_actionfield af ON a.id = af.parent_id
@@ -179,11 +149,11 @@ const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
       short_name: `PowerThePolls-${slug}`,
       description: slug,
       to_emails: addEmail(Emails),
-      emails_always_csv: true,
+      email_always_csv: true,
       send_if_no_rows: false,
       run_every: "weekly",
-      run_weekday: 5, // friday
-      run_hour: 14, // 1430 GMT so 1030 EST
+      run_weekday: 4, // thursday
+      run_hour: 17, //
       categories,
       sql,
    };
