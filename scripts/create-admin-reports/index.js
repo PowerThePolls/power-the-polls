@@ -1,18 +1,7 @@
 import fetch, { Headers } from "node-fetch";
 import Airtable from "airtable";
 
-const getWeeklyReports = async () => {
-   const { AIRTABLE_PARTNERS_BASE } = process.env;
-   const base = new Airtable().base(AIRTABLE_PARTNERS_BASE);
-   return base("Admin Reports")
-      .select({
-         filterByFormula: "{ReportRequested}",
-         fields: ["State", "Jurisdiction", "JurisdictionType", "Emails"],
-      })
-      .all();
-};
-
-const actionKitURL = "https://ptp.actionkit.com";
+const ACTION_KIT_URL = "https://ptp.actionkit.com";
 
 let AK_HEADERS_CACHE;
 
@@ -40,7 +29,7 @@ const checkStatus = async (res) => {
 
 const sanitizeEmails = (emails) => emails.replace(/\n/g, "").replace(/ /g, "");
 
-const addEmail = (Emails) => `${sanitizeEmails(Emails)},kalynn@powerthepolls.org`;
+const addEmail = (Emails) => `${sanitizeEmails(Emails)},kay@powerthepolls.org`;
 
 const getSql = (State, Jurisdiction, JurisdictionType) => {
    if (JurisdictionType === "County") {
@@ -200,9 +189,10 @@ const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
    };
 };
 
-const createReport = async (body) => {
+const createReport = async (reportConfig) => {
    const headers = getActionKitHeaders();
-   const res = await fetch(`${actionKitURL}/rest/v1/queryreport/`, {
+   const body = getBody(reportConfig);
+   const res = await fetch(`${ACTION_KIT_URL}/rest/v1/queryreport/`, {
       body: JSON.stringify(body),
       headers,
       method: "post",
@@ -211,6 +201,17 @@ const createReport = async (body) => {
 };
 
 const getReportConfig = (report) => report.fields;
+
+const getWeeklyReports = async () => {
+   const { AIRTABLE_ADMIN_REPORTS_BASE } = process.env;
+   const base = new Airtable().base(AIRTABLE_ADMIN_REPORTS_BASE);
+   return base("Admin Reports")
+      .select({
+         filterByFormula: "{ReportRequested}",
+         fields: ["State", "Jurisdiction", "JurisdictionType", "Emails"],
+      })
+      .all();
+};
 
 const run = async () => {
    // get list of weekly reports
@@ -221,19 +222,18 @@ const run = async () => {
    // iterate over reports and create in actionkit
    for (const report of reports) {
       try {
-         await createReport(getBody(report));
+         await createReport(report);
       } catch (e) {
          console.error(e);
       }
    }
 };
 
-run()
-   .then(() => {
-      console.log("Done creating admin reports");
-      process.exit(0);
-   })
-   .catch((e) => {
-      console.error(e);
-      process.exit(11);
-   });
+try {
+   await run();
+   console.log("Done creating admin reports");
+   process.exit(0);
+} catch (e) {
+   console.error(e);
+   process.exit(11);
+}
