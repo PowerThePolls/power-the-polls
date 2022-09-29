@@ -29,11 +29,12 @@ const checkStatus = async (res) => {
 
 const sanitizeEmails = (emails) => emails.replace(/\n/g, "").replace(/ /g, "");
 
-const addEmail = (Emails) => `${sanitizeEmails(Emails)},kay@powerthepolls.org,billy@powerthepolls.org`;
+const addEmail = (Emails) =>
+   `${sanitizeEmails(Emails)},kay@powerthepolls.org,billy@powerthepolls.org`;
 
 const getSql = (State, Jurisdiction, JurisdictionType) => {
    if (JurisdictionType === "County") {
-      const county = Jurisdiction.replace(" County", "")
+      const county = Jurisdiction.replace(" County", "");
       return `SELECT u.first_name
      , u.last_name
      , u.email
@@ -136,7 +137,9 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
 
 const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
    // unique key for report!
-   const slug = `${Jurisdiction.replace("(City)", "").replace("(city)", "").replace(/ /g, "")}${State}`;
+   const slug = `${Jurisdiction.replace("(City)", "")
+      .replace("(city)", "")
+      .replace(/ /g, "")}${State}`;
 
    // "admin reports" category
    const categories = ["/rest/v1/reportcategory/19/"];
