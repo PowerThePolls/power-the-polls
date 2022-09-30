@@ -37,25 +37,28 @@ const checkStatus = async (res) => {
    }
 };
 
-const getPartnerReportList = async () => {
+const callActionKit = async (path, method = "get", body = "") => {
    const headers = getActionKitHeaders();
-   const url = `${actionKitURL}/rest/v1/queryreport?categories__name=partners&_limit=100`;
-   let res = await fetch(url, { headers });
-
+   const url = `${actionKitURL}${path}`;
+   const res = await fetch(url, { headers, method, body });
    await checkStatus(res);
+   return res.json();
+};
 
-   let jsonResponse = await res.json();
-   let reportList = jsonResponse.objects;
+const getParams = () => {
+   const params = new URLSearchParams();
+   params.set("_limit", "100");
+   params.set("categories__name", "partners");
+   return params.toString();
+};
 
-   while (jsonResponse.meta.next) {
-      res = await fetch(`${actionKitURL}${jsonResponse.meta.next}`, {
-         headers,
-      });
-      await checkStatus(res);
-      jsonResponse = await res.json();
-      reportList = reportList.concat(jsonResponse.objects);
+const getPartnerReportList = async () => {
+   let response = await callActionKit(`/rest/v1/queryreport?${getParams()}`);
+   let reportList = response.objects;
+   while (response.meta.next) {
+      response = await callActionKit(response.meta.next);
+      reportList = reportList.concat(response.objects);
    }
-
    return reportList;
 };
 
@@ -148,29 +151,21 @@ const getBody = ({
    isAggregate,
    frequency,
    emails,
-}) => {
-   return {
-      name: `Power The Polls Report: ${organization}`,
-      short_name: `PowerThePolls-${sourceCodes[0]}`,
-      description: sourceCodes[0],
-      sql: getSQL(sourceCodes, isAggregate),
-      run_every: frequency,
-      to_emails: emails.replace(/ /g, ""),
-      email_always_csv: true,
-      send_if_no_rows: false,
-      categories: ["/rest/v1/reportcategory/18/"],
-   };
-};
+}) => ({
+   name: `Power The Polls Report: ${organization}`,
+   short_name: `PowerThePolls-${sourceCodes[0]}`,
+   description: sourceCodes[0],
+   sql: getSQL(sourceCodes, isAggregate),
+   run_every: frequency,
+   to_emails: emails.replace(/ /g, ""),
+   email_always_csv: true,
+   send_if_no_rows: false,
+   categories: ["/rest/v1/reportcategory/18/"],
+});
 
 const createReport = async (reportConfig) => {
-   const headers = getActionKitHeaders();
-   const body = JSON.stringify(getBody(reportConfig));
-   const res = await fetch(`${actionKitURL}/rest/v1/queryreport/`, {
-      method: "post",
-      headers,
-      body,
-   });
-   await checkStatus(res);
+   const body = getBody(reportConfig);
+   await callActionKit("/rest/v1/queryreport/", "post", JSON.stringify(body));
 };
 
 const getReportConfig = (partner) => ({
@@ -255,15 +250,12 @@ const isModified = (partner, report) => {
 };
 
 const updateReport = async (reportId, reportConfig) => {
-   const headers = getActionKitHeaders();
    const body = getBody(reportConfig);
-   const res = await fetch(`${actionKitURL}/rest/v1/queryreport/${reportId}`, {
-      method: "patch",
-      headers,
-      body: JSON.stringify(body),
-   });
-
-   await checkStatus(res);
+   await callActionKit(
+      `/rest/v1/queryreport/${reportId}`,
+      "patch",
+      JSON.stringify(body)
+   );
 };
 
 const updateModifiedReports = async (approvedPartners, reportList) => {
