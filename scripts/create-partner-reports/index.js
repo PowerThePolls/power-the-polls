@@ -1,7 +1,7 @@
 import fetch, { Headers } from "node-fetch";
 import Airtable from "airtable";
 
-const getApprovedRecords = async () => {
+async function getApprovedRecords() {
    const { AIRTABLE_PARTNERS_BASE } = process.env;
    const base = new Airtable().base(AIRTABLE_PARTNERS_BASE);
    const filterByFormula = "{report_status} = 'Approved'";
@@ -13,11 +13,11 @@ const getApprovedRecords = async () => {
       "source_code",
    ];
    return base("Partners").select({ filterByFormula, fields }).all();
-};
+}
 
 const actionKitURL = "https://ptp.actionkit.com";
 
-const getActionKitHeaders = () => {
+function getActionKitHeaders() {
    const { ACTION_KIT_USERNAME, ACTION_KIT_PASSWORD } = process.env;
    const headers = new Headers();
    const encodedCredentials = Buffer.from(
@@ -26,43 +26,43 @@ const getActionKitHeaders = () => {
    headers.set("Authorization", `Basic ${encodedCredentials}`);
    headers.set("Content-Type", "application/json");
    return headers;
-};
+}
 
-const checkStatus = async (res) => {
+async function checkStatus(res) {
    if (!res.ok) {
       const body = await res.text();
       throw new Error(
          `HTTP Error Response: ${res.status} ${res.statusText}. Body: ${body}`
       );
    }
-};
+}
 
-const getPartnerReportList = async () => {
+async function callActionKit(path, method = "get", body) {
    const headers = getActionKitHeaders();
-   const url = `${actionKitURL}/rest/v1/queryreport?categories__name=partners&_limit=100`;
-   let res = await fetch(url, { headers });
-
+   const url = `${actionKitURL}${path}`;
+   const res = await fetch(url, { headers, method, body });
    await checkStatus(res);
+   return res.json();
+}
 
-   let jsonResponse = await res.json();
-   let reportList = jsonResponse.objects;
+function getParams() {
+   const params = new URLSearchParams();
+   params.set("_limit", "100");
+   params.set("categories__name", "partners");
+   return params.toString();
+}
 
-   while (jsonResponse.meta.next) {
-      res = await fetch(`${actionKitURL}${jsonResponse.meta.next}`, {
-         headers,
-      });
-      await checkStatus(res);
-      jsonResponse = await res.json();
-      reportList = reportList.concat(jsonResponse.objects);
+async function getPartnerReportList() {
+   let response = await callActionKit(`/rest/v1/queryreport?${getParams()}`);
+   let reportList = response.objects;
+   while (response.meta.next) {
+      response = await callActionKit(response.meta.next);
+      reportList = reportList.concat(response.objects);
    }
-
    return reportList;
-};
+}
 
-const convertArray = (array) =>
-   array.map((code) => `'${code.toLowerCase()}'`).join(",");
-
-const getSQL = (sourceCodes, isAggregate) => {
+function getSQL(sourceCodes, isAggregate) {
    // language=MySQL
    return isAggregate
       ? `SELECT count(1) AS signups
@@ -131,24 +131,35 @@ const getSQL = (sourceCodes, isAggregate) => {
                GROUP BY user_id, source) sign_ups
          ON core_user.id = sign_ups.user_id
          ORDER BY date_joined`;
-};
+}
 
-const isAggregate = (partner) => !partner.get("report_type").startsWith("List");
+function convertArray(array) {
+   return array.map((code) => `'${code.toLowerCase()}'`).join(",");
+}
 
-const getFrequency = (partner) => partner.get("report_frequency").toLowerCase();
+function isAggregate(partner) {
+   return !partner.get("report_type").startsWith("List");
+}
 
-const hasReportEmails = (partner) =>
-   partner.get("report_emails").replace(/ /g, "").length;
+function getFrequency(partner) {
+   return partner.get("report_frequency").toLowerCase();
+}
 
-const sanitizeEmails = (emails) => emails.replace(/\n/g, "").replace(/ /g, "");
+function hasReportEmails(partner) {
+   return partner.get("report_emails").replace(/ /g, "").length;
+}
 
-const getBody = ({
+function sanitizeEmails(emails) {
+   return emails.replace(/\n/g, "").replace(/ /g, "");
+}
+
+function getBody({
    organization,
    sourceCodes,
    isAggregate,
    frequency,
    emails,
-}) => {
+}) {
    return {
       name: `Power The Polls Report: ${organization}`,
       short_name: `PowerThePolls-${sourceCodes[0]}`,
@@ -160,38 +171,29 @@ const getBody = ({
       send_if_no_rows: false,
       categories: ["/rest/v1/reportcategory/18/"],
    };
-};
+}
 
-const createReport = async (reportConfig) => {
-   const headers = getActionKitHeaders();
-   const body = JSON.stringify(getBody(reportConfig));
-   const res = await fetch(`${actionKitURL}/rest/v1/queryreport/`, {
-      method: "post",
-      headers,
-      body,
-   });
-   await checkStatus(res);
-};
+async function createReport(reportConfig) {
+   const body = getBody(reportConfig);
+   await callActionKit("/rest/v1/queryreport/", "post", body);
+}
 
-const getReportConfig = (partner) => ({
-   organization: partner.get("organization").trim(),
-   sourceCodes: [partner.get("source_code").trim()],
-   isAggregate: isAggregate(partner),
-   frequency: getFrequency(partner),
-   emails: sanitizeEmails(partner.get("report_emails")),
-});
+function getReportConfig(partner) {
+   return {
+      organization: partner.get("organization").trim(),
+      sourceCodes: [partner.get("source_code").trim()],
+      isAggregate: isAggregate(partner),
+      frequency: getFrequency(partner),
+      emails: sanitizeEmails(partner.get("report_emails")),
+   };
+}
 
-const logPartners = (partners) => {
-   console.log(
-      JSON.stringify(
-         partners.map((partner) => partner.get("source_code")),
-         null,
-         2
-      )
-   );
-};
+function logPartners(partners) {
+   const sourceCodes = partners.map((partner) => partner.get("source_code"));
+   console.log(JSON.stringify(sourceCodes, null, 2));
+}
 
-const createNewReports = async (approvedPartners, reportList) => {
+async function createNewReports(approvedPartners, reportList) {
    let errorThrown = false;
 
    const newPartners = approvedPartners.filter((partner) => {
@@ -223,9 +225,9 @@ const createNewReports = async (approvedPartners, reportList) => {
       }
    }
    return errorThrown;
-};
+}
 
-const isModified = (partner, report) => {
+function isModified(partner, report) {
    const body = getBody(getReportConfig(partner));
 
    const {
@@ -252,21 +254,14 @@ const isModified = (partner, report) => {
       categories,
    };
    return JSON.stringify(body) !== JSON.stringify(reportBody);
-};
+}
 
-const updateReport = async (reportId, reportConfig) => {
-   const headers = getActionKitHeaders();
+async function updateReport(reportId, reportConfig) {
    const body = getBody(reportConfig);
-   const res = await fetch(`${actionKitURL}/rest/v1/queryreport/${reportId}`, {
-      method: "patch",
-      headers,
-      body: JSON.stringify(body),
-   });
+   await callActionKit(`/rest/v1/queryreport/${reportId}`, "patch", body);
+}
 
-   await checkStatus(res);
-};
-
-const updateModifiedReports = async (approvedPartners, reportList) => {
+async function updateModifiedReports(approvedPartners, reportList) {
    let errorThrown = false;
 
    const modifiedPartners = approvedPartners.reduce((modified, partner) => {
@@ -293,9 +288,9 @@ const updateModifiedReports = async (approvedPartners, reportList) => {
    }
 
    return errorThrown;
-};
+}
 
-const run = async () => {
+async function run() {
    // get all approved partners from airtable
    const approvedRecords = await getApprovedRecords();
 
@@ -314,7 +309,7 @@ const run = async () => {
    if (creatErrorThrown || updateErrorThrown) {
       throw new Error("Error during report sync!");
    }
-};
+}
 
 try {
    await run();
