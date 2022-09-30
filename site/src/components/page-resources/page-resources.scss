@@ -107,47 +107,78 @@ page-resources {
       }
    }
 
-   .wrimagecard{  
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      text-align: left;
-      position: relative;
-      background: #fff;
-      box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
-      border-radius: 4px;
-      transition: all 0.3s ease;
+   /* Float four columns side by side */
+   .column {
+     float: left;
+     width: 33%;
+     padding: 5px;
    }
 
-   .wrimagecard .fa{
-      position: relative;
-      font-size: 70px;
+   /* Remove extra left and right margins, due to padding in columns */
+   .row {margin: 0 -5px;}
+
+   /* Clear floats after the columns */
+   .row:after {
+     content: "";
+     display: table;
+     clear: both;
    }
 
-   .wrimagecard-topimage_header{
-      padding: 20px;
+   /* Style the counter cards */
+   .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1); /* this adds the "card" effect */
+      padding: .4em;
+      text-align: center;
+      background-color: #315dd6;
+      height: 215px;
    }
 
-   a.wrimagecard:hover, .wrimagecard-topimage:hover {
-      box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2);
-   }
-
-   .wrimagecard-topimage a {
-      width: 100%;
-      height: 100%;
+   .card:hover + .hide {
       display: block;
    }
 
-   .wrimagecard-topimage_title {
-      padding: 20px 24px;
-      height: 80px;
-      padding-bottom: 0.75rem;
-      position: relative;
+   /* Responsive columns - one column layout (vertical) on small screens */
+   @media screen and (max-width: 600px) {
+     .column {
+       width: 100%;
+       display: block;
+       margin-bottom: 20px;
+     }
    }
 
-   .wrimagecard-topimage a {
-      border-bottom: none;
-      text-decoration: none;
-      color: #525c65;
-      transition: color 0.3s ease;
-   }
+   /* Parent Container */
+.content_img{
+ position: relative;
+ width: 200px;
+ height: 200px;
+ float: left;
+ margin-right: 10px;
+}
+
+/* Child Text Container */
+.content_img div{
+ position: absolute;
+ bottom: 0;
+ right: 0;
+ background: black;
+ color: white;
+ margin-bottom: 5px;
+ font-family: sans-serif;
+ opacity: 0;
+ visibility: hidden;
+ -webkit-transition: visibility 0s, opacity 0.5s linear; 
+ transition: visibility 0s, opacity 0.5s linear;
+}
+
+/* Hover on Parent Container */
+.content_img:hover{
+ cursor: pointer;
+}
+
+.content_img:hover div{
+ width: 150px;
+ padding: 8px 15px;
+ visibility: visible;
+ opacity: 0.7; 
+}
 }

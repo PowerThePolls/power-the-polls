@@ -1,4 +1,4 @@
-import {Component, h, Host} from "@stencil/core";
+ import {Component, h, Host} from "@stencil/core";
 
 @Component({
     tag: "page-resources",
@@ -10,71 +10,92 @@ export class PageResources {
     public render() {
         return (
             <Host>
+
                 <h1>Resources</h1>
                 <p>
-                    Now that you've <stencil-route-link url={`/${formPath}#form`} onClick={onSelectNavItem}>
-                    signed up</stencil-route-link>
-                     with Power the Polls, here are some resources to help you get ready to serve.
+                    Now that you've signed up (link to application on “signed up”) with Power the Polls, here are some resources to help you get ready to serve.
                 </p>
+                <div class="row">
+                  <div class="column">
 
-                <div class="col-md-3 col-sm-4">
-                    <div class="wrimagecard wrimagecard-topimage">
-                        <a href="#">
-                        <div class="wrimagecard-topimage_header" style="background-color:  rgba(250, 188, 9, 0.1)">
-                        <center><i class="fa fa-info-circle" style="color:#fabc09"> </i></center>
+                    <div class="card">
+                       <h2>
+                            Becoming a Poll Worker
+                        </h2>
+                        <div class="content_img">
+                            <img src="/assets/images/resources/ballot_box.png" width='100%' height='100%'>
+                             <p>
+                               You’ve signed up with Power the Polls—now what?
+                            </p> 
+                            </img>
+                        </div>
                     </div>
-                <div class="wrimagecard-topimage_title">
-                    <h4>Information
-                    <div class="pull-right badge" id="WrInformation"></div></h4>
+
+                    </div>
+
+                  <div class="column">
+                    <div class="card">
+                        <h2>
+                            Day in the Life of a Poll Worker
+                        </h2>
+                        <p>
+                            Learn what to expect on an average day as a poll worker. 
+                        </p>
+                    </div>
+
+                  </div>
+
+                  <div class="column">
+                    <div class="card">
+                        <h2>
+                            Poll Worker Election Day Checklist
+                        </h2>
+                        <p>
+                            Save this checklist to make sure you’re ready to power the polls!
+                        </p>
+                    </div>
+                  </div>
+
+                </div>
+            <div class="row">
+                  <div class="column">
+                    <div class="card">
+                        <h2>
+                            Common Voter Issues At the Polls
+                        </h2>
+                        <p>
+                            Learn how to handle voting issues you may encounter as a poll worker.
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="card">
+                        <h2>
+                            Accessibility at the Polls
+                        </h2>
+                        <p>
+                            Learn how to make voting accessible for everyone.
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="card">
+                        <h2>
+                            Checking Our Biases at the Polls
+                        </h2>
+                        <p>
+                            Learn how to identify and check your biases so you can best serve all voters. 
+                        </p>
+                    </div>
+                  </div>
                 </div>
 
-                <h2>
-                    You’ve signed up to be a poll worker - now what? - <a href="/assets/documents/now-what.pdf"
-                                                                          target="_blank" rel="noopener noreferrer">Click
-                    here</a>
-                </h2>
-                <p>
-                    You’ve signed up with Power the Polls—now what? Read <a href="/assets/documents/now-what.pdf"
-                                                                            target="_blank"
-                                                                            rel="noopener noreferrer">here</a> for an
-                    overview of your journey to becoming a poll worker.
-                </p>
-
-                <h2>
-                    A Day in the Life of a Poll Worker - <a href="/assets/documents/a-day-in-the-life.pdf"
-                                                            target="_blank"
-                                                            rel="noopener noreferrer">Click here</a>
-                </h2>
-                <p>
-                    Want to learn a little bit more about what to expect on the average day of a poll worker? Read <a
-                    href="/assets/documents/a-day-in-the-life.pdf" target="_blank" rel="noopener noreferrer">here</a>
-                    for more.
-                </p>
-
-                <h2>
-                    25 Questions to Ask in Your Official Poll Worker Training - <a
-                    href="/assets/documents/25-questions-to-ask.pdf" target="_blank" rel="noopener noreferrer">Click
-                    here</a>
-                </h2>
-                <p>
-                    Your local elections office will schedule an official training for you. Get ready to make the most
-                    of this valuable training time by reviewing this checklist <a
-                    href="/assets/documents/25-questions-to-ask.pdf" target="_blank" rel="noopener noreferrer">here</a>.
-                </p>
-                <h2>
-                    Election Day Checklist for Poll Workers - <a href="/assets/documents/election-day-checklist.pdf"
-                                                                 target="_blank" rel="noopener noreferrer">Click
-                    here</a>
-                </h2>
-                <p>
-                    Early voting and Election Day are right around the corner. <a
-                    href="/assets/documents/election-day-checklist.pdf" target="_blank" rel="noopener noreferrer">Print
-                    or save</a> this checklist to help you prepare.
-                </p>
                 <br />
                 <br />
                 <p>
-                    Please note these supplemental resources do not take the place of the official poll worker training
+                    These supplemental resources do not take the place of the official poll worker training
                     and resources that your elections office provides. If you have specific questions related to your
                     service as a poll worker or the rules and resources in your jurisdiction,{" "}
                     <stencil-route-link url="/search">reach out to your local election
