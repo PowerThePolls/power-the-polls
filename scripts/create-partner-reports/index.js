@@ -37,7 +37,7 @@ const checkStatus = async (res) => {
    }
 };
 
-const callActionKit = async (path, method = "get", body = "") => {
+const callActionKit = async (path, method = "get", body) => {
    const headers = getActionKitHeaders();
    const url = `${actionKitURL}${path}`;
    const res = await fetch(url, { headers, method, body });
@@ -165,7 +165,7 @@ const getBody = ({
 
 const createReport = async (reportConfig) => {
    const body = getBody(reportConfig);
-   await callActionKit("/rest/v1/queryreport/", "post", JSON.stringify(body));
+   await callActionKit("/rest/v1/queryreport/", "post", body);
 };
 
 const getReportConfig = (partner) => ({
@@ -251,11 +251,7 @@ const isModified = (partner, report) => {
 
 const updateReport = async (reportId, reportConfig) => {
    const body = getBody(reportConfig);
-   await callActionKit(
-      `/rest/v1/queryreport/${reportId}`,
-      "patch",
-      JSON.stringify(body)
-   );
+   await callActionKit(`/rest/v1/queryreport/${reportId}`, "patch", body);
 };
 
 const updateModifiedReports = async (approvedPartners, reportList) => {
