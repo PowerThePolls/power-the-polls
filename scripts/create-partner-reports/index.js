@@ -175,7 +175,7 @@ function getBody({
 
 async function createReport(reportConfig) {
    const body = getBody(reportConfig);
-   await callActionKit("/rest/v1/queryreport/", "post", body);
+   await callActionKit("/rest/v1/queryreport/", "post", JSON.stringify(body));
 }
 
 function getReportConfig(partner) {
@@ -258,7 +258,11 @@ function isModified(partner, report) {
 
 async function updateReport(reportId, reportConfig) {
    const body = getBody(reportConfig);
-   await callActionKit(`/rest/v1/queryreport/${reportId}`, "patch", body);
+   await callActionKit(
+      `/rest/v1/queryreport/${reportId}`,
+      "patch",
+      JSON.stringify(body)
+   );
 }
 
 async function updateModifiedReports(approvedPartners, reportList) {
