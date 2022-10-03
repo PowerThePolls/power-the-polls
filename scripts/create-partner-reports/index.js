@@ -42,7 +42,7 @@ async function callActionKit(path, method = "get", body) {
    const url = `${actionKitURL}${path}`;
    const res = await fetch(url, { headers, method, body });
    await checkStatus(res);
-   return res.json();
+   return method === "get" ? res.json() : {};
 }
 
 function getParams() {
