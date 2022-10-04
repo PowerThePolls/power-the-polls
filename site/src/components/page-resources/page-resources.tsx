@@ -22,13 +22,10 @@ export class PageResources {
                        <h2>
                             Becoming a Poll Worker
                         </h2>
-                        <div class="content_img">
-                            <img src="/assets/images/resources/ballot_box.png" width='100%' height='100%'>
                              <p>
                                You’ve signed up with Power the Polls—now what?
                             </p> 
-                            </img>
-                        </div>
+                            
                     </div>
 
                     </div>
