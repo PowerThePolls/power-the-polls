@@ -13,7 +13,10 @@ export class PageResources {
 
                 <h1>Resources</h1>
                 <p>
-                    Now that you've signed up (link to application on “signed up”) with Power the Polls, here are some resources to help you get ready to serve.
+                    Now that you've <a href="/assets/documents/election-day-checklist.pdf"
+                                                                         target="_blank" rel="noopener noreferrer">
+                                signed up
+                            </a> with Power the Polls, here are some resources to help you get ready to serve.
                 </p>
                 <div class="row">
                   <div class="column">
