@@ -155,8 +155,8 @@ const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
       email_always_csv: true,
       send_if_no_rows: false,
       run_every: "weekly",
-      run_weekday: 4, // thursday
-      run_hour: 17, //
+      run_weekday: 1, // Monday
+      run_hour: 11, // 11GMT -> 7AM Eastern
       categories,
       sql,
    };
