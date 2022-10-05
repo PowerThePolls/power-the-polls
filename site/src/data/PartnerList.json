@@ -2460,5 +2460,17 @@
   {
     "partnerId": "zillow ",
     "name": "Zillow"
+  },
+  {
+    "partnerId": "smuckers",
+    "name": "Smuckers"
+  },
+  {
+    "partnerId": "pg",
+    "name": "Proctor & Gamble"
+  },
+  {
+    "partnerId": "abercrombie",
+    "name": "Abercrombie"
   }
 ]
