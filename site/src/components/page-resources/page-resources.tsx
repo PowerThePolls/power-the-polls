@@ -12,10 +12,10 @@ export class PageResources {
             <Host>
 
                 <h1>Resources</h1>
-                    Now that you've <a href="/assets/documents/election-day-checklist.pdf">
+                    <p>Now that you've <a href="/assets/documents/election-day-checklist.pdf">
                         signed up
                     </a> with Power the Polls, here are some resources to help you get ready to serve.
-                <div class="row">
+                    </p>
                   <div class="column">
                     <div class="card">
                         <a href="/assets/documents/now-what.pdf"
@@ -29,7 +29,30 @@ export class PageResources {
                             </p> 
                         </a>
                     </div>
-
+                    <div class="card">
+                    <a href="/assets/documents/common-scenarios.pdf"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/images/resources/ballot_box.png"></img>
+                        <h2>
+                            Common Voter Issues At the Polls
+                        </h2>
+                        <p>
+                            Learn how to handle voting issues you may encounter as a poll worker.
+                        </p>
+                        </a>
+                    </div>
+                    <div class="card">
+                         <a href="/assets/documents/problem-solving.pdf"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/images/resources/problem_solving.png"></img>
+                        <h2>
+                            Problem Solving at the Polls
+                        </h2>
+                        <p>
+                            Learn how to  
+                        </p>
+                        </a>
+                    </div>
                     </div>
 
                   <div class="column">
@@ -45,42 +68,6 @@ export class PageResources {
                         </p>
                         </a>
                     </div>
-
-                  </div>
-
-                  <div class="column">
-                <div class="card">
-                  <a href="/assets/documents/election-day-checklist.pdf"
-                                                                         target="_blank" rel="noopener noreferrer">                        <img src="/assets/images/resources/checklist.png"></img>
-                        <h2>
-                            Poll Worker Election Day Checklist
-                        </h2>
-                        <p>
-                            Save this checklist to make sure you’re ready to power the polls!
-                        </p>
-                        </a>
-                    </div>
-                    
-                  </div>
-
-                </div>
-            <div class="row">
-                  <div class="column">
-                    <div class="card">
-                    <a href="/assets/documents/common-scenarios.pdf"
-                                                                         target="_blank" rel="noopener noreferrer">
-                        <img src="/assets/images/resources/ballot_box.png"></img>
-                        <h2>
-                            Common Voter Issues At the Polls
-                        </h2>
-                        <p>
-                            Learn how to handle voting issues you may encounter as a poll worker.
-                        </p>
-                        </a>
-                    </div>
-                  </div>
-
-                  <div class="column">
                     <div class="card">
                          <a href="/assets/documents/election-day-checklist.pdf"
                                                                          target="_blank" rel="noopener noreferrer">
@@ -96,6 +83,17 @@ export class PageResources {
                   </div>
 
                   <div class="column">
+                <div class="card">
+                  <a href="/assets/documents/election-day-checklist.pdf"
+                                                                         target="_blank" rel="noopener noreferrer">                        <img src="/assets/images/resources/checklist.png"></img>
+                        <h2>
+                            Poll Worker Election Day Checklist
+                        </h2>
+                        <p>
+                            Save this checklist to make sure you’re ready to power the polls!
+                        </p>
+                        </a>
+                    </div>
                     <div class="card">
                          <a href="/assets/documents/election-day-checklist.pdf"
                                                                          target="_blank" rel="noopener noreferrer">
@@ -109,14 +107,12 @@ export class PageResources {
                         </a>
                     </div>
                   </div>
-                </div>
 
                 <br />
                 <br />
                 <p>
-                    These resources do not take the place of the official poll worker training
-                    and resources that your elections office provides. If you have specific questions related to your
-                    service as a poll worker or the rules and resources in your jurisdiction,{" "}
+                    These resources do not take the place of the official training
+                    and resources that your elections office provides. If you have specific questions,{" "}
                     <stencil-route-link url="/search">reach out to your local election
                         administrator.
                     </stencil-route-link>
