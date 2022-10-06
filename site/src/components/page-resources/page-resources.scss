@@ -3,6 +3,7 @@ page-resources {
       padding-top: .5em;
       font-size: 15px;
       color: #FF5554;
+      padding: .2em;
    }
 
    .checklist {
@@ -122,7 +123,6 @@ page-resources {
       background-color: #F5F3F1;
       height: 215px;
       position: relative;
-      text-decoration: none;
 
          p {
       padding: .5em;
@@ -136,8 +136,6 @@ page-resources {
 
       a:visited { text-decoration: none; }
 
-      a:hover { text-decoration: none; }
-
       a:active { text-decoration: none; }
 
 
@@ -148,6 +146,8 @@ page-resources {
        width: 100%;
        display: block;
        margin-bottom: 20px;
+
+      float:left;
      }
    }
 
@@ -160,4 +160,9 @@ page-resources {
       margin-right: auto;
       padding-top: .5em;
       }
+
+   p {
+      display:block;
+      float:left;
+   }
 }

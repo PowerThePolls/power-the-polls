@@ -49,7 +49,7 @@ export class PageResources {
                             Problem Solving at the Polls
                         </h2>
                         <p>
-                            Learn how to ensure that all voters have a smooth, positive voting experience at your polling place
+                            Learn how to facilitate a positive voting experience at your polling place.
                         </p>
                         </a>
                     </div>
@@ -103,6 +103,18 @@ export class PageResources {
                         </h2>
                         <p>
                             Save this checklist to make sure you’re ready to power the polls!
+                        </p>
+                        </a>
+                    </div>
+                    <div class="card">
+                         <a href="/assets/documents/election-day-checklist.pdf"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/images/resources/tables.png"></img>
+                        <h2>
+                            Checking Our Biases at the Polls
+                        </h2>
+                        <p>
+                            Learn how to identify and check your biases so you can best serve all voters. 
                         </p>
                         </a>
                     </div>
