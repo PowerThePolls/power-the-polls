@@ -1,6 +1,8 @@
 page-resources {
    h2 {
       padding-top: .5em;
+      font-size: 15px;
+      color: #FF5554;
    }
 
    .checklist {
@@ -126,15 +128,21 @@ page-resources {
 
    /* Style the counter cards */
    .card {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1); /* this adds the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
       padding: .4em;
       text-align: center;
-      background-color: #315dd6;
+      background-color: #F5F3F1;
       height: 215px;
-   }
+      position: relative;
+      text-decoration: none;
 
-   .card:hover + .hide {
-      display: block;
+      a:link { text-decoration: none; }
+
+      a:visited { text-decoration: none; }
+
+      a:hover { text-decoration: none; }
+
+      a:active { text-decoration: none; }
    }
 
    /* Responsive columns - one column layout (vertical) on small screens */
@@ -146,39 +154,21 @@ page-resources {
      }
    }
 
-   /* Parent Container */
-.content_img{
- position: relative;
- width: 200px;
- height: 200px;
- float: left;
- margin-right: 10px;
-}
+   img {
+      width:100px;
+      height:100px;
+      object-fit:scale-down;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: .5em;
+      }
 
-/* Child Text Container */
-.content_img div{
- position: absolute;
- bottom: 0;
- right: 0;
- background: black;
- color: white;
- margin-bottom: 5px;
- font-family: sans-serif;
- opacity: 0;
- visibility: hidden;
- -webkit-transition: visibility 0s, opacity 0.5s linear; 
- transition: visibility 0s, opacity 0.5s linear;
-}
-
-/* Hover on Parent Container */
-.content_img:hover{
- cursor: pointer;
-}
-
-.content_img:hover div{
- width: 150px;
- padding: 8px 15px;
- visibility: visible;
- opacity: 0.7; 
-}
+   p {
+      padding-top: .5em;
+      font-size: 10px;
+      position: absolute;
+      bottom: 0;
+      color: #1C1834;
+   }
 }
