@@ -49,7 +49,7 @@ export class PageResources {
                             Problem Solving at the Polls
                         </h2>
                         <p>
-                            Learn how to  
+                            Learn how to ensure that all voters have a smooth, positive voting experience at your polling place
                         </p>
                         </a>
                     </div>
@@ -77,6 +77,18 @@ export class PageResources {
                         </h2>
                         <p>
                             Learn how to make voting accessible for everyone.
+                        </p>
+                        </a>
+                    </div>
+                    <div class="card">
+                         <a href="https://www.fairelectionscenter.org/statevotingguides"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/images/resources/states.png"></img>
+                        <h2>
+                            State by State Voting Guide 
+                        </h2>
+                        <p>
+                            Get a guide on how to vote in your state via the Fair Elections Center.  
                         </p>
                         </a>
                     </div>
