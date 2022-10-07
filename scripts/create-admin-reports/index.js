@@ -196,6 +196,7 @@ const run = async () => {
    for (const report of reports) {
       try {
          await createReport(report);
+         console.log(`created report for ${report.Jurisdiction}`);
       } catch (e) {
          console.error(e);
       }
