@@ -76,7 +76,7 @@ export class PageResources {
                             Accessibility at the Polls
                         </h2>
                         <p>
-                            Learn how to make voting accessible for everyone.
+                            Learn how you can make voting accessible for everyone at your polling location.
                         </p>
                         </a>
                     </div>
@@ -119,14 +119,14 @@ export class PageResources {
                         </a>
                     </div>
                     <div class="card">
-                         <a href="/assets/documents/election-day-checklist.pdf"
+                         <a href="/assets/documents/25-questions.pdf"
                                                                          target="_blank" rel="noopener noreferrer">
-                        <img src="/assets/images/resources/tables.png"></img>
+                        <img src="/assets/images/resources/questions.png"></img>
                         <h2>
-                            Checking Our Biases at the Polls
+                            Questions to Ask in Your Official Training
                         </h2>
                         <p>
-                            Learn how to identify and check your biases so you can best serve all voters. 
+                            Get ready to make the most of your local jurisdiction's poll worker training.
                         </p>
                         </a>
                     </div>
