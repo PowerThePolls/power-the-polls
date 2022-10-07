@@ -2456,5 +2456,29 @@
   {
     "partnerId": "pbs1914gotv",
     "name": "Phi Beta Sigma Fraternity Inc"
+  },
+  {
+    "partnerId": "zillow ",
+    "name": "Zillow"
+  },
+  {
+    "partnerId": "smuckers",
+    "name": "Smuckers"
+  },
+  {
+    "partnerId": "pg",
+    "name": "Proctor & Gamble"
+  },
+  {
+    "partnerId": "abercrombie",
+    "name": "Abercrombie"
+  },
+  {
+    "partnerId": "civic-us",
+    "name": "Civic Entertainment Group"
+  },
+  {
+    "partnerId": "eileenfisher",
+    "name": "Eileen Fisher"
   }
 ]
