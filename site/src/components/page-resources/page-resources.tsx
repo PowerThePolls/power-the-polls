@@ -34,10 +34,10 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/ballot_box.png"></img>
                         <h2>
-                            Common Voter Issues At the Polls
+                            Top Voting or Ballot Issues to Prepare For
                         </h2>
                         <p>
-                            Learn how to handle voting issues you may encounter as a poll worker.
+                            Voters may need help with the voting process. Learn what solutions you can provide.
                         </p>
                         </a>
                     </div>
@@ -46,10 +46,10 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/problem_solving.png"></img>
                         <h2>
-                            Problem Solving at the Polls
+                            Safety and Problem Solving at the Polls
                         </h2>
                         <p>
-                            Learn how to facilitate a positive voting experience at your polling place.
+                            Learn how you can problem solve and help keep things calm at your polling location.
                         </p>
                         </a>
                     </div>
@@ -73,10 +73,10 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/team.png"></img>
                         <h2>
-                            Accessibility at the Polls
+                            Maintaining Accessible Voting for Everyone
                         </h2>
                         <p>
-                            Learn how you can make voting accessible for everyone at your polling location.
+                            Learn how to help your polling place be accessible for disabled and bi-lingual voters.
                         </p>
                         </a>
                     </div>
@@ -140,6 +140,13 @@ export class PageResources {
                     <stencil-route-link url="/search">reach out to your local election
                         administrator.
                     </stencil-route-link>
+                </p>
+                <p>
+                    Credits:
+                        <a href="https://www.flaticon.com/free-icons/checklist" title="checklist icons">Checklist icons created by Ilham Fitrotul Hayat - Flaticon</a>
+                        <a href="https://www.flaticon.com/free-icons/vote" title="vote icons">Vote and Group icons created by Freepik - Flaticon</a>
+                        <a href="https://www.flaticon.com/free-icons/work" title="work icons">Work icons created by Eucalyp - Flaticon</a>
+                        <a href="https://www.flaticon.com/free-icons/united-states" title="united states icons">United states icons created by Nikita Golubev - Flaticon</a>
                 </p>
 
             </Host>
