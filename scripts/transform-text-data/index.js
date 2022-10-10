@@ -1,34 +1,21 @@
 const { load, write } = require("csvdata");
 
-function transformActive2022(rows) {
-   const active2022ResponseMappings = [
-      {
-         startsWith: "[yes]",
-         response: "I have completed my application",
-      },
-      {
-         startsWith: "[not yet]",
-         response: "I have not completed my application",
-      },
-      {
-         startsWith: "[not interested]",
-         response: "I have decided to not complete my application",
-      },
-   ];
+function mapResponse(answer, responseMappings) {
+   for (const response of responseMappings) {
+      if (answer.startsWith(response.startsWith)) {
+         return response.response;
+      }
+   }
+   throw new Error("response not mapped!");
+}
 
+function mapResponses(rows, fieldName, responseMapping) {
    return rows
-      .filter((row) => row["QT1"] && row["QT1"] !== "[other]")
+      .filter((row) => row[fieldName] && row[fieldName] !== "[other]")
       .map((row) => {
-         const { user_id, QT1 } = row;
-
-         let action_applied_2022;
-         for (const response of active2022ResponseMappings) {
-            if (QT1.startsWith(response.startsWith)) {
-               action_applied_2022 = response.response;
-               break;
-            }
-         }
-
+         const { user_id } = row;
+         const answer = row[fieldName];
+         const action_applied_2022 = mapResponse(answer, responseMapping);
          return {
             user_id,
             action_applied_2022,
@@ -36,37 +23,31 @@ function transformActive2022(rows) {
       });
 }
 
-function transformApplied2020(rows) {
-   const applied2020ResponseMappings = [
-      {
-         startsWith: "[1 yes]",
-         response: "I have completed my application",
-      },
-      {
-         startsWith: "[2 not yet]",
-         response: "I have not completed my application",
-      },
-   ];
+const active2022ResponseMapping = [
+   {
+      startsWith: "[yes]",
+      response: "I have completed my application",
+   },
+   {
+      startsWith: "[not yet]",
+      response: "I have not completed my application",
+   },
+   {
+      startsWith: "[not interested]",
+      response: "I have decided to not complete my application",
+   },
+];
 
-   return rows
-      .filter((row) => row["QT2"] && row["QT2"] !== "[other]")
-      .map((row) => {
-         const { user_id, QT2 } = row;
-
-         let action_applied_2022;
-         for (const response of applied2020ResponseMappings) {
-            if (QT2.startsWith(response.startsWith)) {
-               action_applied_2022 = response.response;
-               break;
-            }
-         }
-
-         return {
-            user_id,
-            action_applied_2022,
-         };
-      });
-}
+const applied2020ResponseMapping = [
+   {
+      startsWith: "[1 yes]",
+      response: "I have completed my application",
+   },
+   {
+      startsWith: "[2 not yet]",
+      response: "I have not completed my application",
+   },
+];
 
 async function process() {
    // files from text campaign
@@ -75,7 +56,6 @@ async function process() {
       applied2020: "campaign_databack_BFS00729.csv",
    };
 
-   // csv load options
    const loadOpts = {
       delimiter: ",",
       encoding: "utf8",
@@ -85,15 +65,25 @@ async function process() {
    };
 
    const rawApplied2020 = await load(files.applied2020, loadOpts);
-   const applied2020 = transformApplied2020(rawApplied2020);
+   const applied2020 = mapResponses(
+      rawApplied2020,
+      "QT2",
+      applied2020ResponseMapping
+   );
 
    const rawActive2022 = await load(files.active2022, loadOpts);
-   const active2022 = transformActive2022(rawActive2022);
+   const active2022 = mapResponses(
+      rawActive2022,
+      "QT1",
+      active2022ResponseMapping
+   );
 
    const output = [...applied2020, ...active2022];
 
-   const header = "user_id,action_applied_2022";
-   await write("./output.csv", output, { header, log: false });
+   await write("./output.csv", output, {
+      header: "user_id,action_applied_2022",
+      log: false,
+   });
 }
 
 process()
