@@ -26,7 +26,7 @@ export class PageResources {
                         </h2>
                              <p>
                                There’s more to do to complete your poll worker application! Here’s what comes next.
-                            </p> 
+                            </p>
                         </a>
                     </div>
                     <div class="card">
@@ -64,7 +64,7 @@ export class PageResources {
                             A Day in the Life of a Poll Worker
                         </h2>
                         <p>
-                            Serving as a poll worker may not be what you think. Learn what your day will be like. 
+                            Serving as a poll worker may not be what you think. Learn what your day will be like.
                         </p>
                         </a>
                     </div>
@@ -85,10 +85,10 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/states.png"></img>
                         <h2>
-                            Fair Elections Center: State Voting Guides 
+                            Fair Elections Center: State Voting Guides
                         </h2>
                         <p>
-                            Learn the rules, requirements and important dates for casting a ballot in every state.  
+                            Learn the rules, requirements and important dates for casting a ballot in every state.
                         </p>
                         </a>
                     </div>
@@ -119,7 +119,7 @@ export class PageResources {
                         </a>
                     </div>
                     <div class="card">
-                         <a href="/assets/documents/25-questions.pdf"
+                         <a href="/assets/documents/25-questions-to-ask.pdf"
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/questions.png"></img>
                         <h2>
@@ -143,10 +143,10 @@ export class PageResources {
                 </p>
                 <p>
                     Credits:
-                        <a href="https://www.flaticon.com/free-icons/checklist" title="checklist icons">Checklist icons created by Ilham Fitrotul Hayat - Flaticon</a>
-                        <a href="https://www.flaticon.com/free-icons/vote" title="vote icons">Vote and Group icons created by Freepik - Flaticon</a>
-                        <a href="https://www.flaticon.com/free-icons/work" title="work icons">Work icons created by Eucalyp - Flaticon</a>
-                        <a href="https://www.flaticon.com/free-icons/united-states" title="united states icons">United states icons created by Nikita Golubev - Flaticon</a>
+                        <a href="https://www.flaticon.com/free-icons/checklist" title="checklist icons"> Checklist icons created by Ilham Fitrotul Hayat - Flaticon</a>
+                        <a href="https://www.flaticon.com/free-icons/vote" title="vote icons"> Vote and Group icons created by Freepik - Flaticon</a>
+                        <a href="https://www.flaticon.com/free-icons/work" title="work icons"> Work icons created by Eucalyp - Flaticon</a>
+                        <a href="https://www.flaticon.com/free-icons/united-states" title="united states icons"> United states icons created by Nikita Golubev - Flaticon</a>
                 </p>
 
             </Host>
