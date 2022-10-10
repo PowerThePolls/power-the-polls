@@ -12,7 +12,7 @@ export class PageResources {
             <Host>
 
                 <h1>Resources</h1>
-                    <p>Now that you've <a href="/assets/documents/election-day-checklist.pdf">
+                    <p>Now that you've <a href="https://www.powerthepolls.org/signup#form">
                         signed up
                     </a> with Power the Polls, here are some resources to help you get ready to serve.
                     </p>
