@@ -22,10 +22,10 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/logo-icon-pink-source.png"></img>
                        <h2>
-                            How to become a Poll Worker
+                            I signed up to power the polls - now what?
                         </h2>
                              <p>
-                               You’ve signed up with Power the Polls—now what?
+                               There’s more to do to complete your poll worker application! Here’s what comes next.
                             </p> 
                         </a>
                     </div>
@@ -64,7 +64,7 @@ export class PageResources {
                             A Day in the Life of a Poll Worker
                         </h2>
                         <p>
-                            Learn what to expect on an average day as a poll worker. 
+                            Serving as a poll worker may not be what you think. Learn what your day will be like. 
                         </p>
                         </a>
                     </div>
@@ -85,10 +85,10 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/states.png"></img>
                         <h2>
-                            State by State Voting Guide 
+                            Fair Elections Center: State Voting Guides 
                         </h2>
                         <p>
-                            Get a guide on how to vote in your state via the Fair Elections Center.  
+                            Learn the rules, requirements and important dates for casting a ballot in every state.  
                         </p>
                         </a>
                     </div>
@@ -111,10 +111,10 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/tables.png"></img>
                         <h2>
-                            Checking Our Biases at the Polls
+                            Checking Our Personal Biases at the Polls
                         </h2>
                         <p>
-                            Learn how to identify and check your biases so you can best serve all voters. 
+                            Learn how to identify and check your biases so that you can best serve all voters.
                         </p>
                         </a>
                     </div>
@@ -126,7 +126,7 @@ export class PageResources {
                             Questions to Ask in Your Official Training
                         </h2>
                         <p>
-                            Get ready to make the most of your local jurisdiction's poll worker training.
+                            Use this guide to prep for your official training and make sure you’re ready to serve.
                         </p>
                         </a>
                     </div>
