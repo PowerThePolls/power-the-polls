@@ -57,7 +57,7 @@ export class PageResources {
 
                   <div class="column">
                     <div class="card">
-                     <a href="/assets/documents/election-day-checklist.pdf"
+                     <a href="/assets/documents/a-day-in-the-life.pdf"
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/group.png"></img>
                         <h2>
@@ -69,7 +69,7 @@ export class PageResources {
                         </a>
                     </div>
                     <div class="card">
-                         <a href="/assets/documents/election-day-checklist.pdf"
+                         <a href="/assets/documents/accessibility-at-the-polls.pdf"
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/team.png"></img>
                         <h2>
@@ -107,7 +107,7 @@ export class PageResources {
                         </a>
                     </div>
                     <div class="card">
-                         <a href="/assets/documents/election-day-checklist.pdf"
+                         <a href="/assets/documents/checking-biases.pdf"
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/tables.png"></img>
                         <h2>
