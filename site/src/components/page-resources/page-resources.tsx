@@ -143,10 +143,12 @@ export class PageResources {
                 </p>
                 <p>
                     Credits:
-                        <a href="https://www.flaticon.com/free-icons/checklist" title="checklist icons"> Checklist icons created by Ilham Fitrotul Hayat - Flaticon</a>
-                        <a href="https://www.flaticon.com/free-icons/vote" title="vote icons"> Vote, Group, and Problem icons created by Freepik - Flaticon</a>
-                        <a href="https://www.flaticon.com/free-icons/work" title="work icons"> Work icons created by Eucalyp - Flaticon</a>
-                        <a href="https://www.flaticon.com/free-icons/united-states" title="united states icons"> United states icons created by Nikita Golubev - Flaticon</a>
+                    <ul>
+                        <li><a href="https://www.flaticon.com/free-icons/checklist" title="checklist icons"> Checklist icons created by Ilham Fitrotul Hayat - Flaticon</a></li>
+                        <li><a href="https://www.flaticon.com/free-icons/vote" title="vote icons"> Vote, Group, and Problem icons created by Freepik - Flaticon</a></li>
+                        <li><a href="https://www.flaticon.com/free-icons/work" title="work icons"> Work icons created by Eucalyp - Flaticon</a></li>
+                        <li><a href="https://www.flaticon.com/free-icons/united-states" title="united states icons"> United states icons created by Nikita Golubev - Flaticon</a></li>
+                    </ul>
                 </p>
 
             </Host>
