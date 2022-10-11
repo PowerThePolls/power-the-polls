@@ -2135,7 +2135,8 @@
   },
   {
     "partnerId": "deltas",
-    "name": "Delta Sigma Theta Sorority, Incorporated"
+    "name": "Delta Sigma Theta Sorority, Incorporated",
+    "logo": "deltasigmatheta.png"
   },
   {
     "partnerId": "NextGenAmerica",
@@ -2371,7 +2372,8 @@
   },
   {
     "partnerId": "newsinmotion",
-    "name": "News in Motion / Ready Magazine"
+    "name": "News in Motion / Ready Magazine",
+    "logo": "newsinmotion.png"
   },
   {
     "partnerId": "JCCPGH-CFLK",
