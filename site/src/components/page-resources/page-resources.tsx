@@ -131,7 +131,6 @@ export class PageResources {
                         </a>
                     </div>
                   </div>
-
                 <br />
                 <br />
                 <p>
