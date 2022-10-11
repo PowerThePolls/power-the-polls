@@ -131,7 +131,7 @@ export class PagePrivacy {
 
                 <h3>How To Contact Us</h3>
                 <p>Questions regarding this Privacy Policy should be emailed to info@powerthepolls.org.</p>
-
+                <p>You can also opt out of our sharing your information with other third parties by emailing us at info@powerthepolls.org and describing your request.</p>
             </Host>
         );
     }

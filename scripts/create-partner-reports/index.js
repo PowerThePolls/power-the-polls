@@ -1,7 +1,7 @@
 import fetch, { Headers } from "node-fetch";
 import Airtable from "airtable";
 
-const getApprovedRecords = async () => {
+async function getApprovedRecords() {
    const { AIRTABLE_PARTNERS_BASE } = process.env;
    const base = new Airtable().base(AIRTABLE_PARTNERS_BASE);
    const filterByFormula = "{report_status} = 'Approved'";
@@ -13,11 +13,11 @@ const getApprovedRecords = async () => {
       "source_code",
    ];
    return base("Partners").select({ filterByFormula, fields }).all();
-};
+}
 
 const actionKitURL = "https://ptp.actionkit.com";
 
-const getActionKitHeaders = () => {
+function getActionKitHeaders() {
    const { ACTION_KIT_USERNAME, ACTION_KIT_PASSWORD } = process.env;
    const headers = new Headers();
    const encodedCredentials = Buffer.from(
@@ -26,43 +26,43 @@ const getActionKitHeaders = () => {
    headers.set("Authorization", `Basic ${encodedCredentials}`);
    headers.set("Content-Type", "application/json");
    return headers;
-};
+}
 
-const checkStatus = async (res) => {
+async function checkStatus(res) {
    if (!res.ok) {
       const body = await res.text();
       throw new Error(
          `HTTP Error Response: ${res.status} ${res.statusText}. Body: ${body}`
       );
    }
-};
+}
 
-const getPartnerReportList = async () => {
+async function callActionKit(path, method = "get", body) {
    const headers = getActionKitHeaders();
-   const url = `${actionKitURL}/rest/v1/queryreport?categories__name=partners&_limit=100`;
-   let res = await fetch(url, { headers });
-
+   const url = `${actionKitURL}${path}`;
+   const res = await fetch(url, { headers, method, body });
    await checkStatus(res);
+   return method === "get" ? res.json() : {};
+}
 
-   let jsonResponse = await res.json();
-   let reportList = jsonResponse.objects;
+function getParams() {
+   const params = new URLSearchParams();
+   params.set("_limit", "100");
+   params.set("categories__name", "partners");
+   return params.toString();
+}
 
-   while (jsonResponse.meta.next) {
-      res = await fetch(`${actionKitURL}${jsonResponse.meta.next}`, {
-         headers,
-      });
-      await checkStatus(res);
-      jsonResponse = await res.json();
-      reportList = reportList.concat(jsonResponse.objects);
+async function getPartnerReportList() {
+   let response = await callActionKit(`/rest/v1/queryreport?${getParams()}`);
+   let reportList = response.objects;
+   while (response.meta.next) {
+      response = await callActionKit(response.meta.next);
+      reportList = reportList.concat(response.objects);
    }
-
    return reportList;
-};
+}
 
-const convertArray = (array) =>
-   array.map((code) => `'${code.toLowerCase()}'`).join(",");
-
-const getSQL = (sourceCodes, isAggregate) => {
+function getSQL(sourceCodes, isAggregate) {
    // language=MySQL
    return isAggregate
       ? `SELECT count(1) AS signups
@@ -131,128 +131,86 @@ const getSQL = (sourceCodes, isAggregate) => {
                GROUP BY user_id, source) sign_ups
          ON core_user.id = sign_ups.user_id
          ORDER BY date_joined`;
-};
+}
 
-const updateReportEmails = async (reportId, emails) => {
-   const headers = getActionKitHeaders();
-   const body = JSON.stringify({
-      to_emails: sanitizeEmails(emails),
-   });
-   const res = await fetch(`${actionKitURL}/rest/v1/queryreport/${reportId}`, {
-      method: "patch",
-      headers,
-      body,
-   });
+function convertArray(array) {
+   return array.map((code) => `'${code.toLowerCase()}'`).join(",");
+}
 
-   await checkStatus(res);
-};
+function isAggregate(partner) {
+   return !partner.get("report_type").startsWith("List");
+}
 
-const createReport = async (
+function getFrequency(partner) {
+   return partner.get("report_frequency").toLowerCase();
+}
+
+function hasReportEmails(partner) {
+   return partner.get("report_emails").replace(/ /g, "").length;
+}
+
+function sanitizeEmails(emails) {
+   return emails.replace(/\n/g, "").replace(/ /g, "");
+}
+
+function getBody({
    organization,
    sourceCodes,
    isAggregate,
    frequency,
-   emails
-) => {
-   const headers = getActionKitHeaders();
-
-   const body = {
+   emails,
+}) {
+   return {
       name: `Power The Polls Report: ${organization}`,
       short_name: `PowerThePolls-${sourceCodes[0]}`,
       description: sourceCodes[0],
       sql: getSQL(sourceCodes, isAggregate),
-      categories: ["/rest/v1/reportcategory/18/"],
-      email_always_csv: true,
-      send_if_no_rows: false,
       run_every: frequency,
       to_emails: emails.replace(/ /g, ""),
+      email_always_csv: true,
+      send_if_no_rows: false,
+      categories: ["/rest/v1/reportcategory/18/"],
    };
+}
 
-   const res = await fetch(`${actionKitURL}/rest/v1/queryreport/`, {
-      headers,
-      method: "post",
-      body: JSON.stringify(body),
-   });
+async function createReport(reportConfig) {
+   const body = getBody(reportConfig);
+   await callActionKit("/rest/v1/queryreport/", "post", JSON.stringify(body));
+}
 
-   await checkStatus(res);
-};
+function getReportConfig(partner) {
+   return {
+      organization: partner.get("organization").trim(),
+      sourceCodes: [partner.get("source_code").trim()],
+      isAggregate: isAggregate(partner),
+      frequency: getFrequency(partner),
+      emails: sanitizeEmails(partner.get("report_emails")),
+   };
+}
 
-const isAggregate = (partner) => !partner.get("report_type").startsWith("List");
+function logPartners(partners) {
+   const sourceCodes = partners.map((partner) => partner.get("source_code"));
+   console.log(JSON.stringify(sourceCodes, null, 2));
+}
 
-const getFrequency = (partner) => partner.get("report_frequency").toLowerCase();
+async function createNewReports(approvedPartners, reportList) {
+   let errorThrown = false;
 
-const hasReportEmails = (partner) =>
-   partner.get("report_emails").replace(/ /g, "").length;
-
-const sanitizeEmails = (emails) => emails.replace(/\n/g, "").replace(/ /g, "");
-
-const isModified = (report, record) => {
-   return (
-      sanitizeEmails(report.to_emails) !==
-      sanitizeEmails(record.get("report_emails"))
-   );
-};
-
-const run = async () => {
-   // get all approved partners from airtable
-   const approvedRecords = await getApprovedRecords();
-
-   // get partner reports from ActionKit
-   const reportList = await getPartnerReportList();
-
-   // const modifiedPartners = approvedRecords.filter((record) => {
-   //    const found = reportList.find(
-   //       (report) => report.description === record.get("source_code")
-   //    );
-   //    // TODO: don't do async in the filter...
-   //    // if (isModified(found, record)) {
-   //    //    await updateReportEmails(found.id, record.get("report_emails"))
-   //    //    console.log("update needed...");
-   //    // }
-   //    return isModified(found, record);
-   // });
-
-   // console.log("Modified emails:");
-   // console.log(
-   //    JSON.stringify(
-   //       modifiedPartners.map((partner) => partner.get("source_code")),
-   //       null,
-   //       2
-   //    )
-   // );
-   // the reports use the primary source code in the description,
-   // so we know which reports have already been created and avoid
-   // duplicate reports.
-
-   const newPartners = approvedRecords.filter((record) => {
+   const newPartners = approvedPartners.filter((partner) => {
       const found = reportList.find(
-         (report) => report.description === record.get("source_code")
+         (report) => report.description === partner.get("source_code")
       );
       return !found;
    });
 
-   console.log("New Partners:");
-   console.log(
-      JSON.stringify(
-         newPartners.map((partner) => partner.get("source_code")),
-         null,
-         2
-      )
-   );
-
-   let errorThrown = false;
+   console.log("New Reports:");
+   logPartners(newPartners);
 
    for (const partner of newPartners) {
       // create report for new partners
       if (hasReportEmails(partner)) {
          try {
-            await createReport(
-               partner.get("organization"),
-               [partner.get("source_code")],
-               isAggregate(partner),
-               getFrequency(partner),
-               sanitizeEmails(partner.get("report_emails"))
-            );
+            await createReport(getReportConfig(partner));
             console.log("Report created for: ", partner.get("organization"));
          } catch (e) {
             errorThrown = true;
@@ -266,11 +224,102 @@ const run = async () => {
          );
       }
    }
+   return errorThrown;
+}
 
-   if (errorThrown) {
-      throw new Error("Error during report creation!");
+function isModified(partner, report) {
+   const body = getBody(getReportConfig(partner));
+
+   const {
+      name,
+      short_name,
+      description,
+      sql,
+      run_every,
+      to_emails,
+      email_always_csv,
+      send_if_no_rows,
+      categories,
+   } = report;
+
+   const reportBody = {
+      name,
+      short_name,
+      description,
+      sql,
+      run_every,
+      to_emails,
+      email_always_csv,
+      send_if_no_rows,
+      categories,
+   };
+   return JSON.stringify(body) !== JSON.stringify(reportBody);
+}
+
+async function updateReport(reportId, reportConfig) {
+   const body = getBody(reportConfig);
+   await callActionKit(
+      `/rest/v1/queryreport/${reportId}`,
+      "patch",
+      JSON.stringify(body)
+   );
+}
+
+async function updateModifiedReports(approvedPartners, reportList) {
+   let errorThrown = false;
+
+   const modifiedPartners = approvedPartners.reduce((modified, partner) => {
+      const report = reportList.find(
+         (report) => report.description === partner.get("source_code")
+      );
+      if (!report || !isModified(partner, report)) {
+         return modified;
+      }
+      partner.report_id = report.id;
+      return [...modified, partner];
+   }, []);
+
+   console.log("Modified Reports:");
+   logPartners(modifiedPartners);
+
+   for (const partner of modifiedPartners) {
+      try {
+         await updateReport(partner.report_id, getReportConfig(partner));
+      } catch (e) {
+         errorThrown = true;
+         console.error(e);
+      }
    }
-   console.log("Done creating reports!");
-};
 
-run();
+   return errorThrown;
+}
+
+async function run() {
+   // get all approved partners from airtable
+   const approvedRecords = await getApprovedRecords();
+
+   // get partner reports from ActionKit
+   const reportList = await getPartnerReportList();
+
+   // create new reports
+   const creatErrorThrown = await createNewReports(approvedRecords, reportList);
+
+   // update modified reports
+   const updateErrorThrown = await updateModifiedReports(
+      approvedRecords,
+      reportList
+   );
+
+   if (creatErrorThrown || updateErrorThrown) {
+      throw new Error("Error during report sync!");
+   }
+}
+
+try {
+   await run();
+   console.log("Done creating reports");
+   process.exit(0);
+} catch (e) {
+   console.error(e);
+   process.exit(11);
+}
