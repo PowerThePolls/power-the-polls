@@ -46,11 +46,8 @@ export class QuestionSection {
                <section class={isOpen ? "open" : "close"}>
                   {questions.map( ( { question, answer } ) => (
                      <div class="subquestion">
-                        <a class="header-click-wrapper" onClick={() => this.isOpen = !this.isOpen}>
-                        <h4 class="section-title">{question}</h4>
-                        </a>
+                        <h4 class="subquestion-title">{question}</h4>
                         <p>{answer()}</p>
-
                      </div>
                   ) )
                   }

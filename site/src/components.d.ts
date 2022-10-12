@@ -64,6 +64,8 @@ export namespace Components {
     }
     interface PagePrivacy {
     }
+    interface PageResources {
+    }
     interface PageSearch {
         "history": RouterHistory;
     }
@@ -215,6 +217,12 @@ declare global {
         prototype: HTMLPagePrivacyElement;
         new (): HTMLPagePrivacyElement;
     };
+    interface HTMLPageResourcesElement extends Components.PageResources, HTMLStencilElement {
+    }
+    var HTMLPageResourcesElement: {
+        prototype: HTMLPageResourcesElement;
+        new (): HTMLPageResourcesElement;
+    };
     interface HTMLPageSearchElement extends Components.PageSearch, HTMLStencilElement {
     }
     var HTMLPageSearchElement: {
@@ -278,6 +286,7 @@ declare global {
         "page-partners": HTMLPagePartnersElement;
         "page-partners-table": HTMLPagePartnersTableElement;
         "page-privacy": HTMLPagePrivacyElement;
+        "page-resources": HTMLPageResourcesElement;
         "page-search": HTMLPageSearchElement;
         "page-testimonial": HTMLPageTestimonialElement;
         "question-section": HTMLQuestionSectionElement;
@@ -345,6 +354,8 @@ declare namespace LocalJSX {
     interface PagePartnersTable {
     }
     interface PagePrivacy {
+    }
+    interface PageResources {
     }
     interface PageSearch {
         "history": RouterHistory;
@@ -427,6 +438,7 @@ declare namespace LocalJSX {
         "page-partners": PagePartners;
         "page-partners-table": PagePartnersTable;
         "page-privacy": PagePrivacy;
+        "page-resources": PageResources;
         "page-search": PageSearch;
         "page-testimonial": PageTestimonial;
         "question-section": QuestionSection;
@@ -455,6 +467,7 @@ declare module "@stencil/core" {
             "page-partners": LocalJSX.PagePartners & JSXBase.HTMLAttributes<HTMLPagePartnersElement>;
             "page-partners-table": LocalJSX.PagePartnersTable & JSXBase.HTMLAttributes<HTMLPagePartnersTableElement>;
             "page-privacy": LocalJSX.PagePrivacy & JSXBase.HTMLAttributes<HTMLPagePrivacyElement>;
+            "page-resources": LocalJSX.PageResources & JSXBase.HTMLAttributes<HTMLPageResourcesElement>;
             "page-search": LocalJSX.PageSearch & JSXBase.HTMLAttributes<HTMLPageSearchElement>;
             "page-testimonial": LocalJSX.PageTestimonial & JSXBase.HTMLAttributes<HTMLPageTestimonialElement>;
             "question-section": LocalJSX.QuestionSection & JSXBase.HTMLAttributes<HTMLQuestionSectionElement>;
