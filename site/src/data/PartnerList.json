@@ -57,8 +57,7 @@
     "name": "All In For Voting // All In: The Fight for Democracy (Film)",
     "logo": "allinforvoting.jpg",
     "logoIsDark": true,
-    "logoAppearsOnLandingPage": true,
-    "excludeFromPartnerList": true
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "AlphaPhiAlpha",
@@ -2482,5 +2481,9 @@
   {
     "partnerId": "eileenfisher",
     "name": "Eileen Fisher"
+  },
+  {
+    "partnerId": "ThePeople",
+    "name": "The People"
   }
 ]
