@@ -21,6 +21,16 @@ export namespace Components {
     }
     interface PageAbout {
     }
+    interface PageContact {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+        /**
+          * The page's title
+         */
+        "pageTitle"?: string;
+    }
     interface PageElectionOfficials {
     }
     interface PageFaq {
@@ -163,6 +173,12 @@ declare global {
         prototype: HTMLPageAboutElement;
         new (): HTMLPageAboutElement;
     };
+    interface HTMLPageContactElement extends Components.PageContact, HTMLStencilElement {
+    }
+    var HTMLPageContactElement: {
+        prototype: HTMLPageContactElement;
+        new (): HTMLPageContactElement;
+    };
     interface HTMLPageElectionOfficialsElement extends Components.PageElectionOfficials, HTMLStencilElement {
     }
     var HTMLPageElectionOfficialsElement: {
@@ -277,6 +293,7 @@ declare global {
         "contact-form": HTMLContactFormElement;
         "contact-modal": HTMLContactModalElement;
         "page-about": HTMLPageAboutElement;
+        "page-contact": HTMLPageContactElement;
         "page-election-officials": HTMLPageElectionOfficialsElement;
         "page-faq": HTMLPageFaqElement;
         "page-faq-es": HTMLPageFaqEsElement;
@@ -311,6 +328,16 @@ declare namespace LocalJSX {
         "onClose"?: (event: CustomEvent<any>) => void;
     }
     interface PageAbout {
+    }
+    interface PageContact {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+        /**
+          * The page's title
+         */
+        "pageTitle"?: string;
     }
     interface PageElectionOfficials {
     }
@@ -429,6 +456,7 @@ declare namespace LocalJSX {
         "contact-form": ContactForm;
         "contact-modal": ContactModal;
         "page-about": PageAbout;
+        "page-contact": PageContact;
         "page-election-officials": PageElectionOfficials;
         "page-faq": PageFaq;
         "page-faq-es": PageFaqEs;
@@ -458,6 +486,7 @@ declare module "@stencil/core" {
             "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
             "contact-modal": LocalJSX.ContactModal & JSXBase.HTMLAttributes<HTMLContactModalElement>;
             "page-about": LocalJSX.PageAbout & JSXBase.HTMLAttributes<HTMLPageAboutElement>;
+            "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
             "page-election-officials": LocalJSX.PageElectionOfficials & JSXBase.HTMLAttributes<HTMLPageElectionOfficialsElement>;
             "page-faq": LocalJSX.PageFaq & JSXBase.HTMLAttributes<HTMLPageFaqElement>;
             "page-faq-es": LocalJSX.PageFaqEs & JSXBase.HTMLAttributes<HTMLPageFaqEsElement>;

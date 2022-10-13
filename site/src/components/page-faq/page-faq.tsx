@@ -29,25 +29,54 @@ export class PageFaq {
             <Host>
                 <h1>{this.pageTitle || ""}</h1>
                 <p>
-                    Power the Polls is a first-of-its-kind, nonpartisan initiative for recruiting poll workers to ensure
-                    a safe and fair election for all. Power the Polls was launched in June 2020 by a coalition of
-                    businesses and nonprofits, including Civic Alliance, Civic Responsibility Project, Comedy Central,
-                    Fair Elections Center, Pizza to the Polls, MTV Entertainment Group, and Center for Secure & Modern
-                    Elections. Power the Polls relies on objective data about poll worker requirements and applications
-                    collected from over 5,000 jurisdictions assembled by the non-partisan Fair Elections Center.
-                </p>
-                <p>
                     There are over 5,000 local election jurisdictions in the country - and becoming a poll worker is a
                     little different in each place. We’ve compiled a list of FAQs to help you understand the process
                     better. If you have questions specific to your local area, contact your local election office.
                 </p>
-                {data.map(({sectionTitle, questions}) => (
-                    <question-section
-                        key={sectionTitle}
-                        sectionTitle={sectionTitle}
-                        questions={questions}
-                    />
-                ))}
+                                
+                    <div class="column">
+                    <div class="card">
+                        <a href="/eligibility.html"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/images/resources/credentials.png"></img>
+                       <h2>
+                            ELIGIBILITY
+                        </h2>
+                             <p>
+                               Figure out if you're eligible to be a poll worker.
+                            </p>
+                        </a>
+                    </div>
+                    </div>
+                    <div class="column">
+                    <div class="card">
+                    <a href="/assets/documents/common-scenarios.pdf"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/images/resources/application.png"></img>
+                        <h2>
+                            APPLICATION & PLACEMENT STATUS
+                        </h2>
+                        <p>
+                            Learn about your application status.
+                        </p>
+                        </a>
+                    </div>
+                    </div>
+                    <div class="column">
+                    <div class="card">
+                         <a href="/assets/documents/problem-solving.pdf"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/images/resources/problem_solving.png"></img>
+                        <h2>
+                            POLL WORKER FAQ
+                        </h2>
+                        <p>
+                            Get information you need as you work.
+                        </p>
+                        </a>
+                    </div>
+                    </div>
+                    
                 <hr />
                 <h3>Still can’t find the answer to your question?</h3>
                 <button class="cta" onClick={() => this.isModalOpen = true}>contact us</button>

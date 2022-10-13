@@ -24,7 +24,7 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
                url="/faq"
                urlMatch={["/faq", "/faq-es", "/contact", "/faq-contact"]}
                onClick={onSelectNavItem}
-            >FAQ &amp; Contact</stencil-route-link>
+            >FAQ</stencil-route-link>
          </li>
          <li>
             <stencil-route-link url="/electionofficials" onClick={onSelectNavItem}>Election Officials</stencil-route-link>
@@ -38,6 +38,13 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
          </li>
          <li>
             <stencil-route-link url="/resources" onClick={onSelectNavItem}>Resources</stencil-route-link>
+         </li>
+         <li>
+            <stencil-route-link
+               url="/faq"
+               urlMatch={["/contact"]}
+               onClick={onSelectNavItem}
+            >Contact</stencil-route-link>
          </li>
       </ul>
    </nav>

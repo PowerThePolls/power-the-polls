@@ -1,4 +1,4 @@
-page-faq {
+page-contact {
    a > h3 {
       margin-top: 0em;
    }
@@ -33,6 +33,7 @@ page-faq {
 
          .number {
             margin: 0 1em 1.5em 0;
+            border: 2px solid $color-accent;
             padding: 0.25em;
             display: block;
             width: 2.2em;
@@ -118,6 +119,7 @@ page-faq {
          &.background {
             padding: 8px;
             background: white;
+            border-radius: 4px;
          }
       }
       & > p {
@@ -173,7 +175,7 @@ page-faq {
       display: block;
       margin-left: auto;
       margin-right: auto;
-      padding-top: .8em;
+      padding-top: .5em;
       }
 
    p {
