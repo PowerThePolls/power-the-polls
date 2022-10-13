@@ -13,9 +13,9 @@ export class PageResources {
 
                 <h1>Resources</h1>
                     <p>
-                    You've signed up with Power the Polls and completed the poll worker application through your 
-                    local elections office—and now you're waiting to hear back. Or perhaps you've been selected 
-                    as a poll worker! Maybe you’re still thinking about submitting an application and want to 
+                    You've signed up with Power the Polls and completed the poll worker application through your
+                    local elections office—and now you're waiting to hear back. Or perhaps you've been selected
+                    as a poll worker! Maybe you’re still thinking about submitting an application and want to
                     know more before you do. Wherever you are in the process, here are some resources to help you get ready to serve.
                     </p>
                   <div class="column">
@@ -75,7 +75,7 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/team.png"></img>
                         <h2>
-                            Accessibility for all Voters 
+                            Accessibility for all Voters
                         </h2>
                         <p>
                            Learn how to help your polling place be accessible for voters with various needs.
