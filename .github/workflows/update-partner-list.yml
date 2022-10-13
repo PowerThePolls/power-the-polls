@@ -31,7 +31,7 @@ jobs:
         if: steps.changes.outputs.changed != 0
         run: |
           git config user.name 'Billy Laing'
-          git config user.email 'billy@powerthepolls.org'
+          git config user.email 'blaing@blaing.io'
           git add .
           git commit -m "automated: update partner list"
 
@@ -41,6 +41,6 @@ jobs:
         with:
           title: Update Partner List
           commit-message: "[update-partner-list] add new partners"
-          assignees: billylaing
+          assignees: PowerThePollsAdmin
           branch: update-partner-list
           delete-branch: true
