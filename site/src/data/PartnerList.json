@@ -57,8 +57,7 @@
     "name": "All In For Voting // All In: The Fight for Democracy (Film)",
     "logo": "allinforvoting.jpg",
     "logoIsDark": true,
-    "logoAppearsOnLandingPage": true,
-    "excludeFromPartnerList": true
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "AlphaPhiAlpha",
@@ -2135,7 +2134,8 @@
   },
   {
     "partnerId": "deltas",
-    "name": "Delta Sigma Theta Sorority, Incorporated"
+    "name": "Delta Sigma Theta Sorority, Incorporated",
+    "logo": "deltasigmatheta.png"
   },
   {
     "partnerId": "NextGenAmerica",
@@ -2371,7 +2371,8 @@
   },
   {
     "partnerId": "newsinmotion",
-    "name": "News in Motion / Ready Magazine"
+    "name": "News in Motion / Ready Magazine",
+    "logo": "newsinmotion.png"
   },
   {
     "partnerId": "JCCPGH-CFLK",
