@@ -2489,5 +2489,17 @@
   {
     "partnerId": "IAVA",
     "name": "Iraq and Afghanistan Veterans of America"
+  },
+  {
+    "partnerId": "Stellantis",
+    "name": "Stellantis"
+  },
+  {
+    "partnerId": "urbanoutfitters",
+    "name": "Urban Outfitters"
+  },
+  {
+    "partnerId": "LaColombe",
+    "name": "La Colombe"
   }
 ]
