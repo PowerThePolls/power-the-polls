@@ -12,9 +12,11 @@ export class PageResources {
             <Host>
 
                 <h1>Resources</h1>
-                    <p>Now that you've <a href="https://www.powerthepolls.org/signup#form">
-                        signed up
-                    </a> with Power the Polls, here are some resources to help you get ready to serve.
+                    <p>
+                    You've signed up with Power the Polls and completed the poll worker application through your
+                    local elections office—and now you're waiting to hear back. Or perhaps you've been selected
+                    as a poll worker! Maybe you’re still thinking about submitting an application and want to
+                    know more before you do. Wherever you are in the process, here are some resources to help you get ready to serve.
                     </p>
                   <div class="column">
                     <div class="card">
@@ -34,10 +36,10 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/ballot_box.png"></img>
                         <h2>
-                            Top Voting or Ballot Issues to Prepare For
+                            Common Voter Issues & Solutions
                         </h2>
                         <p>
-                            Voters may need help with the voting process. Learn what solutions you can provide.
+                            Voters may need help with the voting process. Learn how to handle common scenarios.
                         </p>
                         </a>
                     </div>
@@ -49,7 +51,7 @@ export class PageResources {
                             Safety and Problem Solving at the Polls
                         </h2>
                         <p>
-                            Learn how you can problem solve and help keep things calm at your polling location.
+                            Learn to handle difficult situations and  keep things calm at your polling place.
                         </p>
                         </a>
                     </div>
@@ -73,10 +75,10 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/team.png"></img>
                         <h2>
-                            Maintaining Accessible Voting for Everyone
+                            Accessibility for all Voters
                         </h2>
                         <p>
-                            Learn how to help your polling place be accessible for disabled and bi-lingual voters.
+                           Learn how to help your polling place be accessible for voters with various needs.
                         </p>
                         </a>
                     </div>
@@ -85,7 +87,7 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/states.png"></img>
                         <h2>
-                            Fair Elections Center: State Voting Guides
+                            Campus Vote Project: State Voting Guides
                         </h2>
                         <p>
                             Learn the rules, requirements and important dates for casting a ballot in every state.
@@ -102,7 +104,7 @@ export class PageResources {
                             Poll Worker Election Day Checklist
                         </h2>
                         <p>
-                            Save this checklist to make sure you’re ready to power the polls!
+                            Get ready for your poll worker shift by reviewing this handy Election Day checklist.
                         </p>
                         </a>
                     </div>
@@ -111,7 +113,7 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/tables.png"></img>
                         <h2>
-                            Checking Our Personal Biases at the Polls
+                            Checking Our Biases at the Polls
                         </h2>
                         <p>
                             Learn how to identify and check your biases so that you can best serve all voters.
@@ -126,7 +128,7 @@ export class PageResources {
                             Questions to Ask in Your Official Training
                         </h2>
                         <p>
-                            Use this guide to prep for your official training and make sure you’re ready to serve.
+                         Prepare for your official training and make sure you’re ready to serve.
                         </p>
                         </a>
                     </div>

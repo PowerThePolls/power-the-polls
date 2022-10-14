@@ -6,7 +6,7 @@
    "homepage": "https://powerthepolls.org",
    "repository": {
       "type": "git",
-      "url": "https://github.com/pizza-to-the-polls/power-the-polls"
+      "url": "https://github.com/PowerThePolls/power-the-polls"
    },
    "main": "dist/index.cjs.js",
    "module": "dist/full/index.js",
