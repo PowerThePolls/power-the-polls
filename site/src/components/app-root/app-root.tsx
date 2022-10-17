@@ -1,6 +1,6 @@
 import { Component, FunctionalComponent, h, State } from "@stencil/core";
 
-import { FaqApplicationData, FaqEligibilityData, FaqPollWorkerData, FaqESData, PartnerList, Social } from "../../data";
+import { FaqApplicationData, FaqEligibilityData, FaqESData, FaqPollWorkerData, PartnerList, Social } from "../../data";
 import { Partner } from "../../data/types";
 import { parseQueryString, shuffle } from "../../util";
 

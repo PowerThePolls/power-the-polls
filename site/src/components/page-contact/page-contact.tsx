@@ -5,7 +5,7 @@ import {Component, h, Host, Prop, State} from "@stencil/core";
     styleUrl: "page-contact.scss",
     shadow: false,
 })
-export class PageContact{
+export class PageContact {
 
     /**
      * A list of entries to display in the FAQ
