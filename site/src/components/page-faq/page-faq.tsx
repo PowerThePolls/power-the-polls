@@ -33,11 +33,11 @@ export class PageFaq {
                     little different in each place. We’ve compiled a list of FAQs to help you understand the process
                     better. If you have questions specific to your local area, contact your local election office.
                 </p>
-                                
+                    <hr />        
                     <div class="column">
                     <div class="card">
-                        <a href="/eligibility.html"
-                                                                         target="_blank" rel="noopener noreferrer">
+                        <a href="/faq-eligibility"
+                           target="_self" rel="noopener noreferrer">
                         <img src="/assets/images/resources/credentials.png"></img>
                        <h2>
                             ELIGIBILITY
@@ -50,8 +50,8 @@ export class PageFaq {
                     </div>
                     <div class="column">
                     <div class="card">
-                    <a href="/assets/documents/common-scenarios.pdf"
-                                                                         target="_blank" rel="noopener noreferrer">
+                    <a href="/faq-application-status"
+                                                                         target="_self" rel="noopener noreferrer">
                         <img src="/assets/images/resources/application.png"></img>
                         <h2>
                             APPLICATION & PLACEMENT STATUS
@@ -64,8 +64,8 @@ export class PageFaq {
                     </div>
                     <div class="column">
                     <div class="card">
-                         <a href="/assets/documents/problem-solving.pdf"
-                                                                         target="_blank" rel="noopener noreferrer">
+                         <a href="/faq-poll-worker"
+                                                                         target="_self" rel="noopener noreferrer">
                         <img src="/assets/images/resources/problem_solving.png"></img>
                         <h2>
                             POLL WORKER FAQ
@@ -77,13 +77,26 @@ export class PageFaq {
                     </div>
                     </div>
                     
-                <hr />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <hr />  
                 <h3>Still can’t find the answer to your question?</h3>
                 <button class="cta" onClick={() => this.isModalOpen = true}>contact us</button>
                 <contact-modal
                     isOpen={isModalOpen}
                     onClose={() => this.isModalOpen = false}
                 />
+
                 <p>
                     For press inquiries, please contact <a
                     href="mailto:press@powerthepolls.org">press@powerthepolls.org</a>.
