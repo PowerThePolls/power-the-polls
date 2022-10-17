@@ -33,7 +33,7 @@ export class PageFaq {
                     little different in each place. We’ve compiled a list of FAQs to help you understand the process
                     better. If you have questions specific to your local area, contact your local election office.
                 </p>
-                    <hr/>        
+                    <hr/>
                     <div class="column">
                     <div class="card">
                         <a href="/faq-eligibility"
@@ -88,7 +88,7 @@ export class PageFaq {
                     <br />
                     <br />
                     <br />
-                    <hr />  
+                    <hr />
                 <h3>Still can’t find the answer to your question?</h3>
                 <button class="cta" onClick={() => this.isModalOpen = true}>contact us</button>
                 <contact-modal
