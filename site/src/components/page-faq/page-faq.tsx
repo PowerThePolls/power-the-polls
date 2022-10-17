@@ -6,14 +6,6 @@ import {Component, h, Host, Prop, State} from "@stencil/core";
     shadow: false,
 })
 export class PageFaq {
-
-    /**
-     * A list of entries to display in the FAQ
-     * see: FaqData.ts
-     * see: app-root.tsx
-     */
-    @Prop() public data?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
-
     /**
      * The page's title
      */
@@ -22,7 +14,6 @@ export class PageFaq {
     @State() private isModalOpen: boolean = false;
 
     public render() {
-        const data = this.data || [];
         const {isModalOpen} = this;
 
         return (

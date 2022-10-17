@@ -23,10 +23,6 @@ export namespace Components {
     }
     interface PageContact {
         /**
-          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
-         */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
-        /**
           * The page's title
          */
         "pageTitle"?: string;
@@ -34,10 +30,6 @@ export namespace Components {
     interface PageElectionOfficials {
     }
     interface PageFaq {
-        /**
-          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
-         */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
         /**
           * The page's title
          */
@@ -370,10 +362,6 @@ declare namespace LocalJSX {
     }
     interface PageContact {
         /**
-          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
-         */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
-        /**
           * The page's title
          */
         "pageTitle"?: string;
@@ -381,10 +369,6 @@ declare namespace LocalJSX {
     interface PageElectionOfficials {
     }
     interface PageFaq {
-        /**
-          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
-         */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
         /**
           * The page's title
          */

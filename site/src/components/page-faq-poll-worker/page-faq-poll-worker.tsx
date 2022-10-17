@@ -1,6 +1,4 @@
-import { Component, h, Host, Listen, Prop, State } from "@stencil/core";
-
-import { Partner } from "../../data/types";
+import { Component, h, Host, Prop } from "@stencil/core";
 
 @Component( {
    tag: "page-faq-poll-worker",
