@@ -125,7 +125,7 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/states.png"></img>
                         <h2>
-                            Campus Vote Project: State Voting Guides
+                            Fair Elections Center: State Voting Guides
                         </h2>
                         <p>
                             Learn the rules, requirements and important dates for casting a ballot in every state.
