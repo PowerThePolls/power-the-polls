@@ -3,11 +3,17 @@ page-jurisdiction {
    a.poll-worker-action {
       font-family: $font-heading;
       border: 0;
+      border-radius: 4px;
       background-color: $color-font-primary;
       color: black;
       &.cta {
          background-color: $color-highlight;
          color: $color-font-primary;
       }
+   }
+
+   .poll-worker-details-section {
+     border: solid 4px $color-highlight;
+     background-color: $color-highlight;
    }
 }

@@ -162,6 +162,7 @@ page-form {
          border: 0;
          background-color: $color-font-primary;
          color: black;
+         border-radius: 4px;
          &.cta {
             background-color: $color-highlight;
             color: $color-font-primary;

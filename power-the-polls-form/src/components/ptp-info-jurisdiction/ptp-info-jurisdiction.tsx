@@ -347,7 +347,7 @@ export class JurisdictionInfoComponent {
                             </Fragment>
                         )}
 
-                        <section>
+                        <section class="poll-worker-details-section">
                             <h4>Hours and Compensation</h4>
                             {!allNullOrEmpty(
                                 j?.hours_start,
@@ -441,14 +441,6 @@ export class JurisdictionInfoComponent {
                             )}
                         </section>
 
-                        {!allNullOrEmpty(j?.further_notes, j?.notes) ? (
-                            <section>
-                                <h4>Further Notes</h4>
-                                <p>{j.further_notes}</p>
-                                {j.notes && <PtpHtml html={j.notes} />}
-                            </section>
-                        ) : null}
-
                         {!allNullOrEmpty(
                             j?.telephone,
                             j?.email,
@@ -502,6 +494,14 @@ export class JurisdictionInfoComponent {
                                 Student Poll Worker Information
                             </a>
                         )}
+
+                        {!allNullOrEmpty(j?.further_notes, j?.notes) ? (
+                            <section>
+                                <h4>More Details</h4>
+                                <p>{j.further_notes}</p>
+                                {j.notes && <PtpHtml html={j.notes} />}
+                            </section>
+                        ) : null}
 
                         {hasApplication ? (
                             <CompleteApplicationButton jurisdiction={j} />
