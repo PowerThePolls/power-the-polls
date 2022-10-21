@@ -1,0 +1,24 @@
+
+name: create admin reports
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Create Partner Reports
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: cd scripts/create-admin-reports && npm install
+      - run: cd scripts/create-admin-reports && npm run start
+        env:
+          ACTION_KIT_USERNAME: ${{ secrets.ACTION_KIT_USERNAME }}
+          ACTION_KIT_PASSWORD: ${{ secrets.ACTION_KIT_PASSWORD }}
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+          AIRTABLE_PARTNERS_BASE: ${{ secrets.AIRTABLE_PARTNERS_BASE }}
