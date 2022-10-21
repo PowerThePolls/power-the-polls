@@ -11,7 +11,7 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Create Partner Reports
+      - name: Create Admin Reports
         uses: actions/setup-node@v1
         with:
           node-version: 14
