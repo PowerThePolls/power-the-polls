@@ -81,7 +81,7 @@ function getSQL(sourceCodes, isAggregate) {
          OR (ca.name = 'training_2022' AND ca.value = 'Yes, I’m scheduled for my official training')
          OR (ca.name = 'training_2022' AND ca.value = 'Yes, I have completed my official training')
          OR (ca.name = 'contacted_2022' AND ca.value = 'Yes')
-         ) as likely ON u.id = likely.user_id
+         ) as likely ON core_user.id = likely.user_id
          JOIN (SELECT user_id
                     , source
                     , min(created_at) AS created_at
@@ -145,7 +145,7 @@ function getSQL(sourceCodes, isAggregate) {
          OR (ca.name = 'training_2022' AND ca.value = 'Yes, I’m scheduled for my official training')
          OR (ca.name = 'training_2022' AND ca.value = 'Yes, I have completed my official training')
          OR (ca.name = 'contacted_2022' AND ca.value = 'Yes')
-         ) as likely ON u.id = likely.user_id
+         ) as likely ON core_user.id = likely.user_id
          JOIN (SELECT user_id
                     , source
                     , min(created_at) AS created_at
