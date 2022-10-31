@@ -69,19 +69,8 @@ function getSQL(sourceCodes, isAggregate) {
               , 'ALL' AS state
               , 'ALL' AS city
               , sign_ups.source
+              , count(likely.user_id) AS likely_poll_workers
          FROM core_user
-         JOIN (SELECT DISTINCT user_id
-         FROM core_action
-         JOIN core_actionfield ca ON core_action.id = ca.parent_id
-         WHERE (ca.name = 'admintraining' AND ca.value = 'Yes, I have completed my official training')
-         OR (ca.name = 'placed_election_day_2022' AND ca.value = 'Yes, I have my polling location assignment for Election Day')
-         OR (ca.name = 'placed_early_voting_2022 ' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
-         OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment')
-         OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
-         OR (ca.name = 'training_2022' AND ca.value = 'Yes, I’m scheduled for my official training')
-         OR (ca.name = 'training_2022' AND ca.value = 'Yes, I have completed my official training')
-         OR (ca.name = 'contacted_2022' AND ca.value = 'Yes')
-         ) as likely ON core_user.id = likely.user_id
          JOIN (SELECT user_id
                     , source
                     , min(created_at) AS created_at
@@ -90,11 +79,25 @@ function getSQL(sourceCodes, isAggregate) {
                  AND created_at > date('2020-12-31')
                GROUP BY user_id, source) sign_ups
          ON core_user.id = sign_ups.user_id
+         LEFT JOIN (
+              SELECT DISTINCT user_id
+              FROM core_action
+              JOIN core_actionfield ca ON core_action.id = ca.parent_id
+              WHERE (ca.name = 'admintraining' AND ca.value = 'Yes, I have completed my official training')
+              OR (ca.name = 'placed_election_day_2022' AND ca.value = 'Yes, I have my polling location assignment for Election Day')
+                 OR (ca.name = 'placed_early_voting_2022 ' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
+                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment')
+                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
+                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I’m scheduled for my official training')
+                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I have completed my official training')
+                 OR (ca.name = 'contacted_2022' AND ca.value = 'Yes')
+         ) as likely ON core_user.id = likely.user_id
          UNION
          (SELECT count(1) AS signups
                , core_user.state
                , core_user.city
                , sign_ups.source
+               , count(likely.user_id) AS likely_poll_workers
           FROM core_user
           JOIN (SELECT user_id
                      , source
@@ -104,6 +107,19 @@ function getSQL(sourceCodes, isAggregate) {
                   AND created_at > date('2020-12-31')
                 GROUP BY user_id, source) sign_ups
           ON core_user.id = sign_ups.user_id
+          LEFT JOIN (
+              SELECT DISTINCT user_id
+              FROM core_action
+              JOIN core_actionfield ca ON core_action.id = ca.parent_id
+              WHERE (ca.name = 'admintraining' AND ca.value = 'Yes, I have completed my official training')
+              OR (ca.name = 'placed_election_day_2022' AND ca.value = 'Yes, I have my polling location assignment for Election Day')
+                 OR (ca.name = 'placed_early_voting_2022 ' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
+                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment')
+                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
+                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I’m scheduled for my official training')
+                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I have completed my official training')
+                 OR (ca.name = 'contacted_2022' AND ca.value = 'Yes')
+          ) as likely ON core_user.id = likely.user_id
           GROUP BY core_user.state, core_user.city, sign_ups.source
           ORDER BY core_user.state, core_user.city, sign_ups.source)`
       : `SELECT sign_ups.created_at AS date_joined
@@ -133,18 +149,20 @@ function getSQL(sourceCodes, isAggregate) {
                  FROM core_userfield
                  WHERE core_userfield.parent_id = core_user.id
                    AND core_userfield.name = 'partner_field') AS partner_field
+              , count(likely.user_id) AS likely_poll_workers
          FROM core_user
-         JOIN (SELECT DISTINCT user_id
-         FROM core_action
-         JOIN core_actionfield ca ON core_action.id = ca.parent_id
-         WHERE (ca.name = 'admintraining' AND ca.value = 'Yes, I have completed my official training')
-         OR (ca.name = 'placed_election_day_2022' AND ca.value = 'Yes, I have my polling location assignment for Election Day')
-         OR (ca.name = 'placed_early_voting_2022 ' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
-         OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment')
-         OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
-         OR (ca.name = 'training_2022' AND ca.value = 'Yes, I’m scheduled for my official training')
-         OR (ca.name = 'training_2022' AND ca.value = 'Yes, I have completed my official training')
-         OR (ca.name = 'contacted_2022' AND ca.value = 'Yes')
+         LEFT JOIN (
+              SELECT DISTINCT user_id
+              FROM core_action
+              JOIN core_actionfield ca ON core_action.id = ca.parent_id
+              WHERE (ca.name = 'admintraining' AND ca.value = 'Yes, I have completed my official training')
+              OR (ca.name = 'placed_election_day_2022' AND ca.value = 'Yes, I have my polling location assignment for Election Day')
+                 OR (ca.name = 'placed_early_voting_2022 ' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
+                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment')
+                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
+                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I’m scheduled for my official training')
+                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I have completed my official training')
+                 OR (ca.name = 'contacted_2022' AND ca.value = 'Yes')
          ) as likely ON core_user.id = likely.user_id
          JOIN (SELECT user_id
                     , source
@@ -154,6 +172,19 @@ function getSQL(sourceCodes, isAggregate) {
                  AND created_at > date('2020-12-31')
                GROUP BY user_id, source) sign_ups
          ON core_user.id = sign_ups.user_id
+         LEFT JOIN (
+              SELECT DISTINCT user_id
+              FROM core_action
+              JOIN core_actionfield ca ON core_action.id = ca.parent_id
+              WHERE (ca.name = 'admintraining' AND ca.value = 'Yes, I have completed my official training')
+              OR (ca.name = 'placed_election_day_2022' AND ca.value = 'Yes, I have my polling location assignment for Election Day')
+                 OR (ca.name = 'placed_early_voting_2022 ' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
+                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment')
+                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
+                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I’m scheduled for my official training')
+                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I have completed my official training')
+                 OR (ca.name = 'contacted_2022' AND ca.value = 'Yes')
+         ) as likely ON core_user.id = likely.user_id
          ORDER BY date_joined`;
 }
 
