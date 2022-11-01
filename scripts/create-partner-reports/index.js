@@ -135,6 +135,9 @@ function getSQL(sourceCodes, isAggregate) {
                  OR (ca.name = 'training_2022' AND ca.value = 'Yes, I’m scheduled for my official training')
                  OR (ca.name = 'training_2022' AND ca.value = 'Yes, I have completed my official training')
                  OR (ca.name = 'contacted_2022' AND ca.value = 'Yes')
+                 OR (page_id = 72) 
+                 OR (page_id = 80 AND ca.name = 'applied_2022' AND ca.value = 'I have completed my application')
+                 OR (ca.name = 'application' AND ca.value = 'Yes')
          ) as likely ON core_user.id = likely.user_id
          JOIN (SELECT user_id
                     , source
