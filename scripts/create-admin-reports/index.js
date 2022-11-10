@@ -30,12 +30,16 @@ const checkStatus = async (res) => {
 const sanitizeEmails = (emails) => emails.replace(/\n/g, "").replace(/ /g, "");
 
 const addEmail = (Emails) =>
-   `${sanitizeEmails(Emails)},kay@powerthepolls.org,billy@powerthepolls.org`;
+   `${sanitizeEmails(Emails)},kay@powerthepolls.org,sage@powerthepolls.org`;
 
 const getSql = (State, Jurisdiction, JurisdictionType) => {
    if (JurisdictionType === "County") {
       const county = Jurisdiction.replace(" County", "");
-      return `SELECT u.first_name
+      return `SELECT
+   *
+FROM
+(
+SELECT u.first_name
      , u.last_name
      , u.email
      , (SELECT coalesce(group_concat(phone ORDER BY core_phone.id DESC SEPARATOR ', '), '')
@@ -48,12 +52,26 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
      , coalesce((SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
                  FROM core_action a
                  JOIN core_actionfield af ON a.id = af.parent_id
+                 WHERE af.name = 'waitlist'
+                   AND a.user_id = u.id), '') AS waitlist
+     , coalesce((SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
+                 FROM core_action a
+                 JOIN core_actionfield af ON a.id = af.parent_id
                  WHERE af.name = 'language'
                    AND a.user_id = u.id), '') AS languages
      , coalesce((SELECT max(DISTINCT uf.value)
                  FROM core_userfield uf
                  WHERE uf.name = 'tech_skills'
                    AND uf.parent_id = u.id), '') AS tech_skills
+     , (SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
+        FROM core_action a
+        JOIN core_actionfield af ON a.id = af.parent_id
+        WHERE (af.name = 'travel' AND a.user_id = u.id)
+        ) AS willing_to_travel
+     , (SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
+        FROM core_action a
+        JOIN core_actionfield af ON a.id = af.parent_id
+        WHERE (af.name= 'travel_distance' AND a.user_id = u.id)) AS potential_travel_distance
      , (SELECT max(created_at)
         FROM core_action
         WHERE user_id = u.id) AS latest_action
@@ -64,11 +82,16 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
       FROM core_user AS u
       JOIN core_userfield uf ON u.id = uf.parent_id
       WHERE lower(u.state) = lower('${State}') AND uf.name = 'county' AND lower(uf.value) = lower('${county}')
-      ORDER BY latest_signup DESC`;
+      ORDER BY waitlist DESC, latest_signup DESC
+) as innerTable WHERE waitlist = "Yes"`;
    }
    if (JurisdictionType === "City") {
       const city = Jurisdiction.replace(" (City)", "").replace(" (city)", "");
-      return `SELECT u.first_name
+      return `SELECT
+   *
+FROM
+(
+SELECT u.first_name
      , u.last_name
      , u.email
      , (SELECT coalesce(group_concat(phone ORDER BY core_phone.id DESC SEPARATOR ', '), '')
@@ -81,12 +104,26 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
      , coalesce((SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
                  FROM core_action a
                  JOIN core_actionfield af ON a.id = af.parent_id
+                 WHERE af.name = 'waitlist'
+                   AND a.user_id = u.id), '') AS waitlist
+     , coalesce((SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
+                 FROM core_action a
+                 JOIN core_actionfield af ON a.id = af.parent_id
                  WHERE af.name = 'language'
                    AND a.user_id = u.id), '') AS languages
      , coalesce((SELECT max(DISTINCT uf.value)
                  FROM core_userfield uf
                  WHERE uf.name = 'tech_skills'
                    AND uf.parent_id = u.id), '') AS tech_skills
+     , (SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
+        FROM core_action a
+        JOIN core_actionfield af ON a.id = af.parent_id
+        WHERE (af.name = 'travel' AND a.user_id = u.id)
+        ) AS willing_to_travel
+     , (SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
+        FROM core_action a
+        JOIN core_actionfield af ON a.id = af.parent_id
+        WHERE (af.name= 'travel_distance' AND a.user_id = u.id)) AS potential_travel_distance
      , (SELECT max(created_at)
         FROM core_action
         WHERE user_id = u.id) AS latest_action
@@ -96,11 +133,16 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
           AND page_id = 12) AS latest_signup
       FROM core_user AS u
       JOIN core_userfield uf ON u.id = uf.parent_id
-      WHERE uf.name = 'county' AND lower(u.state) = lower('${State}') AND lower(u.city) = lower('${city}') 
-      ORDER BY latest_signup DESC;`;
+      WHERE lower(u.state) = lower('${State}') AND uf.name = 'county' AND lower(u.city) = lower('${city}')
+      ORDER BY waitlist DESC, latest_signup DESC
+) as innerTable WHERE waitlist = "Yes"`;
    }
    if (JurisdictionType === "State") {
-      return `SELECT u.first_name
+      return `SELECT
+   *
+FROM
+(
+SELECT u.first_name
      , u.last_name
      , u.email
      , (SELECT coalesce(group_concat(phone ORDER BY core_phone.id DESC SEPARATOR ', '), '')
@@ -113,12 +155,26 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
      , coalesce((SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
                  FROM core_action a
                  JOIN core_actionfield af ON a.id = af.parent_id
+                 WHERE af.name = 'waitlist'
+                   AND a.user_id = u.id), '') AS waitlist
+     , coalesce((SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
+                 FROM core_action a
+                 JOIN core_actionfield af ON a.id = af.parent_id
                  WHERE af.name = 'language'
                    AND a.user_id = u.id), '') AS languages
      , coalesce((SELECT max(DISTINCT uf.value)
                  FROM core_userfield uf
                  WHERE uf.name = 'tech_skills'
                    AND uf.parent_id = u.id), '') AS tech_skills
+     , (SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
+        FROM core_action a
+        JOIN core_actionfield af ON a.id = af.parent_id
+        WHERE (af.name = 'travel' AND a.user_id = u.id)
+        ) AS willing_to_travel
+     , (SELECT coalesce(group_concat(DISTINCT trim(value) ORDER BY value SEPARATOR ', '), '')
+        FROM core_action a
+        JOIN core_actionfield af ON a.id = af.parent_id
+        WHERE (af.name= 'travel_distance' AND a.user_id = u.id)) AS potential_travel_distance
      , (SELECT max(created_at)
         FROM core_action
         WHERE user_id = u.id) AS latest_action
@@ -129,8 +185,8 @@ const getSql = (State, Jurisdiction, JurisdictionType) => {
       FROM core_user AS u
       JOIN core_userfield uf ON u.id = uf.parent_id
       WHERE lower(u.state) = lower('${State}') AND uf.name = 'county'
-      ORDER BY latest_signup DESC
-      `;
+      ORDER BY waitlist DESC, latest_signup DESC
+) as innerTable WHERE waitlist = "Yes"`;
    }
    return "";
 };
@@ -148,14 +204,14 @@ const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
    const sql = getSql(State, Jurisdiction, JurisdictionType);
 
    return {
-      name: `Power The Polls Report: ${Jurisdiction}, ${State}`,
-      short_name: `PowerThePolls-${slug}`,
+      name: `Power The Polls Report: Waitlist for ${Jurisdiction}, ${State}`,
+      short_name: `PowerThePolls-admin-waitlist-${slug}`,
       description: slug,
       to_emails: addEmail(Emails),
       email_always_csv: true,
       send_if_no_rows: false,
       run_every: "weekly",
-      run_weekday: 1, // Monday
+      run_weekday: 5, // Friday
       run_hour: 11, // 11GMT -> 7AM Eastern
       categories,
       sql,

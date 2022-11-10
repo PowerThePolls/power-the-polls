@@ -6,7 +6,7 @@ function mapResponse(answer, responseMappings) {
          return response.response;
       }
    }
-   throw new Error("response not mapped!");
+   //throw new Error("response not mapped!");
 }
 
 function mapResponses(rows, fieldName, responseMapping) {
@@ -22,6 +22,47 @@ function mapResponses(rows, fieldName, responseMapping) {
          };
       });
 }
+
+const assignment2022ResponseMapping = [
+   {
+      startsWith: "[1. Yes]",
+      response: "Yes, I have received my assignment",
+   },
+   {
+      startsWith: "[2. Yes]",
+      response: "Yes, but I have not received my assignment",
+   },
+   {
+      startsWith: "[3. No]",
+      response: "No, I have not heard from them.",
+   },
+];
+
+const adminPlacementeday2022ResponseMapping = [
+   {
+      startsWith: "Yes, I have received my assignment",
+      response: "Yes, I have received my assignment",
+   },
+   {
+      startsWith: "Yes, but I have not received my assignment",
+      response: "Yes, but I have not received my assignment",
+   },
+   {
+      startsWith:"No, I have not heard from them.",
+      response:"No, I have not heard from them.",
+   }
+];
+
+const waitlist2022ResponseMapping = [
+   {
+      startsWith: "Yes",
+      response: "Yes",
+   },
+   {
+      startsWith: "No",
+      response: "No",
+   }
+];
 
 const active2022ResponseMapping = [
    {
@@ -49,11 +90,21 @@ const applied2020ResponseMapping = [
    },
 ];
 
+const surveyResponseMapping = [
+{
+      startsWith: "Yes",
+      response: "Yes",
+   },
+   {
+      startsWith: " ",
+      response: "Yes",
+   },
+]
+
 async function process() {
    // files from text campaign
    const files = {
-      active2022: "campaign_databack_BFS00727.csv",
-      applied2020: "campaign_databack_BFS00729.csv",
+      halloweendata2022: "halloweenData.csv",
    };
 
    const loadOpts = {
@@ -64,21 +115,37 @@ async function process() {
       stream: false,
    };
 
-   const rawApplied2020 = await load(files.applied2020, loadOpts);
-   const applied2020 = mapResponses(
-      rawApplied2020,
-      "QT2",
-      applied2020ResponseMapping
-   );
-
-   const rawActive2022 = await load(files.active2022, loadOpts);
-   const active2022 = mapResponses(
-      rawActive2022,
+   const rawAssignment2022 = await load(files.halloweendata2022, loadOpts);
+   const assignment2022 = mapResponses(
+      rawAssignment2022,
       "QT1",
-      active2022ResponseMapping
+      assignment2022ResponseMapping
    );
 
-   const output = [...applied2020, ...active2022];
+   const rawWaitlist2022 = await load(files.halloweendata2022, loadOpts);
+   const waitlist2022 = mapResponses(
+      rawWaitlist2022,
+      "waitlist",
+      waitlist2022ResponseMapping
+   );
+
+   const rawAdminPlacementeday2022 = await load(files.halloweendata2022, loadOpts);
+   const adminPlacementeday2022 = mapResponses(
+      rawAdminPlacementeday2022,
+      "QT2",
+      adminPlacementeday2022ResponseMapping
+   );
+
+   const rawSurvey = await load(files.halloweendata2022, loadOpts);
+   const survey = mapResponses(
+      rawSurvey,
+      "clicked_survey",
+      surveyResponseMapping
+   );
+
+
+
+   const output = [...assignment2022, ...waitlist2022, ...adminPlacementeday2022, ...survey];
 
    await write("./output.csv", output, {
       header: "user_id,action_applied_2022",
