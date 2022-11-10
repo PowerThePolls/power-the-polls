@@ -23,18 +23,33 @@ function mapResponses(rows, fieldName, responseMapping) {
       });
 }
 
-const assignment2022ResponseMapping = [
+const contacted2022ResponseMapping = [
    {
-      startsWith: "[1. Yes]",
+      startsWith: "[1.Yes]Great!",
       response: "Yes, I have received my assignment",
    },
    {
-      startsWith: "[2. Yes]",
-      response: "Yes, but I have not received my assignment",
+      startsWith: "[2.Yes]Your",
+      response: "Yes, I’ve heard from my elections office, but I do not have an assignment yet.",
    },
    {
-      startsWith: "[3. No]",
+      startsWith: "[3.No]Your",
       response: "No, I have not heard from them.",
+   },
+];
+
+const assignment2022ResponseMapping = [
+   {
+      startsWith: "[1.Yes]Fantastic!",
+      response: "I’ve been assigned a shift as a poll worker.",
+   },
+   {
+      startsWith: "[2.No]Your",
+      response: "No I do not have assignment.",
+   },
+   {
+      startsWith: "[3.No]Thanks",
+      response: "I am no longer serving as a poll worker.",
    },
 ];
 
@@ -55,11 +70,11 @@ const adminPlacementeday2022ResponseMapping = [
 
 const waitlist2022ResponseMapping = [
    {
-      startsWith: "Yes",
+      startsWith: "[1 yes]",
       response: "Yes",
    },
    {
-      startsWith: "No",
+      startsWith: "[2 no]",
       response: "No",
    }
 ];
@@ -104,7 +119,7 @@ const surveyResponseMapping = [
 async function process() {
    // files from text campaign
    const files = {
-      halloweendata2022: "halloweenData.csv",
+      contactedData2022: "ubercampaign.csv",
    };
 
    const loadOpts = {
@@ -115,37 +130,21 @@ async function process() {
       stream: false,
    };
 
-   const rawAssignment2022 = await load(files.halloweendata2022, loadOpts);
+   const rawAssignment2022 = await load(files.contactedData2022, loadOpts);
    const assignment2022 = mapResponses(
       rawAssignment2022,
       "QT1",
       assignment2022ResponseMapping
    );
 
-   const rawWaitlist2022 = await load(files.halloweendata2022, loadOpts);
+   const rawWaitlist2022 = await load(files.contactedData2022, loadOpts);
    const waitlist2022 = mapResponses(
       rawWaitlist2022,
-      "waitlist",
+      "QT3",
       waitlist2022ResponseMapping
    );
 
-   const rawAdminPlacementeday2022 = await load(files.halloweendata2022, loadOpts);
-   const adminPlacementeday2022 = mapResponses(
-      rawAdminPlacementeday2022,
-      "QT2",
-      adminPlacementeday2022ResponseMapping
-   );
-
-   const rawSurvey = await load(files.halloweendata2022, loadOpts);
-   const survey = mapResponses(
-      rawSurvey,
-      "clicked_survey",
-      surveyResponseMapping
-   );
-
-
-
-   const output = [...assignment2022, ...waitlist2022, ...adminPlacementeday2022, ...survey];
+   const output = [...assignment2022, ...waitlist2022];
 
    await write("./output.csv", output, {
       header: "user_id,action_applied_2022",
