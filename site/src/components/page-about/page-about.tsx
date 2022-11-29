@@ -2,6 +2,7 @@ import {Component, h, Host} from "@stencil/core";
 
 @Component({
     tag: "page-about",
+    styleUrl: "page-about.scss",
     shadow: false,
 })
 export class PageAbout {
@@ -10,6 +11,15 @@ export class PageAbout {
         return (
             <Host>
                 <h1>About Us</h1>
+                <div class="inspire">
+                <h3>We Aim to Inspire Americans to Sign Up to be Poll Workers</h3>
+                <p>
+                    <b>America needs more poll workers to ensure a safe and fair election. </b> Power the Polls is designed to
+                    address that need to recruit a new wave of
+                    younger, more diverse poll workers who can help protect fair access to the ballot box now and in the
+                    future. Power the Polls is a first-of-its-kind, nonpartisan initiative for recruiting poll workers.
+                </p>
+                </div>
                 <p>
                     Power the Polls was launched in June 2020 by a coalition of businesses and nonprofits seeking to
                     recruit a new wave of poll workers ahead of the 2020 election. America was in the midst of a
@@ -25,11 +35,6 @@ export class PageAbout {
                     Consequently, the shortages we saw during the 2020 primaries were limited in the general election:
                     little to no poll worker shortages were reported during states’ early voting period and on Tuesday,
                     November 3, 2020.
-                </p>
-                <p>
-                    We’re already seeing the need for large scale poll worker recruitment in 2022. Poll worker shortages
-                    have already affected voters this year, as polling places in some states across the country have
-                    closed due to shortages during primary elections.
                 </p>
                 <p>
                     When polling places close, it becomes more difficult for voters to access the ballot box. That’s why
