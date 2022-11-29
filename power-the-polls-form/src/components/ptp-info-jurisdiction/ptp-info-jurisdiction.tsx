@@ -255,6 +255,7 @@ export class JurisdictionInfoComponent {
                         </p>
 
                         <CompleteApplicationButton jurisdiction={j} />
+                        <p>This link will open a new tab connecting you to your local elections office's poll worker application.</p>
 
                         {
                             // if jurisdiction has no application link,show the e-mail form

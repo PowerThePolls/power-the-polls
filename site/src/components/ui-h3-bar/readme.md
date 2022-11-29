@@ -11,14 +11,12 @@
 
  - [component-list](../component-list)
  - [page-partners](../page-partners)
- - [page-resources](../page-resources)
 
 ### Graph
 ```mermaid
 graph TD;
   component-list --> ui-h3-bar
   page-partners --> ui-h3-bar
-  page-resources --> ui-h3-bar
   style ui-h3-bar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

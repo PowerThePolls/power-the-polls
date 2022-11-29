@@ -12,12 +12,17 @@ page-jurisdiction {
       }
    }
 
-   .poll-worker-details-section {
-     width: 37.5rem;
-     height: 69.75rem;
-     margin: 1.5rem 0 1.5rem 3.125rem;
-     padding: 3rem 2.25rem;
-     border: solid 4px #FF5554;
-     background-color: #F5F3F1;
+     .small {
+      width: 37.5rem;
+      height: 0.75rem;
+      margin: 0.75rem 0 0;
+      font-size: 0.64rem;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.17;
+      letter-spacing: normal;
+      text-align: center;
+      color: #f5f3f1;
    }
 }

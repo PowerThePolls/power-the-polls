@@ -11,13 +11,13 @@ function mapResponse(answer, responseMappings) {
 
 function mapResponses(rows, fieldName, responseMapping) {
    return rows
-      .filter((row) => row[fieldName] && row[fieldName] !== "[OTHER]")
+      .filter((row) => row[fieldName] && row[fieldName] !== "[other]")
       .map((row) => {
-         const { user_id } = row;
+         const { email } = row;
          const answer = row[fieldName];
          const action_applied_2022 = mapResponse(answer, responseMapping);
          return {
-            user_id,
+            email,
             action_applied_2022,
          };
       });
@@ -104,22 +104,22 @@ const surveyResponseMapping = [
 const availableGAElectionResponseMapping = [
    {
       startsWith: "[1.Yes]Great!",
-      response: "Yes, I am still available to work at the polls Tuesday, November 8.",
+      response: "Yes I am still available to work at the polls Tuesday November 8.",
    },
    {
       startsWith: "[2.No]Thanks ",
-      response: "No, I am not still available to work at the polls Tuesday, November 8.",
+      response: "No I am not still available to work at the polls Tuesday November 8.",
    }
 ];
 
 const canMakeItToAssignmentResponseMapping = [
    {
       startsWith: "Yes]Great!",
-      response: "Yes, I can report to get my assignment.",
+      response: "Yes I can report to get my assignment.",
    },
    {
       startsWith: "[No]Thanks",
-      response: "No, I can not report to get my assignment.",
+      response: "No I can not report to get my assignment.",
    },
 ];
 
@@ -180,10 +180,10 @@ async function process() {
       canMakeItToAssignmentResponseMapping
    );
 
-   const output = [...assignment2022, ...waitlist2022, ...adminPlacementeday2022, ...survey];
+   const output = [...availableGAElection, ...canMakeItToAssignment];
 
    await write("./output.csv", output, {
-      header: "user_id,action_applied_2022",
+      header: "email,action_applied_2022",
       log: false,
    });
 }
