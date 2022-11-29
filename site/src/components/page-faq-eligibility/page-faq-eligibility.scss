@@ -1,0 +1,46 @@
+page-faq-eligibility {
+
+   input[type=submit]{
+    font-family: 'Orator Std';
+   }
+
+   .back-button {
+      border: 0;
+      background-color: $color-font-highlight-contrast;
+      padding: 0.8em 1em;
+      margin: 1em 0em;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+   }
+
+   h2 {
+      padding-top: .5em;
+      font-size: 30px;
+      color: #FF5554;
+   }
+
+   p {
+      display:block;
+      font-size: 20px;
+      padding: .5em;
+   }
+
+   a > h3 {
+      margin-top: 0em;
+   }
+
+   header > a {
+      text-decoration: none;
+   }
+
+   button.cta {
+      border: 0;
+      background-color: $color-font-highlight-contrast;
+      padding: 0.8em 1em;
+      width: 75%;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+   }
+}
