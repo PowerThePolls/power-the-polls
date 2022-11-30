@@ -497,7 +497,7 @@ export class JurisdictionInfoComponent {
                         )}
 
                         {!allNullOrEmpty(j?.further_notes, j?.notes) ? (
-                            <section>
+                            <section class="more-details-section">
                                 <h4>More Details</h4>
                                 <p>{j.further_notes}</p>
                                 {j.notes && <PtpHtml html={j.notes} />}
