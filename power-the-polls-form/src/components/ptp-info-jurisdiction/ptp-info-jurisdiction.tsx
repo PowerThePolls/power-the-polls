@@ -348,7 +348,7 @@ export class JurisdictionInfoComponent {
                             </Fragment>
                         )}
 
-                        <section class="poll-worker-details-section">
+                        <section class="poll-worker-details-section-hours">
                             <h4>Hours and Compensation</h4>
                             {!allNullOrEmpty(
                                 j?.hours_start,
@@ -396,7 +396,7 @@ export class JurisdictionInfoComponent {
                         </section>
 
                         {!isNullOrEmpty(j.registration_status) ? (
-                            <section>
+                            <section class="poll-worker-details-section">
                                 <h4>Voter Registration Requirements</h4>
                                 <ul>
                                     <li>
@@ -410,7 +410,7 @@ export class JurisdictionInfoComponent {
                             </section>
                         ) : null}
 
-                        <section>
+                        <section class="poll-worker-details-section">
                             <h4>Work Requirements</h4>
                             {!allNullOrEmpty(
                                 j?.minimum_age,
@@ -447,22 +447,22 @@ export class JurisdictionInfoComponent {
                             j?.email,
                             j?.office_address,
                         ) ? (
-                            <section>
+                            <section class="contact-info">
                                 <h4>Contact Information</h4>
                                 {j?.telephone && (
-                                    <p>
+                                    <p class="btn-outline">
                                         <strong>Phone: </strong>
                                         <a href={`tel:${j.telephone}`}>{j.telephone}</a>
                                     </p>
                                 )}
                                 {j?.email && (
-                                    <p>
+                                    <p class="btn-outline">
                                         <strong>Email: </strong>
                                         <a href={`mailto:${j.email}`}>{j.email}</a>
                                     </p>
                                 )}
                                 {j?.office_address && (
-                                    <p>
+                                    <p class="btn-outline">
                                         <strong>Office Address: </strong>
                                         <a
                                             target="_blank"
