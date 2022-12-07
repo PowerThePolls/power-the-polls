@@ -265,4 +265,148 @@ page-form {
       text-align: center;
       color: #f5f3f1;
    }
+
+   .hours {
+      margin: 0;
+      padding: 36px 0 36px 84px;
+      list-style: none;
+      background-image: url('/assets/images/further_notes/icon-hours@3x.png');
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 40px;
+      strong {
+      font-size: 1rem;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      color: #ff5554
+   }
+   color: #1c1834;
+   }
+
+   .compensation {
+      margin: 0;
+      padding: 36px 0 36px 84px;
+      list-style: none;
+      background-image: url('/assets/images/further_notes/icon-compensation@3x.png');
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 40px;
+      strong {
+      font-size: 1rem;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      color: #ff5554
+   }
+   color: #1c1834;
+   }
+
+   .other-details {
+      margin: 0;
+      padding: 36px 0 36px 84px;
+      list-style: none;
+      background-image: url('/assets/images/further_notes/icon-compensation@3x.png');
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 40px;
+   strong {
+      font-size: 1rem;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      color: #ff5554
+   }
+   color: #1c1834;
+   }
+
+   .requirements {
+      margin: 0;
+      padding: 36px 0 36px 84px;
+      list-style: none;
+      background-image: url('/assets/images/further_notes/icon-voter-registration@3x.png');
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 40px;
+      strong {
+      font-size: 1rem;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      color: #ff5554
+   }
+   color: #1c1834;
+   }
+
+   .age {
+      margin: 0;
+      padding: 36px 0 36px 84px;
+      list-style: none;
+      background-image: url('/assets/images/further_notes/icon-age-requirement@3x.png');
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 40px;
+   strong {
+      font-size: 1rem;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      color: #ff5554
+   }
+   color: #1c1834;
+   }
+
+   .training {
+      margin: 0;
+      padding: 36px 0 0px 84px;
+      list-style: none;
+      background-image: url('/assets/images/further_notes/icon-training-details@3x.png');
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 40px;
+      strong {
+      font-size: 1rem;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: 1px;
+      color: #ff5554
+   }
+   color: #1c1834;
+   }
+
+   .training-details {
+      margin: 0;
+      padding: 0 84px;
+      list-style: none;
+      color: #1c1834;
+   }
+
+   h5 {
+   margin:0;
+     font-family: Oswald;
+     font-size: 1.25rem;
+     font-weight: bold;
+     font-stretch: normal;
+     font-style: normal;
+     line-height: 1.8;
+     letter-spacing: normal;
+     color: #ff5554;
+   }
+
+   h2 {
+      margin: 0;
+   }
+
 }
