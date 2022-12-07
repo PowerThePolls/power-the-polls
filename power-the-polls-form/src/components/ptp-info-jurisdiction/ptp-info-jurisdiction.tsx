@@ -223,8 +223,9 @@ export class JurisdictionInfoComponent {
                     />
                 </div>
 
+                <h5> Your {stateInfo.subdivision_name} is</h5>
                 <h2>
-                    {getFullName(j)}
+                 {getFullName(j)}
                 </h2>
 
                 {this.showNextSteps &&
@@ -243,9 +244,8 @@ export class JurisdictionInfoComponent {
                 ) : (
                     <Fragment>
                         {j.disambiguation_notice && (
-                            <PtpHtml html={j.disambiguation_notice} />
+                        <PtpHtml html={j.disambiguation_notice} />
                         )}
-
                         <p>
                             Thank you so much for your interest in being a poll worker.
                             Please be sure to reach out to your local election
@@ -348,6 +348,15 @@ export class JurisdictionInfoComponent {
                             </Fragment>
                         )}
 
+                        {j.disambiguation_notice && (
+                        <PtpHtml html={j.disambiguation_notice} />
+                        )}
+
+                        <h5> Being a poll worker in</h5>
+                        <h2>
+                            {getFullName(j)}
+                        </h2>
+
                         <section class="poll-worker-details-section-hours">
                             <h4>Hours and Compensation</h4>
                             {!allNullOrEmpty(
@@ -358,33 +367,33 @@ export class JurisdictionInfoComponent {
                             ) ? (
                                 <ul>
                                     {j.hours_start && (
-                                        <li>
-                                            <strong>Start Time: </strong>
-                                            {j.hours_start}
-                                        </li>
-                                    )}
-                                    {j.hours_end && (
-                                        <li>
-                                            <strong>End Time: </strong>
-                                            {j.hours_end}
+                                        <li class="hours">
+                                        <strong>Hours</strong>
+                                            <br></br>{j.hours_start} to {j.hours_end}
                                         </li>
                                     )}
                                     {j.compensation_for_the_day && (
-                                        <li>
-                                            <strong>Compensation: </strong>
-                                            {j.compensation_for_the_day}
+                                        <li class="compensation">
+                                            <strong>Compensation</strong>
+                                            <br></br>{j.compensation_for_the_day}
                                         </li>
                                     )}
                                     {j.full_day_required === "Y" ? (
-                                        <li>You must work the full day</li>
+                                        <li class="other-details">
+                                        <strong>Other Details</strong>
+                                        <br></br>You must work the full day</li>
                                     ) : null}
                                     {j.full_day_required === "N" && (
-                                        <li>
-                                            Part-day poll worker shifts are available.
+                                        <li class="other-details">
+                                        <strong>Other Details</strong>
+                                            <br></br>Part-day poll worker shifts are available.
                                         </li>
                                     )}
                                     {j.full_day_required.length > 1 && (
-                                        <li>{j.full_day_required}</li>
+                                        <li class="other-details">
+                                        <strong>Other Details</strong>
+                                        <br></br>{j.full_day_required}
+                                        </li>
                                     )}
                                 </ul>
                             ) : (
@@ -399,8 +408,9 @@ export class JurisdictionInfoComponent {
                             <section class="poll-worker-details-section">
                                 <h4>Voter Registration Requirements</h4>
                                 <ul>
-                                    <li>
-                                        {j.registration_status === "S"
+                                    <li class="requirements">
+                                    <strong>Requirements</strong>
+                                        <br></br>{j.registration_status === "S"
                                             ? `You can be registered to vote anywhere in the state to work on Election Day in ${j.name}.`
                                             : j.registration_status === "J"
                                                 ? `You must be registered to vote in ${j.name} to work on Election Day`
@@ -419,19 +429,21 @@ export class JurisdictionInfoComponent {
                             ) ? (
                                 <ul>
                                     {j.minimum_age && (
-                                        <li>
-                                            <strong>Minimum Age: </strong>
-                                            {j.minimum_age}
+                                        <li class="age">
+                                            <strong>Minimum Age Requirements </strong>
+                                            <br></br>{j.minimum_age}
                                         </li>
                                     )}
                                     {j.training_required && (
-                                        <li>You must attend a training session.</li>
+                                        <li class="training">
+                                        <strong>Training Details</strong>
+                                        <br></br>Yes. You must attend a training session.</li>
+
                                     )}
                                     {j.training_note && (
-                                        <li>
-                                            <strong>Training Details: </strong>
+                                        <div class="training-details">
                                             <PtpHtml html={j.training_note} />
-                                        </li>
+                                        </div>
                                     )}
                                 </ul>
                             ) : (
@@ -451,6 +463,7 @@ export class JurisdictionInfoComponent {
                                 <h4>Contact Information</h4>
                                 {j?.telephone && (
                                     <p class="btn-outline">
+                                    <img> </img>
                                         <strong>Phone: </strong>
                                         <a href={`tel:${j.telephone}`}>{j.telephone}</a>
                                     </p>
