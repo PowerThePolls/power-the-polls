@@ -80,21 +80,6 @@ export class PageFaq {
                     <br />
                     <br />
                     <hr />
-                <h3>Still can’t find the answer to your question?</h3>
-                <button class="cta" onClick={() => this.isModalOpen = true}>contact us</button>
-                <contact-modal
-                    isOpen={isModalOpen}
-                    onClose={() => this.isModalOpen = false}
-                />
-
-                <p>
-                    For press inquiries, please contact <a
-                    href="mailto:press@powerthepolls.org">press@powerthepolls.org</a>.
-                </p>
-                <p>
-                    To inquire about partnering with us, please contact <a
-                    href="mailto:partners@powerthepolls.org">partners@powerthepolls.org</a>
-                </p>
             </Host>
         );
     }
