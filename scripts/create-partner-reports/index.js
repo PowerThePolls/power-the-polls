@@ -121,7 +121,24 @@ function getSQL(sourceCodes, isAggregate) {
                  FROM core_userfield
                  WHERE core_userfield.parent_id = core_user.id
                    AND core_userfield.name = 'partner_field') AS partner_field
+              , (SELECT(IF(likely.user_id IS NOT NULL, "Yes", "No"))) as likely_poll_worker
          FROM core_user
+         LEFT JOIN (
+              SELECT DISTINCT user_id
+              FROM core_action
+              JOIN core_actionfield ca ON core_action.id = ca.parent_id
+              WHERE (ca.name = 'admintraining' AND ca.value = 'Yes, I have completed my official training')
+              OR (ca.name = 'placed_election_day_2022' AND ca.value = 'Yes, I have my polling location assignment for Election Day')
+                 OR (ca.name = 'placed_early_voting_2022 ' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
+                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment')
+                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
+                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I’m scheduled for my official training')
+                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I have completed my official training')
+                 OR (ca.name = 'contacted_2022' AND ca.value = 'Yes')
+                 OR (page_id = 72) 
+                 OR (page_id = 80 AND ca.name = 'applied_2022' AND ca.value = 'I have completed my application')
+                 OR (ca.name = 'application' AND ca.value = 'Yes')
+         ) as likely ON core_user.id = likely.user_id
          JOIN (SELECT user_id
                     , source
                     , min(created_at) AS created_at

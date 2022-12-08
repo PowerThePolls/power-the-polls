@@ -19,7 +19,45 @@ export class PageResources {
                     know more before you do. Wherever you are in the process, here are some resources to help you get ready to serve.
                     </p>
                   <div class="column">
+                  <div class="card">
+                  <a href="/assets/documents/election-day-checklist.pdf"
+                                                                         target="_blank" rel="noopener noreferrer">                        <img src="/assets/images/resources/checklist.png"></img>
+                        <h2>
+                            Poll Worker Election Day Checklist
+                        </h2>
+                        <p>
+                            Get ready for your poll worker shift by reviewing this handy Election Day checklist.
+                        </p>
+                        </a>
+                    </div>
                     <div class="card">
+                         <a href="/assets/documents/25-questions-to-ask.pdf"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/images/resources/questions.png"></img>
+                        <h2>
+                            Questions to Ask in Your Official Training
+                        </h2>
+                        <p>
+                         Prepare for your official training and make sure you’re ready to serve.
+                        </p>
+                        </a>
+                    </div>
+                    <div class="card">
+                         <a href="/assets/documents/checking-biases.pdf"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <img src="/assets/images/resources/tables.png"></img>
+                        <h2>
+                            Checking Our Biases at the Polls
+                        </h2>
+                        <p>
+                            Learn how to identify and check your biases so that you can best serve all voters.
+                        </p>
+                        </a>
+                    </div>
+                    </div>
+
+                  <div class="column">
+                  <div class="card">
                         <a href="/assets/documents/now-what.pdf"
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/logo-icon-pink-source.png"></img>
@@ -55,10 +93,10 @@ export class PageResources {
                         </p>
                         </a>
                     </div>
-                    </div>
+                  </div>
 
                   <div class="column">
-                    <div class="card">
+                  <div class="card">
                      <a href="/assets/documents/a-day-in-the-life.pdf"
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/group.png"></img>
@@ -87,48 +125,10 @@ export class PageResources {
                                                                          target="_blank" rel="noopener noreferrer">
                         <img src="/assets/images/resources/states.png"></img>
                         <h2>
-                            Campus Vote Project: State Voting Guides
+                            Fair Elections Center: State Voting Guides
                         </h2>
                         <p>
                             Learn the rules, requirements and important dates for casting a ballot in every state.
-                        </p>
-                        </a>
-                    </div>
-                  </div>
-
-                  <div class="column">
-                <div class="card">
-                  <a href="/assets/documents/election-day-checklist.pdf"
-                                                                         target="_blank" rel="noopener noreferrer">                        <img src="/assets/images/resources/checklist.png"></img>
-                        <h2>
-                            Poll Worker Election Day Checklist
-                        </h2>
-                        <p>
-                            Get ready for your poll worker shift by reviewing this handy Election Day checklist.
-                        </p>
-                        </a>
-                    </div>
-                    <div class="card">
-                         <a href="/assets/documents/checking-biases.pdf"
-                                                                         target="_blank" rel="noopener noreferrer">
-                        <img src="/assets/images/resources/tables.png"></img>
-                        <h2>
-                            Checking Our Biases at the Polls
-                        </h2>
-                        <p>
-                            Learn how to identify and check your biases so that you can best serve all voters.
-                        </p>
-                        </a>
-                    </div>
-                    <div class="card">
-                         <a href="/assets/documents/25-questions-to-ask.pdf"
-                                                                         target="_blank" rel="noopener noreferrer">
-                        <img src="/assets/images/resources/questions.png"></img>
-                        <h2>
-                            Questions to Ask in Your Official Training
-                        </h2>
-                        <p>
-                         Prepare for your official training and make sure you’re ready to serve.
                         </p>
                         </a>
                     </div>
@@ -142,16 +142,6 @@ export class PageResources {
                         administrator.
                     </stencil-route-link>
                 </p>
-                <p>
-                    Credits:
-                    <ul>
-                        <li><a href="https://www.flaticon.com/free-icons/checklist" title="checklist icons"> Checklist icons created by Ilham Fitrotul Hayat - Flaticon</a></li>
-                        <li><a href="https://www.flaticon.com/free-icons/vote" title="vote icons"> Vote, Group, and Problem icons created by Freepik - Flaticon</a></li>
-                        <li><a href="https://www.flaticon.com/free-icons/work" title="work icons"> Work icons created by Eucalyp - Flaticon</a></li>
-                        <li><a href="https://www.flaticon.com/free-icons/united-states" title="united states icons"> United states icons created by Nikita Golubev - Flaticon</a></li>
-                    </ul>
-                </p>
-
             </Host>
         );
     }

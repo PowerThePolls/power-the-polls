@@ -57,7 +57,25 @@ This is currently done manually
 3. Don't commit the modified `package.json`!
 4. Make sure you run `npm run unlink:form` when you are done to fix the `package.json`.
 
-### Deploying
+### Deploying the Form
+
+To deploy the NPM package for the PtP form you will need to do a few steps:
+
+1. Update the package version in `power-the-polls-form/package.json`
+2. Release the form using the following commands:
+    ```shell
+    cd power-the-polls-form
+    npm run release
+    ```
+3. Update the package on the site using the `<VERSION>` you set above in the `package.json`.
+    ```shell
+    cd site
+   npm install power-the-polls-form@<VERSION>
+    ```
+4. Create a PR to have Netlify create a preview of the site and verify everything looks good. 
+5. Merge the PR.
+
+### Deploying the Site
 
 Run `npm run build` to do a production build. The contents of `/dist/www` can then be deployed to a host or CDN.
 
