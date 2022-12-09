@@ -14,7 +14,6 @@ export class PageFaq {
     @State() private isModalOpen: boolean = false;
 
     public render() {
-        const {isModalOpen} = this;
 
         return (
             <Host>
