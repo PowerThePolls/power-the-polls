@@ -11,8 +11,6 @@ export class PageFaq {
      */
     @Prop() public pageTitle?: string;
 
-    @State() private isModalOpen: boolean = false;
-
     public render() {
 
         return (
