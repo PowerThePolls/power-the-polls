@@ -1,4 +1,4 @@
-import {Component, h, Host, Prop, State} from "@stencil/core";
+import {Component, h, Host, Prop} from "@stencil/core";
 
 @Component({
     tag: "page-faq",
