@@ -8,35 +8,35 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
         sectionTitle: "Submitting your poll worker application",
         questions: [
             {
-                question: "Once I submit my name and email here on Power The Polls, is my application complete?",
+                question: "How do I send my application to you?",
                 answer: () => <p>
-                    No! Once you sign up with us, we immediately direct you to a page with your local elections office
-                    information. You must fill out an application and/or provide information to your local elections
-                    office. They manage everything related to poll worker applications, selection, training, and
-                    placement. You must complete this most important step of completing their application process.
+                    Hello, there! Thank you for reaching out.
+                    Unfortunately we can't process your application from here, but we can help you connect with the people who can! You should reach 
+                    out to your local administrators directly for information on how to proceed. They will be able to instruct you on how to submit an 
+                    application. Enter your zip code at https://www.powerthepolls.org/search and you’ll find contact info for your local election administrators.
                 </p>,
             },
             {
                 question: "Can you mail me an application?",
                 answer: () => <p>
-                    Unfortunately, Power the Polls can’t mail you an application, but many applications are available
-                    online. You can get more information when you sign up <stencil-route-link
-                    url="/signup#form">here</stencil-route-link>.
+                Thank you for your interest in applying to be a poll worker!
+                You must complete your application with your local elections office. Look up their information at www.powerthepolls.org/search. 
+                It’s important to get your application in as early as possible to let your elections office know that you’re eager and available for work. 
                 </p>,
             },
         ],
     },
     {
-        sectionTitle: "After you apply to be a poll worker",
+        sectionTitle: "After you've submitted your application'",
         questions: [
             {
-                question: "What do I do after I complete my application?",
+                question: "I haven't heard anything",
                 answer: () => <p>
-                    Be sure to look for any communication from your local election administrators! Be proactive in
-                    reaching out to your local elections office to follow up on the status of your application and make
-                    sure you are signed up for any training or mandatory information sessions. The earlier you can reach
-                    out to your elections office the better. The closer you get to the upcoming elections (including any
-                    primaries), the busier those offices will be. Be proactive early on.
+                    Thank you for signing up to be a poll worker, and thank you for reaching out to us!
+                    Election Administrators are working hard to review poll worker applications, schedule 
+                    training and handle all the other moving pieces that make an election day run smoothly. 
+                    We suggest giving them a call (and remember to pick up unknown numbers in case they 
+                    call you!). You can find their contact information here: https://www.powerthepolls.org/search
                 </p>,
             },
             {
