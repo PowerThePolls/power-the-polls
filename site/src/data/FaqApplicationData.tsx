@@ -27,10 +27,10 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
         ],
     },
     {
-        sectionTitle: "What do I do after I complete my application?",
+        sectionTitle: "After you apply to be a poll worker",
         questions: [
             {
-                question: "I haven't heard anything",
+                question: "What do I do after I complete my application?",
                 answer: () => <p>
                     Be sure to look for any communication from your local election administrators! Be proactive in
                     reaching out to your local elections office to follow up on the status of your application and make
