@@ -8,20 +8,20 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
         sectionTitle: "Submitting your poll worker application",
         questions: [
             {
-                question: "How do I send my application to you?",
+                question: "Once I submit my name and email here on Power The Polls, is my application complete?",
                 answer: () => <p>
-                    Hello, there! Thank you for reaching out.
-                    Unfortunately we can't process your application from here, but we can help you connect with the people who can! You should reach 
-                    out to your local administrators directly for information on how to proceed. They will be able to instruct you on how to submit an 
-                    application. Enter your zip code at https://www.powerthepolls.org/search and you’ll find contact info for your local election administrators.
+                    No! Once you sign up with us, we immediately direct you to a page with your local elections office
+                    information. You must fill out an application and/or provide information to your local elections
+                    office. They manage everything related to poll worker applications, selection, training, and
+                    placement. You must complete this most important step of completing their application process.
                 </p>,
             },
             {
                 question: "Can you mail me an application?",
                 answer: () => <p>
-                Thank you for your interest in applying to be a poll worker!
-                You must complete your application with your local elections office. Look up their information at www.powerthepolls.org/search. 
-                It’s important to get your application in as early as possible to let your elections office know that you’re eager and available for work. 
+                    Unfortunately, Power the Polls can’t mail you an application, but many applications are available
+                    online. You can get more information when you sign up <stencil-route-link
+                    url="/signup#form">here</stencil-route-link>.
                 </p>,
             },
         ],
