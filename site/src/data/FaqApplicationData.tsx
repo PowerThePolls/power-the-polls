@@ -27,16 +27,16 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
         ],
     },
     {
-        sectionTitle: "After you've submitted your application'",
+        sectionTitle: "What do I do after I complete my application?",
         questions: [
             {
                 question: "I haven't heard anything",
                 answer: () => <p>
-                    Thank you for signing up to be a poll worker, and thank you for reaching out to us!
-                    Election Administrators are working hard to review poll worker applications, schedule 
-                    training and handle all the other moving pieces that make an election day run smoothly. 
-                    We suggest giving them a call (and remember to pick up unknown numbers in case they 
-                    call you!). You can find their contact information here: https://www.powerthepolls.org/search
+                    Be sure to look for any communication from your local election administrators! Be proactive in
+                    reaching out to your local elections office to follow up on the status of your application and make
+                    sure you are signed up for any training or mandatory information sessions. The earlier you can reach
+                    out to your elections office the better. The closer you get to the upcoming elections (including any
+                    primaries), the busier those offices will be. Be proactive early on.
                 </p>,
             },
             {
