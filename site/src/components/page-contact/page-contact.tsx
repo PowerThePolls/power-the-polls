@@ -1,4 +1,4 @@
-import {Component, h, Host, Prop, State} from "@stencil/core";
+import {Component, h, Host, Prop} from "@stencil/core";
 
 @Component({
     tag: "page-contact",
@@ -11,10 +11,7 @@ export class PageContact {
      */
     @Prop() public pageTitle?: string;
 
-    @State() private isModalOpen: boolean = false;
-
     public render() {
-        const {isModalOpen} = this;
 
         return (
             <Host>
@@ -36,15 +33,6 @@ export class PageContact {
                     href="https://www.powerthepolls.org/faq">here</a>, and resources can be found <a
                     href="https://www.powerthepolls.org/resources">here</a>.
                 </p>
-
-
-                <h2> Other needs </h2>
-
-                <button class="cta" onClick={() => this.isModalOpen = true}>contact us</button>
-                <contact-modal
-                    isOpen={isModalOpen}
-                    onClose={() => this.isModalOpen = false}
-                />
             </Host>
         );
     }
