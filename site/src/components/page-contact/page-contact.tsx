@@ -29,7 +29,7 @@ export class PageContact {
 
                 <h2> Questions </h2>
                 <p>
-                    Frequently asked questions can be found <a
+                    Answers to your questions can be found <a
                     href="https://www.powerthepolls.org/faq">here</a>, and resources can be found <a
                     href="https://www.powerthepolls.org/resources">here</a>.
                 </p>
