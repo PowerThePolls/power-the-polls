@@ -16,4 +16,93 @@ page-faq {
       font-weight: bold;
       cursor: pointer;
    }
+   h2 {
+      padding-top: .5em;
+      font-size: 15px;
+      color: #FF5554;
+      padding: .2em;
+   }
+
+   .checklist {
+      & > h4 {
+         margin-bottom: .5em;
+      }
+
+      &-item {
+         display: flex; 
+
+         .number {
+            margin: 0 1em 1.5em 0;
+            padding: 0.25em;
+            display: block;
+            width: 2.2em;
+            height: 2.2em;
+            color: $color-accent;
+            text-align: center;
+            font-size: 1.6em;
+            font-weight: bold;
+            float: left;
+         }
+
+         & > p {
+            margin: 0 0 1em 0;
+         }
+      }
+   }
+
+   .column {
+     float: left;
+     width: 33%;
+     margin: 0 -5px;
+     position: relative;
+   }
+
+   .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+      margin: .7em;
+      text-align: center;
+      background-color: #F5F3F1;
+      height: 215px;
+      position: relative;
+
+      p {
+         padding: .8em;
+         font-size: 12px;
+         position: absolute;
+         bottom: 0;
+         color: #1C1834;
+      }
+
+      a:link { text-decoration: none; }
+
+      a:visited { text-decoration: none; }
+
+      a:active { text-decoration: none; }
+
+
+   }
+
+   @media screen and (max-width: 600px) {
+     .column {
+       width: 100%;
+       display: block;
+       margin-bottom: 20px;
+
+      float:left;
+     }
+   }
+
+   img {
+      width:110px;
+      height:110px;
+      object-fit:scale-down;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: .8em;
+      }
+
+   p {
+      display:block;
+   }
 }

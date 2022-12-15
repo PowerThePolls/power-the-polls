@@ -21,17 +21,31 @@ export namespace Components {
     }
     interface PageAbout {
     }
-    interface PageElectionOfficials {
-    }
-    interface PageFaq {
-        /**
-          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
-         */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+    interface PageContact {
         /**
           * The page's title
          */
         "pageTitle"?: string;
+    }
+    interface PageElectionOfficials {
+    }
+    interface PageFaq {
+        /**
+          * The page's title
+         */
+        "pageTitle"?: string;
+    }
+    interface PageFaqApplicationStatus {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+    }
+    interface PageFaqEligibility {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
     }
     interface PageFaqEs {
         /**
@@ -42,6 +56,12 @@ export namespace Components {
           * The page's title
          */
         "pageTitle"?: string;
+    }
+    interface PageFaqPollWorker {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
     }
     interface PageForm {
         /**
@@ -163,6 +183,12 @@ declare global {
         prototype: HTMLPageAboutElement;
         new (): HTMLPageAboutElement;
     };
+    interface HTMLPageContactElement extends Components.PageContact, HTMLStencilElement {
+    }
+    var HTMLPageContactElement: {
+        prototype: HTMLPageContactElement;
+        new (): HTMLPageContactElement;
+    };
     interface HTMLPageElectionOfficialsElement extends Components.PageElectionOfficials, HTMLStencilElement {
     }
     var HTMLPageElectionOfficialsElement: {
@@ -175,11 +201,29 @@ declare global {
         prototype: HTMLPageFaqElement;
         new (): HTMLPageFaqElement;
     };
+    interface HTMLPageFaqApplicationStatusElement extends Components.PageFaqApplicationStatus, HTMLStencilElement {
+    }
+    var HTMLPageFaqApplicationStatusElement: {
+        prototype: HTMLPageFaqApplicationStatusElement;
+        new (): HTMLPageFaqApplicationStatusElement;
+    };
+    interface HTMLPageFaqEligibilityElement extends Components.PageFaqEligibility, HTMLStencilElement {
+    }
+    var HTMLPageFaqEligibilityElement: {
+        prototype: HTMLPageFaqEligibilityElement;
+        new (): HTMLPageFaqEligibilityElement;
+    };
     interface HTMLPageFaqEsElement extends Components.PageFaqEs, HTMLStencilElement {
     }
     var HTMLPageFaqEsElement: {
         prototype: HTMLPageFaqEsElement;
         new (): HTMLPageFaqEsElement;
+    };
+    interface HTMLPageFaqPollWorkerElement extends Components.PageFaqPollWorker, HTMLStencilElement {
+    }
+    var HTMLPageFaqPollWorkerElement: {
+        prototype: HTMLPageFaqPollWorkerElement;
+        new (): HTMLPageFaqPollWorkerElement;
     };
     interface HTMLPageFormElement extends Components.PageForm, HTMLStencilElement {
     }
@@ -277,9 +321,13 @@ declare global {
         "contact-form": HTMLContactFormElement;
         "contact-modal": HTMLContactModalElement;
         "page-about": HTMLPageAboutElement;
+        "page-contact": HTMLPageContactElement;
         "page-election-officials": HTMLPageElectionOfficialsElement;
         "page-faq": HTMLPageFaqElement;
+        "page-faq-application-status": HTMLPageFaqApplicationStatusElement;
+        "page-faq-eligibility": HTMLPageFaqEligibilityElement;
         "page-faq-es": HTMLPageFaqEsElement;
+        "page-faq-poll-worker": HTMLPageFaqPollWorkerElement;
         "page-form": HTMLPageFormElement;
         "page-info": HTMLPageInfoElement;
         "page-jurisdiction": HTMLPageJurisdictionElement;
@@ -312,17 +360,31 @@ declare namespace LocalJSX {
     }
     interface PageAbout {
     }
-    interface PageElectionOfficials {
-    }
-    interface PageFaq {
-        /**
-          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
-         */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+    interface PageContact {
         /**
           * The page's title
          */
         "pageTitle"?: string;
+    }
+    interface PageElectionOfficials {
+    }
+    interface PageFaq {
+        /**
+          * The page's title
+         */
+        "pageTitle"?: string;
+    }
+    interface PageFaqApplicationStatus {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+    }
+    interface PageFaqEligibility {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
     }
     interface PageFaqEs {
         /**
@@ -333,6 +395,12 @@ declare namespace LocalJSX {
           * The page's title
          */
         "pageTitle"?: string;
+    }
+    interface PageFaqPollWorker {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
     }
     interface PageForm {
         /**
@@ -429,9 +497,13 @@ declare namespace LocalJSX {
         "contact-form": ContactForm;
         "contact-modal": ContactModal;
         "page-about": PageAbout;
+        "page-contact": PageContact;
         "page-election-officials": PageElectionOfficials;
         "page-faq": PageFaq;
+        "page-faq-application-status": PageFaqApplicationStatus;
+        "page-faq-eligibility": PageFaqEligibility;
         "page-faq-es": PageFaqEs;
+        "page-faq-poll-worker": PageFaqPollWorker;
         "page-form": PageForm;
         "page-info": PageInfo;
         "page-jurisdiction": PageJurisdiction;
@@ -458,9 +530,13 @@ declare module "@stencil/core" {
             "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
             "contact-modal": LocalJSX.ContactModal & JSXBase.HTMLAttributes<HTMLContactModalElement>;
             "page-about": LocalJSX.PageAbout & JSXBase.HTMLAttributes<HTMLPageAboutElement>;
+            "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
             "page-election-officials": LocalJSX.PageElectionOfficials & JSXBase.HTMLAttributes<HTMLPageElectionOfficialsElement>;
             "page-faq": LocalJSX.PageFaq & JSXBase.HTMLAttributes<HTMLPageFaqElement>;
+            "page-faq-application-status": LocalJSX.PageFaqApplicationStatus & JSXBase.HTMLAttributes<HTMLPageFaqApplicationStatusElement>;
+            "page-faq-eligibility": LocalJSX.PageFaqEligibility & JSXBase.HTMLAttributes<HTMLPageFaqEligibilityElement>;
             "page-faq-es": LocalJSX.PageFaqEs & JSXBase.HTMLAttributes<HTMLPageFaqEsElement>;
+            "page-faq-poll-worker": LocalJSX.PageFaqPollWorker & JSXBase.HTMLAttributes<HTMLPageFaqPollWorkerElement>;
             "page-form": LocalJSX.PageForm & JSXBase.HTMLAttributes<HTMLPageFormElement>;
             "page-info": LocalJSX.PageInfo & JSXBase.HTMLAttributes<HTMLPageInfoElement>;
             "page-jurisdiction": LocalJSX.PageJurisdiction & JSXBase.HTMLAttributes<HTMLPageJurisdictionElement>;

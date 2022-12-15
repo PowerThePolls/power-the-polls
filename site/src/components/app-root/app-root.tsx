@@ -1,6 +1,6 @@
 import { Component, FunctionalComponent, h, State } from "@stencil/core";
 
-import { FaqData, FaqESData, PartnerList, Social } from "../../data";
+import { FaqApplicationData, FaqEligibilityData, FaqESData, FaqPollWorkerData, PartnerList, Social } from "../../data";
 import { Partner } from "../../data/types";
 import { parseQueryString, shuffle } from "../../util";
 
@@ -22,9 +22,9 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
          <li>
             <stencil-route-link
                url="/faq"
-               urlMatch={["/faq", "/faq-es", "/contact", "/faq-contact"]}
+               urlMatch={["/faq", "/faq-es", "/faq-contact"]}
                onClick={onSelectNavItem}
-            >FAQ &amp; Contact</stencil-route-link>
+            >FAQ</stencil-route-link>
          </li>
          <li>
             <stencil-route-link url="/electionofficials" onClick={onSelectNavItem}>Election Officials</stencil-route-link>
@@ -38,6 +38,13 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
          </li>
          <li>
             <stencil-route-link url="/resources" onClick={onSelectNavItem}>Resources</stencil-route-link>
+         </li>
+         <li>
+            <stencil-route-link
+               url="/contact"
+               urlMatch={["/contact"]}
+               onClick={onSelectNavItem}
+            >Contact</stencil-route-link>
          </li>
       </ul>
    </nav>
@@ -95,8 +102,14 @@ export class AppRoot {
             url: "/faq",
             component: "page-faq",
             componentProps: {
-               data: FaqData,
                pageTitle: "Frequently Asked Questions about Poll Working",
+            },
+         },
+         {
+            url: "/contact",
+            component: "page-contact",
+            componentProps: {
+               pageTitle: "Contact Us",
             },
          },
          {
@@ -149,18 +162,31 @@ export class AppRoot {
             url: "/testimonial",
             component: "page-testimonial",
          },
+         {
+            url: "/faq-eligibility",
+            component: "page-faq-eligibility",
+            componentProps: {
+               data: FaqEligibilityData,
+            },
+         },
+         {
+            url: "/faq-application-status",
+            component: "page-faq-application-status",
+            componentProps: {
+               data: FaqApplicationData,
+            },
+         },
+         {
+            url: "/faq-poll-worker",
+            component: "page-faq-poll-worker",
+            componentProps: {
+               data: FaqPollWorkerData,
+            },
+         },
 
          /*
           * legacy routes
           */
-         {
-            url: "/contact",
-            component: "page-faq",
-            componentProps: {
-               data: FaqData,
-               pageTitle: "Frequently Asked Questions about Poll Working",
-            },
-         },
          {
             url: "/redirector",
             component: "page-info",
