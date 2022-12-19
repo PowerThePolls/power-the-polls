@@ -1,4 +1,4 @@
-page-jurisdiction {
+ptp-info-jurisdiction {
 
    @include form-defaults();
 
@@ -7,8 +7,7 @@ page-jurisdiction {
       grid-template-columns: 50% 50%;
       column-gap: 3em;
    }
-   
-   // this is also used in page-form.scss so if you change one, change the other
+
    a.poll-worker-action {
       border: 2px solid;
       padding: 0.5em 1em;
