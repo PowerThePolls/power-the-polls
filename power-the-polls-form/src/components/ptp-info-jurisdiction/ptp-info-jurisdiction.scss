@@ -1,38 +1,28 @@
-ptp-info-jurisdiction {
-   @include form-defaults();
-
-   .option-grid {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      column-gap: 3em;
+page-jurisdiction {
+   // this is also used in page-form.scss so if you change one, change the other
+   a.poll-worker-action {
+      font-family: $font-heading;
+      border: 0;
+      border-radius: 4px;
+      background-color: $color-font-primary;
+      color: black;
+      &.cta {
+         background-color: $color-highlight;
+         color: $color-font-primary;
+      }
    }
 
-   a.poll-worker-action {
-      border: 2px solid;
-      padding: 0.5em 1em;
-      margin: 2rem 0;
-      font-size: 1.2em;
-      letter-spacing: 0.05rem;
-      display: block;
+     .small {
+      width: 37.5rem;
+      height: 0.75rem;
+      margin: 0.75rem 0 0;
+      font-size: 0.64rem;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.17;
+      letter-spacing: normal;
       text-align: center;
-
-      font-weight: bold;
-      text-decoration: none;
-      text-transform: uppercase;
-
-      &:hover {
-         opacity: 0.8;
-      }
-      &:focus {
-         opacity: 0.6;
-      }
-      &:active {
-         opacity: 0.4;
-      }
-      &.cta {
-         border: 0;
-         background-color: $color-highlight;
-         color: $color-font-highlight-contrast;
-      }
+      color: #f5f3f1;
    }
 }
