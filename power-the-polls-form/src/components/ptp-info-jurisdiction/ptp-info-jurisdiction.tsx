@@ -223,9 +223,8 @@ export class JurisdictionInfoComponent {
                     />
                 </div>
 
-                <h5> Your {stateInfo.subdivision_name} is</h5>
                 <h2>
-                 {getFullName(j)}
+                    {getFullName(j)}
                 </h2>
 
                 {this.showNextSteps &&
@@ -244,8 +243,9 @@ export class JurisdictionInfoComponent {
                 ) : (
                     <Fragment>
                         {j.disambiguation_notice && (
-                        <PtpHtml html={j.disambiguation_notice} />
+                            <PtpHtml html={j.disambiguation_notice} />
                         )}
+
                         <p>
                             Thank you so much for your interest in being a poll worker.
                              In order to apply to be a poll worker, you must connect
@@ -255,7 +255,6 @@ export class JurisdictionInfoComponent {
                         </p>
 
                         <CompleteApplicationButton jurisdiction={j} />
-                        <p>This link will open a new tab connecting you to your local elections office's poll worker application.</p>
 
                         {
                             // if jurisdiction has no application link,show the e-mail form
@@ -348,11 +347,7 @@ export class JurisdictionInfoComponent {
                             </Fragment>
                         )}
 
-                        {j.disambiguation_notice && (
-                        <PtpHtml html={j.disambiguation_notice} />
-                        )}
-
-                        <section class="poll-worker-details-section-hours">
+                        <section>
                             <h4>Hours and Compensation</h4>
                             {!allNullOrEmpty(
                                 j?.hours_start,
@@ -362,33 +357,33 @@ export class JurisdictionInfoComponent {
                             ) ? (
                                 <ul>
                                     {j.hours_start && (
-                                        <li class="hours">
-                                        <strong>Hours</strong>
-                                            <br></br>{j.hours_start} to {j.hours_end}
+                                        <li>
+                                            <strong>Start Time: </strong>
+                                            {j.hours_start}
+                                        </li>
+                                    )}
+                                    {j.hours_end && (
+                                        <li>
+                                            <strong>End Time: </strong>
+                                            {j.hours_end}
                                         </li>
                                     )}
                                     {j.compensation_for_the_day && (
-                                        <li class="compensation">
-                                            <strong>Compensation</strong>
-                                            <br></br>{j.compensation_for_the_day}
+                                        <li>
+                                            <strong>Compensation: </strong>
+                                            {j.compensation_for_the_day}
                                         </li>
                                     )}
                                     {j.full_day_required === "Y" ? (
-                                        <li class="other-details">
-                                        <strong>Other Details</strong>
-                                        <br></br>You must work the full day</li>
+                                        <li>You must work the full day</li>
                                     ) : null}
                                     {j.full_day_required === "N" && (
-                                        <li class="other-details">
-                                        <strong>Other Details</strong>
-                                            <br></br>Part-day poll worker shifts are available.
+                                        <li>
+                                            Part-day poll worker shifts are available.
                                         </li>
                                     )}
                                     {j.full_day_required.length > 1 && (
-                                        <li class="other-details">
-                                        <strong>Other Details</strong>
-                                        <br></br>{j.full_day_required}
-                                        </li>
+                                        <li>{j.full_day_required}</li>
                                     )}
                                 </ul>
                             ) : (
@@ -400,12 +395,11 @@ export class JurisdictionInfoComponent {
                         </section>
 
                         {!isNullOrEmpty(j.registration_status) ? (
-                            <section class="poll-worker-details-section">
+                            <section>
                                 <h4>Voter Registration Requirements</h4>
                                 <ul>
-                                    <li class="requirements">
-                                    <strong>Requirements</strong>
-                                        <br></br>{j.registration_status === "S"
+                                    <li>
+                                        {j.registration_status === "S"
                                             ? `You can be registered to vote anywhere in the state to work on Election Day in ${j.name}.`
                                             : j.registration_status === "J"
                                                 ? `You must be registered to vote in ${j.name} to work on Election Day`
@@ -415,7 +409,7 @@ export class JurisdictionInfoComponent {
                             </section>
                         ) : null}
 
-                        <section class="poll-worker-details-section">
+                        <section>
                             <h4>Work Requirements</h4>
                             {!allNullOrEmpty(
                                 j?.minimum_age,
@@ -424,21 +418,19 @@ export class JurisdictionInfoComponent {
                             ) ? (
                                 <ul>
                                     {j.minimum_age && (
-                                        <li class="age">
-                                            <strong>Minimum Age Requirements </strong>
-                                            <br></br>{j.minimum_age}
+                                        <li>
+                                            <strong>Minimum Age: </strong>
+                                            {j.minimum_age}
                                         </li>
                                     )}
                                     {j.training_required && (
-                                        <li class="training">
-                                        <strong>Training Details</strong>
-                                        <br></br>Yes. You must attend a training session.</li>
-
+                                        <li>You must attend a training session.</li>
                                     )}
                                     {j.training_note && (
-                                        <div class="training-details">
+                                        <li>
+                                            <strong>Training Details: </strong>
                                             <PtpHtml html={j.training_note} />
-                                        </div>
+                                        </li>
                                     )}
                                 </ul>
                             ) : (
@@ -449,28 +441,35 @@ export class JurisdictionInfoComponent {
                             )}
                         </section>
 
+                        {!allNullOrEmpty(j?.further_notes, j?.notes) ? (
+                            <section>
+                                <h4>Further Notes</h4>
+                                <p>{j.further_notes}</p>
+                                {j.notes && <PtpHtml html={j.notes} />}
+                            </section>
+                        ) : null}
+
                         {!allNullOrEmpty(
                             j?.telephone,
                             j?.email,
                             j?.office_address,
                         ) ? (
-                            <section class="contact-info">
+                            <section>
                                 <h4>Contact Information</h4>
                                 {j?.telephone && (
-                                    <p class="btn-outline">
-                                    <img> </img>
+                                    <p>
                                         <strong>Phone: </strong>
                                         <a href={`tel:${j.telephone}`}>{j.telephone}</a>
                                     </p>
                                 )}
                                 {j?.email && (
-                                    <p class="btn-outline">
+                                    <p>
                                         <strong>Email: </strong>
                                         <a href={`mailto:${j.email}`}>{j.email}</a>
                                     </p>
                                 )}
                                 {j?.office_address && (
-                                    <p class="btn-outline">
+                                    <p>
                                         <strong>Office Address: </strong>
                                         <a
                                             target="_blank"
@@ -503,14 +502,6 @@ export class JurisdictionInfoComponent {
                                 Student Poll Worker Information
                             </a>
                         )}
-
-                        {!allNullOrEmpty(j?.further_notes, j?.notes) ? (
-                            <section class="more-details-section">
-                                <h4>More Details</h4>
-                                <p>{j.further_notes}</p>
-                                {j.notes && <PtpHtml html={j.notes} />}
-                            </section>
-                        ) : null}
 
                         {hasApplication ? (
                             <CompleteApplicationButton jurisdiction={j} />

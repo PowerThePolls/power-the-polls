@@ -3,26 +3,11 @@ page-jurisdiction {
    a.poll-worker-action {
       font-family: $font-heading;
       border: 0;
-      border-radius: 4px;
       background-color: $color-font-primary;
       color: black;
       &.cta {
          background-color: $color-highlight;
          color: $color-font-primary;
       }
-   }
-
-     .small {
-      width: 37.5rem;
-      height: 0.75rem;
-      margin: 0.75rem 0 0;
-      font-size: 0.64rem;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.17;
-      letter-spacing: normal;
-      text-align: center;
-      color: #f5f3f1;
    }
 }
