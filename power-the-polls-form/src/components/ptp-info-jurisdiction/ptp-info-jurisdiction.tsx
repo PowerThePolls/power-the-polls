@@ -352,11 +352,6 @@ export class JurisdictionInfoComponent {
                         <PtpHtml html={j.disambiguation_notice} />
                         )}
 
-                        <h5> Being a poll worker in</h5>
-                        <h2>
-                            {getFullName(j)}
-                        </h2>
-
                         <section class="poll-worker-details-section-hours">
                             <h4>Hours and Compensation</h4>
                             {!allNullOrEmpty(
