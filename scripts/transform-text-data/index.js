@@ -13,11 +13,11 @@ function mapResponses(rows, fieldName, responseMapping) {
    return rows
       .filter((row) => row[fieldName] && row[fieldName] !== "[other]")
       .map((row) => {
-         const { user_id } = row;
+         const { email } = row;
          const answer = row[fieldName];
          const action_applied_2022 = mapResponse(answer, responseMapping);
          return {
-            user_id,
+            email,
             action_applied_2022,
          };
       });
@@ -101,10 +101,32 @@ const surveyResponseMapping = [
    },
 ]
 
+const availableGAElectionResponseMapping = [
+   {
+      startsWith: "[1.Yes]Great!",
+      response: "Yes I am still available to work at the polls Tuesday November 8.",
+   },
+   {
+      startsWith: "[2.No]Thanks ",
+      response: "No I am not still available to work at the polls Tuesday November 8.",
+   }
+];
+
+const canMakeItToAssignmentResponseMapping = [
+   {
+      startsWith: "Yes]Great!",
+      response: "Yes I can report to get my assignment.",
+   },
+   {
+      startsWith: "[No]Thanks",
+      response: "No I can not report to get my assignment.",
+   },
+];
+
 async function process() {
    // files from text campaign
    const files = {
-      halloweendata2022: "halloweenData.csv",
+      halloweendata2022: "georgiaData.csv",
    };
 
    const loadOpts = {
@@ -114,7 +136,7 @@ async function process() {
       parse: true,
       stream: false,
    };
-
+/*
    const rawAssignment2022 = await load(files.halloweendata2022, loadOpts);
    const assignment2022 = mapResponses(
       rawAssignment2022,
@@ -143,12 +165,25 @@ async function process() {
       surveyResponseMapping
    );
 
+**/
+   const rawAvailableGAElection = await load(files.halloweendata2022, loadOpts);
+   const availableGAElection = mapResponses(
+      rawAvailableGAElection,
+      "QT1",
+      availableGAElectionResponseMapping
+   );
 
+   const rawCanMakeItToAssignment = await load(files.halloweendata2022, loadOpts);
+   const canMakeItToAssignment = mapResponses(
+      rawCanMakeItToAssignment,
+      "QT2",
+      canMakeItToAssignmentResponseMapping
+   );
 
-   const output = [...assignment2022, ...waitlist2022, ...adminPlacementeday2022, ...survey];
+   const output = [...availableGAElection, ...canMakeItToAssignment];
 
    await write("./output.csv", output, {
-      header: "user_id,action_applied_2022",
+      header: "email,action_applied_2022",
       log: false,
    });
 }
