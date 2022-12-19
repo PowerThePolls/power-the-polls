@@ -25,7 +25,7 @@ jobs:
 
       - name: Check if there is any change
         id: changes
-        run: echo "::set-output name=changed::$(git status --porcelain | wc -l)"
+        run: echo "name=changed::$(git status --porcelain | wc -l)"  >> $GITHUB_OUTPUT
 
       - name: Create Commits
         if: steps.changes.outputs.changed != 0
