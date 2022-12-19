@@ -248,10 +248,10 @@ export class JurisdictionInfoComponent {
                         )}
                         <p>
                             Thank you so much for your interest in being a poll worker.
-                            Please be sure to reach out to your local election
-                            administrator to learn more about their needs for upcoming
-                            elections, as well as official application procedures for
-                            poll workers.
+                             In order to apply to be a poll worker, you must connect
+                              with your local elections office so that you can
+                               complete the official poll worker application
+                                process with them.
                         </p>
 
                         <CompleteApplicationButton jurisdiction={j} />
