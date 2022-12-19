@@ -27,8 +27,8 @@ export class PageAbout {
                      workers in states all across the nation – and we can’t stop now.
                 </p>
                 <p>
-                    When polling places close, it becomes more difficult for voters to access the ballot box. That’s why 
-                    Power the Polls is continuing its work to recruit a new generation of poll workers who can ensure
+                    When polling places close, it becomes more difficult for voters to access the ballot box. That’s why
+                     Power the Polls is continuing its work to recruit a new generation of poll workers who can ensure
                      safe and fair access to the ballot box in elections to come.
                 </p>
                 <h3>Providing Accurate Poll Worker Information</h3>
