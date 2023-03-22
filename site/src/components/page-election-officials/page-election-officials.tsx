@@ -17,7 +17,7 @@ export class PageElectionOfficials {
                 </p>
                 <p>
                     <a
-                    href="https://powerthepolls.typeform.com/EASupport">If you’re
+                    href="https://powerthepolls.typeform.com/EASupport" target="_blank">If you’re
                      looking for more poll workers, complete this
                      quick and easy survey to let us know what you need.</a>
                 </p>
@@ -43,7 +43,10 @@ export class PageElectionOfficials {
                 </ul>
                 <p>
                     For more information about how Power the Polls works,
-                     visit our About page.
+                     <a
+                     href="https://www.powerthepolls.org/about">
+                    visit our About page.
+                    </a>
                 </p>
                 <h3>Thank you for your service!</h3>
                 <p>
