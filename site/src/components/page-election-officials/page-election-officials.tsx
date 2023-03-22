@@ -42,7 +42,7 @@ export class PageElectionOfficials {
                     </li>
                 </ul>
                 <p>
-                    For more information about how Power the Polls works,
+                    For more information about how Power the Polls works, 
                      <a
                      href="https://www.powerthepolls.org/about">
                     visit our About page.
