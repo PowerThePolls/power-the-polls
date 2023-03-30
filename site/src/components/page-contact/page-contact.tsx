@@ -16,6 +16,15 @@ export class PageContact {
         return (
             <Host>
                 <h1>{this.pageTitle || ""}</h1>
+                <h2> Questions </h2>
+                <p>
+                    Frequently asked questions can be found <a
+                    href="https://www.powerthepolls.org/faq">here</a>, and resources can be found <a
+                    href="https://www.powerthepolls.org/resources">here</a>.
+
+                    For general inquiries, please contact <a
+                    href="mailto:info@powerthepolls.org">info@powerthepolls.org</a>
+                </p>
                 <h2> Press </h2>
                 <p>
                     For press inquiries, please contact <a
@@ -25,13 +34,6 @@ export class PageContact {
                 <p>
                     To inquire about partnering with us, please contact <a
                     href="mailto:partners@powerthepolls.org">partners@powerthepolls.org</a>
-                </p>
-
-                <h2> Questions </h2>
-                <p>
-                    Answers to your questions can be found <a
-                    href="https://www.powerthepolls.org/faq">here</a>, and resources can be found <a
-                    href="https://www.powerthepolls.org/resources">here</a>.
                 </p>
             </Host>
         );
