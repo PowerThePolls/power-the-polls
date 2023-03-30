@@ -19,7 +19,9 @@ export class PageFaq {
                 <p>
                     There are over 5,000 local election jurisdictions in the country - and becoming a poll worker is a
                     little different in each place. We’ve compiled a list of FAQs to help you understand the process
-                    better. If you have questions specific to your local area, contact your local election office.
+                    better. If you have questions specific to your local area,
+                    <a href= "https://www.powerthepolls.org/search" target="_self">
+                    contact your local election office.</href>
                 </p>
                     <hr/>
                     <div class="column">
@@ -31,7 +33,7 @@ export class PageFaq {
                             ELIGIBILITY
                         </h2>
                              <p>
-                               Figure out if you're eligible to be a poll worker.
+                               Find out if you're eligible to be a poll worker.
                             </p>
                         </a>
                     </div>
@@ -59,7 +61,7 @@ export class PageFaq {
                             POLL WORKER FAQ
                         </h2>
                         <p>
-                            Get information you need as you work.
+                            Learn about responsibilities, training, compensation, and safety.
                         </p>
                         </a>
                     </div>

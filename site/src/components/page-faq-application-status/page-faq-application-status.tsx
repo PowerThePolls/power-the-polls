@@ -17,7 +17,7 @@ export class PageFaqApplicationStatus {
       const data = this.data || [];
       return ( <Host>
          <a href="/faq"><button class= "back-button">Back</button></a>
-         <h1>Application & Status Questions</h1>
+         <h1>APPLICATION & PLACEMENT STATUS FAQS</h1>
          {data.map(({sectionTitle, questions}) => (
                     <question-section
                         key={sectionTitle}
