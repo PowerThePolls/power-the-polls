@@ -25,7 +25,6 @@ export class PageFaqPollWorker {
                         questions={questions}
                     />
                 ))}
-         
       </Host > );
    }
 }

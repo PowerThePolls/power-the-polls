@@ -25,7 +25,6 @@ export class PageFaqApplicationStatus {
                         questions={questions}
                     />
                 ))}
-         
       </Host > );
    }
 }
