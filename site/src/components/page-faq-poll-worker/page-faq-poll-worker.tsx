@@ -24,7 +24,7 @@ export class PageFaqPollWorker {
                         sectionTitle={sectionTitle}
                         questions={questions}
                     />
-                ))}
+                ))};
          <p><a href="https://www.powerthepolls.org/faq-eligibility" target="_self"> Eligibility FAQs</a><p>
          <p><a href="https://www.powerthepolls.org/faq-application-status" target="_self"> Application Status FAQs</a><p>
       </Host > );
