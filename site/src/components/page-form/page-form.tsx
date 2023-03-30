@@ -65,21 +65,22 @@ export class PageForm {
                     <h1 class={{"partner": partner?.logoAppearsOnLandingPage ?? false}}>Help staff your local polling
                         place</h1>
                     <p>
-                        In 2020, America faced a record shortage of poll workers, and over
-                         700,000 people stepped up via Power the Polls to help address that
-                         challenge. That was just the beginning.
+                        Our democracy depends on ordinary people who make sure every
+                         election runs smoothly and everyone's vote is counted—people
+                         like you.
                     </p>
                     <p>
-                        In 2022, over 275,000 individuals said they wanted to be poll
-                         workers through Power the Polls, so that they could help keep
-                         polling places open and fully staffed. Our democracy depends
-                         on ordinary people who make sure every election runs smoothly
-                         and everyone's vote is counted.
+                        In 2020, America faced a record shortage of poll workers,
+                         and over 700,000 people stepped up via Power the Polls to
+                         help address that challenge. That was just the beginning.
+                         In 2022, over 275,000 people signed up to keep polling places
+                         open and fully staffed.
                     </p>
                     <p>
-                        Our work can’t stop now. You can make sure we have safe, fair,
-                         efficient elections for all: step up and become a poll worker
-                         in your community for the next election in your area.
+                        Today, our work is more important than ever. You can make
+                         sure we have safe, fair, efficient elections for all:
+                         step up and become a poll worker for the next election in
+                         your community today.
                     </p>
 
                     <div class="incentive-container">

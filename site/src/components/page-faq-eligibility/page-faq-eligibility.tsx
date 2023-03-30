@@ -17,7 +17,7 @@ export class PageFaqEligibility {
       const data = this.data || [];
       return ( <Host>
          <a href="/faq"><button class= "back-button">Back</button></a>
-         <h1>Eligibility</h1>
+         <h1>ELIGIBILITY FAQS</h1>
          {data.map(({sectionTitle, questions}) => (
                     <question-section
                         key={sectionTitle}
@@ -25,6 +25,8 @@ export class PageFaqEligibility {
                         questions={questions}
                     />
                 ))}
+         <p><a href="https://www.powerthepolls.org/faq-application-status" target="_self"> Application Status FAQs</a></p>
+         <p><a href="https://www.powerthepolls.org/faq-poll-worker" target="_self"> Poll Worker FAQs</a></p>
       </Host > );
    }
 }

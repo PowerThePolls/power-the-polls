@@ -8,7 +8,7 @@ export class PageElectionOfficials {
     public render() {
         return (
             <Host>
-                <h1>Information for Election Administrators</h1>
+                <h1>INFORMATION FOR ELECTION ADMINISTRATORS</h1>
                 <h3>Need poll workers? We’re here to help.</h3>
                 <p>
                     The Power the Polls team is here to help hardworking elections
@@ -17,9 +17,9 @@ export class PageElectionOfficials {
                 </p>
                 <p>
                     <a
-                    href="https://powerthepolls.typeform.com/EASupport" target="_blank">If you’re
+                    href="https://powerthepolls.typeform.com/EASupport" target="_blank"> &#62;&#62; If you’re
                      looking for more poll workers, complete this
-                     quick and easy survey to let us know what you need.</a>
+                     quick and easy survey to let us know what you need. &#60;&#60;</a>
                 </p>
                 <p>
                     Here’s how we’ll help:
@@ -42,11 +42,12 @@ export class PageElectionOfficials {
                     </li>
                 </ul>
                 <p>
-                    For more information about how Power the Polls works, 
-                     <a
+                    For more information about how Power the Polls works, visit our
+                      <a
                      href="https://www.powerthepolls.org/about">
-                    visit our About page.
+                    About.
                     </a>
+                     page
                 </p>
                 <h3>Thank you for your service!</h3>
                 <p>

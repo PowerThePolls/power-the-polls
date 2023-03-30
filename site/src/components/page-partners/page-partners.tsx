@@ -30,13 +30,18 @@ export class PagePartners {
       const { highlightedPartner } = this;
       return ( <Host>
          <h1>Power the Polls Partners</h1>
+         <p>Power the Polls works with a diverse coalition of nonprofit
+          and business partners to help recruit potential poll workers
+          across the country. </p>
          <p>
-            Power the Polls unites nonprofits and businesses to help recruit and support these workers by:
+            Partners support poll worker recruitment in many ways, including:
          </p>
          <ul>
-            <li>Educating potential voters about the opportunity to work Election Day polling places.</li>
-            <li>Creating efficient and effective programming that ensures poll workers sign up and then show up when they’re needed.</li>
-            <li>Activating businesses to give their workers Election Day off so they can serve.</li>
+            <li>Educating their audiences about the importance of poll workers in ensuring safe, fair, accessible elections</li>
+            <li>Encouraging their audiences to sign up as potential poll workers and serve on Election Day</li>
+            <li>Working with Power the Polls to respond to specific election administrator requests, e.g. for
+             bilingual or tech-savvy poll workers, or poll workers in a specific geographic area </li>
+            <li>For businesses, giving employees time off on Election Day so they can serve as poll workers</li>
          </ul>
          <p>
             If you’d like to become a campaign partner, please reach out to: <a href="mailto:partners@powerthepolls.org">partners@powerthepolls.org</a>.
