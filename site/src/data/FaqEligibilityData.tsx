@@ -28,7 +28,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 answer: () => <p>
                     Most states require that poll workers are U.S. citizens. The best way to find this information is
                      by looking up your zip code at <a href="https://www.powerthepolls.org/search" target="_self">
-                     https://www.powerthepolls.org/search</href> or reaching out to your local
+                     https://www.powerthepolls.org/search</a> or reaching out to your local
                      election office.
                 </p>,
             },

@@ -21,7 +21,7 @@ export class PageFaq {
                     little different in each place. We’ve compiled a list of FAQs to help you understand the process
                     better. If you have questions specific to your local area,
                     <a href= "https://www.powerthepolls.org/search" target="_self">
-                    contact your local election office.</href>
+                    contact your local election office.</a>
                 </p>
                     <hr/>
                     <div class="column">
