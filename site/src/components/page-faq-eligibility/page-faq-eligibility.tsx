@@ -25,7 +25,7 @@ export class PageFaqEligibility {
                         questions={questions}
                     />
                 ))}
-         <a href="https://www.powerthepolls.org/faq-application-status" target="_self"> Application Status FAQs</a>
+         <p><a href="https://www.powerthepolls.org/faq-application-status" target="_self"> Application Status FAQs</a></p>
          <a href="https://www.powerthepolls.org/faq-poll-worker" target="_self"> Poll Worker FAQs</a>
       </Host > );
    }
