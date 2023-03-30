@@ -74,7 +74,7 @@ export class PageForm {
                          and over 700,000 people stepped up via Power the Polls to
                          help address that challenge. That was just the beginning.
                          In 2022, over 275,000 people signed up to keep polling places
-                         open and fully staffed. 
+                         open and fully staffed.
                     </p>
                     <p>
                         Today, our work is more important than ever. You can make

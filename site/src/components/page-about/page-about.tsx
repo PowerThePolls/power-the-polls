@@ -14,7 +14,7 @@ export class PageAbout {
                     Power the Polls is a first-of-its-kind, nonpartisan
                      initiative to recruit the next generation of poll
                      workers to ensure safe and fair elections for
-                     all voters. 
+                     all voters.
                 </p>
                 <p>
                     When polling places close, it becomes more difficult
@@ -22,7 +22,7 @@ export class PageAbout {
                      the Polls is working to recruit a new generation of
                      poll workers excited to serve their communities,
                      help their neighbors vote, and ensure safe access
-                     to the ballot box for years to come. 
+                     to the ballot box for years to come.
                 </p>
                 <p>
                     Power the Polls was launched in June 2020 by a coalition
@@ -43,7 +43,7 @@ export class PageAbout {
                       up through Power the Polls, we direct them to their
                        state or local jurisdiction’s official online application
                       to apply. We also provide resources on the importance of
-                          poll workers in ensuring safe and fair elections. 
+                          poll workers in ensuring safe and fair elections.
                 </p>
                 <p>
                     <strong>We identify needs for poll workers.</strong> We coordinate
@@ -53,7 +53,7 @@ export class PageAbout {
                      In 2020 and 2022, we worked with local elections officials,
                      Secretaries of State, and State Election Directors to address
                      poll worker shortages, and we are proud to continue this
-                     critical work. 
+                     critical work.
                 </p>
                 <p>
                     <strong>We house a centralized hub for localized poll worker information.</strong> Type in any U.S.
@@ -62,7 +62,7 @@ export class PageAbout {
                      links, and training and voter registration requirements.
                      This objective data is collected and maintained by the
                      nonpartisan Fair Elections Center, as part of the
-                     WorkElections project. 
+                     WorkElections project.
                 </p>
                 <h1>HOW POWER THE POLLS STARTED </h1>
                 <p>
