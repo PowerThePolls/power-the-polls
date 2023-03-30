@@ -64,7 +64,7 @@ export class PageAbout {
                      nonpartisan Fair Elections Center, as part of the
                      WorkElections project.
                 </p>
-                <h1>HOW POWER THE POLLS STARTED </h1>
+                <h3>HOW POWER THE POLLS STARTED </h3>
                 <p>
                     In the spring of 2020, America was in the midst of a
                     nationwide poll worker shortage: primary elections
