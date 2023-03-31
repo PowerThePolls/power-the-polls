@@ -108,7 +108,8 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 answer: () => <p>
                     Unfortunately, Power the Polls cannot process your application directly. You should reach out to
                     your local administrators for information on how to proceed. You can find their info at
-                    up <a href="https://www.powerthepolls.org/search">https://www.powerthepolls.org/search</a>.
+                    up <stencil-route-link
+                    url="/search">http://www.powerthepolls.org/search</stencil-route-link>.
                 </p>,
             },
             {

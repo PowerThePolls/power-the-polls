@@ -29,8 +29,9 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 question: "ARE THERE CITIZENSHIP REQUIREMENTS TO BE A POLL WORKER?",
                 answer: () => <p>
                     Most states require that poll workers are U.S. citizens. The best way to find this information is
-                     by looking up your zip code at <a href="https://www.powerthepolls.org/search" target="_self">
-                     https://www.powerthepolls.org/search</a> or reaching out to your local
+                     by looking up your zip code at <stencil-route-link
+                    url="/search">
+                     https://www.powerthepolls.org/search</stencil-route-link> or reaching out to your local
                      election office.
                 </p>,
             },
@@ -39,8 +40,9 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 answer: () => <p>
                     Many states allow individuals under 18 to be poll workers, but each state has its own requirements,
                     and sometimes these can vary depending on which part of the state you are in. The best way to find this information is
-                     by looking up your zip code at <a href="https://www.powerthepolls.org/search" target="_self">
-                     https://www.powerthepolls.org/search</a> or reaching out to your local
+                     by looking up your zip code at <stencil-route-link
+                    url="/search">
+                     http://www.powerthepolls.org/search</stencil-route-link> or reaching out to your local
                      election office.
                 </p>,
             },
