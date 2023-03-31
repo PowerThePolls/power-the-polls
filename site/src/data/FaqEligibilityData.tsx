@@ -8,23 +8,25 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
         sectionTitle: "Requirements for being a poll worker",
         questions: [
             {
-                question: "What are the requirements for being a poll worker?",
+                question: "WHAT ARE THE REQUIREMENTS FOR BEING A POLL WORKER?",
                 answer: () => <p>
-                    Qualifications vary by jurisdictions. Most states require poll workers to live in or be registered
-                    to vote in the state or their local jurisdiction. Some local election offices have student poll
-                    worker programs for younger people who aren’t yet eligible to vote but would like to play an
-                    important part of the democratic process.
+                    Qualifications vary by jurisdictions. Most states require
+                    poll workers to live in or be registered to vote in the
+                    state or their local jurisdiction. Some local election
+                    offices have student poll worker programs for younger
+                    people who aren’t yet eligible to vote but would like
+                    to play an important part of the democratic process.
                 </p>,
             },
             {
-                question: "Can I be a poll worker in another state?",
+                question: "CAN I BE A POLL WORKER IN ANOTHER STATE?",
                 answer: () => <p>
                     Individuals are generally only allowed to serve in the state where they reside/vote, though there
                     may be exceptions to this in select jurisdictions.
                 </p>,
             },
             {
-                question: "Are there citizenship requirements to be a poll worker?",
+                question: "ARE THERE CITIZENSHIP REQUIREMENTS TO BE A POLL WORKER?",
                 answer: () => <p>
                     Most states require that poll workers are U.S. citizens. The best way to find this information is
                      by looking up your zip code at <a href="https://www.powerthepolls.org/search" target="_self">
@@ -33,15 +35,17 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 </p>,
             },
             {
-                question: "I’m under 18. Can I still help?",
+                question: "I’M UNDER 18. CAN I STILL HELP?",
                 answer: () => <p>
                     Many states allow individuals under 18 to be poll workers, but each state has its own requirements,
-                    and sometimes these can vary depending on which part of the state you are in. The best way to find
-                    this information is by reaching out to your local election office.
+                    and sometimes these can vary depending on which part of the state you are in. The best way to find this information is
+                     by looking up your zip code at <a href="https://www.powerthepolls.org/search" target="_self">
+                     https://www.powerthepolls.org/search</a> or reaching out to your local
+                     election office.
                 </p>,
             },
             {
-                question: "Do i really have to work the full day or can i sign up for shorter shift?",
+                question: "DO I REALLY HAVE TO WORK THE FULL DAY OR CAN I SIGN UP FOR SHORTER SHIFT?",
                 answer: () => <p>
                     Some jurisdictions allow workers to sign up for shifts, while others require you to work full
                     days. Hours also often vary for early voting work versus Election Day. If you’re concerned about
@@ -52,7 +56,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 </p>,
             },
             {
-                question: "Does it matter if i’m a Republican, Democrat, or Independent?",
+                question: "DOES IT MATTER IF I’M A REPUBLICAN, DEMOCRAT, OR INDEPENDENT?",
                 answer: () => <p>
                     Poll working is usually a non-partisan activity and your party affiliation does not matter, but in
                     some states poll workers are matched to locations in pairs based on their party registration. This
@@ -66,7 +70,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
         sectionTitle: "Poll worker responsibilities",
         questions: [
             {
-                question: "What do poll workers do?",
+                question: "WHAT DO POLL WORKERS DO?",
                 answer: () => <p>
                     There are many kinds of jobs for poll workers to do, including helping voters check in, managing
                     voter lines, troubleshooting equipment, and providing directions and assistance. Poll workers may
@@ -74,7 +78,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 </p>,
             },
             {
-                question: "Is a poll worker the same as a poll watcher?",
+                question: "IS A POLL WORKER THE SAME AS A POLL WATCHER?",
                 answer: () => <p>
                     No, these are different roles. Poll workers work for election administrators to help administer the
                     election. They do things like set up the polling location, check in voters, assist voters with
@@ -85,7 +89,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 </p>,
             },
             {
-                question: "Do poll workers need training?",
+                question: "DO POLL WORKERS NEED TRAINING?",
                 answer: () => <p>
                     Yes, prior to Election Day, local jurisdictions provide training for all necessary information that
                     poll workers need.
@@ -97,7 +101,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
         sectionTitle: "Compensation and safety",
         questions: [
             {
-                question: "Are poll workers paid?",
+                question: "ARE POLL WORKERS PAID?",
                 answer: () => <p>
                     Local jurisdictions will often pay poll workers a stipend for their participation. In most cases,
                     you will be paid with a check for a day’s worth of work. In some cases, poll working may be
@@ -106,7 +110,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 </p>,
             },
             {
-                question: "I’m concerned about my safety. What precautions are being taken to protect poll workers?",
+                question: "I’M CONCERNED ABOUT MY SAFETY. WHAT PRECAUTIONS ARE BEING TAKEN TO PROTECT POLL WORKERS?",
                 answer: () => <p>
                     Local election authorities across the country know how important safety is at polling sites – not
                     just for voters but for workers too! If you have specific questions or concerns about steps being
@@ -118,7 +122,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 </p>,
             },
             {
-                question: "I have a disability. What accommodations are being provided?",
+                question: "I HAVE A DISABILITY. WHAT ACCOMODATIONS ARE BEING PROVIDED?",
                 answer: () => <p>
                     Accommodations vary state to state, so the best place to find information is by contacting your
                     local election administrator directly. You can find their info <stencil-route-link
@@ -126,7 +130,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                 </p>,
             },
             {
-                question: "I don’t want to be paid to be a poll worker.",
+                question: "I DON'T WANT TO BE PAID TO BE A POLL WORKER.",
                 answer: () => <p>
                     If you are not interested in being paid, you can ask your administrator about waiving your wages. If
                     that is not possible, you can choose to donate it to a charity.
