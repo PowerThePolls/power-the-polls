@@ -113,7 +113,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                     they provide to poll workers and voters. If you have specific
                     questions or concerns about steps being taken in your area,
                     please reach out to your local election officials for more
-                    information. 
+                    information.
                 </p>,
             },
             {

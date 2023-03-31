@@ -64,7 +64,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                     If you haven’t heard anything for awhile after submitting
                     your application, it’s okay to reach out to your local
                     elections office to follow up on the status of your
-                    application. 
+                    application.
                 </p>,
             },
             {
@@ -79,7 +79,7 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                     elections office to check in on the status of your
                     application. These offices tend to be busier the
                     closer it gets to Election Day, so be patient as
-                    you await a reply. 
+                    you await a reply.
                 </p>,
             },
             {
