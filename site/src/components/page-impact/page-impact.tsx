@@ -2,6 +2,7 @@ import {Component, h, Host} from "@stencil/core";
 
 @Component({
     tag: "page-impact",
+    styleUrl: "page-impact.scss",
     shadow: false,
 })
 export class PageImpact {
@@ -48,8 +49,12 @@ export class PageImpact {
                      satisfaction in their work and the vast majority (88%)
                      interested in continuing to work in future elections.
                 </p>
+                <div class="adjascent-graphs">
                 <img src="/assets/images/impact/satisfaction_with_experience.png"></img>
+                </div>
+                <div class="adjascent-graphs">
                 <img src="/assets/images/impact/interest_in_serving.png"></img>
+                </div>
                 <p>
                     Election administrators did an effective job training poll
                      workers. Almost every poll worker who received training
