@@ -281,6 +281,12 @@ declare global {
         prototype: HTMLPageTestimonialElement;
         new (): HTMLPageTestimonialElement;
     };
+    interface HTMLPageImpactElement extends Components.PageImpact, HTMLStencilElement {
+    }
+    var HTMLPageImpactElement: {
+        prototype: HTMLPageImpactElement;
+        new (): HTMLPageImpactElement;
+    };
     interface HTMLQuestionSectionElement extends Components.QuestionSection, HTMLStencilElement {
     }
     var HTMLQuestionSectionElement: {
@@ -316,12 +322,6 @@ declare global {
     var HTMLUiSocialShareElement: {
         prototype: HTMLUiSocialShareElement;
         new (): HTMLUiSocialShareElement;
-    };
-    interface HTMLPageImpactElement extends Components.PageImpact, HTMLStencilElement {
-    }
-    var HTMLPageImpactElement: {
-        prototype: HTMLPageImpactElement;
-        new (): HTMLPageImpactElement;
     };
     interface HTMLElementTagNameMap {
         "app-root": HTMLAppRootElement;
