@@ -41,6 +41,13 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
          </li>
          <li>
             <stencil-route-link
+               url="/impact"
+               urlMatch={["/impact"]}
+               onClick={onSelectNavItem}
+            >Impact</stencil-route-link>
+         </li>
+         <li>
+            <stencil-route-link
                url="/contact"
                urlMatch={["/contact"]}
                onClick={onSelectNavItem}
@@ -197,6 +204,13 @@ export class AppRoot {
           */
          {
             component: "page-form",
+         },
+         {
+            url: "/impact",
+            component: "page-impact",
+            componentProps: {
+               pageTitle: "Our Impact",
+            },
          },
       ];
    }
