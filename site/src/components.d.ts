@@ -317,6 +317,12 @@ declare global {
         prototype: HTMLUiSocialShareElement;
         new (): HTMLUiSocialShareElement;
     };
+    interface HTMLPageImpactElement extends Components.PageImpact, HTMLStencilElement {
+    }
+    var HTMLPageImpactElement: {
+        prototype: HTMLPageImpactElement;
+        new (): HTMLPageImpactElement;
+    };
     interface HTMLElementTagNameMap {
         "app-root": HTMLAppRootElement;
         "component-list": HTMLComponentListElement;
@@ -339,6 +345,7 @@ declare global {
         "page-resources": HTMLPageResourcesElement;
         "page-search": HTMLPageSearchElement;
         "page-testimonial": HTMLPageTestimonialElement;
+        "page-impact"; HTMLPageImpactElement;
         "question-section": HTMLQuestionSectionElement;
         "ui-h3-bar": HTMLUiH3BarElement;
         "ui-impact-box": HTMLUiImpactBoxElement;
