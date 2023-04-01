@@ -41,34 +41,34 @@ export class PageImpact {
                      Election (compared to 48.5% of respondents in 2020). Of these, 80% reported serving on Election Day and
                      19% reported serving during early voting.
                 </p>
-                <img src="/assets/images/resources/did_you_serve.png"></img>
+                <img src="/assets/images/impact/did_you_serve.png"></img>
                 <p>
                     Survey respondents reported having an overwhelmingly positive
                      experience working the polls in 2022, with 95% reporting
                      satisfaction in their work and the vast majority (88%)
                      interested in continuing to work in future elections.
                 </p>
-                <img src="/assets/images/resources/credentials.png"></img>
-                <img src="/assets/images/resources/credentials.png"></img>
+                <img src="/assets/images/impact/satisfaction_with_experience.png"></img>
+                <img src="/assets/images/impact/interest_in_serving.png"></img>
                 <p>
                     Election administrators did an effective job training poll
                      workers. Almost every poll worker who received training
                      reported feeling prepared for Election Day.
                 </p>
-                <img src="/assets/images/resources/credentials.png"></img>
+                <img src="/assets/images/impact/prepared_to_serve.png"></img>
                 <p>
                     Trust in elections is high in the Power the Polls community:
                      86% of respondents believe that elections were run well in
                      their community.
                 </p>
-                <img src="/assets/images/resources/credentials.png"></img>
+                <img src="/assets/images/impact/elections_well_run.png"></img>
                 <p>
                     Over half of employed survey respondents reported that
                      their current employers offered time off to work the
                      polls. Most of these workers were employed by businesses
                      (41%), outpacing government (14%) and nonprofits (12%).
                 </p>
-                <img src="/assets/images/resources/credentials.png"></img>
+                <img src="/assets/images/impact/was_time_off_given.png"></img>
                 <p>
                     More than half (52%) of people recruited by Power the
                      Polls who self-reported their language abilities are
@@ -86,7 +86,7 @@ export class PageImpact {
                     <li>ASL (1.0%)</li>
                     <li>Other languages (8.9%)</li>
                 </ul>
-                <img src="/assets/images/resources/credentials.png"></img>
+                <img src="/assets/images/impact/language_breakdown.png"></img>
                 <p>
                     This survey was conducted by Patinkin Research
                      Strategies and completed by 4,708 people across
