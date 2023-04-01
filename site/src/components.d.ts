@@ -345,7 +345,7 @@ declare global {
         "page-resources": HTMLPageResourcesElement;
         "page-search": HTMLPageSearchElement;
         "page-testimonial": HTMLPageTestimonialElement;
-        "page-impact"; HTMLPageImpactElement;
+        "page-impact": HTMLPageImpactElement;
         "question-section": HTMLQuestionSectionElement;
         "ui-h3-bar": HTMLUiH3BarElement;
         "ui-impact-box": HTMLUiImpactBoxElement;
@@ -439,6 +439,8 @@ declare namespace LocalJSX {
     }
     interface PageTestimonial {
     }
+    interface PageImpact {
+    }
     interface QuestionSection {
         "questions"?: { question: string, answer: () => string }[];
         "sectionTitle"?: string;
@@ -522,6 +524,7 @@ declare namespace LocalJSX {
         "page-resources": PageResources;
         "page-search": PageSearch;
         "page-testimonial": PageTestimonial;
+        "page-impact": PageImpact;
         "question-section": QuestionSection;
         "ui-h3-bar": UiH3Bar;
         "ui-impact-box": UiImpactBox;
@@ -555,6 +558,7 @@ declare module "@stencil/core" {
             "page-resources": LocalJSX.PageResources & JSXBase.HTMLAttributes<HTMLPageResourcesElement>;
             "page-search": LocalJSX.PageSearch & JSXBase.HTMLAttributes<HTMLPageSearchElement>;
             "page-testimonial": LocalJSX.PageTestimonial & JSXBase.HTMLAttributes<HTMLPageTestimonialElement>;
+            "page-impact": LocalJSX.PageImpact & JSXBase.HTMLAttributes<HTMLPageImpactElement>;
             "question-section": LocalJSX.QuestionSection & JSXBase.HTMLAttributes<HTMLQuestionSectionElement>;
             "ui-h3-bar": LocalJSX.UiH3Bar & JSXBase.HTMLAttributes<HTMLUiH3BarElement>;
             "ui-impact-box": LocalJSX.UiImpactBox & JSXBase.HTMLAttributes<HTMLUiImpactBoxElement>;
