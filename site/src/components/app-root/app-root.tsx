@@ -208,9 +208,6 @@ export class AppRoot {
          {
             url: "/impact",
             component: "page-impact",
-            componentProps: {
-               pageTitle: "Our Impact",
-            },
          },
       ];
    }

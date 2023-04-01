@@ -91,6 +91,8 @@ export namespace Components {
     }
     interface PageTestimonial {
     }
+    interface PageImpact {
+    }
     interface QuestionSection {
         "questions"?: { question: string, answer: () => string }[];
         "sectionTitle"?: string;
