@@ -190,6 +190,10 @@ export class AppRoot {
                data: FaqPollWorkerData,
             },
          },
+         {
+            url: "/impact",
+            component: "page-impact",
+         },
 
          /*
           * legacy routes
@@ -204,10 +208,6 @@ export class AppRoot {
           */
          {
             component: "page-form",
-         },
-         {
-            url: "/impact",
-            component: "page-impact",
          },
       ];
    }

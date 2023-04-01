@@ -69,6 +69,8 @@ export namespace Components {
          */
         "partnerId"?: string;
     }
+    interface PageImpact {
+    }
     interface PageInfo {
     }
     interface PageJurisdiction {
@@ -90,8 +92,6 @@ export namespace Components {
         "history": RouterHistory;
     }
     interface PageTestimonial {
-    }
-    interface PageImpact {
     }
     interface QuestionSection {
         "questions"?: { question: string, answer: () => string }[];
@@ -233,6 +233,12 @@ declare global {
         prototype: HTMLPageFormElement;
         new (): HTMLPageFormElement;
     };
+    interface HTMLPageImpactElement extends Components.PageImpact, HTMLStencilElement {
+    }
+    var HTMLPageImpactElement: {
+        prototype: HTMLPageImpactElement;
+        new (): HTMLPageImpactElement;
+    };
     interface HTMLPageInfoElement extends Components.PageInfo, HTMLStencilElement {
     }
     var HTMLPageInfoElement: {
@@ -280,12 +286,6 @@ declare global {
     var HTMLPageTestimonialElement: {
         prototype: HTMLPageTestimonialElement;
         new (): HTMLPageTestimonialElement;
-    };
-    interface HTMLPageImpactElement extends Components.PageImpact, HTMLStencilElement {
-    }
-    var HTMLPageImpactElement: {
-        prototype: HTMLPageImpactElement;
-        new (): HTMLPageImpactElement;
     };
     interface HTMLQuestionSectionElement extends Components.QuestionSection, HTMLStencilElement {
     }
@@ -337,6 +337,7 @@ declare global {
         "page-faq-es": HTMLPageFaqEsElement;
         "page-faq-poll-worker": HTMLPageFaqPollWorkerElement;
         "page-form": HTMLPageFormElement;
+        "page-impact": HTMLPageImpactElement;
         "page-info": HTMLPageInfoElement;
         "page-jurisdiction": HTMLPageJurisdictionElement;
         "page-partners": HTMLPagePartnersElement;
@@ -345,7 +346,6 @@ declare global {
         "page-resources": HTMLPageResourcesElement;
         "page-search": HTMLPageSearchElement;
         "page-testimonial": HTMLPageTestimonialElement;
-        "page-impact": HTMLPageImpactElement;
         "question-section": HTMLQuestionSectionElement;
         "ui-h3-bar": HTMLUiH3BarElement;
         "ui-impact-box": HTMLUiImpactBoxElement;
@@ -417,6 +417,8 @@ declare namespace LocalJSX {
          */
         "partnerId"?: string;
     }
+    interface PageImpact {
+    }
     interface PageInfo {
     }
     interface PageJurisdiction {
@@ -438,8 +440,6 @@ declare namespace LocalJSX {
         "history": RouterHistory;
     }
     interface PageTestimonial {
-    }
-    interface PageImpact {
     }
     interface QuestionSection {
         "questions"?: { question: string, answer: () => string }[];
@@ -516,6 +516,7 @@ declare namespace LocalJSX {
         "page-faq-es": PageFaqEs;
         "page-faq-poll-worker": PageFaqPollWorker;
         "page-form": PageForm;
+        "page-impact": PageImpact;
         "page-info": PageInfo;
         "page-jurisdiction": PageJurisdiction;
         "page-partners": PagePartners;
@@ -524,7 +525,6 @@ declare namespace LocalJSX {
         "page-resources": PageResources;
         "page-search": PageSearch;
         "page-testimonial": PageTestimonial;
-        "page-impact": PageImpact;
         "question-section": QuestionSection;
         "ui-h3-bar": UiH3Bar;
         "ui-impact-box": UiImpactBox;
@@ -550,6 +550,7 @@ declare module "@stencil/core" {
             "page-faq-es": LocalJSX.PageFaqEs & JSXBase.HTMLAttributes<HTMLPageFaqEsElement>;
             "page-faq-poll-worker": LocalJSX.PageFaqPollWorker & JSXBase.HTMLAttributes<HTMLPageFaqPollWorkerElement>;
             "page-form": LocalJSX.PageForm & JSXBase.HTMLAttributes<HTMLPageFormElement>;
+            "page-impact": LocalJSX.PageImpact & JSXBase.HTMLAttributes<HTMLPageImpactElement>;
             "page-info": LocalJSX.PageInfo & JSXBase.HTMLAttributes<HTMLPageInfoElement>;
             "page-jurisdiction": LocalJSX.PageJurisdiction & JSXBase.HTMLAttributes<HTMLPageJurisdictionElement>;
             "page-partners": LocalJSX.PagePartners & JSXBase.HTMLAttributes<HTMLPagePartnersElement>;
@@ -558,7 +559,6 @@ declare module "@stencil/core" {
             "page-resources": LocalJSX.PageResources & JSXBase.HTMLAttributes<HTMLPageResourcesElement>;
             "page-search": LocalJSX.PageSearch & JSXBase.HTMLAttributes<HTMLPageSearchElement>;
             "page-testimonial": LocalJSX.PageTestimonial & JSXBase.HTMLAttributes<HTMLPageTestimonialElement>;
-            "page-impact": LocalJSX.PageImpact & JSXBase.HTMLAttributes<HTMLPageImpactElement>;
             "question-section": LocalJSX.QuestionSection & JSXBase.HTMLAttributes<HTMLQuestionSectionElement>;
             "ui-h3-bar": LocalJSX.UiH3Bar & JSXBase.HTMLAttributes<HTMLUiH3BarElement>;
             "ui-impact-box": LocalJSX.UiImpactBox & JSXBase.HTMLAttributes<HTMLUiImpactBoxElement>;

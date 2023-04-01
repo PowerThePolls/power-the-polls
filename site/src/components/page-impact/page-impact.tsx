@@ -41,7 +41,7 @@ export class PageImpact {
                      Election (compared to 48.5% of respondents in 2020). Of these, 80% reported serving on Election Day and
                      19% reported serving during early voting.
                 </p>
-                <img src="/assets/images/resources/credentials.png"></img>
+                <img src="/assets/images/resources/did_you_serve.png"></img>
                 <p>
                     Survey respondents reported having an overwhelmingly positive
                      experience working the polls in 2022, with 95% reporting
