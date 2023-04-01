@@ -39,7 +39,7 @@ export class PageImpact {
                 <p>
                     Of Power the Polls’ recruits surveyed, 61% reported serving as a poll worker in the November 2022 General
                      Election (compared to 48.5% of respondents in 2020). Of these, 80% reported serving on Election Day and
-                     19% reported serving during early voting. 
+                     19% reported serving during early voting.
                 </p>
                 <img src="/assets/images/resources/credentials.png"></img>
                 <p>
@@ -91,12 +91,12 @@ export class PageImpact {
                     This survey was conducted by Patinkin Research
                      Strategies and completed by 4,708 people across
                      the United States, pulled from two samples of the
-                     Power the Polls 2022 sign-up list. 
+                     Power the Polls 2022 sign-up list.
                 </p>
                 <p>
                     For more information about this survey, please reach
                      out to <a
-                    href="mailto:info@powerthepolls.org">info@powerthepolls.org</a> 
+                    href="mailto:info@powerthepolls.org">info@powerthepolls.org</a>
                 </p>
             </Host>
         );
