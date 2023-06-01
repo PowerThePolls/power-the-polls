@@ -16,7 +16,7 @@ export class PageMedia {
         // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
         for (filterButtonIndex = 0; filterButtonIndex < x.length; filterButtonIndex++) {
             removeClass(x[filterButtonIndex], "show");
-            if (x[filterButtonIndex].className.indexOf(c) > -1) { addClass(x[filterButtonIndex], "show");}
+            if (x[filterButtonIndex].className.indexOf(c) > -1) { addClass(x[filterButtonIndex], "show"); }
         }
         }
 
