@@ -1,10 +1,10 @@
 import {Component, h, Host} from "@stencil/core";
 
 @Component({
-    tag: "page-about",
+    tag: "page-press-release-six",
     shadow: false,
 })
-export class PageAbout {
+export class PagePressReleaseSix {
 
     public render() {
         return (
