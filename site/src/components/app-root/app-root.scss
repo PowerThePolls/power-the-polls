@@ -3,6 +3,10 @@ app-root {
    display: flex;
    flex-flow: column;
 
+   ul > li {
+    margin-left: 10px;
+   }
+   
    & > .container {
       flex-grow: 1;
       display: grid;

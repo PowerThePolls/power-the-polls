@@ -164,8 +164,8 @@ export class AppRoot {
          //    component: "page-partners-table",
          // },
          {
-            url: "/press",
-            component: "page-press",
+            url: "/media",
+            component: "page-media",
          },
          {
             url: "/privacy",
