@@ -9,8 +9,8 @@ export class PagePressReleaseFive {
     public render() {
         return (
             <Host>
-                <h1>Power the Polls Announces Recruitment of 265,000 Potential Poll Workers 
-Ahead of 2022 Election
+                <h1>Power the Polls Announces Recruitment of 265,000 Potential Poll Workers
+ Ahead of 2022 Election
 </h1>
                 <p>
                     November 3, 2022 — Just five days before Election Day, Power the Polls – the first-of-its-kind, nonpartisan initiative for recruiting the next generation of poll workers who will help ensure a safe, fair, and secure election – announced it has recruited more than 265,000 potential poll workers since it re-launched in May 2022.
