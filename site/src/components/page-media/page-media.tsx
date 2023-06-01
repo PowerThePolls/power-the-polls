@@ -1,11 +1,10 @@
 import {Component, h, Host} from "@stencil/core";
 
 @Component({
-    tag: "page-impact",
-    styleUrl: "page-impact.scss",
+    tag: "page-media",
     shadow: false,
 })
-export class PageImpact {
+export class PageMedia {
 
     public render() {
         return (
