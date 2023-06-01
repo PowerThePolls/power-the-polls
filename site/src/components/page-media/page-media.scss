@@ -1,39 +1,25 @@
-.container {
-  overflow: hidden;
-}
+.card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+      margin: .7em;
+      text-align: center;
+      background-color: #F5F3F1;
+      height: 215px;
+      position: relative;
 
-.filterDiv {
-  float: left;
-  background-color: #2196F3;
-  color: #ffffff;
-  width: 100px;
-  line-height: 100px;
-  text-align: center;
-  margin: 2px;
-  display: none; /* Hidden by default */
-}
+         p {
+      padding: .5em;
+      font-size: 10px;
+      position: absolute;
+      bottom: 0;
+      color: #1C1834;
+   }
 
-/* The "show" class is added to the filtered elements */
-.show {
-  display: block;
-}
+      a:link { text-decoration: none; }
 
-/* Style the buttons */
-.btn {
-  border: none;
-  outline: none;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
+      a:visited { text-decoration: none; }
 
-/* Add a light grey background on mouse-over */
-.btn:hover {
-  background-color: #ddd;
-}
+      a:active { text-decoration: none; }
 
-/* Add a dark background to the active button */
-.btn.active {
-  background-color: #666;
-  color: white;
-}
+      a:hover { tex-decoration: underline; }
+
+   }

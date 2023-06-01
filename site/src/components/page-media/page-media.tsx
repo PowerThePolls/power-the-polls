@@ -14,7 +14,49 @@ export class PageMedia {
                     <div class="card">
                     <a href="/assets/documents/25-questions-to-ask.pdf" rel="noopener noreferrer">
                         <h3>
-                            Press Release 1
+                            Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards. May 3, 2023.
+                        </h3>
+                        </a>
+                    </div>
+                    <div class="card">
+                    <a href="/assets/documents/25-questions-to-ask.pdf" rel="noopener noreferrer">
+                        <h3>
+                            Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards. May 3, 2023.
+                        </h3>
+                        </a>
+                    </div>
+                    <div class="card">
+                    <a href="/assets/documents/25-questions-to-ask.pdf" rel="noopener noreferrer">
+                        <h3>
+                            Power the Polls Announces Recruitment of 265,000 Potential Poll Workers Ahead of 2022 Election. November 3, 2022.
+                        </h3>
+                        </a>
+                    </div>
+                    <div class="card">
+                    <a href="/assets/documents/25-questions-to-ask.pdf" rel="noopener noreferrer">
+                        <h3>
+                            125,000 New Potential Poll Workers Recruited by Power the Polls Ahead of 2022 Election. September 19, 2022.
+                        </h3>
+                        </a>
+                    </div>
+                    <div class="card">
+                    <a href="/assets/documents/25-questions-to-ask.pdf" rel="noopener noreferrer">
+                        <h3>
+                            Power the Polls Returns to Recruit New Wave of Poll Workers Ahead of Primary and Midterm Elections. May 20, 2022.
+                        </h3>
+                        </a>
+                    </div>
+                    <div class="card">
+                    <a href="/assets/documents/25-questions-to-ask.pdf" rel="noopener noreferrer">
+                        <h3>
+                            Power The Polls Launches First-of-its-Kind Effort to Recruit New Wave of Poll Workers for Election Day. June 30, 2020.
+                        </h3>
+                        </a>
+                    </div>
+                    <div class="card">
+                    <a href="/assets/documents/25-questions-to-ask.pdf" rel="noopener noreferrer">
+                        <h3>
+                            Power the Polls Returns to Recruit New Wave of Poll Workers Ahead of Primary and Midterm Elections. May 20, 2022.
                         </h3>
                         </a>
                     </div>
