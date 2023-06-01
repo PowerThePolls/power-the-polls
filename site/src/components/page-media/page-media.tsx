@@ -6,8 +6,6 @@ import {Component, h, Host} from "@stencil/core";
     shadow: false,
 })
 export class PageMedia {
-
-
     public render() {
         return (
             <Host>
@@ -20,7 +18,7 @@ export class PageMedia {
                         </h2>
                         </a>
                     </div>
-                <h2> In the News <h2>
+                <h1> In the News </h1>
                 <div class="card">
                          <a href="https://www.politico.com/newsletters/playbook/2022/11/03/bidens-important-puzzling-democracy-speech-00064817"
                                                                          target="_blank" rel="noopener noreferrer">
