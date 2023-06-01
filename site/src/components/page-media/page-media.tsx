@@ -2,6 +2,7 @@ import {Component, h, Host} from "@stencil/core";
 
 @Component({
     tag: "page-media",
+    styleUrl: "page-media.scss",
     shadow: false,
 })
 export class PageMedia {
