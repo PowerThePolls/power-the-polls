@@ -86,6 +86,18 @@ export namespace Components {
     }
     interface PagePress {
     }
+    interface PagePressReleaseOne {
+    }
+    interface PagePressReleaseTwo {
+    }
+    interface PagePressReleaseThree {
+    }
+    interface PagePressReleaseFour {
+    }
+    interface PagePressReleaseFive {
+    }
+    interface PagePressReleaseSix {
+    }
     interface PagePrivacy {
     }
     interface PageResources {
@@ -271,6 +283,42 @@ declare global {
         prototype: HTMLPagePressElement;
         new (): HTMLPagePressElement;
     };
+    interface HTMLPagePressReleaseOneElement extends Components.PagePressReleaseOne, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseOneElement: {
+        prototype: HTMLPagePressReleaseOneElement;
+        new (): HTMLPagePressReleaseOneElement;
+    };
+    interface HTMLPagePressReleaseTwoElement extends Components.PagePressReleaseTwo, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseOneElement: {
+        prototype: HTMLPagePressReleaseTwoElement;
+        new (): HTMLPagePressReleaseTwoElement;
+    };
+    interface HTMLPagePressReleaseThreeElement extends Components.PagePressReleaseThree, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseOneElement: {
+        prototype: HTMLPagePressReleaseThreeElement;
+        new (): HTMLPagePressReleaseThreeElement;
+    };
+    interface HTMLPagePressReleaseFourElement extends Components.PagePressReleaseFour, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseOneElement: {
+        prototype: HTMLPagePressReleaseFourElement;
+        new (): HTMLPagePressReleaseFourElement;
+    };
+    interface HTMLPagePressReleaseFiveElement extends Components.PagePressReleaseFive, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseFiveElement: {
+        prototype: HTMLPagePressReleaseFiveElement;
+        new (): HTMLPagePressReleaseFiveElement;
+    };
+    interface HTMLPagePressReleaseSixElement extends Components.PagePressReleaseSix, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseSixElement: {
+        prototype: HTMLPagePressReleaseSixElement;
+        new (): HTMLPagePressReleaseSixElement;
+    };
     interface HTMLPagePrivacyElement extends Components.PagePrivacy, HTMLStencilElement {
     }
     var HTMLPagePrivacyElement: {
@@ -350,7 +398,12 @@ declare global {
         "page-jurisdiction": HTMLPageJurisdictionElement;
         "page-partners": HTMLPagePartnersElement;
         "page-partners-table": HTMLPagePartnersTableElement;
-        "page-press": HTMLPagePressElement;
+        "page-press-release-one": HTMLPagePressReleaseOneElement;
+        "page-press-release-two": HTMLPagePressReleaseTwoElement;
+        "page-press-release-three": HTMLPagePressReleaseThreeElement;
+        "page-press-release-four": HTMLPagePressReleaseFourElement;
+        "page-press-release-five": HTMLPagePressReleaseFiveElement;
+        "page-press-release-six": HTMLPagePressReleaseSixElement;
         "page-privacy": HTMLPagePrivacyElement;
         "page-resources": HTMLPageResourcesElement;
         "page-search": HTMLPageSearchElement;
@@ -443,6 +496,18 @@ declare namespace LocalJSX {
     }
     interface PagePress {
     }
+    interface PagePressReleaseOne {
+    }
+    interface PagePressReleaseTwo {
+    }
+    interface PagePressReleaseThreee {
+    }
+    interface PagePressReleaseFour {
+    }
+    interface PagePressReleaseFive {
+    }
+    interface PagePressReleaseSix {
+    }
     interface PagePrivacy {
     }
     interface PageResources {
@@ -534,6 +599,12 @@ declare namespace LocalJSX {
         "page-partners-table": PagePartnersTable;
         "page-privacy": PagePrivacy;
         "page-press": PagePress;
+        "page-press-release-one": PagePressReleaseOne;
+        "page-press-release-two": PagePressReleaseTwo;
+        "page-press-release-three": PagePressReleaseThree;
+        "page-press-release-four": PagePressReleaseFour;
+        "page-press-release-five": PagePressReleaseFive;
+        "page-press-release-six": PagePressReleaseSix;
         "page-resources": PageResources;
         "page-search": PageSearch;
         "page-testimonial": PageTestimonial;
@@ -568,6 +639,13 @@ declare module "@stencil/core" {
             "page-partners": LocalJSX.PagePartners & JSXBase.HTMLAttributes<HTMLPagePartnersElement>;
             "page-partners-table": LocalJSX.PagePartnersTable & JSXBase.HTMLAttributes<HTMLPagePartnersTableElement>;
             "page-press": LocalJSX.PagePress & JSXBase.HTMLAttributes<HTMLPagePressElement>;
+            "page-press": LocalJSX.PagePress & JSXBase.HTMLAttributes<HTMLPagePressElement>;
+            "page-press-release-one": LocalJSX.PagePressReleaseOne & JSXBase.HTMLAttributes<HTMLPagePressReleaseOneElement>;
+            "page-press-release-two": LocalJSX.PagePressReleaseTwo & JSXBase.HTMLAttributes<HTMLPagePressReleaseTwoElement>;
+            "page-press-release-three": LocalJSX.PagePressReleaseThree & JSXBase.HTMLAttributes<HTMLPagePressReleaseThreeElement>;
+            "page-press-release-four": LocalJSX.PagePressReleaseFour & JSXBase.HTMLAttributes<HTMLPagePressReleaseFourElement>;
+            "page-press-release-five": LocalJSX.PagePressReleaseFive & JSXBase.HTMLAttributes<HTMLPagePressReleaseFiveElement>;
+            "page-press-release-six": LocalJSX.PagePressReleaseSix & JSXBase.HTMLAttributes<HTMLPagePressReleaseSixElement>;
             "page-privacy": LocalJSX.PagePrivacy & JSXBase.HTMLAttributes<HTMLPagePrivacyElement>;
             "page-resources": LocalJSX.PageResources & JSXBase.HTMLAttributes<HTMLPageResourcesElement>;
             "page-search": LocalJSX.PageSearch & JSXBase.HTMLAttributes<HTMLPageSearchElement>;

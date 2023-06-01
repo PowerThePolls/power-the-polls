@@ -53,13 +53,7 @@ export class PageMedia {
                         </h3>
                         </a>
                     </div>
-                    <div class="card">
-                    <a href="/assets/documents/25-questions-to-ask.pdf" rel="noopener noreferrer">
-                        <h3>
-                            Power the Polls Returns to Recruit New Wave of Poll Workers Ahead of Primary and Midterm Elections. May 20, 2022.
-                        </h3>
-                        </a>
-                    </div>
+
                 <h2> In the News </h2>
                 <div class="card">
                          <a href="https://www.politico.com/newsletters/playbook/2022/11/03/bidens-important-puzzling-democracy-speech-00064817"
