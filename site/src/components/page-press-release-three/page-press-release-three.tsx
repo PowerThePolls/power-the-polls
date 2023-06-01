@@ -9,8 +9,8 @@ export class PagePressReleaseThree {
     public render() {
         return (
             <Host>
-                <h1>Power the Polls Returns to Recruit New Wave of Poll Workers 
-Ahead of Primary and Midterm Elections
+                <h1>Power the Polls Returns to Recruit New Wave of Poll Workers
+ Ahead of Primary and Midterm Elections
 </h1>
                 <p>
                     <i>The first-of-its-kind initiative signed up more than 700,000 potential poll workers in 2020 and helped ensure a safe and fair election.</i>
