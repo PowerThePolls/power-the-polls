@@ -18,7 +18,31 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
          </li>
          <li>
             <stencil-route-link url="/about" onClick={onSelectNavItem}>About</stencil-route-link>
+            <ul>
+               <li>
+                  <stencil-route-link
+                  url="/impact"
+                  urlMatch={["/impact"]}
+                  onClick={onSelectNavItem}
+                  >Impact</stencil-route-link>
+               </li>
+               <li>
+                  <stencil-route-link
+                  url="/media"
+                  urlMatch={["/media"]}
+                  onClick={onSelectNavItem}
+                  >Media</stencil-route-link>
+               </li>
+               <li>
+                  <stencil-route-link
+                  url="/contact"
+                  urlMatch={["/contact"]}
+                  onClick={onSelectNavItem}
+                  >Contact</stencil-route-link>
+               </li>
+            </ul>
          </li>
+
          <li>
             <stencil-route-link
                url="/faq"
@@ -38,20 +62,6 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
          </li>
          <li>
             <stencil-route-link url="/resources" onClick={onSelectNavItem}>Resources</stencil-route-link>
-         </li>
-         <li>
-            <stencil-route-link
-               url="/impact"
-               urlMatch={["/impact"]}
-               onClick={onSelectNavItem}
-            >Impact</stencil-route-link>
-         </li>
-         <li>
-            <stencil-route-link
-               url="/contact"
-               urlMatch={["/contact"]}
-               onClick={onSelectNavItem}
-            >Contact</stencil-route-link>
          </li>
       </ul>
    </nav>
@@ -153,6 +163,10 @@ export class AppRoot {
          //    url: "/partners-table",
          //    component: "page-partners-table",
          // },
+         {
+            url: "/press",
+            component: "page-press",
+         },
          {
             url: "/privacy",
             component: "page-privacy",

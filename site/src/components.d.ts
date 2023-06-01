@@ -84,6 +84,8 @@ export namespace Components {
     }
     interface PagePartnersTable {
     }
+    interface PagePress {
+    }
     interface PagePrivacy {
     }
     interface PageResources {
@@ -263,6 +265,12 @@ declare global {
         prototype: HTMLPagePartnersTableElement;
         new (): HTMLPagePartnersTableElement;
     };
+    interface HTMLPagePressElement extends Components.PagePress, HTMLStencilElement {
+    }
+    var HTMLPagePressElement: {
+        prototype: HTMLPagePressElement;
+        new (): HTMLPagePressElement;
+    };
     interface HTMLPagePrivacyElement extends Components.PagePrivacy, HTMLStencilElement {
     }
     var HTMLPagePrivacyElement: {
@@ -342,6 +350,7 @@ declare global {
         "page-jurisdiction": HTMLPageJurisdictionElement;
         "page-partners": HTMLPagePartnersElement;
         "page-partners-table": HTMLPagePartnersTableElement;
+        "page-press": HTMLPagePressElement;
         "page-privacy": HTMLPagePrivacyElement;
         "page-resources": HTMLPageResourcesElement;
         "page-search": HTMLPageSearchElement;
@@ -431,6 +440,8 @@ declare namespace LocalJSX {
         "partners"?: Partner[];
     }
     interface PagePartnersTable {
+    }
+    interface PagePress {
     }
     interface PagePrivacy {
     }
@@ -522,6 +533,7 @@ declare namespace LocalJSX {
         "page-partners": PagePartners;
         "page-partners-table": PagePartnersTable;
         "page-privacy": PagePrivacy;
+        "page-press": PagePress;
         "page-resources": PageResources;
         "page-search": PageSearch;
         "page-testimonial": PageTestimonial;
@@ -555,6 +567,7 @@ declare module "@stencil/core" {
             "page-jurisdiction": LocalJSX.PageJurisdiction & JSXBase.HTMLAttributes<HTMLPageJurisdictionElement>;
             "page-partners": LocalJSX.PagePartners & JSXBase.HTMLAttributes<HTMLPagePartnersElement>;
             "page-partners-table": LocalJSX.PagePartnersTable & JSXBase.HTMLAttributes<HTMLPagePartnersTableElement>;
+            "page-press": LocalJSX.PagePress & JSXBase.HTMLAttributes<HTMLPagePressElement>;
             "page-privacy": LocalJSX.PagePrivacy & JSXBase.HTMLAttributes<HTMLPagePrivacyElement>;
             "page-resources": LocalJSX.PageResources & JSXBase.HTMLAttributes<HTMLPageResourcesElement>;
             "page-search": LocalJSX.PageSearch & JSXBase.HTMLAttributes<HTMLPageSearchElement>;
