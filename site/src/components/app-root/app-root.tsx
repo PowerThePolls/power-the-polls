@@ -168,27 +168,27 @@ export class AppRoot {
             component: "page-media",
          },
           {
-            url: "/page-press-release-one",
+            url: "/press-release-one",
             component: "page-press-release-one",
          },
           {
-            url: "/page-press-release-two",
+            url: "/press-release-two",
             component: "page-press-release-two",
          },
           {
-            url: "/page-press-release-three",
+            url: "/press-release-three",
             component: "page-press-release-three",
          },
           {
-            url: "/page-press-release-four",
+            url: "/press-release-four",
             component: "page-press-release-four",
          },
           {
-            url: "/page-press-release-five",
+            url: "/press-release-five",
             component: "page-press-release-five",
          },
          {
-            url: "/page-press-release-six",
+            url: "/press-release-six",
             component: "page-press-release-six",
          },
          {
