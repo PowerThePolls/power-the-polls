@@ -1,8 +1,8 @@
 .card {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
       background-color: #F5F3F1;
-      height: 215px;
-      padding: .5em;
+
+      color: #1C1834;
 
       a:link { text-decoration: none; }
 
@@ -10,6 +10,6 @@
 
       a:active { text-decoration: none; }
 
-      a:hover { tex-decoration: underline; }
+      a:hover { text-decoration: underline; }
 
    }
