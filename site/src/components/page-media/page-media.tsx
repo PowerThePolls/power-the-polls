@@ -14,22 +14,19 @@ export class PageMedia {
                     <div class="card">
                     <a href="https://deploy-preview-227--powerthepolls.netlify.app/press-release-six" rel="noopener noreferrer">
                         <h3>
-                            Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards. May 3, 2023.
-                        </h3>
+                            Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards. </h3> May 3, 2023.
                         </a>
                     </div>
                     <div class="card">
                     <a href="https://deploy-preview-227--powerthepolls.netlify.app/press-release-five" rel="noopener noreferrer">
                         <h3>
-                            Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards. May 3, 2023.
-                        </h3>
+                            Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards. </h3> May 3, 2023.
                         </a>
                     </div>
                     <div class="card">
                     <a href="https://deploy-preview-227--powerthepolls.netlify.app/press-release-four" rel="noopener noreferrer">
                         <h3>
-                            Power the Polls Announces Recruitment of 265,000 Potential Poll Workers Ahead of 2022 Election. November 3, 2022.
-                        </h3>
+                            Power the Polls Announces Recruitment of 265,000 Potential Poll Workers Ahead of 2022 Election. </h3> November 3, 2022.
                         </a>
                     </div>
                     <div class="card">
