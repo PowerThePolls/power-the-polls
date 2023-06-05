@@ -8,7 +8,7 @@ export class PagePressReleaseThree {
 
     public render() {
         return (
-            <Host>
+            <Host><a href="/media"><button>BACK TO MEDIA</button></a>
                 <h1>Power the Polls Returns to Recruit New Wave of Poll Workers
  Ahead of Primary and Midterm Elections
 </h1>
