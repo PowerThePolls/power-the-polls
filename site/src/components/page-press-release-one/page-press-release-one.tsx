@@ -8,7 +8,7 @@ export class PagePressReleaseOne {
 
     public render() {
         return (
-            <Host>
+            <Host><button>BACK TO MEDIA</button>
                 <h1>Power The Polls Launches First-of-its-Kind Effort to Recruit New Wave of Poll Workers for Election Day</h1>
                 <p><i>In the Midst of a Nationwide Poll Worker Shortage, Nonprofits and Companies Come Together to Ensure Safe, Secure and Fair Elections
  Launch Partners Include Civic Alliance, Comedy Central, Fair Elections Center, Levi Strauss & Co., MTV, Patagonia, Pizza to the Polls, Time to Vote, Uber, and We Can Vote. </i></p>
