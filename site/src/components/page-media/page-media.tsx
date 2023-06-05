@@ -12,37 +12,37 @@ export class PageMedia {
                 <h1>Press & Media</h1>
                 <h2>Press Releases</h2>
                     <div class="card">
-                    <a href="https://deploy-preview-227--powerthepolls.netlify.app/press-release-six" rel="noopener noreferrer">
+                    <a href="/press-release-six" rel="noopener noreferrer">
                         <h3>
                             Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards. </h3> May 3, 2023.
                         </a>
                     </div>
                     <div class="card">
-                    <a href="https://deploy-preview-227--powerthepolls.netlify.app/press-release-five" rel="noopener noreferrer">
+                    <a href="/press-release-five" rel="noopener noreferrer">
                         <h3>
                             Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards. </h3> May 3, 2023.
                         </a>
                     </div>
                     <div class="card">
-                    <a href="https://deploy-preview-227--powerthepolls.netlify.app/press-release-four" rel="noopener noreferrer">
+                    <a href="/press-release-four" rel="noopener noreferrer">
                         <h3>
                             Power the Polls Announces Recruitment of 265,000 Potential Poll Workers Ahead of 2022 Election. </h3> November 3, 2022.
                         </a>
                     </div>
                     <div class="card">
-                    <a href="https://deploy-preview-227--powerthepolls.netlify.app/press-release-three" rel="noopener noreferrer">
+                    <a href="/press-release-three" rel="noopener noreferrer">
                         <h3>
                             125,000 New Potential Poll Workers Recruited by Power the Polls Ahead of 2022 Election. </h3> September 19, 2022.
                         </a>
                     </div>
                     <div class="card">
-                    <a href="https://deploy-preview-227--powerthepolls.netlify.app/press-release-two" rel="noopener noreferrer">
+                    <a href="/press-release-two" rel="noopener noreferrer">
                         <h3>
                             Power the Polls Returns to Recruit New Wave of Poll Workers Ahead of Primary and Midterm Elections. </h3> May 20, 2022.
                         </a>
                     </div>
                     <div class="card">
-                    <a href="https://deploy-preview-227--powerthepolls.netlify.app/press-release-one" rel="noopener noreferrer">
+                    <a href="/press-release-one" rel="noopener noreferrer">
                         <h3>
                             Power The Polls Launches First-of-its-Kind Effort to Recruit New Wave of Poll Workers for Election Day. </h3> June 30, 2020.
                         </a>

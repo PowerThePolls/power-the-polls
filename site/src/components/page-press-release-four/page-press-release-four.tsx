@@ -2,6 +2,7 @@ import {Component, h, Host} from "@stencil/core";
 
 @Component({
     tag: "page-press-release-four",
+    styleUrl: "page-press-release-four.scss",
     shadow: false,
 })
 export class PagePressReleaseFour {
