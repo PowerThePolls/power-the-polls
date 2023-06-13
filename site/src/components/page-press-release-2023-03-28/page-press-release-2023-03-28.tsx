@@ -22,7 +22,7 @@ export class PagePressRelease20230328 {
                     Power the Polls and its founding partners – Civic Alliance, Civic Responsibility Project, Comedy Central, Fair Elections Center, Pizza to the Polls, MTV Entertainment Group, and Center for Secure & Modern Elections – worked closely with over 400 nonprofit organizations and businesses to recruit younger, more diverse, and non-partisan potential poll workers to ensure that local elections officials' needs for poll workers are identified and met, particularly in these jurisdictions with high need.
                 </p>
                 <p>
-                   Key findings of a new survey, conducted by Patinkin Research Strategies, of people who signed up through Power the Polls include: 
+                   Key findings of a new survey, conducted by Patinkin Research Strategies, of people who signed up through Power the Polls include:
 <ul><li>88% expressed interest in working in future elections</li>
 <li>85% of those who received local poll worker training felt prepared to serve during the election
 </li>
