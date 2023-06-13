@@ -14,7 +14,7 @@ export class PageAllMedia {
                          <a href="https://www.politico.com/newsletters/playbook/2022/11/03/bidens-important-puzzling-democracy-speech-00064817"
                                                                          target="_blank" rel="noopener noreferrer">
                         <h3>
-                            POLITICO Playbook: Biden's important, puzzling democracy speech. POLITICO Playbook. </h3> Garrett Ross. November 3, 2022.
+                            First in Playbook: Power the Polls. POLITICO Playbook. </h3> Garrett Ross. November 3, 2022.
                         </a>
                     </div>
                  <div class="card">
