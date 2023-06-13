@@ -17,9 +17,6 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
             <stencil-route-link url={`/${formPath}#form`} onClick={onSelectNavItem}>Sign Up</stencil-route-link>
          </li>
          <li>
-            <stencil-route-link url="/about" onClick={onSelectNavItem}>About</stencil-route-link>
-         </li>
-         <li>
             <stencil-route-link
                url="/faq"
                urlMatch={["/faq", "/faq-es", "/faq-contact"]}
@@ -40,18 +37,30 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
             <stencil-route-link url="/resources" onClick={onSelectNavItem}>Resources</stencil-route-link>
          </li>
          <li>
-            <stencil-route-link
-               url="/impact"
-               urlMatch={["/impact"]}
-               onClick={onSelectNavItem}
-            >Impact</stencil-route-link>
-         </li>
-         <li>
-            <stencil-route-link
-               url="/contact"
-               urlMatch={["/contact"]}
-               onClick={onSelectNavItem}
-            >Contact</stencil-route-link>
+            <stencil-route-link url="/about" onClick={onSelectNavItem}>About</stencil-route-link>
+            <ul>
+               <li>
+                  <stencil-route-link
+                  url="/impact"
+                  urlMatch={["/impact"]}
+                  onClick={onSelectNavItem}
+                  >Impact</stencil-route-link>
+               </li>
+               <li>
+                  <stencil-route-link
+                  url="/press-and-media"
+                  urlMatch={["/press-and-media"]}
+                  onClick={onSelectNavItem}
+                  >Press & Media</stencil-route-link>
+               </li>
+               <li>
+                  <stencil-route-link
+                  url="/contact"
+                  urlMatch={["/contact"]}
+                  onClick={onSelectNavItem}
+                  >Contact</stencil-route-link>
+               </li>
+            </ul>
          </li>
       </ul>
    </nav>
@@ -153,6 +162,46 @@ export class AppRoot {
          //    url: "/partners-table",
          //    component: "page-partners-table",
          // },
+         {
+            url: "/press-and-media",
+            component: "page-media",
+         },
+          {
+            url: "/press-release-2020-06-30",
+            component: "page-press-release-one",
+         },
+          {
+            url: "/press-release-2020-09-25",
+            component: "page-press-release-two",
+         },
+          {
+            url: "/press-release-2022-03-20",
+            component: "page-press-release-three",
+         },
+          {
+            url: "/press-release-2022-09-19",
+            component: "page-press-release-four",
+         },
+         {
+            url: "/press-release-2023-03-28",
+            component: "page-press-release-2023-03-28",
+         },
+          {
+            url: "/press-release-2022-11-03",
+            component: "page-press-release-five",
+         },
+         {
+            url: "/press-release-2023-05-03",
+            component: "page-press-release-six",
+         },
+         {
+            url: "/media",
+            component: "page-all-media",
+         },
+         {
+            url: "/press-releases",
+            component: "page-all-press-releases",
+         },
          {
             url: "/privacy",
             component: "page-privacy",
