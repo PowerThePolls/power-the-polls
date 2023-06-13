@@ -9,8 +9,7 @@ export class PageAllMedia {
     public render() {
         return (
             <Host>
-            <div><a href="/press-releases"><button>PRESS RELEASES</button></a></div>
-                <h2> In the News </h2>
+                <h2> In the News: Selected Media </h2>
                 <div class="card">
                          <a href="https://www.politico.com/newsletters/playbook/2022/11/03/bidens-important-puzzling-democracy-speech-00064817"
                                                                          target="_blank" rel="noopener noreferrer">
@@ -130,6 +129,7 @@ export class PageAllMedia {
                             America is facing a nationwide poll worker shortage, but you can help. The Daily Show with Trevor Noah. </h3> July 14, 2020.
                         </a>
                     </div>
+                <div class="button-container"><a href="/press-releases"><button>SEE PRESS RELEASES</button></a></div>
             </Host>
         );
     }

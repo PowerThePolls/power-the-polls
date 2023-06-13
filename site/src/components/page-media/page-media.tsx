@@ -18,15 +18,15 @@ export class PageMedia {
                         </a>
                     </div>
                     <div class="card">
-                    <a href="/press-release-2022-11-03" rel="noopener noreferrer">
+                    <a href="/press-release-2023-03-28" rel="noopener noreferrer">
                         <h3>
-                            Power the Polls Announces Recruitment of 265,000 Potential Poll Workers Ahead of 2022 Election </h3> November 3, 2022.
+                            New Survey Finds People Excited to Serve as Poll Workers in Future Elections </h3> May 28, 2023.
                         </a>
                     </div>
                     <div class="card">
-                    <a href="/press-release-2022-09-19" rel="noopener noreferrer">
+                    <a href="/press-release-2022-11-03" rel="noopener noreferrer">
                         <h3>
-                            125,000 New Potential Poll Workers Recruited by Power the Polls Ahead of 2022 Election. </h3> September 19, 2022.
+                            Power the Polls Announces Recruitment of 265,000 Potential Poll Workers Ahead of 2022 Election </h3> November 3, 2022.
                         </a>
                     </div>
                 <div class="button-container"><a href="/press-releases"><button>SEE MORE PRESS RELEASES →</button></a></div>
@@ -36,7 +36,7 @@ export class PageMedia {
                          <a href="https://www.politico.com/newsletters/playbook/2022/11/03/bidens-important-puzzling-democracy-speech-00064817"
                                                                          target="_blank" rel="noopener noreferrer">
                         <h3>
-                            POLITICO Playbook: Biden's important, puzzling democracy speech. POLITICO Playbook. </h3> Garrett Ross. November 3, 2022.
+                            First in Playbook: Power the Polls. POLITICO Playbook. </h3> Garrett Ross. November 3, 2022.
                         </a>
                     </div>
                  <div class="card">

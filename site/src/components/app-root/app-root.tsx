@@ -182,6 +182,10 @@ export class AppRoot {
             url: "/press-release-2022-09-19",
             component: "page-press-release-four",
          },
+         {
+            url: "/press-release-2023-03-28",
+            component: "page-press-release-2023-03-28",
+         },
           {
             url: "/press-release-2022-11-03",
             component: "page-press-release-five",

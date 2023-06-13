@@ -90,6 +90,8 @@ export namespace Components {
     }
     interface PagePartnersTable {
     }
+    interface PagePressRelease20230328 {
+    }
     interface PagePressReleaseFive {
     }
     interface PagePressReleaseFour {
@@ -299,6 +301,12 @@ declare global {
         prototype: HTMLPagePartnersTableElement;
         new (): HTMLPagePartnersTableElement;
     };
+    interface HTMLPagePressRelease20230328Element extends Components.PagePressRelease20230328, HTMLStencilElement {
+    }
+    var HTMLPagePressRelease20230328Element: {
+        prototype: HTMLPagePressRelease20230328Element;
+        new (): HTMLPagePressRelease20230328Element;
+    };
     interface HTMLPagePressReleaseFiveElement extends Components.PagePressReleaseFive, HTMLStencilElement {
     }
     var HTMLPagePressReleaseFiveElement: {
@@ -417,6 +425,7 @@ declare global {
         "page-media": HTMLPageMediaElement;
         "page-partners": HTMLPagePartnersElement;
         "page-partners-table": HTMLPagePartnersTableElement;
+        "page-press-release-2023-03-28": HTMLPagePressRelease20230328Element;
         "page-press-release-five": HTMLPagePressReleaseFiveElement;
         "page-press-release-four": HTMLPagePressReleaseFourElement;
         "page-press-release-one": HTMLPagePressReleaseOneElement;
@@ -518,6 +527,8 @@ declare namespace LocalJSX {
         "partners"?: Partner[];
     }
     interface PagePartnersTable {
+    }
+    interface PagePressRelease20230328 {
     }
     interface PagePressReleaseFive {
     }
@@ -623,6 +634,7 @@ declare namespace LocalJSX {
         "page-media": PageMedia;
         "page-partners": PagePartners;
         "page-partners-table": PagePartnersTable;
+        "page-press-release-2023-03-28": PagePressRelease20230328;
         "page-press-release-five": PagePressReleaseFive;
         "page-press-release-four": PagePressReleaseFour;
         "page-press-release-one": PagePressReleaseOne;
@@ -666,6 +678,7 @@ declare module "@stencil/core" {
             "page-media": LocalJSX.PageMedia & JSXBase.HTMLAttributes<HTMLPageMediaElement>;
             "page-partners": LocalJSX.PagePartners & JSXBase.HTMLAttributes<HTMLPagePartnersElement>;
             "page-partners-table": LocalJSX.PagePartnersTable & JSXBase.HTMLAttributes<HTMLPagePartnersTableElement>;
+            "page-press-release-2023-03-28": LocalJSX.PagePressRelease20230328 & JSXBase.HTMLAttributes<HTMLPagePressRelease20230328Element>;
             "page-press-release-five": LocalJSX.PagePressReleaseFive & JSXBase.HTMLAttributes<HTMLPagePressReleaseFiveElement>;
             "page-press-release-four": LocalJSX.PagePressReleaseFour & JSXBase.HTMLAttributes<HTMLPagePressReleaseFourElement>;
             "page-press-release-one": LocalJSX.PagePressReleaseOne & JSXBase.HTMLAttributes<HTMLPagePressReleaseOneElement>;

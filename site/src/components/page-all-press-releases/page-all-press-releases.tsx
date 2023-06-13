@@ -9,12 +9,17 @@ export class PageAllPressReleases {
     public render() {
         return (
             <Host>
-                <div><a href="/media"><button>MEDIA</button></a></div>
-                <h2>Press Releases</h2>
+                <h2>Selected Press Releases</h2>
                     <div class="card">
                     <a href="/press-release-2023-05-03" rel="noopener noreferrer">
                         <h3>
                             Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards. </h3> May 3, 2023.
+                        </a>
+                    </div>
+                    <div class="card">
+                    <a href="/press-release-2023-03-28" rel="noopener noreferrer">
+                        <h3>
+                            New Survey Finds People Excited to Serve as Poll Workers in Future Elections </h3> May 28, 2023.
                         </a>
                     </div>
                     <div class="card">
@@ -47,6 +52,7 @@ export class PageAllPressReleases {
                             Power The Polls Launches First-of-its-Kind Effort to Recruit New Wave of Poll Workers for Election Day. </h3> June 30, 2020.
                         </a>
                     </div>
+                    <div class="button-container"><a href="/media"><button>SEE MEDIA</button></a></div>
             </Host>
         );
     }
