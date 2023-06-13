@@ -9,7 +9,7 @@ export class PagePressReleaseSix {
 
     public render() {
         return (
-            <Host><a href="/media"><button>BACK TO MEDIA</button></a>
+            <Host><a href="/press-and-media"><button>BACK TO PRESS AND MEDIA</button></a>
                 <h1>Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards</h1>
                 <p>
                     <i>First-of-its-kind initiative to recruit the next generation of poll workers named for the second time as one of the top creative solutions to the biggest issues facing our nation today.</i>

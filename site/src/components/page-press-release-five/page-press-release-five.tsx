@@ -9,7 +9,7 @@ export class PagePressReleaseFive {
 
     public render() {
         return (
-            <Host><a href="/media"><button>BACK TO MEDIA</button></a>
+            <Host><a href="/press-and-media"><button>BACK TO PRESS AND MEDIA</button></a>
                 <h1>Power the Polls Announces Recruitment of 265,000 Potential Poll Workers
  Ahead of 2022 Election
 </h1>

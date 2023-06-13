@@ -9,7 +9,7 @@ export class PagePressReleaseTwo {
 
     public render() {
         return (
-            <Host><a href="/media"><button>BACK TO MEDIA</button></a>
+            <Host><a href="/press-and-media"><button>BACK TO PRESS AND MEDIA</button></a>
                 <h1>Power the Polls Signs Up More Than 500,000 People Who Want To Serve as Poll Workers</h1>
                 <p>
                     <i>With Election Day less than 40 days away and early voting beginning in many states across the U.S., Power the Polls’s efforts to address poll worker shortages are more urgent than ever.</i>

@@ -9,7 +9,7 @@ export class PagePressReleaseFour {
 
     public render() {
         return (
-            <Host><a href="/media"><button>BACK TO MEDIA</button></a>
+            <Host><a href="/press-and-media"><button>BACK TO PRESS AND MEDIA</button></a>
                 <h1>
 
 125,000 New Potential Poll Workers Recruited by Power the Polls

@@ -9,9 +9,9 @@ export class PagePressReleaseOne {
 
     public render() {
         return (
-            <Host><a href="/media"><button>BACK TO MEDIA</button></a>
+            <Host><a href="/press-and-media"><button>BACK TO PRESS AND MEDIA</button></a>
                 <h1>Power The Polls Launches First-of-its-Kind Effort to Recruit New Wave of Poll Workers for Election Day</h1>
-                <p><i>In the Midst of a Nationwide Poll Worker Shortage, Nonprofits and Companies Come Together to Ensure Safe, Secure and Fair Elections
+                <p><i>June 30, 2020 -- In the Midst of a Nationwide Poll Worker Shortage, Nonprofits and Companies Come Together to Ensure Safe, Secure and Fair Elections
  Launch Partners Include Civic Alliance, Comedy Central, Fair Elections Center, Levi Strauss & Co., MTV, Patagonia, Pizza to the Polls, Time to Vote, Uber, and We Can Vote. </i></p>
                 <p>
                     PORTLAND, Ore. – Today, a coalition of businesses and nonprofits is launching Power the Polls, a first-of-its-kind initiative to recruit a new wave of poll workers – especially among younger, more diverse populations that have not historically filled these roles – to ensure a safe, secure, healthy and fair election for all voters. Amidst a nationwide poll worker shortage and fewer than 100 days to sign up as many as 250,000 new workers nationally, Power the Polls will be part of the solution through education, recruitment, business engagement, PPE procurement, and potential rewards for those who sign up. The initiative is being launched by nonprofit organizations and businesses, namely Civic Alliance, Comedy Central, Fair Elections Center, Levi Strauss & Co, MTV, Patagonia, Pizza to the Polls, Time To Vote, Uber, and We Can Vote—with a goal of recruiting more partners.
