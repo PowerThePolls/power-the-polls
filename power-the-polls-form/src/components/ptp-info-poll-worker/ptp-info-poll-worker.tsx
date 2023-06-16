@@ -57,6 +57,159 @@ export class PollWorkerInfo {
         const stateInfo = (state && state in States && States[state]) || null;
 
         if (stateInfo?.has_all_mail_elections) {
+            if (stateInfo?.name === "Washington") {
+                return (
+                <Fragment>
+                    <h1>Thanks for signing up to Power the Polls!</h1>
+                    <p>
+                        Thank you so much for your interest in being a poll worker.
+                    </p>
+                    <p>
+                        Washington conducts elections by mail,
+                         meaning that the need for poll workers is generally
+                         lower than many other states. However, some election
+                         administrators in Washington may still need temporary
+                         workers for support around upcoming elections.
+                    </p>
+                    <p>
+                        We encourage you to call or email your county election
+                         office directly to find out about any opportunities
+                         to get involved. <a href="https://www.sos.wa.gov/elections/viewauditors.aspx" target="_blank">Click here to find the contact
+                         information for your county election office </a> and see
+                         below for a sample email.
+                    </p>
+                    <p>
+                        --
+                    </p>
+                     <p>
+                        <i>Sample email: </i>
+                    </p>
+                    <br/>
+                    <p>
+                        <i>I am a resident of ____ County and interested in providing support for upcoming elections.</i>
+                    </p>
+                    <p>
+                        <i>I found your contact info through Power the Polls, a national nonpartisan initiative to recruit poll workers. I know there isn’t a widespread need for poll workers in Washington since the state conducts elections by mail, but I am reaching out in case there are other upcoming opportunities to get involved and support elections locally.</i>
+                    </p>
+                    <br/>
+                    <p>
+                        <i>Thank you for all you do!</i>
+                    </p>
+                    <br/>
+                    <p>
+                        <i>Name</i>
+                    </p>
+                    <p>
+                        <i>Address</i>
+                    </p>
+                    <p>
+                        <i>Phone</i>
+                    </p>
+                </Fragment>
+            );
+            }
+            if (stateInfo?.name === "Oregon") {
+                return (
+                <Fragment>
+                    <h1>Thanks for signing up to Power the Polls!</h1>
+                    <p>
+                        Thank you so much for your interest in being a poll worker.
+                    </p>
+                    <p>
+                        Oregon conducts elections by mail,
+                         meaning that the need for poll workers is generally
+                         lower than many other states. However, some election
+                         administrators in Oregon may still need temporary
+                         workers for support around upcoming elections.
+                    </p>
+                    <p>
+                        We encourage you to call or email your county election
+                         office directly to find out about any opportunities
+                         to get involved. <a href="https://sos.oregon.gov/elections/Pages/countyofficials.aspx" target="_blank">Click here to find the contact
+                         information for your county election office </a> and see
+                         below for a sample email.
+                    </p>
+                    <p>
+                        --
+                    </p>
+                     <p>
+                        <i>Sample email: </i>
+                    </p>
+                    <br/>
+                    <p>
+                        <i>I am a resident of ____ County and interested in providing support for upcoming elections.</i>
+                    </p>
+                    <p>
+                        <i>I found your contact info through Power the Polls, a national nonpartisan initiative to recruit poll workers. I know there isn’t a widespread need for poll workers in Washington since the state conducts elections by mail, but I am reaching out in case there are other upcoming opportunities to get involved and support elections locally.</i>
+                    </p>
+                    <br/>
+                    <p>
+                        <i>Thank you for all you do!</i>
+                    </p>
+                    <br/>
+                    <p>
+                        <i>Name</i>
+                    </p>
+                    <p>
+                        <i>Address</i>
+                    </p>
+                    <p>
+                        <i>Phone</i>
+                    </p>
+                </Fragment>
+            );
+            }
+            if (stateInfo?.name === "Hawaii") {
+                return (
+                <Fragment>
+                    <h1>Thanks for signing up to Power the Polls!</h1>
+                    <p>
+                        Thank you so much for your interest in being a poll worker.
+                    </p>
+                    <p>
+                        Hawaii conducts elections by mail,
+                         meaning that the need for poll workers is generally
+                         lower than many other states. However, some election
+                         administrators in Hawaii may still need temporary
+                         workers for support around upcoming elections.
+                    </p>
+                    <p>
+                        We encourage you to call or email your county election
+                         office directly to find out about any opportunities
+                         to get involved. <a href="https://elections.hawaii.gov/resources/county-election-divisions" target="_blank">Click here to find the contact
+                         information for your county election office </a> and see
+                         below for a sample email.
+                    </p>
+                    <p>
+                        --
+                    </p>
+                     <p>
+                        <i>Sample email: </i>
+                    </p>
+                    <br/>
+                    <p>
+                        <i>I am a resident of ____ County and interested in providing support for upcoming elections.</i>
+                    </p>
+                    <p>
+                        <i>I found your contact info through Power the Polls, a national nonpartisan initiative to recruit poll workers. I know there isn’t a widespread need for poll workers in Washington since the state conducts elections by mail, but I am reaching out in case there are other upcoming opportunities to get involved and support elections locally.</i>
+                    </p>
+                    <br/>
+                    <p>
+                        <i>Thank you for all you do!</i>
+                    </p>
+                    <br/>
+                    <p>
+                        <i>Name</i>
+                    </p>
+                    <p>
+                        <i>Address</i>
+                    </p>
+                    <p>
+                        <i>Phone</i>
+                    </p>
+                </Fragment>
+            );
+            }
             return (
                 <Fragment>
                     <h1>Thanks for signing up to Power the Polls!</h1>
