@@ -57,7 +57,7 @@ export class PollWorkerInfo {
         const stateInfo = (state && state in States && States[state]) || null;
 
         if (stateInfo?.has_all_mail_elections) {
-            if (stateInfo?.name == "Washington") {
+            if (stateInfo?.name === "Washington") {
                 return (
                 <Fragment>
                     <h1>Thanks for signing up to Power the Polls!</h1>
@@ -108,7 +108,7 @@ export class PollWorkerInfo {
                 </Fragment>
             );
             }
-            if (stateInfo?.name == "Oregon") {
+            if (stateInfo?.name === "Oregon") {
                 return (
                 <Fragment>
                     <h1>Thanks for signing up to Power the Polls!</h1>
@@ -159,7 +159,7 @@ export class PollWorkerInfo {
                 </Fragment>
             );
             }
-            if (stateInfo?.name == "Hawaii") {
+            if (stateInfo?.name === "Hawaii") {
                 return (
                 <Fragment>
                     <h1>Thanks for signing up to Power the Polls!</h1>
