@@ -140,7 +140,7 @@ export class PollWorkerInfo {
                         <i>I am a resident of ____ County and interested in providing support for upcoming elections.</i>
                     </p>
                     <p>
-                        <i>I found your contact info through Power the Polls, a national nonpartisan initiative to recruit poll workers. I know there isn’t a widespread need for poll workers in Washington since the state conducts elections by mail, but I am reaching out in case there are other upcoming opportunities to get involved and support elections locally.</i>
+                        <i>I found your contact info through Power the Polls, a national nonpartisan initiative to recruit poll workers. I know there isn’t a widespread need for poll workers in Oregon since the state conducts elections by mail, but I am reaching out in case there are other upcoming opportunities to get involved and support elections locally.</i>
                     </p>
                     <br/>
                     <p>
@@ -191,7 +191,7 @@ export class PollWorkerInfo {
                         <i>I am a resident of ____ County and interested in providing support for upcoming elections.</i>
                     </p>
                     <p>
-                        <i>I found your contact info through Power the Polls, a national nonpartisan initiative to recruit poll workers. I know there isn’t a widespread need for poll workers in Washington since the state conducts elections by mail, but I am reaching out in case there are other upcoming opportunities to get involved and support elections locally.</i>
+                        <i>I found your contact info through Power the Polls, a national nonpartisan initiative to recruit poll workers. I know there isn’t a widespread need for poll workers in Hawaii since the state conducts elections by mail, but I am reaching out in case there are other upcoming opportunities to get involved and support elections locally.</i>
                     </p>
                     <br/>
                     <p>
