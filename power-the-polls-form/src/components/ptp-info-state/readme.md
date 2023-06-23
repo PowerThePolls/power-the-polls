@@ -3,6 +3,11 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+When we have no specific polling jurisdiction for a user and just their state we
+display a list of all the counties for them to choose from.
+
 ## Properties
 
 | Property | Attribute | Description        | Type                  | Default     |

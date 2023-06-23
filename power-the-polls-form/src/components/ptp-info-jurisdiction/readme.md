@@ -3,6 +3,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+Component to render work elections jurisdiction data.
+
 ## Properties
 
 | Property          | Attribute         | Description                                                                   | Type                                                                                                                                                                                                                                                                                                                                                                                                                                             | Default     |

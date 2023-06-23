@@ -3,6 +3,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+Render a `<select>` if `options` has values, else render `<input type="hidden">` with `selected` as the value.
+
 ## Properties
 
 | Property     | Attribute     | Description | Type                                 | Default     |

@@ -3,6 +3,11 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+Display state or specific jurisdiction information for poll workers based on whether
+the provided `state`, `county`, and `city` match a jurisdiction or not.
+
 ## Properties
 
 | Property                | Attribute                  | Description                                                                                       | Type                                                                                                                                                                                                                                                                                                                                                                                                                                             | Default     |
