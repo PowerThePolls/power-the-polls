@@ -23,7 +23,8 @@
       "noUnusedParameters": true,
       "jsx": "react",
       "jsxFactory": "h",
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "skipLibCheck": true,
    },
    "include": [
       "src",
