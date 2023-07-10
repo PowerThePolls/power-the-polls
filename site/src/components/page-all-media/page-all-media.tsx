@@ -11,6 +11,14 @@ export class PageAllMedia {
             <Host>
                 <h2> In the News: Selected Media </h2>
                 <div class="card">
+                         <a href="https://electionline.org/electionline-weekly/2023/05-11/#tab-4"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            Power the Polls named honorable mention in Fast Company’s 2023 World Changing Ideas Awards. electionline Weekly.
+The Election Center. </h3> May 11, 2023.
+                        </a>
+                    </div>
+                <div class="card">
                          <a href="https://www.politico.com/newsletters/playbook/2022/11/03/bidens-important-puzzling-democracy-speech-00064817"
                                                                          target="_blank" rel="noopener noreferrer">
                         <h3>
