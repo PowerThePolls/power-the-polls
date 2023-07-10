@@ -20,12 +20,6 @@ The Election Center. </h3> May 11, 2023.
                         </a>
                     </div>
                     <div class="card">
-                    <a href="/press-release-2023-05-03" rel="noopener noreferrer">
-                        <h3>
-                            Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards. </h3> May 3, 2023.
-                        </a>
-                    </div>
-                    <div class="card">
                     <a href="/press-release-2023-03-28" rel="noopener noreferrer">
                         <h3>
                             New Survey Finds People Excited to Serve as Poll Workers in Future Elections </h3> March 28, 2023.
@@ -40,6 +34,12 @@ The Election Center. </h3> May 11, 2023.
                 <div class="button-container"><a href="/press-releases"><button>SEE MORE PRESS RELEASES →</button></a></div>
 
                 <div class="title-container"><h2> In the News </h2></div>
+                <div class="card">
+                    <a href="/press-release-2023-05-03" rel="noopener noreferrer">
+                        <h3>
+                            Power the Polls Recognized in Politics & Policy Category of Fast Company’s 2023 World Changing Ideas Awards. </h3> May 3, 2023.
+                        </a>
+                    </div>
                 <div class="card">
                          <a href="https://www.politico.com/newsletters/playbook/2022/11/03/bidens-important-puzzling-democracy-speech-00064817"
                                                                          target="_blank" rel="noopener noreferrer">
