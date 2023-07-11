@@ -19,7 +19,7 @@ export class PageAllPressReleases {
                     <div class="card">
                     <a href="/press-release-2023-03-28" rel="noopener noreferrer">
                         <h3>
-                            New Survey Finds People Excited to Serve as Poll Workers in Future Elections </h3> May 28, 2023.
+                            New Survey Finds People Excited to Serve as Poll Workers in Future Elections </h3> March 28, 2023.
                         </a>
                     </div>
                     <div class="card">
