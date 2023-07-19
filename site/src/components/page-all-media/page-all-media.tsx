@@ -11,6 +11,13 @@ export class PageAllMedia {
             <Host>
                 <h2> In the News: Selected Media </h2>
                 <div class="card">
+                    <a href="https://plus.thebulwark.com/p/group-looking-for-volunteer-poll-workers"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            Meet the Group Trying to Get More People to Volunteer as Poll Workers. The Bulwark. </h3> Jim Swift. June 13, 2023.
+                    </a>
+                </div>
+                <div class="card">
                          <a href="https://electionline.org/electionline-weekly/2023/05-11/#tab-4"
                                                                          target="_blank" rel="noopener noreferrer">
                         <h3>
