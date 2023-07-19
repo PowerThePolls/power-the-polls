@@ -11,6 +11,13 @@ export class PageAllMedia {
             <Host>
                 <h2> In the News: Selected Media </h2>
                 <div class="card">
+                    <a href="https://www.women.com/1336248/get-involved-local-politics-more-women-power/"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            How To Get Involved In Local Politics - Because More Women In Power Starts At Home. Women.com.</h3> Amanda Ray Byerly. July 14, 2023.
+                    </a>
+                </div>
+                <div class="card">
                     <a href="https://plus.thebulwark.com/p/group-looking-for-volunteer-poll-workers"
                                                                          target="_blank" rel="noopener noreferrer">
                         <h3>

@@ -33,6 +33,13 @@ export class PageMedia {
 
                 <div class="title-container"><h2> In the News </h2></div>
                 <div class="card">
+                    <a href="https://www.women.com/1336248/get-involved-local-politics-more-women-power/"
+                                                                         target="_blank" rel="noopener noreferrer">
+                        <h3>
+                            How To Get Involved In Local Politics - Because More Women In Power Starts At Home. Women.com.</h3> Amanda Ray Byerly. July 14, 2023.
+                    </a>
+                </div>
+                <div class="card">
                     <a href="https://plus.thebulwark.com/p/group-looking-for-volunteer-poll-workers"
                                                                          target="_blank" rel="noopener noreferrer">
                         <h3>
@@ -45,13 +52,6 @@ export class PageMedia {
                         <h3>
                             Power the Polls named honorable mention in Fast Company’s 2023 World Changing Ideas Awards. electionline Weekly.
 The Election Center. </h3> May 11, 2023.
-                        </a>
-                    </div>
-                <div class="card">
-                         <a href="https://www.politico.com/newsletters/playbook/2022/11/03/bidens-important-puzzling-democracy-speech-00064817"
-                                                                         target="_blank" rel="noopener noreferrer">
-                        <h3>
-                            First in Playbook: Power the Polls. POLITICO Playbook. </h3> Garrett Ross. November 3, 2022.
                         </a>
                     </div>
                 <div class="button-container"><a href="/media"><button>SEE MORE MEDIA →</button></a></div>
