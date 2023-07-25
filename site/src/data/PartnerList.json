@@ -2505,5 +2505,17 @@
   {
     "partnerId": "celtics",
     "name": "Celtics"
+  },
+   {
+    "partnerId": "galeo",
+    "name": "GALEO"
+  },
+   {
+    "partnerId": "AVL",
+    "name": "All Voting is Local (2)"
+  },
+  {
+    "partnerId": "Virginia",
+    "name": "Virginia Civic Engagement"
   }
 ]
