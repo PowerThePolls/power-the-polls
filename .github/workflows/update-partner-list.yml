@@ -23,12 +23,12 @@ jobs:
           AIRTABLE_PARTNERS_BASE: ${{ secrets.AIRTABLE_PARTNERS_BASE }}
       - run: cd scripts/compile-source-codes && npm run test
 
-    #  - name: Check if there is any change
-     #   id: changes
-    #    run: echo "name=changed::$(git status --porcelain | wc -l)"  >> $GITHUB_OUTPUT
+      - name: Check if there is any change
+        id: changes
+        run: echo "name=changed::$(git status --porcelain | wc -l)"  >> $GITHUB_OUTPUT
 
       - name: Create Commits
-    #    if: steps.changes.outputs.changed != 0
+        if: steps.changes.outputs.changed != 0
         run: |
           git config user.name 'Sage Vouse'
           git config user.email 's.vouse@gmail.com'
