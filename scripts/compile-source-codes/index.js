@@ -2,8 +2,7 @@ const fs = require("fs/promises");
 const Airtable = require("airtable");
 
 const getApprovedRecords = async () => {
-   const { AIRTABLE_PARTNERS_BASE } = process.env;
-   const base = new Airtable().base(AIRTABLE_PARTNERS_BASE);
+   const base = new Airtable().base('appc14jHeQ2v7FhU9');
 
    const filterByFormula = "{status} = 'Approved'";
    const fields = ["organization", "source_code", "status"];
