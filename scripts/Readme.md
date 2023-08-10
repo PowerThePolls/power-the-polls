@@ -1,6 +1,7 @@
 # Infrastructure Scripts
 
 ## compile-source-codes
+[![update partner list json](https://github.com/PowerThePolls/power-the-polls/actions/workflows/update-partner-list.yml/badge.svg)](https://github.com/PowerThePolls/power-the-polls/actions/workflows/update-partner-list.yml)
 
 This is run by GitHub actions hourly. The script grabs new approved source codes for vanity urls from AirTable and adds
 them to `PartnerList.json`.
