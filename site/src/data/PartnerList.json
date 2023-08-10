@@ -2506,16 +2506,28 @@
     "partnerId": "celtics",
     "name": "Celtics"
   },
-   {
+  {
     "partnerId": "galeo",
     "name": "GALEO"
   },
-   {
+  {
     "partnerId": "AVL",
     "name": "All Voting is Local (2)"
   },
   {
     "partnerId": "Virginia",
     "name": "Virginia Civic Engagement"
+  },
+  {
+    "partnerId": "Pace",
+    "name": "Pace University"
+  },
+  {
+    "partnerId": "tok",
+    "name": "People First TikTok"
+  },
+  {
+    "partnerId": "LatinoJustice",
+    "name": "LatinoJustice PRLDEF"
   }
 ]

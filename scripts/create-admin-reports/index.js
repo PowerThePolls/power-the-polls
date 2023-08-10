@@ -30,7 +30,7 @@ const checkStatus = async (res) => {
 const sanitizeEmails = (emails) => emails.replace(/\n/g, "").replace(/ /g, "");
 
 const addEmail = (Emails) =>
-   `${sanitizeEmails(Emails)},kay@powerthepolls.org,sage@powerthepolls.org`;
+   `${sanitizeEmails(Emails)},kay@powerthepolls.org,sage@trestle.us, tech@powerthepolls.org`;
 
 const getSql = (State, Jurisdiction, JurisdictionType) => {
    if (JurisdictionType === "County") {
