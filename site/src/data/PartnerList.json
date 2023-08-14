@@ -2533,5 +2533,13 @@
   {
     "partnerId": "ml23",
     "name": "Movement Labs - 2023 PWRD"
+  },
+  {
+    "partnerId": "LWVColumbiaSC",
+    "name": "League of Women Voters of the Columbia Area, Inc."
+  },
+  {
+    "partnerId": "FaithInElections",
+    "name": "Interfaith America"
   }
 ]
