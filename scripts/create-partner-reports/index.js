@@ -5,6 +5,8 @@ async function getApprovedRecords() {
    const { AIRTABLE_PARTNERS_BASE } = process.env;
    const base = new Airtable().base(AIRTABLE_PARTNERS_BASE);
    const filterByFormula = "{report_status} = 'Approved'";
+   // add filter for 2023 reports, to be removed when all reports resume
+   const filterByFormula = "{2023_reports} = 'Active'";
    const fields = [
       "organization",
       "report_type",
