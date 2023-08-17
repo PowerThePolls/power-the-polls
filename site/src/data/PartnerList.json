@@ -2545,5 +2545,21 @@
   {
     "partnerId": "ml55",
     "name": "Movement Labs - 2023 PWRD - audience 2"
+  },
+  {
+    "partnerId": "AnswerTheCall",
+    "name": "New Politics Academy"
+  },
+  {
+    "partnerId": "IssueOne",
+    "name": "Issue One"
+  },
+  {
+    "partnerId": "PPFA",
+    "name": "Planned Parenthood"
+  },
+  {
+    "partnerId": "ait",
+    "name": "All In Together"
   }
 ]
