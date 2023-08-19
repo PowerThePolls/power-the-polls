@@ -176,7 +176,7 @@ function getBody({
 }) {
    return {
       name: `Power The Polls Report: ${organization}`,
-      short_name: `PowerThePolls-${sourceCodes[0]}`,
+      short_name: `PowerThePolls-${sourceCodes[0]}-2023`,
       description: sourceCodes[0],
       sql: getSQL(sourceCodes, isAggregate),
       run_every: frequency,
