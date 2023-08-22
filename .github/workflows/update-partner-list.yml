@@ -35,7 +35,6 @@ jobs:
           git commit -m "automated: update partner list"
 
       - name: Submit Pull Request
-        if: steps.changes.outputs.changed != 0
         uses: peter-evans/create-pull-request@v4
         with:
           title: Update Partner List
