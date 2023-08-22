@@ -2577,5 +2577,13 @@
   {
     "partnerId": "pwrd23",
     "name": "PTP PWRD 2023 Social"
+  },
+  {
+    "partnerId": "ptp23",
+    "name": "PTP PWRD 2023 partner hold"
+  },
+  {
+    "partnerId": "Estepoder",
+    "name": "Este Poder"
   }
 ]
