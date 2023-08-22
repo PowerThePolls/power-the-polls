@@ -2565,5 +2565,17 @@
   {
     "partnerId": "interfaithpower",
     "name": "Interfaith Power & Light"
+  },
+  {
+    "partnerId": "test",
+    "name": "Test client!"
+  },
+  {
+    "partnerId": "BinghamtonSA",
+    "name": "Student Association of SUNY Binghamton University"
+  },
+  {
+    "partnerId": "pwrd23",
+    "name": "PTP PWRD 2023 Social"
   }
 ]
