@@ -1,8 +1,6 @@
 name: update partner list json
 
-on:
-  schedule:
-    - cron: "0 * * * *" # run every hour
+on: workflow_dispatch
 
 jobs:
   build:
