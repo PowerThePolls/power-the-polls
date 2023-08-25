@@ -91,7 +91,7 @@ function getSQL(sourceCodes, isAggregate) {
                      , min(created_at) AS created_at
                 FROM core_action
                 WHERE lower(source) IN (${convertArray(sourceCodes)})
-                  AND created_at > date('2020-12-31')
+                  AND created_at > date('2022-12-31')
                 GROUP BY user_id, source) sign_ups
           ON core_user.id = sign_ups.user_id
           GROUP BY core_user.state, core_user.city, sign_ups.source
@@ -140,7 +140,7 @@ function getSQL(sourceCodes, isAggregate) {
                     , min(created_at) AS created_at
                FROM core_action
                WHERE lower(source) IN (${convertArray(sourceCodes)})
-                 AND created_at > date('2020-12-31')
+                 AND created_at > date('2022-12-31')
                GROUP BY user_id, source) sign_ups
          ON core_user.id = sign_ups.user_id
 WHERE hostile.user_id IS NULL
