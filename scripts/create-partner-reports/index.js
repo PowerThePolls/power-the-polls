@@ -175,8 +175,8 @@ function getBody({
    emails,
 }) {
    return {
-      name: `Power the Polls Report: ${organization} 2023`,
-      short_name: `PowerThePolls-${sourceCodes[0]}-2023-latest`,
+      name: `2023 Power the Polls Report: ${organization}`,
+      short_name: `PowerThePolls-${sourceCodes[0]}-2023-updated`,
       description: sourceCodes[0],
       sql: getSQL(sourceCodes, isAggregate),
       run_every: frequency,
