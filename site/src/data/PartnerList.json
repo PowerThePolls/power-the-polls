@@ -2565,5 +2565,29 @@
   {
     "partnerId": "interfaithpower",
     "name": "Interfaith Power & Light"
+  },
+  {
+    "partnerId": "ptp23",
+    "name": "PTP PWRD 2023 partner hold"
+  },
+  {
+    "partnerId": "test",
+    "name": "Test client!"
+  },
+  {
+    "partnerId": "Estepoder",
+    "name": "Este Poder"
+  },
+  {
+    "partnerId": "CountryFirst",
+    "name": "Country First Action"
+  },
+  {
+    "partnerId": "BinghamtonSA",
+    "name": "Student Association of SUNY Binghamton University"
+  },
+  {
+    "partnerId": "pwrd23",
+    "name": "PTP PWRD 2023 Sample"
   }
 ]
