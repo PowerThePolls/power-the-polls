@@ -1,8 +1,6 @@
 name: update partner list json
 
-on:
-  schedule:
-    - cron: "0 * * * *" # run every hour
+on: workflow_dispatch
 
 jobs:
   build:
@@ -28,7 +26,6 @@ jobs:
         run: echo "name=changed::$(git status --porcelain | wc -l)"  >> $GITHUB_OUTPUT
 
       - name: Create Commits
-        if: steps.changes.outputs.changed != 0
         run: |
           git config user.name 'Sage Vouse'
           git config user.email 's.vouse@gmail.com'
@@ -36,7 +33,6 @@ jobs:
           git commit -m "automated: update partner list"
 
       - name: Submit Pull Request
-        if: steps.changes.outputs.changed != 0
         uses: peter-evans/create-pull-request@v4
         with:
           title: Update Partner List
