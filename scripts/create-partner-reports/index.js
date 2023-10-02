@@ -3,8 +3,10 @@ import Airtable from "airtable";
 
 async function getApprovedRecords() {
    const { AIRTABLE_PARTNERS_BASE } = process.env;
-   const base = new Airtable().base(AIRTABLE_PARTNERS_BASE);
-   const filterByFormula = "{report_status} = 'Approved'";
+   const base = new Airtable().base('appc14jHeQ2v7FhU9');
+   //const filterByFormula = "{report_status} = 'Approved'";
+   // add filter for 2023 reports, to be removed when all reports resume
+   const filterByFormula = "{2023_reports} = 'Active'";
    const fields = [
       "organization",
       "report_type",
@@ -89,7 +91,7 @@ function getSQL(sourceCodes, isAggregate) {
                      , min(created_at) AS created_at
                 FROM core_action
                 WHERE lower(source) IN (${convertArray(sourceCodes)})
-                  AND created_at > date('2020-12-31')
+                  AND created_at > date('2022-12-31')
                 GROUP BY user_id, source) sign_ups
           ON core_user.id = sign_ups.user_id
           GROUP BY core_user.state, core_user.city, sign_ups.source
@@ -117,37 +119,32 @@ function getSQL(sourceCodes, isAggregate) {
                  WHERE core_userfield.parent_id = core_user.id
                    AND core_userfield.name = 'county') AS county
               , sign_ups.source
-              , (SELECT group_concat(core_userfield.value SEPARATOR ', ')
-                 FROM core_userfield
-                 WHERE core_userfield.parent_id = core_user.id
-                   AND core_userfield.name = 'partner_field') AS partner_field
-              , (SELECT(IF(likely.user_id IS NOT NULL, "Yes", "No"))) as likely_poll_worker
-         FROM core_user
-         LEFT JOIN (
+           , (SELECT max(core_action.created_at)
+               from core_action 
+             join core_page on core_action.page_id = core_page.id 
+             where core_action.status = 'complete' and core_page.type not in ('Import') AND user_id = core_user.id) AS latest_action
+, (SELECT(IF(core_user.subscription_status = "subscribed", "Yes", "No"))) as currently_subscribed 
+              , (SELECT(IF(completed.user_id IS NOT NULL, "Yes", "No"))) as completed_poll_worker_application
+        FROM core_user
+      LEFT JOIN (
               SELECT DISTINCT user_id
               FROM core_action
               JOIN core_actionfield ca ON core_action.id = ca.parent_id
-              WHERE (ca.name = 'admintraining' AND ca.value = 'Yes, I have completed my official training')
-              OR (ca.name = 'placed_election_day_2022' AND ca.value = 'Yes, I have my polling location assignment for Election Day')
-                 OR (ca.name = 'placed_early_voting_2022 ' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
-                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment')
-                 OR (ca.name = 'adminplacementev' AND ca.value = 'Yes, I have received my polling location assignment for Early Voting')
-                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I’m scheduled for my official training')
-                 OR (ca.name = 'training_2022' AND ca.value = 'Yes, I have completed my official training')
-                 OR (ca.name = 'contacted_2022' AND ca.value = 'Yes')
-                 OR (page_id = 72) 
-                 OR (page_id = 80 AND ca.name = 'applied_2022' AND ca.value = 'I have completed my application')
-                 OR (ca.name = 'application' AND ca.value = 'Yes')
-         ) as likely ON core_user.id = likely.user_id
+              WHERE core_action.status = 'complete' AND (page_id = 143) OR (page_id = 141)) as completed ON core_user.id = completed.user_id
+      LEFT JOIN (
+              SELECT DISTINCT core_user_groups.user_id
+              FROM core_user_groups
+              WHERE core_user_groups.usergroup_id in ( 22 )) as hostile ON core_user.id = hostile.user_id
          JOIN (SELECT user_id
                     , source
                     , min(created_at) AS created_at
                FROM core_action
                WHERE lower(source) IN (${convertArray(sourceCodes)})
-                 AND created_at > date('2020-12-31')
+                 AND created_at > date('2022-12-31')
                GROUP BY user_id, source) sign_ups
          ON core_user.id = sign_ups.user_id
-         ORDER BY date_joined`;
+WHERE hostile.user_id IS NULL
+         ORDER BY date_joined DESC`;
 }
 
 function convertArray(array) {
@@ -178,8 +175,8 @@ function getBody({
    emails,
 }) {
    return {
-      name: `Power The Polls Report: ${organization}`,
-      short_name: `PowerThePolls-${sourceCodes[0]}`,
+      name: `2023 Power the Polls Report: ${organization}`,
+      short_name: `PowerThePolls-${sourceCodes[0]}-2023-updated`,
       description: sourceCodes[0],
       sql: getSQL(sourceCodes, isAggregate),
       run_every: frequency,

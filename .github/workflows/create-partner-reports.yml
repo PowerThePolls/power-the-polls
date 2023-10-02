@@ -1,6 +1,6 @@
 name: create partner reports
 
-on:
+on: 
   schedule:
     - cron: "0 * * * *" # run every hour
 

@@ -1,0 +1,32 @@
+.card {
+      border-bottom: 1px solid #F5F3F1;
+
+      a:link { text-decoration: none; }
+
+      a:visited { text-decoration: none; }
+
+      a:active { text-decoration: none; }
+
+      a:hover { text-decoration: underline; }
+
+      padding: 8px;
+
+      h3 {
+         color: #F5F3F1;
+         line-height: 38px;
+      }
+
+      a {
+         color: #F5F3F1;
+      }
+
+   }
+
+.button-container {
+   width: 100%;
+   height: 50px;
+   button{
+         margin-top: 10px;
+         float: right;
+         }
+      }

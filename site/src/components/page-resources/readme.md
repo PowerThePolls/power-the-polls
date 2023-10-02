@@ -9,12 +9,12 @@
 
 ### Depends on
 
-- [ui-h3-bar](../ui-h3-bar)
+- stencil-route-link
 
 ### Graph
 ```mermaid
 graph TD;
-  page-resources --> ui-h3-bar
+  page-resources --> stencil-route-link
   style page-resources fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

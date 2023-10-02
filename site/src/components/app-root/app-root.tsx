@@ -1,6 +1,6 @@
 import { Component, FunctionalComponent, h, State } from "@stencil/core";
 
-import { FaqData, FaqESData, PartnerList, Social } from "../../data";
+import { FaqApplicationData, FaqEligibilityData, FaqESData, FaqPollWorkerData, PartnerList, Social } from "../../data";
 import { Partner } from "../../data/types";
 import { parseQueryString, shuffle } from "../../util";
 
@@ -17,14 +17,11 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
             <stencil-route-link url={`/${formPath}#form`} onClick={onSelectNavItem}>Sign Up</stencil-route-link>
          </li>
          <li>
-            <stencil-route-link url="/about" onClick={onSelectNavItem}>About</stencil-route-link>
-         </li>
-         <li>
             <stencil-route-link
                url="/faq"
-               urlMatch={["/faq", "/faq-es", "/contact", "/faq-contact"]}
+               urlMatch={["/faq", "/faq-es", "/faq-contact"]}
                onClick={onSelectNavItem}
-            >FAQ &amp; Contact</stencil-route-link>
+            >FAQ</stencil-route-link>
          </li>
          <li>
             <stencil-route-link url="/electionofficials" onClick={onSelectNavItem}>Election Officials</stencil-route-link>
@@ -38,6 +35,32 @@ const Nav: FunctionalComponent<NavProps> = ( { onSelectNavItem, formPath, partne
          </li>
          <li>
             <stencil-route-link url="/resources" onClick={onSelectNavItem}>Resources</stencil-route-link>
+         </li>
+         <li>
+            <stencil-route-link url="/about" onClick={onSelectNavItem}>About</stencil-route-link>
+            <ul>
+               <li>
+                  <stencil-route-link
+                  url="/impact"
+                  urlMatch={["/impact"]}
+                  onClick={onSelectNavItem}
+                  >Impact</stencil-route-link>
+               </li>
+               <li>
+                  <stencil-route-link
+                  url="/press-and-media"
+                  urlMatch={["/press-and-media"]}
+                  onClick={onSelectNavItem}
+                  >Press & Media</stencil-route-link>
+               </li>
+               <li>
+                  <stencil-route-link
+                  url="/contact"
+                  urlMatch={["/contact"]}
+                  onClick={onSelectNavItem}
+                  >Contact</stencil-route-link>
+               </li>
+            </ul>
          </li>
       </ul>
    </nav>
@@ -95,8 +118,14 @@ export class AppRoot {
             url: "/faq",
             component: "page-faq",
             componentProps: {
-               data: FaqData,
                pageTitle: "Frequently Asked Questions about Poll Working",
+            },
+         },
+         {
+            url: "/contact",
+            component: "page-contact",
+            componentProps: {
+               pageTitle: "Contact Us",
             },
          },
          {
@@ -134,6 +163,46 @@ export class AppRoot {
          //    component: "page-partners-table",
          // },
          {
+            url: "/press-and-media",
+            component: "page-media",
+         },
+          {
+            url: "/press-release-2020-06-30",
+            component: "page-press-release-one",
+         },
+          {
+            url: "/press-release-2020-09-25",
+            component: "page-press-release-two",
+         },
+          {
+            url: "/press-release-2022-03-20",
+            component: "page-press-release-three",
+         },
+          {
+            url: "/press-release-2022-09-19",
+            component: "page-press-release-four",
+         },
+         {
+            url: "/press-release-2023-03-28",
+            component: "page-press-release-2023-03-28",
+         },
+          {
+            url: "/press-release-2022-11-03",
+            component: "page-press-release-five",
+         },
+         {
+            url: "/press-release-2023-05-03",
+            component: "page-press-release-six",
+         },
+         {
+            url: "/media",
+            component: "page-all-media",
+         },
+         {
+            url: "/press-releases",
+            component: "page-all-press-releases",
+         },
+         {
             url: "/privacy",
             component: "page-privacy",
          },
@@ -149,18 +218,35 @@ export class AppRoot {
             url: "/testimonial",
             component: "page-testimonial",
          },
+         {
+            url: "/faq-eligibility",
+            component: "page-faq-eligibility",
+            componentProps: {
+               data: FaqEligibilityData,
+            },
+         },
+         {
+            url: "/faq-application-status",
+            component: "page-faq-application-status",
+            componentProps: {
+               data: FaqApplicationData,
+            },
+         },
+         {
+            url: "/faq-poll-worker",
+            component: "page-faq-poll-worker",
+            componentProps: {
+               data: FaqPollWorkerData,
+            },
+         },
+         {
+            url: "/impact",
+            component: "page-impact",
+         },
 
          /*
           * legacy routes
           */
-         {
-            url: "/contact",
-            component: "page-faq",
-            componentProps: {
-               data: FaqData,
-               pageTitle: "Frequently Asked Questions about Poll Working",
-            },
-         },
          {
             url: "/redirector",
             component: "page-info",

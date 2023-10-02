@@ -2505,5 +2505,85 @@
   {
     "partnerId": "celtics",
     "name": "Celtics"
+  },
+  {
+    "partnerId": "galeo",
+    "name": "GALEO"
+  },
+  {
+    "partnerId": "AVL",
+    "name": "All Voting is Local (2)"
+  },
+  {
+    "partnerId": "Virginia",
+    "name": "Virginia Civic Engagement"
+  },
+  {
+    "partnerId": "Pace",
+    "name": "Pace University"
+  },
+  {
+    "partnerId": "tok",
+    "name": "People First TikTok"
+  },
+  {
+    "partnerId": "LatinoJustice",
+    "name": "LatinoJustice PRLDEF"
+  },
+  {
+    "partnerId": "ml23",
+    "name": "Movement Labs - 2023 PWRD"
+  },
+  {
+    "partnerId": "LWVColumbiaSC",
+    "name": "League of Women Voters of the Columbia Area, Inc."
+  },
+  {
+    "partnerId": "FaithInElections",
+    "name": "Interfaith America"
+  },
+  {
+    "partnerId": "ml55",
+    "name": "Movement Labs - 2023 PWRD - audience 2"
+  },
+  {
+    "partnerId": "AnswerTheCall",
+    "name": "New Politics Academy"
+  },
+  {
+    "partnerId": "IssueOne",
+    "name": "Issue One"
+  },
+  {
+    "partnerId": "PPFA",
+    "name": "Planned Parenthood"
+  },
+  {
+    "partnerId": "ait",
+    "name": "All In Together"
+  },
+  {
+    "partnerId": "interfaithpower",
+    "name": "Interfaith Power & Light"
+  },
+  {
+    "partnerId": "test",
+    "name": "Test client!"
+  },
+  {
+    "partnerId": "BinghamtonSA",
+    "name": "Student Association of SUNY Binghamton University"
+  },
+  {
+    "partnerId": "pwrd23",
+    "name": "PTP PWRD 2023 Social"
+  },
+  {
+    "partnerId": "ptp23",
+    "name": "PTP PWRD 2023 partner hold"
+  },
+  {
+    "partnerId": "Estepoder",
+    "name": "Este Poder"
   }
 ]

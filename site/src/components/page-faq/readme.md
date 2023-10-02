@@ -18,12 +18,16 @@ It has a contact modal with a form that feeds directly to helpscout via zapier w
 
 ### Used by
 
- - [page-faq](.)
+ - [page-faq-application-status](../page-faq-application-status)
+ - [page-faq-eligibility](../page-faq-eligibility)
+ - [page-faq-poll-worker](../page-faq-poll-worker)
 
 ### Graph
 ```mermaid
 graph TD;
-  page-faq --> question-section
+  page-faq-application-status --> question-section
+  page-faq-eligibility --> question-section
+  page-faq-poll-worker --> question-section
   style question-section fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

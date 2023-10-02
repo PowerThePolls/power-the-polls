@@ -20,7 +20,7 @@ const data: SocialInfo[] = [
    },
    {
       name: "Instagram",
-      cta: "Instagram",
+      cta: "Post",
       image: "icon-ig.svg",
       url: "https://www.instagram.com/powerthepolls/",
       eventKey: "instagram-share",

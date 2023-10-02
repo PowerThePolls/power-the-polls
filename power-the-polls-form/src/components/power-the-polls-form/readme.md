@@ -3,6 +3,10 @@
 <!-- Auto Generated Below -->
 
 
+## Overview
+
+The Power the Polls sign-up form.
+
 ## Properties
 
 | Property               | Attribute                 | Description                                                                                                                | Type                   | Default     |

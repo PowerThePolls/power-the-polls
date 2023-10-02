@@ -21,17 +21,35 @@ export namespace Components {
     }
     interface PageAbout {
     }
-    interface PageElectionOfficials {
+    interface PageAllMedia {
     }
-    interface PageFaq {
-        /**
-          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
-         */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+    interface PageAllPressReleases {
+    }
+    interface PageContact {
         /**
           * The page's title
          */
         "pageTitle"?: string;
+    }
+    interface PageElectionOfficials {
+    }
+    interface PageFaq {
+        /**
+          * The page's title
+         */
+        "pageTitle"?: string;
+    }
+    interface PageFaqApplicationStatus {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+    }
+    interface PageFaqEligibility {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
     }
     interface PageFaqEs {
         /**
@@ -43,16 +61,26 @@ export namespace Components {
          */
         "pageTitle"?: string;
     }
+    interface PageFaqPollWorker {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+    }
     interface PageForm {
         /**
           * Optional partnerId/source parameter to use when submitting the form. If the partnerId exists in `/data/PartnerList.ts` then additional partner data will be looked up.
          */
         "partnerId"?: string;
     }
+    interface PageImpact {
+    }
     interface PageInfo {
     }
     interface PageJurisdiction {
         "match"?: MatchResults;
+    }
+    interface PageMedia {
     }
     interface PagePartners {
         /**
@@ -61,6 +89,20 @@ export namespace Components {
         "partners"?: Partner[];
     }
     interface PagePartnersTable {
+    }
+    interface PagePressRelease20230328 {
+    }
+    interface PagePressReleaseFive {
+    }
+    interface PagePressReleaseFour {
+    }
+    interface PagePressReleaseOne {
+    }
+    interface PagePressReleaseSix {
+    }
+    interface PagePressReleaseThree {
+    }
+    interface PagePressReleaseTwo {
     }
     interface PagePrivacy {
     }
@@ -163,6 +205,24 @@ declare global {
         prototype: HTMLPageAboutElement;
         new (): HTMLPageAboutElement;
     };
+    interface HTMLPageAllMediaElement extends Components.PageAllMedia, HTMLStencilElement {
+    }
+    var HTMLPageAllMediaElement: {
+        prototype: HTMLPageAllMediaElement;
+        new (): HTMLPageAllMediaElement;
+    };
+    interface HTMLPageAllPressReleasesElement extends Components.PageAllPressReleases, HTMLStencilElement {
+    }
+    var HTMLPageAllPressReleasesElement: {
+        prototype: HTMLPageAllPressReleasesElement;
+        new (): HTMLPageAllPressReleasesElement;
+    };
+    interface HTMLPageContactElement extends Components.PageContact, HTMLStencilElement {
+    }
+    var HTMLPageContactElement: {
+        prototype: HTMLPageContactElement;
+        new (): HTMLPageContactElement;
+    };
     interface HTMLPageElectionOfficialsElement extends Components.PageElectionOfficials, HTMLStencilElement {
     }
     var HTMLPageElectionOfficialsElement: {
@@ -175,17 +235,41 @@ declare global {
         prototype: HTMLPageFaqElement;
         new (): HTMLPageFaqElement;
     };
+    interface HTMLPageFaqApplicationStatusElement extends Components.PageFaqApplicationStatus, HTMLStencilElement {
+    }
+    var HTMLPageFaqApplicationStatusElement: {
+        prototype: HTMLPageFaqApplicationStatusElement;
+        new (): HTMLPageFaqApplicationStatusElement;
+    };
+    interface HTMLPageFaqEligibilityElement extends Components.PageFaqEligibility, HTMLStencilElement {
+    }
+    var HTMLPageFaqEligibilityElement: {
+        prototype: HTMLPageFaqEligibilityElement;
+        new (): HTMLPageFaqEligibilityElement;
+    };
     interface HTMLPageFaqEsElement extends Components.PageFaqEs, HTMLStencilElement {
     }
     var HTMLPageFaqEsElement: {
         prototype: HTMLPageFaqEsElement;
         new (): HTMLPageFaqEsElement;
     };
+    interface HTMLPageFaqPollWorkerElement extends Components.PageFaqPollWorker, HTMLStencilElement {
+    }
+    var HTMLPageFaqPollWorkerElement: {
+        prototype: HTMLPageFaqPollWorkerElement;
+        new (): HTMLPageFaqPollWorkerElement;
+    };
     interface HTMLPageFormElement extends Components.PageForm, HTMLStencilElement {
     }
     var HTMLPageFormElement: {
         prototype: HTMLPageFormElement;
         new (): HTMLPageFormElement;
+    };
+    interface HTMLPageImpactElement extends Components.PageImpact, HTMLStencilElement {
+    }
+    var HTMLPageImpactElement: {
+        prototype: HTMLPageImpactElement;
+        new (): HTMLPageImpactElement;
     };
     interface HTMLPageInfoElement extends Components.PageInfo, HTMLStencilElement {
     }
@@ -199,6 +283,12 @@ declare global {
         prototype: HTMLPageJurisdictionElement;
         new (): HTMLPageJurisdictionElement;
     };
+    interface HTMLPageMediaElement extends Components.PageMedia, HTMLStencilElement {
+    }
+    var HTMLPageMediaElement: {
+        prototype: HTMLPageMediaElement;
+        new (): HTMLPageMediaElement;
+    };
     interface HTMLPagePartnersElement extends Components.PagePartners, HTMLStencilElement {
     }
     var HTMLPagePartnersElement: {
@@ -210,6 +300,48 @@ declare global {
     var HTMLPagePartnersTableElement: {
         prototype: HTMLPagePartnersTableElement;
         new (): HTMLPagePartnersTableElement;
+    };
+    interface HTMLPagePressRelease20230328Element extends Components.PagePressRelease20230328, HTMLStencilElement {
+    }
+    var HTMLPagePressRelease20230328Element: {
+        prototype: HTMLPagePressRelease20230328Element;
+        new (): HTMLPagePressRelease20230328Element;
+    };
+    interface HTMLPagePressReleaseFiveElement extends Components.PagePressReleaseFive, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseFiveElement: {
+        prototype: HTMLPagePressReleaseFiveElement;
+        new (): HTMLPagePressReleaseFiveElement;
+    };
+    interface HTMLPagePressReleaseFourElement extends Components.PagePressReleaseFour, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseFourElement: {
+        prototype: HTMLPagePressReleaseFourElement;
+        new (): HTMLPagePressReleaseFourElement;
+    };
+    interface HTMLPagePressReleaseOneElement extends Components.PagePressReleaseOne, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseOneElement: {
+        prototype: HTMLPagePressReleaseOneElement;
+        new (): HTMLPagePressReleaseOneElement;
+    };
+    interface HTMLPagePressReleaseSixElement extends Components.PagePressReleaseSix, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseSixElement: {
+        prototype: HTMLPagePressReleaseSixElement;
+        new (): HTMLPagePressReleaseSixElement;
+    };
+    interface HTMLPagePressReleaseThreeElement extends Components.PagePressReleaseThree, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseThreeElement: {
+        prototype: HTMLPagePressReleaseThreeElement;
+        new (): HTMLPagePressReleaseThreeElement;
+    };
+    interface HTMLPagePressReleaseTwoElement extends Components.PagePressReleaseTwo, HTMLStencilElement {
+    }
+    var HTMLPagePressReleaseTwoElement: {
+        prototype: HTMLPagePressReleaseTwoElement;
+        new (): HTMLPagePressReleaseTwoElement;
     };
     interface HTMLPagePrivacyElement extends Components.PagePrivacy, HTMLStencilElement {
     }
@@ -277,14 +409,29 @@ declare global {
         "contact-form": HTMLContactFormElement;
         "contact-modal": HTMLContactModalElement;
         "page-about": HTMLPageAboutElement;
+        "page-all-media": HTMLPageAllMediaElement;
+        "page-all-press-releases": HTMLPageAllPressReleasesElement;
+        "page-contact": HTMLPageContactElement;
         "page-election-officials": HTMLPageElectionOfficialsElement;
         "page-faq": HTMLPageFaqElement;
+        "page-faq-application-status": HTMLPageFaqApplicationStatusElement;
+        "page-faq-eligibility": HTMLPageFaqEligibilityElement;
         "page-faq-es": HTMLPageFaqEsElement;
+        "page-faq-poll-worker": HTMLPageFaqPollWorkerElement;
         "page-form": HTMLPageFormElement;
+        "page-impact": HTMLPageImpactElement;
         "page-info": HTMLPageInfoElement;
         "page-jurisdiction": HTMLPageJurisdictionElement;
+        "page-media": HTMLPageMediaElement;
         "page-partners": HTMLPagePartnersElement;
         "page-partners-table": HTMLPagePartnersTableElement;
+        "page-press-release-2023-03-28": HTMLPagePressRelease20230328Element;
+        "page-press-release-five": HTMLPagePressReleaseFiveElement;
+        "page-press-release-four": HTMLPagePressReleaseFourElement;
+        "page-press-release-one": HTMLPagePressReleaseOneElement;
+        "page-press-release-six": HTMLPagePressReleaseSixElement;
+        "page-press-release-three": HTMLPagePressReleaseThreeElement;
+        "page-press-release-two": HTMLPagePressReleaseTwoElement;
         "page-privacy": HTMLPagePrivacyElement;
         "page-resources": HTMLPageResourcesElement;
         "page-search": HTMLPageSearchElement;
@@ -312,17 +459,35 @@ declare namespace LocalJSX {
     }
     interface PageAbout {
     }
-    interface PageElectionOfficials {
+    interface PageAllMedia {
     }
-    interface PageFaq {
-        /**
-          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
-         */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+    interface PageAllPressReleases {
+    }
+    interface PageContact {
         /**
           * The page's title
          */
         "pageTitle"?: string;
+    }
+    interface PageElectionOfficials {
+    }
+    interface PageFaq {
+        /**
+          * The page's title
+         */
+        "pageTitle"?: string;
+    }
+    interface PageFaqApplicationStatus {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+    }
+    interface PageFaqEligibility {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
     }
     interface PageFaqEs {
         /**
@@ -334,16 +499,26 @@ declare namespace LocalJSX {
          */
         "pageTitle"?: string;
     }
+    interface PageFaqPollWorker {
+        /**
+          * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
+         */
+        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+    }
     interface PageForm {
         /**
           * Optional partnerId/source parameter to use when submitting the form. If the partnerId exists in `/data/PartnerList.ts` then additional partner data will be looked up.
          */
         "partnerId"?: string;
     }
+    interface PageImpact {
+    }
     interface PageInfo {
     }
     interface PageJurisdiction {
         "match"?: MatchResults;
+    }
+    interface PageMedia {
     }
     interface PagePartners {
         /**
@@ -352,6 +527,20 @@ declare namespace LocalJSX {
         "partners"?: Partner[];
     }
     interface PagePartnersTable {
+    }
+    interface PagePressRelease20230328 {
+    }
+    interface PagePressReleaseFive {
+    }
+    interface PagePressReleaseFour {
+    }
+    interface PagePressReleaseOne {
+    }
+    interface PagePressReleaseSix {
+    }
+    interface PagePressReleaseThree {
+    }
+    interface PagePressReleaseTwo {
     }
     interface PagePrivacy {
     }
@@ -429,14 +618,29 @@ declare namespace LocalJSX {
         "contact-form": ContactForm;
         "contact-modal": ContactModal;
         "page-about": PageAbout;
+        "page-all-media": PageAllMedia;
+        "page-all-press-releases": PageAllPressReleases;
+        "page-contact": PageContact;
         "page-election-officials": PageElectionOfficials;
         "page-faq": PageFaq;
+        "page-faq-application-status": PageFaqApplicationStatus;
+        "page-faq-eligibility": PageFaqEligibility;
         "page-faq-es": PageFaqEs;
+        "page-faq-poll-worker": PageFaqPollWorker;
         "page-form": PageForm;
+        "page-impact": PageImpact;
         "page-info": PageInfo;
         "page-jurisdiction": PageJurisdiction;
+        "page-media": PageMedia;
         "page-partners": PagePartners;
         "page-partners-table": PagePartnersTable;
+        "page-press-release-2023-03-28": PagePressRelease20230328;
+        "page-press-release-five": PagePressReleaseFive;
+        "page-press-release-four": PagePressReleaseFour;
+        "page-press-release-one": PagePressReleaseOne;
+        "page-press-release-six": PagePressReleaseSix;
+        "page-press-release-three": PagePressReleaseThree;
+        "page-press-release-two": PagePressReleaseTwo;
         "page-privacy": PagePrivacy;
         "page-resources": PageResources;
         "page-search": PageSearch;
@@ -458,14 +662,29 @@ declare module "@stencil/core" {
             "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
             "contact-modal": LocalJSX.ContactModal & JSXBase.HTMLAttributes<HTMLContactModalElement>;
             "page-about": LocalJSX.PageAbout & JSXBase.HTMLAttributes<HTMLPageAboutElement>;
+            "page-all-media": LocalJSX.PageAllMedia & JSXBase.HTMLAttributes<HTMLPageAllMediaElement>;
+            "page-all-press-releases": LocalJSX.PageAllPressReleases & JSXBase.HTMLAttributes<HTMLPageAllPressReleasesElement>;
+            "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
             "page-election-officials": LocalJSX.PageElectionOfficials & JSXBase.HTMLAttributes<HTMLPageElectionOfficialsElement>;
             "page-faq": LocalJSX.PageFaq & JSXBase.HTMLAttributes<HTMLPageFaqElement>;
+            "page-faq-application-status": LocalJSX.PageFaqApplicationStatus & JSXBase.HTMLAttributes<HTMLPageFaqApplicationStatusElement>;
+            "page-faq-eligibility": LocalJSX.PageFaqEligibility & JSXBase.HTMLAttributes<HTMLPageFaqEligibilityElement>;
             "page-faq-es": LocalJSX.PageFaqEs & JSXBase.HTMLAttributes<HTMLPageFaqEsElement>;
+            "page-faq-poll-worker": LocalJSX.PageFaqPollWorker & JSXBase.HTMLAttributes<HTMLPageFaqPollWorkerElement>;
             "page-form": LocalJSX.PageForm & JSXBase.HTMLAttributes<HTMLPageFormElement>;
+            "page-impact": LocalJSX.PageImpact & JSXBase.HTMLAttributes<HTMLPageImpactElement>;
             "page-info": LocalJSX.PageInfo & JSXBase.HTMLAttributes<HTMLPageInfoElement>;
             "page-jurisdiction": LocalJSX.PageJurisdiction & JSXBase.HTMLAttributes<HTMLPageJurisdictionElement>;
+            "page-media": LocalJSX.PageMedia & JSXBase.HTMLAttributes<HTMLPageMediaElement>;
             "page-partners": LocalJSX.PagePartners & JSXBase.HTMLAttributes<HTMLPagePartnersElement>;
             "page-partners-table": LocalJSX.PagePartnersTable & JSXBase.HTMLAttributes<HTMLPagePartnersTableElement>;
+            "page-press-release-2023-03-28": LocalJSX.PagePressRelease20230328 & JSXBase.HTMLAttributes<HTMLPagePressRelease20230328Element>;
+            "page-press-release-five": LocalJSX.PagePressReleaseFive & JSXBase.HTMLAttributes<HTMLPagePressReleaseFiveElement>;
+            "page-press-release-four": LocalJSX.PagePressReleaseFour & JSXBase.HTMLAttributes<HTMLPagePressReleaseFourElement>;
+            "page-press-release-one": LocalJSX.PagePressReleaseOne & JSXBase.HTMLAttributes<HTMLPagePressReleaseOneElement>;
+            "page-press-release-six": LocalJSX.PagePressReleaseSix & JSXBase.HTMLAttributes<HTMLPagePressReleaseSixElement>;
+            "page-press-release-three": LocalJSX.PagePressReleaseThree & JSXBase.HTMLAttributes<HTMLPagePressReleaseThreeElement>;
+            "page-press-release-two": LocalJSX.PagePressReleaseTwo & JSXBase.HTMLAttributes<HTMLPagePressReleaseTwoElement>;
             "page-privacy": LocalJSX.PagePrivacy & JSXBase.HTMLAttributes<HTMLPagePrivacyElement>;
             "page-resources": LocalJSX.PageResources & JSXBase.HTMLAttributes<HTMLPageResourcesElement>;
             "page-search": LocalJSX.PageSearch & JSXBase.HTMLAttributes<HTMLPageSearchElement>;
