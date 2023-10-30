@@ -2197,9 +2197,17 @@
     "partnerId": "arena",
     "name": "Arena"
   },
-  {
+    {
     "partnerId": "jewishdemocracy-jcrcatl",
-    "name": "Jewish Community Relations Council of Atlanta"
+    "name": "Jewish Community Relations Council of Atlanta",
+    "additionalVanityUrls": [
+      "jcrc-atlanta"
+    ],
+    "logo": "jcrcatlanta.jpg",
+    "logoIsDark": true
+    "logoAppearsOnLandingPage": true,
+    "optUserOutOfChase": true,
+    "customSignupFormField": "Your Synagogue or Organization (optional)"
   },
   {
     "partnerId": "colorofchange2022",
