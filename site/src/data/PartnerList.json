@@ -3,18 +3,21 @@
     "partnerId": "911day",
     "name": "9/11 Day",
     "logo": "911-day.png",
-    "logoIsDark": true
+    "logoIsDark": true,
+    "optUserOutOfChase": true
   },
   {
     "partnerId": "AALDEF",
     "name": "Asian American Legal Defense and Education Fund",
-    "logo": "aaldef.png"
+    "logo": "aaldef.png",
+    "optUserOutOfChase": true
   },
   {
     "partnerId": "AARP",
     "name": "AARP",
     "logo": "aarp.png",
-    "logoAppearsOnLandingPage": true
+    "logoAppearsOnLandingPage": true,
+    "optUserOutOfChase": true
   },
   {
     "partnerId": "ACLUGeorgia",
@@ -25,37 +28,48 @@
   },
   {
     "partnerId": "ACLUMI",
-    "name": "ACLU Michigan"
+    "name": "ACLU Michigan",
+    "optUserOutOfChase": true
   },
   {
     "partnerId": "actionbutton",
     "name": "Action Button",
-    "logo": "action-button.png"
+    "logo": "action-button.png",
+    "logoAppearsOnLandingPage": true,
+    "optUserOutOfChase": true
   },
   {
     "partnerId": "aledade",
     "name": "Aledade",
     "logo": "aledade.gif",
-    "logoIsDark": true
+    "logoIsDark": true,
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true,
   },
   {
     "partnerId": "alliance-students-at-the-polls",
     "name": "Alliance Students at the Polls",
-    "logo": "alliance-students-at-the-polls.png"
+    "logo": "alliance-students-at-the-polls.png",
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true,
   },
   {
     "partnerId": "alliancebernstein",
-    "name": "Alliance Bernstein"
+    "name": "Alliance Bernstein",
+    "optUserOutOfChase": true
   },
   {
     "partnerId": "allin",
     "name": "All In",
-    "logo": "all-in.svg"
+    "logo": "all-in.svg",
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true,
   },
   {
     "partnerId": "allinforvoting",
     "name": "All In For Voting // All In: The Fight for Democracy (Film)",
     "logo": "allinforvoting.jpg",
+    "optUserOutOfChase": true,
     "logoIsDark": true,
     "logoAppearsOnLandingPage": true
   },
@@ -63,96 +77,127 @@
     "partnerId": "AlphaPhiAlpha",
     "name": "Alpha Phi Alpha Fraternity, Inc",
     "logo": "alpha-phi-alpha.png",
-    "logoIsDark": true
+    "logoIsDark": true,
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "amctheaters",
     "name": "AMC Theaters",
     "logo": "amc-theaters.png",
-    "logoIsDark": true
+    "logoIsDark": true,
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "acs",
     "name": "American Constitution Society",
-    "logo": "acs.png"
+    "logo": "acs.png",
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "american-promise",
     "name": "American Promise",
-    "logo": "american-promise.png"
+    "logo": "american-promise.png",
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "american-sustainable-business-council",
     "name": "American Sustainable Business Council",
     "logo": "american-sustainable-business-council.png",
-    "logoIsDark": true
+    "logoIsDark": true,
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "AmericorpsAlumni",
     "name": "AmericorpsAlumni",
     "logo": "americorps-alumni.jpg",
     "logoIsDark": true,
+    "optUserOutOfChase": true,
     "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "Amply",
     "name": "Amply",
-    "logo": "amply.png"
+    "logo": "amply.png",
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "AndrewGoodmanFoundation",
     "name": "The Andrew Goodman Foundation",
     "logo": "andrew-goodman-foundation.png",
-    "logoIsDark": true
+    "logoIsDark": true,
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "angel-med-flight",
     "name": "AngelMedFlight",
     "logo": "angel-med-flight.png",
-    "logoIsDark": true
+    "logoIsDark": true,
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "anonymouscontent",
     "name": "Anonymous Content",
-    "logo": "anonymous-content.png"
+    "logo": "anonymous-content.png",
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "APALA",
     "name": "Asian Pacific American Labor Alliance, AFL-CIO",
     "logo": "apala.png",
     "logoIsDark": true,
+    "optUserOutOfChase": true,
     "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "APBCO",
     "name": "Association of Pro Bono Counsel",
-    "customSignupFormField": "Are You a Lawyer?"
+    "customSignupFormField": "Are You a Lawyer?",
+    "optUserOutOfChase": true
   },
   {
     "partnerId": "appdynamics",
     "name": "App Dynamics",
-    "logo": "app-dynamics.png"
+    "logo": "app-dynamics.png",
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "ASAP",
-    "name": "Alliance of Students at the Polls"
+    "name": "Alliance of Students at the Polls",
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "AscendantAthlete",
     "name": "Ascendant Athlete",
     "logo": "ascendant-athlete.jpg",
-    "logoIsDark": true
+    "logoIsDark": true,
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "ASIV",
     "name": "ASIV",
     "logo": "asiv.jpg",
-    "logoIsDark": true
+    "logoIsDark": true,
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "AVIL",
     "name": "All Voting Is Local",
-    "logo": "avil.svg"
+    "logo": "avil.svg",
+    "optUserOutOfChase": true,
+    "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "AYO",
