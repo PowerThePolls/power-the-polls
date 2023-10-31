@@ -276,10 +276,9 @@ export class PowerThePollsForm {
                      <p class="disclaimer">
                         By signing up, you agree to receive occasional emails or
                         text messages from Power the Polls and{" "}
-                        {!chase &&
-                           this.partnerName &&
-                           `${this.partnerName} and `}
-                        accept our{" "}
+                        {this.partnerName ?
+                           `${this.partnerName} and ` :
+                        "accept our " }
                         <PtpLink path="/privacy">Privacy Policy</PtpLink>. You
                         can unsubscribe at any time. For texts, message and data
                         rates may apply. Text HELP for Info. Text STOP to quit.
