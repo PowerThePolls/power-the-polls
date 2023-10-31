@@ -2249,7 +2249,7 @@
       "jcrc-atlanta"
     ],
     "logo": "jcrcatlanta.jpg",
-    "logoIsDark": true
+    "logoIsDark": true,
     "logoAppearsOnLandingPage": true,
     "optUserOutOfChase": true,
     "customSignupFormField": "Your Synagogue or Organization (optional)"
