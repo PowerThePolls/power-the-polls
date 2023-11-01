@@ -4,12 +4,14 @@
         "name": "9/11 Day",
         "logo": "911-day.png",
         "logoIsDark": true,
+        "logoAppearsOnLandingPage": true,
         "optUserOutOfChase": true
     },
     {
         "partnerId": "AALDEF",
         "name": "Asian American Legal Defense and Education Fund",
         "logo": "aaldef.png",
+        "logoAppearsOnLandingPage": true,
         "optUserOutOfChase": true
     },
     {
