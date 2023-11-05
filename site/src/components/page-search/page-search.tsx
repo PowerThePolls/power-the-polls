@@ -36,6 +36,7 @@ export class PageSearch {
             <h1>Start Now: Apply to be a Poll Worker</h1>
             <p>Ready, set, go! Enter your ZIP code below to find information about becoming a poll worker in your local area.</p>
             <button type="submit" class="button">Lookup</button>
+            <input-address />
          </form>
       );
    }
