@@ -76,12 +76,18 @@
             &:hover {
                background-color: rgba(0, 0, 0, 0.05);
             }
+            @include on-mobile() {
+                  display: inline;
+            }
 
             input {
                transform: scale(1.5);
                flex: 0 1 1.5em;
                margin-right: 0.5em;
                z-index: -1;
+               @include on-mobile() {
+                  transform: scale(1);
+               }
             }
          }
       }
