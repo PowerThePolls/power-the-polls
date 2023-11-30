@@ -10,50 +10,59 @@ export class PageElectionOfficials {
             <Host>
                 <h1>INFORMATION FOR ELECTION ADMINISTRATORS</h1>
                 <h3>Need poll workers? We’re here to help.</h3>
+               <p>
+                  At Power the Polls, we help hardworking elections
+                  administrators close the recruitment gap for poll workers and
+                  other seasonal election workers.
+               </p>
                 <p>
-                    The Power the Polls team is here to help hardworking elections
-                     administrators across the country recruit the poll
-                     workers they need to adequately staff every election.
+                    We welcome the opportunity to connect and learn more about your
+                   recruitment needs, and how our diverse nonpartisan network of
+                   businesses and nonprofits can help.
                 </p>
                 <p>
                     <a
-                    href="https://powerthepolls.typeform.com/EASupport" target="_blank"> &#62;&#62; If you’re
-                     looking for more poll workers, complete this
-                     quick and easy survey to let us know what you need. &#60;&#60;</a>
+                    href="https://powerthepolls.typeform.com/EASupport" target="_blank"> &#62;&#62;
+                       Complete this quick and easy survey to get in touch with our team.  &#60;&#60;</a>
                 </p>
                 <p>
-                    Here’s how we’ll help:
+                    Here’s how Power the Polls can help:
                 </p>
                 <ul>
                     <li>
-                        You’ll let us know what you’re looking
-                         for — overall need, specific skill sets,
-                          availability, etc. — by completing the survey above.
+                       <b>Information Gathering - </b>Let us know what you’re looking for — overall need,
+                       specific skill sets, availability, etc. — by completing the survey above.
                     </li>
+                   <br></br>
                     <li>
-                        We’ll send you a list of folks in your
-                        jurisdiction who have expressed their
-                        interest in being a poll worker by
-                        signing up through Power the Polls.
+                        <b>Information Sharing - </b>Our team will follow up and can send you a list of
+                       folks in your jurisdiction who have expressed their interest in being a poll
+                       worker, as permitted by state law.
                     </li>
+                    <br></br>
                     <li>
-                        If needed, we can also support the recruitment
-                      of new potential poll workers in your jurisdiction.
+                       <b> Recruitment Efforts - </b> Power the Polls can also help alert our
+                       wide network of nonpartisan partners to support recruitment in a particular area.
                     </li>
+                    <br></br>
                 </ul>
+               <p>
+                  We look forward to learning more about your needs and lending support
+                  to help achieve your staffing goals.
+               </p>
                 <p>
-                    For more information about how Power the Polls works, visit our
+                    For more information about how Power the Polls works, visit our &#160;
                       <a
                      href="https://www.powerthepolls.org/about">
-                    About.
+                     About
                     </a>
-                     page
+                     &#160; page
                 </p>
                 <h3>Thank you for your service!</h3>
                 <p>
-                    On behalf of our entire team at Power the Polls and all
-                    of our partners, thank you for your incredible service
-                    to your local communities and to our country.
+                    On behalf of our entire team at Power the Polls, all of our partners,
+                   and the community you serve day-in and day-out, thank you for your
+                   incredible service to your local communities and our country.
                 </p>
                 <p>
                     We know you and your team work hard every day to serve
