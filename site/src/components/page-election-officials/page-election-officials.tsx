@@ -54,7 +54,7 @@ export class PageElectionOfficials {
                     For more information about how Power the Polls works, visit our
                       <a
                      href="https://www.powerthepolls.org/about">
-                    &#160About&#160
+                    &#160; About &#160;
                     </a>
                      page
                 </p>
