@@ -33,15 +33,18 @@ export class PageElectionOfficials {
                        <b>Information Gathering - </b>Let us know what you’re looking for — overall need,
                        specific skill sets, availability, etc. — by completing the survey above.
                     </li>
+                   <br></br>
                     <li>
                         <b>Information Sharing - </b>Our team will follow up and can send you a list of
                        folks in your jurisdiction who have expressed their interest in being a poll
                        worker, as permitted by state law.
                     </li>
+                    <br></br>
                     <li>
                        <b> Recruitment Efforts - </b> Power the Polls can also help alert our
                        wide network of nonpartisan partners to support recruitment in a particular area.
                     </li>
+                    <br></br>
                 </ul>
                <p>
                   We look forward to learning more about your needs and lending support
@@ -51,7 +54,7 @@ export class PageElectionOfficials {
                     For more information about how Power the Polls works, visit our
                       <a
                      href="https://www.powerthepolls.org/about">
-                    About
+                    &#160About&#160
                     </a>
                      page
                 </p>
