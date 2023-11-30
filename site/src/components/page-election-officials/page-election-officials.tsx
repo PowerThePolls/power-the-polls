@@ -51,12 +51,12 @@ export class PageElectionOfficials {
                   to help achieve your staffing goals.
                </p>
                 <p>
-                    For more information about how Power the Polls works, visit our
+                    For more information about how Power the Polls works, visit our &#160;
                       <a
                      href="https://www.powerthepolls.org/about">
-                    &#160; About &#160;
+                     About
                     </a>
-                     page
+                     &#160; page
                 </p>
                 <h3>Thank you for your service!</h3>
                 <p>
