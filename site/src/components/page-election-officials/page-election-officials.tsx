@@ -13,7 +13,7 @@ export class PageElectionOfficials {
                <p>
                   At Power the Polls, we help hardworking elections
                   administrators close the recruitment gap for poll workers and
-                  other seasonal election workers. 
+                  other seasonal election workers.
                </p>
                 <p>
                     We welcome the opportunity to connect and learn more about your
@@ -22,7 +22,7 @@ export class PageElectionOfficials {
                 </p>
                 <p>
                     <a
-                    href="https://powerthepolls.typeform.com/EASupport" target="_blank"> &#62;&#62; 
+                    href="https://powerthepolls.typeform.com/EASupport" target="_blank"> &#62;&#62;
                        Complete this quick and easy survey to get in touch with our team.  &#60;&#60;</a>
                 </p>
                 <p>
@@ -40,7 +40,7 @@ export class PageElectionOfficials {
                     </li>
                     <li>
                        <b> Recruitment Efforts - </b> Power the Polls can also help alert our
-                       wide network of nonpartisan partners to support recruitment in a particular area. 
+                       wide network of nonpartisan partners to support recruitment in a particular area.
                     </li>
                 </ul>
                <p>
@@ -51,7 +51,7 @@ export class PageElectionOfficials {
                     For more information about how Power the Polls works, visit our
                       <a
                      href="https://www.powerthepolls.org/about">
-                    About  
+                    About
                     </a>
                      page
                 </p>
