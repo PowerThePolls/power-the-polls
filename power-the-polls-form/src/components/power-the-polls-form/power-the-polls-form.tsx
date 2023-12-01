@@ -274,10 +274,10 @@ export class PowerThePollsForm {
                      </button>
 
                      <p class="disclaimer">
-                        By signing up, you agree to receive occasional emails or
+                        By signing up, you agree to receive occasional emails and/or
                         text messages from Power the Polls and{" "}
                         {this.partnerName ?
-                           `${this.partnerName} and ` :
+                           `${this.partnerName} and accept our ` :
                         "accept our " }
                         <PtpLink path="/privacy">Privacy Policy</PtpLink>. You
                         can unsubscribe at any time. For texts, message and data
