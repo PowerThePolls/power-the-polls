@@ -20,11 +20,12 @@ export class PageElectionOfficials {
                    recruitment needs, and how our diverse nonpartisan network of
                    businesses and nonprofits can help.
                 </p>
-                <p>
+                <h3>
                     <a
                     href="https://powerthepolls.typeform.com/EASupport" target="_blank"> &#62;&#62;
                        Complete this quick and easy survey to get in touch with our team.  &#60;&#60;</a>
-                </p>
+                </h3>
+                <br></br>
                 <p>
                     Here’s how Power the Polls can help:
                 </p>
