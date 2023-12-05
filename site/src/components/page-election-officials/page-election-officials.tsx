@@ -31,7 +31,8 @@ export class PageElectionOfficials {
                 <ul>
                     <li>
                        <b>Information Gathering - </b>Let us know what you’re looking for — overall need,
-                       specific skill sets, availability, etc. — by completing the survey above.
+                       specific skill sets  (such as language or tech skills), availability, etc. — by
+                       completing the survey above.
                     </li>
                    <br></br>
                     <li>
