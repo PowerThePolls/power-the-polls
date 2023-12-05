@@ -1832,7 +1832,8 @@
   },
   {
     "partnerId": "vetthevote",
-    "name": "We The Veterans"
+    "name": "We The Veterans",
+    "customSignupFormField": "VSO/MSO/MILFAM Organization"
   },
   {
     "partnerId": "ViacomCBS",
@@ -2114,7 +2115,8 @@
   },
   {
     "partnerId": "jewishdemocracy",
-    "name": "A More Perfect Union"
+    "name": "A More Perfect Union",
+    "customSignupFormField": "Referring organization (if any)",
   },
   {
     "partnerId": "Indivisible",
