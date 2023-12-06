@@ -1,0 +1,17 @@
+page-election-officials {
+
+   .back-button {
+      border: 0;
+      width: 95%;
+      border-radius: 25px;
+      background-color: $color-accent;
+      padding: 0.8em 1em;
+      font-weight: bold;
+      cursor: pointer;
+
+      a:hover {
+      color: $color-background-app;;
+      }
+   }
+
+}
