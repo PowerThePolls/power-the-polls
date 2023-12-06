@@ -4,13 +4,17 @@ page-election-officials {
       border: 0;
       width: 95%;
       border-radius: 25px;
-      background-color: $color-accent;
+      background-color: $color-highlight;
       padding: 0.8em 1em;
       font-weight: bold;
       cursor: pointer;
 
+      a {
+      color: $color-background-app;
+      }
+
       a:hover {
-      color: $color-background-app;;
+      color: $color-font-primary;
       }
    }
 
