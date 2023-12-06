@@ -23,7 +23,7 @@ export class PageElectionOfficials {
                 </p>
                 <button class="back-button">
                     <a
-                    href="https://powerthepolls.typeform.com/EASupport" target="_blank"> 
+                    href="https://powerthepolls.typeform.com/EASupport" target="_blank">
                        Complete this quick and easy survey to get in touch with our team. </a>
                 </button>
                 <p>
