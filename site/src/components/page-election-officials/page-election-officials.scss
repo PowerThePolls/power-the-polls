@@ -3,18 +3,18 @@ page-election-officials {
    .back-button {
       border: 0;
       width: 95%;
-      border-radius: 25px;
       background-color: $color-highlight;
       padding: 0.8em 1em;
       font-weight: bold;
       cursor: pointer;
+      text-transform: uppercase;
 
       a {
-      color: $color-background-app;
+      text-decoration: none;
       }
 
       a:hover {
-      color: $color-font-primary;
+      color: $color-background-app;
       }
    }
 
