@@ -1,0 +1,23 @@
+page-election-officials {
+
+   .back-button {
+      margin: 0 25%;
+      border: 0;
+      background-color: $color-highlight;
+      padding: 0.8em 1em;
+      font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-family: $font-heading;
+      font-size: 1.1rem;
+
+      a {
+      text-decoration: none;
+      }
+
+      a:hover {
+      color: $color-background-app;
+      }
+   }
+
+}
