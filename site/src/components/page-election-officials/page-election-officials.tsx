@@ -24,7 +24,7 @@ export class PageElectionOfficials {
                 <button class="back-button">
                     <a
                     href="https://powerthepolls.typeform.com/EASupport" target="_blank">
-                       Complete this quick and easy survey to get in touch with our team. </a>
+                       Share recruitment needs </a>
                 </button>
                 <p>
                     Here’s how Power the Polls can help:
