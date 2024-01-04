@@ -17,7 +17,7 @@ test("Partner List does not have duplicate source codes", () => {
    const partnerList = require("../../site/src/data/PartnerList.json");
    const sourceCodes = getSourceCodes(partnerList);
    const lowerSourceCodes = sourceCodes.map((sourceCodes) =>
-      sourceCodes.toLowerCase()
+      sourceCodes.toLowerCase(),
    );
    const findDuplicates = (array) =>
       array.filter((item, index) => array.indexOf(item) != index);
