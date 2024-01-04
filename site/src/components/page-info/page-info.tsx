@@ -1,6 +1,6 @@
-import {Component, h} from "@stencil/core";
+import { Component, h } from "@stencil/core";
 
-import {parseQueryString} from "../../util";
+import { parseQueryString } from "../../util";
 
 /**
  * Render poll worker info for the jurisdiction as parsed from the querystring or hash
@@ -11,24 +11,19 @@ import {parseQueryString} from "../../util";
 })
 export class PageInfo {
     public render() {
-
         const query = parseQueryString();
-        const {
-            state,
-            county,
-            city,
-            city_town_village_suffix,
-        } = query;
+        const { state, county, city, city_town_village_suffix } = query;
 
-        return !state
+        return !state ? (
             // if we still have no state value provided, redirect to the search page
-            ? <stencil-router-redirect url="/search" />
-            : <ptp-info-poll-worker
+            <stencil-router-redirect url="/search" />
+        ) : (
+            <ptp-info-poll-worker
                 city={city}
                 county={county}
                 state={state}
                 cityTownVillageSuffix={city_town_village_suffix}
-            />;
+            />
+        );
     }
-
 }

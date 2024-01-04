@@ -1,32 +1,55 @@
-import { Component, h, Host, Prop} from "@stencil/core";
+import { Component, h, Host, Prop } from "@stencil/core";
 
-@Component( {
+@Component({
    tag: "page-faq-application-status",
    styleUrl: "page-faq-application-status.scss",
    shadow: false,
-} )
+})
 export class PageFaqApplicationStatus {
    /**
-     * A list of entries to display in the FAQ
-     * see: FaqData.ts
-     * see: app-root.tsx
-     */
-    @Prop() public data?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+    * A list of entries to display in the FAQ
+    * see: FaqData.ts
+    * see: app-root.tsx
+    */
+   @Prop() public data?: {
+      sectionTitle: string;
+      questions: { question: string; answer: () => string }[];
+   }[];
 
    public render() {
       const data = this.data || [];
-      return ( <Host>
-         <a href="/faq"><button class= "back-button">Back</button></a>
-         <h1>APPLICATION & PLACEMENT STATUS FAQS</h1>
-         {data.map(({sectionTitle, questions}) => (
-                    <question-section
-                        key={sectionTitle}
-                        sectionTitle={sectionTitle}
-                        questions={questions}
-                    />
-                ))}
-         <p><a href="https://www.powerthepolls.org/faq-eligibility" target="_self"> Eligibility FAQs</a></p>
-         <p><a href="https://www.powerthepolls.org/faq-poll-worker" target="_self"> Poll Worker FAQs</a></p>
-      </Host > );
+      return (
+         <Host>
+            <a href="/faq">
+               <button class="back-button">Back</button>
+            </a>
+            <h1>APPLICATION & PLACEMENT STATUS FAQS</h1>
+            {data.map(({ sectionTitle, questions }) => (
+               <question-section
+                  key={sectionTitle}
+                  sectionTitle={sectionTitle}
+                  questions={questions}
+               />
+            ))}
+            <p>
+               <a
+                  href="https://www.powerthepolls.org/faq-eligibility"
+                  target="_self"
+               >
+                  {" "}
+                  Eligibility FAQs
+               </a>
+            </p>
+            <p>
+               <a
+                  href="https://www.powerthepolls.org/faq-poll-worker"
+                  target="_self"
+               >
+                  {" "}
+                  Poll Worker FAQs
+               </a>
+            </p>
+         </Host>
+      );
    }
 }
