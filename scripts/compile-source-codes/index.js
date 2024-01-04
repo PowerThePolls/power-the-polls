@@ -2,7 +2,7 @@ const fs = require("fs/promises");
 const Airtable = require("airtable");
 
 const getApprovedRecords = async () => {
-   const base = new Airtable().base('appc14jHeQ2v7FhU9');
+   const base = new Airtable().base("appc14jHeQ2v7FhU9");
 
    const filterByFormula = "{status} = 'Approved'";
    const fields = ["organization", "source_code", "status"];
@@ -22,8 +22,8 @@ const findDuplicates = (records, partnerList) => {
    return records.reduce((result, record) => {
       const duplicate = partnerList.find((partner) =>
          getSourceCodes(partner).includes(
-            record.get("source_code").toLowerCase()
-         )
+            record.get("source_code").toLowerCase(),
+         ),
       );
       return duplicate ? [...result, duplicate] : result;
    }, []);
@@ -33,8 +33,8 @@ const removeDuplicates = (records, duplicates) => {
    return records.filter((record) => {
       return !duplicates.find((duplicate) =>
          getSourceCodes(duplicate).includes(
-            record.get("source_code").toLowerCase()
-         )
+            record.get("source_code").toLowerCase(),
+         ),
       );
    });
 };

@@ -9,7 +9,7 @@ const getActionKitHeaders = () => {
       AK_HEADERS_CACHE = new Headers();
       const { ACTION_KIT_USERNAME, ACTION_KIT_PASSWORD } = process.env;
       const encodedCredentials = Buffer.from(
-         `${ACTION_KIT_USERNAME}:${ACTION_KIT_PASSWORD}`
+         `${ACTION_KIT_USERNAME}:${ACTION_KIT_PASSWORD}`,
       ).toString("base64");
       AK_HEADERS_CACHE.set("Authorization", `Basic ${encodedCredentials}`);
       AK_HEADERS_CACHE.set("Content-Type", "application/json");
@@ -21,7 +21,7 @@ const checkStatus = async (res) => {
    if (!res.ok) {
       const body = await res.text();
       throw new Error(
-         `HTTP Error Response: ${res.status} ${res.statusText}. Body: ${body}`
+         `HTTP Error Response: ${res.status} ${res.statusText}. Body: ${body}`,
       );
    }
 };

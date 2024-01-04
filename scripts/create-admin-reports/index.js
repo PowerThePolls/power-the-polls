@@ -3,7 +3,7 @@ import Airtable from "airtable";
 
 async function getApprovedRecords() {
    const { AIRTABLE_PARTNERS_BASE } = process.env;
-   const base = new Airtable().base('appc14jHeQ2v7FhU9');
+   const base = new Airtable().base("appc14jHeQ2v7FhU9");
    const fields = [
       "organization",
       "report_type",
@@ -11,7 +11,7 @@ async function getApprovedRecords() {
       "report_frequency",
       "source_code",
    ];
-   return base("Election Administrators").select({fields}).all();
+   return base("Election Administrators").select({ fields }).all();
 }
 
 const actionKitURL = "https://ptp.actionkit.com";
@@ -20,7 +20,7 @@ function getActionKitHeaders() {
    const { ACTION_KIT_USERNAME, ACTION_KIT_PASSWORD } = process.env;
    const headers = new Headers();
    const encodedCredentials = Buffer.from(
-      `${ACTION_KIT_USERNAME}:${ACTION_KIT_PASSWORD}`
+      `${ACTION_KIT_USERNAME}:${ACTION_KIT_PASSWORD}`,
    ).toString("base64");
    headers.set("Authorization", `Basic ${encodedCredentials}`);
    headers.set("Content-Type", "application/json");
@@ -31,7 +31,7 @@ async function checkStatus(res) {
    if (!res.ok) {
       const body = await res.text();
       throw new Error(
-         `HTTP Error Response: ${res.status} ${res.statusText}. Body: ${body}`
+         `HTTP Error Response: ${res.status} ${res.statusText}. Body: ${body}`,
       );
    }
 }
@@ -62,7 +62,8 @@ async function getPartnerReportList() {
 }
 
 const getSql = (State, Jurisdiction, JurisdictionType) => {
-   if (JurisdictionType === "County") {qaS
+   if (JurisdictionType === "County") {
+      qaS;
       const county = Jurisdiction.replace(" County", "");
       return `SELECT
    *
@@ -285,7 +286,7 @@ async function createNewReports(approvedPartners, reportList) {
 
    const newPartners = approvedPartners.filter((partner) => {
       const found = reportList.find(
-         (report) => report.description === partner.get("source_code")
+         (report) => report.description === partner.get("source_code"),
       );
       return !found;
    });
@@ -307,7 +308,7 @@ async function createNewReports(approvedPartners, reportList) {
       } else {
          console.log(
             "No report emails found for: ",
-            partner.get("organization")
+            partner.get("organization"),
          );
       }
    }
@@ -348,7 +349,7 @@ async function updateReport(reportId, reportConfig) {
    await callActionKit(
       `/rest/v1/queryreport/${reportId}`,
       "patch",
-      JSON.stringify(body)
+      JSON.stringify(body),
    );
 }
 
@@ -357,7 +358,7 @@ async function updateModifiedReports(approvedPartners, reportList) {
 
    const modifiedPartners = approvedPartners.reduce((modified, partner) => {
       const report = reportList.find(
-         (report) => report.description === partner.get("source_code")
+         (report) => report.description === partner.get("source_code"),
       );
       if (!report || !isModified(partner, report)) {
          return modified;
@@ -394,7 +395,7 @@ async function run() {
    // update modified reports
    const updateErrorThrown = await updateModifiedReports(
       approvedRecords,
-      reportList
+      reportList,
    );
 
    if (creatErrorThrown || updateErrorThrown) {

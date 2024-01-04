@@ -30,7 +30,8 @@ const contacted2022ResponseMapping = [
    },
    {
       startsWith: "[2.Yes]Your",
-      response: "Yes, I’ve heard from my elections office, but I do not have an assignment yet.",
+      response:
+         "Yes, I’ve heard from my elections office, but I do not have an assignment yet.",
    },
    {
       startsWith: "[3.No]Your",
@@ -63,9 +64,9 @@ const adminPlacementeday2022ResponseMapping = [
       response: "Yes, but I have not received my assignment",
    },
    {
-      startsWith:"No, I have not heard from them.",
-      response:"No, I have not heard from them.",
-   }
+      startsWith: "No, I have not heard from them.",
+      response: "No, I have not heard from them.",
+   },
 ];
 
 const waitlist2022ResponseMapping = [
@@ -76,7 +77,7 @@ const waitlist2022ResponseMapping = [
    {
       startsWith: "[2 no]",
       response: "No",
-   }
+   },
 ];
 
 const active2022ResponseMapping = [
@@ -106,7 +107,7 @@ const applied2020ResponseMapping = [
 ];
 
 const surveyResponseMapping = [
-{
+   {
       startsWith: "Yes",
       response: "Yes",
    },
@@ -114,7 +115,7 @@ const surveyResponseMapping = [
       startsWith: " ",
       response: "Yes",
    },
-]
+];
 
 async function process() {
    // files from text campaign
@@ -134,14 +135,14 @@ async function process() {
    const assignment2022 = mapResponses(
       rawAssignment2022,
       "QT1",
-      assignment2022ResponseMapping
+      assignment2022ResponseMapping,
    );
 
    const rawWaitlist2022 = await load(files.contactedData2022, loadOpts);
    const waitlist2022 = mapResponses(
       rawWaitlist2022,
       "QT3",
-      waitlist2022ResponseMapping
+      waitlist2022ResponseMapping,
    );
 
    const output = [...assignment2022, ...waitlist2022];
