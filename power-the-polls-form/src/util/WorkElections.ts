@@ -1,7 +1,12 @@
-import {MultiPolygon} from "geojson";
+import { MultiPolygon } from "geojson";
 
-import {DuplicateJurisdictions, States} from "../data";
-import {JurisdictionInfo, JurisdictionShort, Slugs, StateInfo} from "../data/States";
+import { DuplicateJurisdictions, States } from "../data";
+import {
+    JurisdictionInfo,
+    JurisdictionShort,
+    Slugs,
+    StateInfo,
+} from "../data/States";
 
 /**
  * Asynchronous function for returning data from WE
@@ -12,7 +17,9 @@ const fetchFromWE = async (path: string) => {
 };
 
 export const fetchStateInfo = async (stateId: number): Promise<StateInfo> => {
-    const {id, slug, acf} = await fetchFromWE(`/wp-json/wp/v2/state/${stateId}/`);
+    const { id, slug, acf } = await fetchFromWE(
+        `/wp-json/wp/v2/state/${stateId}/`,
+    );
 
     return {
         id,
@@ -29,17 +36,20 @@ export const fetchJurisdictionInfo = async (
         slug,
         acf,
         link,
-        title: {rendered},
+        title: { rendered },
     } = await fetchFromWE(`/wp-json/wp/v2/jurisdiction/${jurisdictionId}/`);
 
-    const alpha = link.replace("https://workelections.org/jurisdiction/", "").toUpperCase().split("/")[0];
+    const alpha = link
+        .replace("https://workelections.org/jurisdiction/", "")
+        .toUpperCase()
+        .split("/")[0];
 
     return {
         id,
         slug,
         ...acf,
         name: rendered,
-        state: {alpha},
+        state: { alpha },
     };
 };
 export const fetchStateJurisdictionsList = (
@@ -69,7 +79,9 @@ export const findJurisdictionId = (
     const stateData = States[state];
     if (stateData) {
         if (city) {
-            let cityString = cityTownVillage ? `${city} (${cityTownVillage})` : city;
+            let cityString = cityTownVillage
+                ? `${city} (${cityTownVillage})`
+                : city;
             let cityInfo = stateData.jurisdictions.cities[cityString];
 
             // Smarty uses Saint but WorkElections uses St.
@@ -98,8 +110,9 @@ export const findJurisdictionId = (
 
         // special case for MI and WI where the county name is appended to the rendered name from Work Elections
         if ((state === "MI" || state === "WI") && city && county) {
-            const cityString = cityTownVillage ?
-                `${city}, ${county} County (${cityTownVillage})` : `${city}, ${county} County`;
+            const cityString = cityTownVillage
+                ? `${city}, ${county} County (${cityTownVillage})`
+                : `${city}, ${county} County`;
             const cityInfo = stateData.jurisdictions.cities[cityString];
             if (cityInfo) {
                 return cityInfo.id;
@@ -154,16 +167,14 @@ export const findVariants = (
         });
     }
     if (state === "VT") {
-        [
-            `${city} (City)`,
-            `${city} (Town)`,
-            `${city} (Village)`,
-        ].forEach((variant: string) => {
-            const info = stateData.jurisdictions.cities[variant];
-            if (info) {
-                cityTownVillage = [...cityTownVillage, variant];
-            }
-        });
+        [`${city} (City)`, `${city} (Town)`, `${city} (Village)`].forEach(
+            (variant: string) => {
+                const info = stateData.jurisdictions.cities[variant];
+                if (info) {
+                    cityTownVillage = [...cityTownVillage, variant];
+                }
+            },
+        );
     }
     return cityTownVillage.sort();
 };
@@ -178,17 +189,21 @@ export const findStateId = (state: string): number | null => {
 /**
  * Return the jurisdictions for the Work Election's State
  **/
-export const findStateJurisdictionsList = (state: string): JurisdictionShort[] => {
+export const findStateJurisdictionsList = (
+    state: string,
+): JurisdictionShort[] => {
     const stateData = States[state];
-    return stateData ? [
-            ...Object.values(stateData.jurisdictions.cities),
-            ...Object.values(stateData.jurisdictions.counties)]
+    return stateData
+        ? [
+              ...Object.values(stateData.jurisdictions.cities),
+              ...Object.values(stateData.jurisdictions.counties),
+          ]
         : [];
 };
 
 /**
  * Return the jurisdiction for a given slug
  **/
-export const idFromSlug = (slugOrId: string | number | undefined): string | number | undefined => (
-    (slugOrId && Slugs[slugOrId]) || slugOrId
-);
+export const idFromSlug = (
+    slugOrId: string | number | undefined,
+): string | number | undefined => (slugOrId && Slugs[slugOrId]) || slugOrId;

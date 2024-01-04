@@ -11,7 +11,10 @@ import {
 } from "@stencil/core";
 
 import { PtpFormData, PtpLink } from "../../util";
-import { findJurisdictionId, getCityTownVillageSuffix } from "../../util/WorkElections";
+import {
+   findJurisdictionId,
+   getCityTownVillageSuffix,
+} from "../../util/WorkElections";
 
 import { submitToActionKit } from "./ActionKit";
 
@@ -95,9 +98,10 @@ export class PowerThePollsForm {
 
    public render() {
       const source = this.partnerId;
-      const chase =
-         !(this.optUserOutOfChase === true ||
-             (this.optUserOutOfChase as any) === "true");
+      const chase = !(
+         this.optUserOutOfChase === true ||
+         (this.optUserOutOfChase as any) === "true"
+      );
       const partnerField = this.customFormFieldLabel;
 
       // Adapted from https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s02.html
@@ -154,7 +158,12 @@ export class PowerThePollsForm {
                            phone,
                            zip,
                            jurisdictionId:
-                              findJurisdictionId(state, county, city, getCityTownVillageSuffix(cityTownVillage)) + "",
+                              findJurisdictionId(
+                                 state,
+                                 county,
+                                 city,
+                                 getCityTownVillageSuffix(cityTownVillage),
+                              ) + "",
                         };
                      }
                   } else {
@@ -179,7 +188,9 @@ export class PowerThePollsForm {
                <article>
                   <ptp-info-poll-worker
                      city={this.formData.city}
-                     cityTownVillageSuffix={getCityTownVillageSuffix(this.formData.cityTownVillage || "")}
+                     cityTownVillageSuffix={getCityTownVillageSuffix(
+                        this.formData.cityTownVillage || "",
+                     )}
                      county={this.formData.county}
                      state={this.formData.state}
                      formData={this.formData}
@@ -227,15 +238,14 @@ export class PowerThePollsForm {
                         }
                      />
 
-
                      <label key="available_full_day" class="checkbox">
                         <input
-                            type="checkbox"
-                            name="user_available_full_day"
-                            value="Are you available to work a full day as a poll worker?"
-                        /> Are you available to work a full day as a poll worker?
+                           type="checkbox"
+                           name="user_available_full_day"
+                           value="Are you available to work a full day as a poll worker?"
+                        />{" "}
+                        Are you available to work a full day as a poll worker?
                      </label>
-
 
                      <input
                         type="hidden"
@@ -274,11 +284,11 @@ export class PowerThePollsForm {
                      </button>
 
                      <p class="disclaimer">
-                        By signing up, you agree to receive occasional emails and/or
-                        text messages from Power the Polls and{" "}
-                        {this.partnerName ?
-                           `${this.partnerName} and accept our ` :
-                        "accept our " }
+                        By signing up, you agree to receive occasional emails
+                        and/or text messages from Power the Polls and{" "}
+                        {this.partnerName
+                           ? `${this.partnerName} and accept our `
+                           : "accept our "}
                         <PtpLink path="/privacy">Privacy Policy</PtpLink>. You
                         can unsubscribe at any time. For texts, message and data
                         rates may apply. Text HELP for Info. Text STOP to quit.

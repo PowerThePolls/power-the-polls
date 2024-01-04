@@ -43,7 +43,7 @@ export class StateInfoComponent {
       ) : (
          <div>
             <h2>{info.name}</h2>
-            {info.notes && (<PtpHtml html={info.notes} />)}
+            {info.notes && <PtpHtml html={info.notes} />}
             <div class="jurisdictions">
                {this.stateJurisdictions.map(({ id, name }) => (
                   <PtpLink
@@ -61,7 +61,7 @@ export class StateInfoComponent {
    private resetState() {
       this.stateId = this.state ? findStateId(this.state) : null;
       if (this.stateId) {
-         this.stateJurisdictions =  findStateJurisdictionsList(this.state || "");
+         this.stateJurisdictions = findStateJurisdictionsList(this.state || "");
          fetchStateInfo(this.stateId).then((x) => (this.stateInfo = x));
       } else {
          this.stateInfo = undefined;

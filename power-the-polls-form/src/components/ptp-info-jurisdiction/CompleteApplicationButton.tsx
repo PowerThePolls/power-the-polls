@@ -7,7 +7,11 @@ const CompleteApplicationButton: FunctionalComponent<{
 }> = ({ jurisdiction: j }) =>
    j?.online_application &&
    j?.online_application !== "" && (
-      <a class="poll-worker-action cta" href={j.online_application} target="_blank">
+      <a
+         class="poll-worker-action cta"
+         href={j.online_application}
+         target="_blank"
+      >
          Complete your application
       </a>
    );

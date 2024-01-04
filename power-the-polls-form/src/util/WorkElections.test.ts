@@ -1,4 +1,8 @@
-import {findJurisdictionId, findVariants, hasTownVillageCityVariant} from "./WorkElections";
+import {
+    findJurisdictionId,
+    findVariants,
+    hasTownVillageCityVariant,
+} from "./WorkElections";
 
 // To find jurisdiction IDs for expect use https://workelections.org
 // and find the jurisdiction you are looking for, then in chrome debugger
@@ -37,10 +41,7 @@ test("St. Albans, VT is a variant", () => {
 
 test("Find St. Albans, VT variants", () => {
     const actual = findVariants("VT", "", "St. Albans");
-    expect(actual).toEqual([
-        "St. Albans (City)",
-        "St. Albans (Town)",
-    ]);
+    expect(actual).toEqual(["St. Albans (City)", "St. Albans (Town)"]);
 });
 
 test("Beaver Dam, Dodge County, WI is a variant", () => {
