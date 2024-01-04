@@ -1,39 +1,68 @@
 import fetch, { Headers } from "node-fetch";
 import Airtable from "airtable";
 
-const ACTION_KIT_URL = "https://ptp.actionkit.com";
+async function getApprovedRecords() {
+   const { AIRTABLE_PARTNERS_BASE } = process.env;
+   const base = new Airtable().base('appc14jHeQ2v7FhU9');
+   const fields = [
+      "organization",
+      "report_type",
+      "report_emails",
+      "report_frequency",
+      "source_code",
+   ];
+   return base("Election Administrators").select({fields}).all();
+}
 
-let AK_HEADERS_CACHE;
+const actionKitURL = "https://ptp.actionkit.com";
 
-const getActionKitHeaders = () => {
-   if (!AK_HEADERS_CACHE) {
-      AK_HEADERS_CACHE = new Headers();
-      const { ACTION_KIT_USERNAME, ACTION_KIT_PASSWORD } = process.env;
-      const encodedCredentials = Buffer.from(
-         `${ACTION_KIT_USERNAME}:${ACTION_KIT_PASSWORD}`
-      ).toString("base64");
-      AK_HEADERS_CACHE.set("Authorization", `Basic ${encodedCredentials}`);
-      AK_HEADERS_CACHE.set("Content-Type", "application/json");
-   }
-   return AK_HEADERS_CACHE;
-};
+function getActionKitHeaders() {
+   const { ACTION_KIT_USERNAME, ACTION_KIT_PASSWORD } = process.env;
+   const headers = new Headers();
+   const encodedCredentials = Buffer.from(
+      `${ACTION_KIT_USERNAME}:${ACTION_KIT_PASSWORD}`
+   ).toString("base64");
+   headers.set("Authorization", `Basic ${encodedCredentials}`);
+   headers.set("Content-Type", "application/json");
+   return headers;
+}
 
-const checkStatus = async (res) => {
+async function checkStatus(res) {
    if (!res.ok) {
       const body = await res.text();
       throw new Error(
          `HTTP Error Response: ${res.status} ${res.statusText}. Body: ${body}`
       );
    }
-};
+}
 
-const sanitizeEmails = (emails) => emails.replace(/\n/g, "").replace(/ /g, "");
+async function callActionKit(path, method = "get", body) {
+   const headers = getActionKitHeaders();
+   const url = `${actionKitURL}${path}`;
+   const res = await fetch(url, { headers, method, body });
+   await checkStatus(res);
+   return method === "get" ? res.json() : {};
+}
 
-const addEmail = (Emails) =>
-   `${sanitizeEmails(Emails)},kay@powerthepolls.org,sage@trestle.us, tech@powerthepolls.org`;
+function getParams() {
+   const params = new URLSearchParams();
+   params.set("_limit", "100");
+   params.set("categories__name", "ea_reports");
+   return params.toString();
+}
+
+async function getPartnerReportList() {
+   let response = await callActionKit(`/rest/v1/queryreport?${getParams()}`);
+   let reportList = response.objects;
+   while (response.meta.next) {
+      response = await callActionKit(response.meta.next);
+      reportList = reportList.concat(response.objects);
+   }
+   return reportList;
+}
 
 const getSql = (State, Jurisdiction, JurisdictionType) => {
-   if (JurisdictionType === "County") {
+   if (JurisdictionType === "County") {qaS
       const county = Jurisdiction.replace(" County", "");
       return `SELECT
    *
@@ -191,77 +220,191 @@ SELECT u.first_name
    return "";
 };
 
-const getBody = ({ State, Jurisdiction, JurisdictionType, Emails }) => {
-   // unique key for report!
-   const slug = `${Jurisdiction.replace("(City)", "")
-      .replace("(city)", "")
-      .replace(/ /g, "")}${State}`;
+function convertArray(array) {
+   return array.map((code) => `'${code.toLowerCase()}'`).join(",");
+}
 
-   // "admin reports" category
-   const categories = ["/rest/v1/reportcategory/19/"];
+function isAggregate(partner) {
+   return !partner.get("report_type").startsWith("List");
+}
 
-   // sql for report
-   const sql = getSql(State, Jurisdiction, JurisdictionType);
+function getFrequency(partner) {
+   return partner.get("report_frequency").toLowerCase();
+}
 
+function hasReportEmails(partner) {
+   return partner.get("report_emails").replace(/ /g, "").length;
+}
+
+function sanitizeEmails(emails) {
+   return emails.replace(/\n/g, "").replace(/ /g, "");
+}
+
+function getBody({
+   organization,
+   sourceCodes,
+   isAggregate,
+   frequency,
+   emails,
+}) {
    return {
-      name: `Power The Polls Report: Waitlist for ${Jurisdiction}, ${State}`,
-      short_name: `PowerThePolls-admin-waitlist-${slug}`,
-      description: slug,
-      to_emails: addEmail(Emails),
+      name: `Power the Polls Report 2023: ${organization}`,
+      short_name: `PowerThePolls-${sourceCodes[0]}-report-updated-fix-2023`,
+      description: sourceCodes[0],
+      sql: getSQL(sourceCodes, isAggregate),
+      run_every: frequency,
+      to_emails: emails.replace(/ /g, ""),
       email_always_csv: true,
       send_if_no_rows: false,
-      run_every: "weekly",
-      run_weekday: 5, // Friday
-      run_hour: 11, // 11GMT -> 7AM Eastern
-      categories,
-      sql,
+      categories: ["/rest/v1/reportcategory/18/"],
    };
-};
+}
 
-const createReport = async (reportConfig) => {
-   const headers = getActionKitHeaders();
+async function createReport(reportConfig) {
    const body = getBody(reportConfig);
-   const res = await fetch(`${ACTION_KIT_URL}/rest/v1/queryreport/`, {
-      body: JSON.stringify(body),
-      headers,
-      method: "post",
+   await callActionKit("/rest/v1/queryreport/", "post", JSON.stringify(body));
+}
+
+function getReportConfig(partner) {
+   return {
+      organization: partner.get("organization").trim(),
+      sourceCodes: [partner.get("source_code").trim()],
+      isAggregate: isAggregate(partner),
+      frequency: getFrequency(partner),
+      emails: sanitizeEmails(partner.get("report_emails")),
+   };
+}
+
+function logPartners(partners) {
+   const sourceCodes = partners.map((partner) => partner.get("source_code"));
+   console.log(JSON.stringify(sourceCodes, null, 2));
+}
+
+async function createNewReports(approvedPartners, reportList) {
+   let errorThrown = false;
+
+   const newPartners = approvedPartners.filter((partner) => {
+      const found = reportList.find(
+         (report) => report.description === partner.get("source_code")
+      );
+      return !found;
    });
-   await checkStatus(res);
-};
 
-const getReportConfig = (report) => report.fields;
+   console.log("New Reports:");
+   logPartners(newPartners);
 
-const getWeeklyReports = async () => {
-   const { AIRTABLE_ADMIN_REPORTS_BASE } = process.env;
-   const base = new Airtable().base(AIRTABLE_ADMIN_REPORTS_BASE);
-   return base("Admin Reports")
-      .select({
-         filterByFormula: "{ReportRequested}",
-         fields: ["State", "Jurisdiction", "JurisdictionType", "Emails"],
-      })
-      .all();
-};
+   for (const partner of newPartners) {
+      // create report for new partners
+      if (hasReportEmails(partner)) {
+         try {
+            await createReport(getReportConfig(partner));
+            console.log("Report created for: ", partner.get("organization"));
+         } catch (e) {
+            errorThrown = true;
+            console.log("Error processing: ", partner.get("organization"));
+            console.error(e);
+         }
+      } else {
+         console.log(
+            "No report emails found for: ",
+            partner.get("organization")
+         );
+      }
+   }
+   return errorThrown;
+}
 
-const run = async () => {
-   // get list of weekly reports
-   const rawReports = await getWeeklyReports();
-   const reports = rawReports.map(getReportConfig);
-   console.log(JSON.stringify(reports, null, 2));
+function isModified(partner, report) {
+   const body = getBody(getReportConfig(partner));
 
-   // iterate over reports and create in actionkit
-   for (const report of reports) {
+   const {
+      name,
+      short_name,
+      description,
+      sql,
+      run_every,
+      to_emails,
+      email_always_csv,
+      send_if_no_rows,
+      categories,
+   } = report;
+
+   const reportBody = {
+      name,
+      short_name,
+      description,
+      sql,
+      run_every,
+      to_emails,
+      email_always_csv,
+      send_if_no_rows,
+      categories,
+   };
+   return JSON.stringify(body) !== JSON.stringify(reportBody);
+}
+
+async function updateReport(reportId, reportConfig) {
+   const body = getBody(reportConfig);
+   await callActionKit(
+      `/rest/v1/queryreport/${reportId}`,
+      "patch",
+      JSON.stringify(body)
+   );
+}
+
+async function updateModifiedReports(approvedPartners, reportList) {
+   let errorThrown = false;
+
+   const modifiedPartners = approvedPartners.reduce((modified, partner) => {
+      const report = reportList.find(
+         (report) => report.description === partner.get("source_code")
+      );
+      if (!report || !isModified(partner, report)) {
+         return modified;
+      }
+      partner.report_id = report.id;
+      return [...modified, partner];
+   }, []);
+
+   console.log("Modified Reports:");
+   logPartners(modifiedPartners);
+
+   for (const partner of modifiedPartners) {
       try {
-         await createReport(report);
-         console.log(`created report for ${report.Jurisdiction}`);
+         await updateReport(partner.report_id, getReportConfig(partner));
       } catch (e) {
+         errorThrown = true;
          console.error(e);
       }
    }
-};
+
+   return errorThrown;
+}
+
+async function run() {
+   // get all approved partners from airtable
+   const approvedRecords = await getApprovedRecords();
+
+   // get partner reports from ActionKit
+   const reportList = await getPartnerReportList();
+
+   // create new reports
+   const creatErrorThrown = await createNewReports(approvedRecords, reportList);
+
+   // update modified reports
+   const updateErrorThrown = await updateModifiedReports(
+      approvedRecords,
+      reportList
+   );
+
+   if (creatErrorThrown || updateErrorThrown) {
+      throw new Error("Error during report sync!");
+   }
+}
 
 try {
    await run();
-   console.log("Done creating admin reports");
+   console.log("Done creating reports");
    process.exit(0);
 } catch (e) {
    console.error(e);
