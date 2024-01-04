@@ -8,7 +8,10 @@ import {
    State,
 } from "@stencil/core";
 
-import {findVariants, hasTownVillageCityVariant} from "../../util/WorkElections";
+import {
+   findVariants,
+   hasTownVillageCityVariant,
+} from "../../util/WorkElections";
 
 import ZipGeocode from "./zipGeocoding";
 
@@ -74,9 +77,23 @@ export class AddressInput {
                   this.countyValue = this.countyOptions.values().next().value;
                   this.stateOptions = result.states;
                   this.stateValue = this.stateOptions.keys().next().value;
-                  if (hasTownVillageCityVariant(this.stateValue, this.countyValue, this.cityValue)) {
-                     this.cityTownVillageOptions = new Set(findVariants(this.stateValue, this.countyValue, this.cityValue));
-                     this.cityTownVillageValue = this.cityTownVillageOptions.keys().next().value;
+                  if (
+                     hasTownVillageCityVariant(
+                        this.stateValue,
+                        this.countyValue,
+                        this.cityValue,
+                     )
+                  ) {
+                     this.cityTownVillageOptions = new Set(
+                        findVariants(
+                           this.stateValue,
+                           this.countyValue,
+                           this.cityValue,
+                        ),
+                     );
+                     this.cityTownVillageValue = this.cityTownVillageOptions
+                        .keys()
+                        .next().value;
                   } else {
                      this.cityTownVillageOptions = new Set();
                      this.cityTownVillageValue = "";
@@ -111,10 +128,10 @@ export class AddressInput {
             />
 
             <input-possibly-hidden-select
-                fieldLabel="City/Town/Village"
-                name="city_town_village"
-                selected={this.cityTownVillageValue}
-                options={this.cityTownVillageOptions}
+               fieldLabel="City/Town/Village"
+               name="city_town_village"
+               selected={this.cityTownVillageValue}
+               options={this.cityTownVillageOptions}
             />
 
             <input-possibly-hidden-select

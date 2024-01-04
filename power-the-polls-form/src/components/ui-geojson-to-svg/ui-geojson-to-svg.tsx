@@ -177,10 +177,10 @@ export class UiGeojsonToSvg {
          return fitTo === "width"
             ? xScale
             : fitTo === "height"
-            ? yScale
-            : fitTo === "larger"
-            ? Math.max(xScale, xScale)
-            : Math.min(xScale, yScale);
+              ? yScale
+              : fitTo === "larger"
+                ? Math.max(xScale, xScale)
+                : Math.min(xScale, yScale);
       }
       return Math.min(xScale, yScale);
    }

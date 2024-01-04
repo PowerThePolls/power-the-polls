@@ -17,8 +17,8 @@ const explode = <G extends MultiPoint | MultiLineString | MultiPolygon>(
 ): (G extends MultiPoint
    ? Point
    : G extends MultiLineString
-   ? LineString
-   : Polygon)[] =>
+     ? LineString
+     : Polygon)[] =>
    g &&
    g.coordinates &&
    (
@@ -30,6 +30,6 @@ const explode = <G extends MultiPoint | MultiLineString | MultiPolygon>(
                type: g.type.replace("Multi", ""),
                coordinates: part,
                crs: (g as any).crs,
-            } as any),
+            }) as any,
       );
 export default explode;

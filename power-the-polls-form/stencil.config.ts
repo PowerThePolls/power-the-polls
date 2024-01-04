@@ -7,13 +7,13 @@ export const config: Config = {
    srcDir: "src", // "src" is the default; just here for clarity
    sourceMap: true,
    plugins: [
-      sass( {
+      sass({
          // scss files will automatically have these added
          injectGlobalPaths: [
             "styles/include/variables.scss",
             "styles/include/mixins.scss",
          ],
-      } ),
+      }),
    ],
    outputTargets: [
       {
