@@ -2,7 +2,6 @@ import fetch, { Headers } from "node-fetch";
 import Airtable from "airtable";
 
 async function getApprovedRecords() {
-   const { AIRTABLE_EADMINS_BASE } = process.env;
    const base = new Airtable().base("appwfzqCbSifnwrme");
    const fields = [
       "Name",
