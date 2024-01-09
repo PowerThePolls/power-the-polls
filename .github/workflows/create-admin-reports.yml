@@ -19,4 +19,3 @@ jobs:
       - run: cd scripts/create-admin-reports && npm run start
         env:
           AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
-          AIRTABLE_PARTNERS_BASE: ${{ secrets.AIRTABLE_PARTNERS_BASE }}
