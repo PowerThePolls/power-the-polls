@@ -64,9 +64,6 @@ async function getAdminReportList() {
 function getSQL(jurisdictionName, state, jurisdictionType) {
    // language=MySQL
    if (jurisdictionType == "County") {
-      console.log(
-         `That is a county-- ${jurisdictionType} named ${jurisdictionName} in ${state}`,
-      );
       return `SELECT u.first_name
      , u.last_name
      , u.email
@@ -95,15 +92,61 @@ JOIN core_userfield uf ON u.id = uf.parent_id
 WHERE lower(u.state) = lower(\"${state}\") AND uf.name = 'county' AND lower(uf.value) = lower(\"${jurisdictionName}\") AND date_sub(current_timestamp(), interval 1 week) <= u.created_at
 ORDER BY signup_date DESC`;
    } else if (jurisdictionType == "City") {
-      console.log(
-         `That is a county-- ${jurisdictionType} named ${jurisdictionName}`,
-      );
-      return `That is a city-- ${jurisdictionType} named ${jurisdictionName}`;
+      return `SELECT u.first_name
+     , u.last_name
+     , u.email
+     , (SELECT coalesce(group_concat(phone ORDER BY core_phone.id DESC SEPARATOR ', '), '')
+        FROM core_phone
+        WHERE core_phone.user_id = u.id) AS phone
+     , u.city
+     , uf.value as county
+     , u.state
+     , u.zip
+     , coalesce((SELECT coalesce(group_concat(DISTINCT TRIM(value) ORDER BY value SEPARATOR ', '), '')
+                 FROM core_action a
+                 JOIN core_actionfield af ON a.id = af.parent_id
+                 WHERE af.name = 'language'
+                   AND a.user_id = u.id), '') AS languages
+     , coalesce((SELECT max(DISTINCT uf.value)
+                 FROM core_userfield uf
+                 WHERE uf.name = 'tech_skills'
+                   AND uf.parent_id = u.id), '') AS tech_skills
+    , (SELECT CAST(max(created_at) AS DATE)
+        FROM core_action
+        WHERE user_id = u.id
+          AND page_id = 12) AS signup_date
+FROM core_user AS u
+JOIN core_userfield uf ON u.id = uf.parent_id
+WHERE uf.name = 'county' AND lower(u.state) = lower(\"${state}\") AND lower(u.city) = lower(\"${jurisdictionName}\") AND date_sub(current_timestamp(), interval 1 week) <= u.created_at
+ORDER BY signup_date DESC`;
    } else {
-      console.log(
-         `That is a county-- ${jurisdictionType} named ${jurisdictionName}`,
-      );
-      return `That is a state-- ${jurisdictionType} named ${jurisdictionName}`;
+      return `SELECT u.first_name
+     , u.last_name
+     , u.email
+     , (SELECT coalesce(group_concat(phone ORDER BY core_phone.id DESC SEPARATOR ', '), '')
+        FROM core_phone
+        WHERE core_phone.user_id = u.id) AS phone
+     , u.city
+     , uf.value as county
+     , u.state
+     , u.zip
+     , coalesce((SELECT coalesce(group_concat(DISTINCT TRIM(value) ORDER BY value SEPARATOR ', '), '')
+                 FROM core_action a
+                 JOIN core_actionfield af ON a.id = af.parent_id
+                 WHERE af.name = 'language'
+                   AND a.user_id = u.id), '') AS languages
+     , coalesce((SELECT max(DISTINCT uf.value)
+                 FROM core_userfield uf
+                 WHERE uf.name = 'tech_skills'
+                   AND uf.parent_id = u.id), '') AS tech_skills
+    , (SELECT CAST(max(created_at) AS DATE)
+        FROM core_action
+        WHERE user_id = u.id
+          AND page_id = 12) AS signup_date
+FROM core_user AS u
+JOIN core_userfield uf ON u.id = uf.parent_id
+WHERE lower(u.state) = lower(\"${state}\") AND date_sub(current_timestamp(), interval 1 week) <= u.created_at
+ORDER BY signup_date DESC`;
    }
 }
 
