@@ -175,7 +175,7 @@ function getBody({
 }) {
    return {
       name: `Power the Polls Election Admin Report: ${jurisdictionName} ${jurisdictionType}`,
-      short_name: `election_admin_report_${jurisdictionName}_${jurisdictionType}`,
+      short_name: `election-admin-report-${jurisdictionName}_${jurisdictionType}`,
       description: `election admin report`,
       sql: getSQL(jurisdictionName, state, jurisdictionType),
       run_every: frequency,
