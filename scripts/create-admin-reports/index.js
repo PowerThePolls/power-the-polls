@@ -173,19 +173,25 @@ function getBody({
    frequency,
    emails,
 }) {
-   var name = "report";
-   var description = "a report";
+   var name;
+   var description;
+   var shortName;
 
    if (jurisdictionType == "State") {
       name = `Power the Polls Election Admin Report: ${state}`;
-      description = `election admin report for ${state}`
+      description = `election admin report for ${state}`;
+      shortName = `election-admin-report-2024-${state}`;
    } else {
       name = `Power the Polls Election Admin Report: ${jurisdictionName} ${jurisdictionType}`;
-      description = `election admin report for ${jurisdictionName} ${jurisdictionType}`
+      description = `election admin report for ${jurisdictionName} ${jurisdictionType}`;
+      shortName = `election-admin-report-2024-${jurisdictionName.replace(
+         /\s/g,
+         "",
+      )}-${jurisdictionType}`;
    }
    return {
       name: name,
-      short_name: `election-admin-report-2024-${jurisdictionName.replace(/\s/g, '')}-${jurisdictionType}`,
+      short_name: shortName,
       description: description,
       sql: getSQL(jurisdictionName, state, jurisdictionType),
       run_every: frequency,
