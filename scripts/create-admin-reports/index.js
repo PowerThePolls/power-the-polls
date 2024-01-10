@@ -63,7 +63,7 @@ async function getAdminReportList() {
    return reportList;
 }
 
-function getSQL(jurisdictionType, jurisdictionName) {
+function getSQL(jurisdictionName, jurisdictionType) {
    // language=MySQL
    if (jurisdictionType == "County") {
       console.log(
@@ -115,7 +115,7 @@ function getBody({
       to_emails: emails.replace(/ /g, ""),
       email_always_csv: true,
       send_if_no_rows: false,
-      categories: ["/rest/v1/reportcategory/21/"],
+      categories: ["/rest/v1/reportcategory/22/"],
    };
 }
 
