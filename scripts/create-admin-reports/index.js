@@ -92,7 +92,7 @@ function getSQL(jurisdictionName, state, jurisdictionType) {
           AND page_id = 12) AS signup_date
 FROM core_user AS u
 JOIN core_userfield uf ON u.id = uf.parent_id
-WHERE lower(u.state) = lower(${state}) AND uf.name = 'county' AND lower(uf.value) = lower(${jurisdictionName}) AND date_sub(current_timestamp(), interval 1 week) <= u.created_at
+WHERE lower(u.state) = lower(\"${state}\") AND uf.name = 'county' AND lower(uf.value) = lower(\"${jurisdictionName}\") AND date_sub(current_timestamp(), interval 1 week) <= u.created_at
 ORDER BY signup_date DESC`;
    } else if (jurisdictionType == "City") {
       console.log(
