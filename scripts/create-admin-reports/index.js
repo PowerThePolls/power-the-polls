@@ -11,9 +11,7 @@ async function getApprovedRecords() {
       "Emails",
       "report_frequency",
    ];
-   return base("Election Administrators")
-      .select({fields })
-      .all();
+   return base("Election Administrators").select({ fields }).all();
 }
 
 const actionKitURL = "https://ptp.actionkit.com";
@@ -63,23 +61,92 @@ async function getAdminReportList() {
    return reportList;
 }
 
-function getSQL(jurisdictionType, jurisdictionName) {
+function getSQL(jurisdictionName, state, jurisdictionType) {
    // language=MySQL
    if (jurisdictionType == "County") {
-      Console.log(
-         `That is a county-- ${jurisdictionType} named ${jurisdictionName}`,
-      );
-      return `That is a county-- ${jurisdictionType} named ${jurisdictionName}`;
+      return `SELECT u.first_name
+     , u.last_name
+     , u.email
+     , (SELECT coalesce(group_concat(phone ORDER BY core_phone.id DESC SEPARATOR ', '), '')
+        FROM core_phone
+        WHERE core_phone.user_id = u.id) AS phone
+     , u.city
+     , uf.value as county
+     , u.state
+     , u.zip
+     , coalesce((SELECT coalesce(group_concat(DISTINCT TRIM(value) ORDER BY value SEPARATOR ', '), '')
+                 FROM core_action a
+                 JOIN core_actionfield af ON a.id = af.parent_id
+                 WHERE af.name = 'language'
+                   AND a.user_id = u.id), '') AS languages
+     , coalesce((SELECT max(DISTINCT uf.value)
+                 FROM core_userfield uf
+                 WHERE uf.name = 'tech_skills'
+                   AND uf.parent_id = u.id), '') AS tech_skills
+    , (SELECT CAST(max(created_at) AS DATE)
+        FROM core_action
+        WHERE user_id = u.id
+          AND page_id = 12) AS signup_date
+FROM core_user AS u
+JOIN core_userfield uf ON u.id = uf.parent_id
+WHERE lower(u.state) = lower(\"${state}\") AND uf.name = 'county' AND lower(uf.value) = lower(\"${jurisdictionName}\") AND date_sub(current_timestamp(), interval 1 week) <= u.created_at
+ORDER BY signup_date DESC`;
    } else if (jurisdictionType == "City") {
-      Console.log(
-         `That is a county-- ${jurisdictionType} named ${jurisdictionName}`,
-      );
-      return `That is a city-- ${jurisdictionType} named ${jurisdictionName}`;
+      return `SELECT u.first_name
+     , u.last_name
+     , u.email
+     , (SELECT coalesce(group_concat(phone ORDER BY core_phone.id DESC SEPARATOR ', '), '')
+        FROM core_phone
+        WHERE core_phone.user_id = u.id) AS phone
+     , u.city
+     , uf.value as county
+     , u.state
+     , u.zip
+     , coalesce((SELECT coalesce(group_concat(DISTINCT TRIM(value) ORDER BY value SEPARATOR ', '), '')
+                 FROM core_action a
+                 JOIN core_actionfield af ON a.id = af.parent_id
+                 WHERE af.name = 'language'
+                   AND a.user_id = u.id), '') AS languages
+     , coalesce((SELECT max(DISTINCT uf.value)
+                 FROM core_userfield uf
+                 WHERE uf.name = 'tech_skills'
+                   AND uf.parent_id = u.id), '') AS tech_skills
+    , (SELECT CAST(max(created_at) AS DATE)
+        FROM core_action
+        WHERE user_id = u.id
+          AND page_id = 12) AS signup_date
+FROM core_user AS u
+JOIN core_userfield uf ON u.id = uf.parent_id
+WHERE uf.name = 'county' AND lower(u.state) = lower(\"${state}\") AND lower(u.city) = lower(\"${jurisdictionName}\") AND date_sub(current_timestamp(), interval 1 week) <= u.created_at
+ORDER BY signup_date DESC`;
    } else {
-      Console.log(
-         `That is a county-- ${jurisdictionType} named ${jurisdictionName}`,
-      );
-      return `That is a state-- ${jurisdictionType} named ${jurisdictionName}`;
+      return `SELECT u.first_name
+     , u.last_name
+     , u.email
+     , (SELECT coalesce(group_concat(phone ORDER BY core_phone.id DESC SEPARATOR ', '), '')
+        FROM core_phone
+        WHERE core_phone.user_id = u.id) AS phone
+     , u.city
+     , uf.value as county
+     , u.state
+     , u.zip
+     , coalesce((SELECT coalesce(group_concat(DISTINCT TRIM(value) ORDER BY value SEPARATOR ', '), '')
+                 FROM core_action a
+                 JOIN core_actionfield af ON a.id = af.parent_id
+                 WHERE af.name = 'language'
+                   AND a.user_id = u.id), '') AS languages
+     , coalesce((SELECT max(DISTINCT uf.value)
+                 FROM core_userfield uf
+                 WHERE uf.name = 'tech_skills'
+                   AND uf.parent_id = u.id), '') AS tech_skills
+    , (SELECT CAST(max(created_at) AS DATE)
+        FROM core_action
+        WHERE user_id = u.id
+          AND page_id = 12) AS signup_date
+FROM core_user AS u
+JOIN core_userfield uf ON u.id = uf.parent_id
+WHERE lower(u.state) = lower(\"${state}\") AND uf.name = 'county' AND date_sub(current_timestamp(), interval 1 week) <= u.created_at
+ORDER BY signup_date DESC`;
    }
 }
 
@@ -106,16 +173,32 @@ function getBody({
    frequency,
    emails,
 }) {
+   var name;
+   var description;
+   var shortName;
+
+   if (jurisdictionType == "State") {
+      name = `Power the Polls Election Admin Report: ${state}`;
+      description = `election admin report for ${state}`;
+      shortName = `election-admin-report-2024-${state}`;
+   } else {
+      name = `Power the Polls Election Admin Report: ${jurisdictionName} ${jurisdictionType}`;
+      description = `election admin report for ${jurisdictionName} ${jurisdictionType}`;
+      shortName = `election-admin-report-2024-${jurisdictionName.replace(
+         /\s/g,
+         "",
+      )}-${jurisdictionType}`;
+   }
    return {
-      name: `Power the Polls Test Election Admin Report 1: ${jurisdictionName} ${jurisdictionType}`,
-      short_name: `test_admin_0`,
-      description: `election admin report`,
+      name: name,
+      short_name: shortName,
+      description: description,
       sql: getSQL(jurisdictionName, state, jurisdictionType),
       run_every: frequency,
       to_emails: emails.replace(/ /g, ""),
       email_always_csv: true,
       send_if_no_rows: false,
-      categories: ["/rest/v1/reportcategory/21/"],
+      categories: ["/rest/v1/reportcategory/22/", "/rest/v1/reportcategory/24/"],
    };
 }
 
