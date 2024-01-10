@@ -66,17 +66,17 @@ async function getAdminReportList() {
 function getSQL(jurisdictionType, jurisdictionName) {
    // language=MySQL
    if (jurisdictionType == "County") {
-      Console.log(
+      console.log(
          `That is a county-- ${jurisdictionType} named ${jurisdictionName}`,
       );
       return `That is a county-- ${jurisdictionType} named ${jurisdictionName}`;
    } else if (jurisdictionType == "City") {
-      Console.log(
+      console.log(
          `That is a county-- ${jurisdictionType} named ${jurisdictionName}`,
       );
       return `That is a city-- ${jurisdictionType} named ${jurisdictionName}`;
    } else {
-      Console.log(
+      console.log(
          `That is a county-- ${jurisdictionType} named ${jurisdictionName}`,
       );
       return `That is a state-- ${jurisdictionType} named ${jurisdictionName}`;
