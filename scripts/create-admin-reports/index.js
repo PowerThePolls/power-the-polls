@@ -126,7 +126,7 @@ async function createReport(reportConfig) {
 
 function getReportConfig(admin) {
    return {
-      name: admin.get("name"),
+      name: admin.get("Name"),
       jurisdictionName: admin.get("Jurisdiction Name"),
       state: admin.get("State"),
       jurisdictionType: admin.get("Jurisdiction Type"),
@@ -136,7 +136,7 @@ function getReportConfig(admin) {
 }
 
 function logAdmins(admin) {
-   const sourceCodes = admin.map((admin) => admin.get("source_code"));
+   const sourceCodes = admin.map((admin) => admin.get("Name"));
    console.log(JSON.stringify(sourceCodes, null, 2));
 }
 
@@ -145,7 +145,7 @@ async function createNewReports(approvedAdmins, reportList) {
 
    const newAdmins = approvedAdmins.filter((admin) => {
       const found = reportList.find(
-         (report) => report.description === admin.get("source_code"),
+         (report) => report.description === admin.get("Name"),
       );
       return !found;
    });
@@ -214,7 +214,7 @@ async function updateModifiedReports(approvedAdmins, reportList) {
 
    const modifiedAdmins = approvedAdmins.reduce((modified, admin) => {
       const report = reportList.find(
-         (report) => report.description === admin.get("source_code"),
+         (report) => report.description === admin.get("jurisdictionName"),
       );
       if (!report || !isModified(admin, report)) {
          return modified;
