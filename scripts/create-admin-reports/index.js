@@ -145,7 +145,7 @@ ORDER BY signup_date DESC`;
           AND page_id = 12) AS signup_date
 FROM core_user AS u
 JOIN core_userfield uf ON u.id = uf.parent_id
-WHERE lower(u.state) = lower(\"${state}\") AND date_sub(current_timestamp(), interval 1 week) <= u.created_at
+WHERE lower(u.state) = lower(\"${state}\") AND uf.name = 'county' AND date_sub(current_timestamp(), interval 1 week) <= u.created_at
 ORDER BY signup_date DESC`;
    }
 }
@@ -198,7 +198,7 @@ function getBody({
       to_emails: emails.replace(/ /g, ""),
       email_always_csv: true,
       send_if_no_rows: false,
-      categories: ["/rest/v1/reportcategory/22/"],
+      categories: ["/rest/v1/reportcategory/22/", "/rest/v1/reportcategory/24/"],
    };
 }
 
