@@ -131,7 +131,7 @@ function getBody({
    emails,
 }) {
    return {
-      name: `Power the Polls Test Election Admin Report 1: ${jurisdictionName} ${jurisdictionType}`,
+      name: `Power the Polls Test Election Admin Report 0: ${jurisdictionName} ${jurisdictionType}`,
       short_name: `test_admin_1`,
       description: `election admin report`,
       sql: getSQL(jurisdictionName, state, jurisdictionType),
