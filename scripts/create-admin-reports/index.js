@@ -92,7 +92,7 @@ function getFrequency(admin) {
 }
 
 function hasReportEmails(admin) {
-   return admin.get("report_emails").replace(/ /g, "").length;
+   return admin.get("Emails").replace(/ /g, "").length;
 }
 
 function sanitizeEmails(emails) {
@@ -130,7 +130,7 @@ function getReportConfig(admin) {
       organization: admin.get("organization").trim(),
       sourceCodes: [admin.get("source_code").trim()],
       frequency: getFrequency(admin),
-      emails: sanitizeEmails(admin.get("report_emails")),
+      emails: sanitizeEmails(admin.get("Emails")),
    };
 }
 
