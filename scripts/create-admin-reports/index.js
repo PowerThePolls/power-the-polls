@@ -5,9 +5,9 @@ async function getApprovedRecords() {
    const base = new Airtable().base("appwfzqCbSifnwrme");
    const fields = [
       "Name",
+      "Jurisdiction Name",
       "State",
       "Jurisdiction Type",
-      "Jurisdiction Name",
       "Emails",
       "report_frequency",
    ];
@@ -100,7 +100,6 @@ function sanitizeEmails(emails) {
 }
 
 function getBody({
-   name,
    state,
    jurisdictionName,
    jurisdictionType,
@@ -108,10 +107,10 @@ function getBody({
    emails,
 }) {
    return {
-      name: `Power the Polls Test Election Admin Report 1: ${organization}`,
+      name: `Power the Polls Test Election Admin Report 1: ${jurisdictionName} ${jurisdictionType}`,
       short_name: `test_admin_0`,
       description: `election admin report`,
-      sql: getSQL(name, jurisdictionName, state, jurisdictionType),
+      sql: getSQL(jurisdictionName, state, jurisdictionType),
       run_every: frequency,
       to_emails: emails.replace(/ /g, ""),
       email_always_csv: true,
@@ -166,7 +165,7 @@ async function createNewReports(approvedAdmins, reportList) {
             console.error(e);
          }
       } else {
-         console.log("No report emails found for: ", admin.get("organization"));
+         console.log("No report emails found for: ", admin.get("Name"));
       }
    }
    return errorThrown;
