@@ -4,9 +4,8 @@ https://www.npmjs.com/package/@ptp-us/power-the-polls-form
 
 This is a custom web component that allows our partners to embed the Power the Polls signup form on their own web sites and intranets. Contact info@powerthepolls.org to discuss any partnerships.
 
-## America is facing a record shortage of poll workers
-
-As coronavirus continues to impact Americans across the country, we are also seeing a staggering decrease in poll workers &mdash; which could mean closed polling places and **long delays for elections in 2022**.
+## America needs poll workers to power our democracy
+Power the Polls is working every day to recruit a new generation of poll workers — folks excited to serve their communities, help their neighbors vote, and ensure safe access to the ballot box for years to come.
 
 **You can help** make sure we have a safe, fair, efficient election for all voters, and potentially get paid to do it!
 
