@@ -2,7 +2,6 @@ import fetch, { Headers } from "node-fetch";
 import Airtable from "airtable";
 
 async function getApprovedRecords() {
-   const { AIRTABLE_PARTNERS_BASE } = process.env;
    const base = new Airtable().base("appc14jHeQ2v7FhU9");
    //const filterByFormula = "{report_status} = 'Approved'";
    // add filter for 2023 reports, to be removed when all reports resume

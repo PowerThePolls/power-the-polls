@@ -18,68 +18,68 @@ export namespace Components {
      * Email application that will only render if there is no application link for the jurisdiction
      */
     interface EmailApplicationForm {
-        data: PtpFormData;
-        jurisdiction?: JurisdictionInfo;
+        "data": PtpFormData;
+        "jurisdiction"?: JurisdictionInfo;
     }
     /**
      * An input and (optional) select element for a US postal address and state which will look up address values based on
      * the user's input to allow the user to select from.
      */
     interface InputAddress {
-        state: () => Promise<"STARTED" | "COMPLETED">;
+        "state": () => Promise<"STARTED" | "COMPLETED">;
     }
     /**
      * Render a `<select>` if `options` has values, else render `<input type="hidden">` with `selected` as the value.
      */
     interface InputPossiblyHiddenSelect {
-        fieldLabel: string;
-        name: string;
-        options: Map<string, string> | Set<string>;
-        selected: string;
+        "fieldLabel": string;
+        "name": string;
+        "options": Map<string, string> | Set<string>;
+        "selected": string;
     }
     /**
      * The Power the Polls sign-up form.
      */
     interface PowerThePollsForm {
         /**
-         * The label for an additional field to be displayed on the signup form. If undefined, no additional field will be displayed.
+          * The label for an additional field to be displayed on the signup form. If undefined, no additional field will be displayed.
          */
-        customFormFieldLabel?: string;
-        optUserOutOfChase?: boolean;
+        "customFormFieldLabel"?: string;
+        "optUserOutOfChase"?: boolean;
         /**
-         * To display custom text and images for a specific Power the Polls partner, enter their ID here.
+          * To display custom text and images for a specific Power the Polls partner, enter their ID here.
          */
-        partnerId?: string;
+        "partnerId"?: string;
         /**
-         * Optional name displayed in privacy policy disclaimer when `optUserOutOfChase` is true
+          * Optional name displayed in privacy policy disclaimer when `optUserOutOfChase` is true
          */
-        partnerName?: string;
-        reset: () => Promise<void>;
+        "partnerName"?: string;
+        "reset": () => Promise<void>;
         /**
-         * The API key to access SmartyStreets which is used for address lookup.
+          * The API key to access SmartyStreets which is used for address lookup.
          */
-        smartyStreetsApiKey?: string;
+        "smartyStreetsApiKey"?: string;
         /**
-         * The version of this `power-the-polls-form` component
+          * The version of this `power-the-polls-form` component
          */
-        version: () => Promise<string>;
+        "version": () => Promise<string>;
     }
     /**
      * Component to render work elections jurisdiction data.
      */
     interface PtpInfoJurisdiction {
         /**
-         * Props possibly passed in from the main form
+          * Props possibly passed in from the main form
          */
-        initialFormData?: PtpFormData;
+        "initialFormData"?: PtpFormData;
         /**
-         * ID of jurisdiction for Work Elections
+          * ID of jurisdiction for Work Elections
          */
-        jurisdictionId?: string | number;
+        "jurisdictionId"?: string | number;
         /**
-         * If `true`, this component should show next steps and any additional form data
+          * If `true`, this component should show next steps and any additional form data
          */
-        showNextSteps: boolean;
+        "showNextSteps": boolean;
     }
     /**
      * Display state or specific jurisdiction information for poll workers based on whether
@@ -87,30 +87,30 @@ export namespace Components {
      */
     interface PtpInfoPollWorker {
         /**
-         * City for matching to location
+          * City for matching to location
          */
-        city?: string;
-        cityTownVillageSuffix?: string;
+        "city"?: string;
+        "cityTownVillageSuffix"?: string;
         /**
-         * County for matching to location
+          * County for matching to location
          */
-        county?: string;
+        "county"?: string;
         /**
-         * Complete form data, if available, for `ptp-info-jurisdiction`
+          * Complete form data, if available, for `ptp-info-jurisdiction`
          */
-        formData?: PtpFormData;
+        "formData"?: PtpFormData;
         /**
-         * ID or Slug of jurisdiction for Work Elections. Use in place of `state`, `county`, and `city`
+          * ID or Slug of jurisdiction for Work Elections. Use in place of `state`, `county`, and `city`
          */
-        jurisdictionIdOrSlug?: string | number;
+        "jurisdictionIdOrSlug"?: string | number;
         /**
-         * If `true`, this component will lso render 1-3 bullet items indicating the next steps for the user
+          * If `true`, this component will lso render 1-3 bullet items indicating the next steps for the user
          */
-        showNextSteps: boolean;
+        "showNextSteps": boolean;
         /**
-         * State for matching to location
+          * State for matching to location
          */
-        state?: string;
+        "state"?: string;
     }
     /**
      * When we have no specific polling jurisdiction for a user and just their state we
@@ -118,18 +118,18 @@ export namespace Components {
      */
     interface PtpInfoState {
         /**
-         * State abbreviation
+          * State abbreviation
          */
-        state?: string;
+        "state"?: string;
     }
     interface UiGeojsonToSvg {
-        geoJson?: GeoJSON;
-        height: number;
-        options?: Options;
-        width: number;
+        "geoJson"?: GeoJSON;
+        "height": number;
+        "options"?: Options;
+        "width": number;
     }
     interface UiLoadingSpinner {
-        small: boolean;
+        "small": boolean;
     }
 }
 export interface EmailApplicationFormCustomEvent<T> extends CustomEvent<T> {
@@ -148,9 +148,8 @@ declare global {
     /**
      * Email application that will only render if there is no application link for the jurisdiction
      */
-    interface HTMLEmailApplicationFormElement
-        extends Components.EmailApplicationForm,
-            HTMLStencilElement {}
+    interface HTMLEmailApplicationFormElement extends Components.EmailApplicationForm, HTMLStencilElement {
+    }
     var HTMLEmailApplicationFormElement: {
         prototype: HTMLEmailApplicationFormElement;
         new (): HTMLEmailApplicationFormElement;
@@ -159,9 +158,8 @@ declare global {
      * An input and (optional) select element for a US postal address and state which will look up address values based on
      * the user's input to allow the user to select from.
      */
-    interface HTMLInputAddressElement
-        extends Components.InputAddress,
-            HTMLStencilElement {}
+    interface HTMLInputAddressElement extends Components.InputAddress, HTMLStencilElement {
+    }
     var HTMLInputAddressElement: {
         prototype: HTMLInputAddressElement;
         new (): HTMLInputAddressElement;
@@ -169,9 +167,8 @@ declare global {
     /**
      * Render a `<select>` if `options` has values, else render `<input type="hidden">` with `selected` as the value.
      */
-    interface HTMLInputPossiblyHiddenSelectElement
-        extends Components.InputPossiblyHiddenSelect,
-            HTMLStencilElement {}
+    interface HTMLInputPossiblyHiddenSelectElement extends Components.InputPossiblyHiddenSelect, HTMLStencilElement {
+    }
     var HTMLInputPossiblyHiddenSelectElement: {
         prototype: HTMLInputPossiblyHiddenSelectElement;
         new (): HTMLInputPossiblyHiddenSelectElement;
@@ -179,9 +176,8 @@ declare global {
     /**
      * The Power the Polls sign-up form.
      */
-    interface HTMLPowerThePollsFormElement
-        extends Components.PowerThePollsForm,
-            HTMLStencilElement {}
+    interface HTMLPowerThePollsFormElement extends Components.PowerThePollsForm, HTMLStencilElement {
+    }
     var HTMLPowerThePollsFormElement: {
         prototype: HTMLPowerThePollsFormElement;
         new (): HTMLPowerThePollsFormElement;
@@ -189,9 +185,8 @@ declare global {
     /**
      * Component to render work elections jurisdiction data.
      */
-    interface HTMLPtpInfoJurisdictionElement
-        extends Components.PtpInfoJurisdiction,
-            HTMLStencilElement {}
+    interface HTMLPtpInfoJurisdictionElement extends Components.PtpInfoJurisdiction, HTMLStencilElement {
+    }
     var HTMLPtpInfoJurisdictionElement: {
         prototype: HTMLPtpInfoJurisdictionElement;
         new (): HTMLPtpInfoJurisdictionElement;
@@ -200,9 +195,8 @@ declare global {
      * Display state or specific jurisdiction information for poll workers based on whether
      * the provided `state`, `county`, and `city` match a jurisdiction or not.
      */
-    interface HTMLPtpInfoPollWorkerElement
-        extends Components.PtpInfoPollWorker,
-            HTMLStencilElement {}
+    interface HTMLPtpInfoPollWorkerElement extends Components.PtpInfoPollWorker, HTMLStencilElement {
+    }
     var HTMLPtpInfoPollWorkerElement: {
         prototype: HTMLPtpInfoPollWorkerElement;
         new (): HTMLPtpInfoPollWorkerElement;
@@ -211,23 +205,20 @@ declare global {
      * When we have no specific polling jurisdiction for a user and just their state we
      * display a list of all the counties for them to choose from.
      */
-    interface HTMLPtpInfoStateElement
-        extends Components.PtpInfoState,
-            HTMLStencilElement {}
+    interface HTMLPtpInfoStateElement extends Components.PtpInfoState, HTMLStencilElement {
+    }
     var HTMLPtpInfoStateElement: {
         prototype: HTMLPtpInfoStateElement;
         new (): HTMLPtpInfoStateElement;
     };
-    interface HTMLUiGeojsonToSvgElement
-        extends Components.UiGeojsonToSvg,
-            HTMLStencilElement {}
+    interface HTMLUiGeojsonToSvgElement extends Components.UiGeojsonToSvg, HTMLStencilElement {
+    }
     var HTMLUiGeojsonToSvgElement: {
         prototype: HTMLUiGeojsonToSvgElement;
         new (): HTMLUiGeojsonToSvgElement;
     };
-    interface HTMLUiLoadingSpinnerElement
-        extends Components.UiLoadingSpinner,
-            HTMLStencilElement {}
+    interface HTMLUiLoadingSpinnerElement extends Components.UiLoadingSpinner, HTMLStencilElement {
+    }
     var HTMLUiLoadingSpinnerElement: {
         prototype: HTMLUiLoadingSpinnerElement;
         new (): HTMLUiLoadingSpinnerElement;
@@ -249,74 +240,72 @@ declare namespace LocalJSX {
      * Email application that will only render if there is no application link for the jurisdiction
      */
     interface EmailApplicationForm {
-        data?: PtpFormData;
-        jurisdiction?: JurisdictionInfo;
-        onSubmitted?: (event: EmailApplicationFormCustomEvent<any>) => void;
+        "data"?: PtpFormData;
+        "jurisdiction"?: JurisdictionInfo;
+        "onSubmitted"?: (event: EmailApplicationFormCustomEvent<any>) => void;
     }
     /**
      * An input and (optional) select element for a US postal address and state which will look up address values based on
      * the user's input to allow the user to select from.
      */
     interface InputAddress {
-        onLookup?: (
-            event: InputAddressCustomEvent<"STARTED" | "COMPLETED">,
-        ) => void;
+        "onLookup"?: (event: InputAddressCustomEvent<"STARTED" | "COMPLETED">) => void;
     }
     /**
      * Render a `<select>` if `options` has values, else render `<input type="hidden">` with `selected` as the value.
      */
     interface InputPossiblyHiddenSelect {
-        fieldLabel?: string;
-        name?: string;
-        options?: Map<string, string> | Set<string>;
-        selected?: string;
+        "fieldLabel"?: string;
+        "name"?: string;
+        "options"?: Map<string, string> | Set<string>;
+        "selected"?: string;
     }
     /**
      * The Power the Polls sign-up form.
      */
     interface PowerThePollsForm {
         /**
-         * The label for an additional field to be displayed on the signup form. If undefined, no additional field will be displayed.
+          * The label for an additional field to be displayed on the signup form. If undefined, no additional field will be displayed.
          */
-        customFormFieldLabel?: string;
+        "customFormFieldLabel"?: string;
         /**
-         * Dispatched when the user has submitted the form and it has successfully POSTed to `destination`
+          * Dispatched when the user has submitted the form and it has successfully POSTed to `destination`
          */
-        onSubmitCompleted?: (event: PowerThePollsFormCustomEvent<any>) => void;
+        "onSubmitCompleted"?: (event: PowerThePollsFormCustomEvent<any>) => void;
         /**
-         * Dispatched when there is an error submitting the form to `destination`
+          * Dispatched when there is an error submitting the form to `destination`
          */
-        onSubmitError?: (event: PowerThePollsFormCustomEvent<any>) => void;
-        optUserOutOfChase?: boolean;
+        "onSubmitError"?: (event: PowerThePollsFormCustomEvent<any>) => void;
+        "optUserOutOfChase"?: boolean;
         /**
-         * To display custom text and images for a specific Power the Polls partner, enter their ID here.
+          * To display custom text and images for a specific Power the Polls partner, enter their ID here.
          */
-        partnerId?: string;
+        "partnerId"?: string;
         /**
-         * Optional name displayed in privacy policy disclaimer when `optUserOutOfChase` is true
+          * Optional name displayed in privacy policy disclaimer when `optUserOutOfChase` is true
          */
-        partnerName?: string;
+        "partnerName"?: string;
         /**
-         * The API key to access SmartyStreets which is used for address lookup.
+          * The API key to access SmartyStreets which is used for address lookup.
          */
-        smartyStreetsApiKey?: string;
+        "smartyStreetsApiKey"?: string;
     }
     /**
      * Component to render work elections jurisdiction data.
      */
     interface PtpInfoJurisdiction {
         /**
-         * Props possibly passed in from the main form
+          * Props possibly passed in from the main form
          */
-        initialFormData?: PtpFormData;
+        "initialFormData"?: PtpFormData;
         /**
-         * ID of jurisdiction for Work Elections
+          * ID of jurisdiction for Work Elections
          */
-        jurisdictionId?: string | number;
+        "jurisdictionId"?: string | number;
         /**
-         * If `true`, this component should show next steps and any additional form data
+          * If `true`, this component should show next steps and any additional form data
          */
-        showNextSteps?: boolean;
+        "showNextSteps"?: boolean;
     }
     /**
      * Display state or specific jurisdiction information for poll workers based on whether
@@ -324,30 +313,30 @@ declare namespace LocalJSX {
      */
     interface PtpInfoPollWorker {
         /**
-         * City for matching to location
+          * City for matching to location
          */
-        city?: string;
-        cityTownVillageSuffix?: string;
+        "city"?: string;
+        "cityTownVillageSuffix"?: string;
         /**
-         * County for matching to location
+          * County for matching to location
          */
-        county?: string;
+        "county"?: string;
         /**
-         * Complete form data, if available, for `ptp-info-jurisdiction`
+          * Complete form data, if available, for `ptp-info-jurisdiction`
          */
-        formData?: PtpFormData;
+        "formData"?: PtpFormData;
         /**
-         * ID or Slug of jurisdiction for Work Elections. Use in place of `state`, `county`, and `city`
+          * ID or Slug of jurisdiction for Work Elections. Use in place of `state`, `county`, and `city`
          */
-        jurisdictionIdOrSlug?: string | number;
+        "jurisdictionIdOrSlug"?: string | number;
         /**
-         * If `true`, this component will lso render 1-3 bullet items indicating the next steps for the user
+          * If `true`, this component will lso render 1-3 bullet items indicating the next steps for the user
          */
-        showNextSteps?: boolean;
+        "showNextSteps"?: boolean;
         /**
-         * State for matching to location
+          * State for matching to location
          */
-        state?: string;
+        "state"?: string;
     }
     /**
      * When we have no specific polling jurisdiction for a user and just their state we
@@ -355,18 +344,18 @@ declare namespace LocalJSX {
      */
     interface PtpInfoState {
         /**
-         * State abbreviation
+          * State abbreviation
          */
-        state?: string;
+        "state"?: string;
     }
     interface UiGeojsonToSvg {
-        geoJson?: GeoJSON;
-        height?: number;
-        options?: Options;
-        width?: number;
+        "geoJson"?: GeoJSON;
+        "height"?: number;
+        "options"?: Options;
+        "width"?: number;
     }
     interface UiLoadingSpinner {
-        small?: boolean;
+        "small"?: boolean;
     }
     interface IntrinsicElements {
         "email-application-form": EmailApplicationForm;
@@ -387,45 +376,36 @@ declare module "@stencil/core" {
             /**
              * Email application that will only render if there is no application link for the jurisdiction
              */
-            "email-application-form": LocalJSX.EmailApplicationForm &
-                JSXBase.HTMLAttributes<HTMLEmailApplicationFormElement>;
+            "email-application-form": LocalJSX.EmailApplicationForm & JSXBase.HTMLAttributes<HTMLEmailApplicationFormElement>;
             /**
              * An input and (optional) select element for a US postal address and state which will look up address values based on
              * the user's input to allow the user to select from.
              */
-            "input-address": LocalJSX.InputAddress &
-                JSXBase.HTMLAttributes<HTMLInputAddressElement>;
+            "input-address": LocalJSX.InputAddress & JSXBase.HTMLAttributes<HTMLInputAddressElement>;
             /**
              * Render a `<select>` if `options` has values, else render `<input type="hidden">` with `selected` as the value.
              */
-            "input-possibly-hidden-select": LocalJSX.InputPossiblyHiddenSelect &
-                JSXBase.HTMLAttributes<HTMLInputPossiblyHiddenSelectElement>;
+            "input-possibly-hidden-select": LocalJSX.InputPossiblyHiddenSelect & JSXBase.HTMLAttributes<HTMLInputPossiblyHiddenSelectElement>;
             /**
              * The Power the Polls sign-up form.
              */
-            "power-the-polls-form": LocalJSX.PowerThePollsForm &
-                JSXBase.HTMLAttributes<HTMLPowerThePollsFormElement>;
+            "power-the-polls-form": LocalJSX.PowerThePollsForm & JSXBase.HTMLAttributes<HTMLPowerThePollsFormElement>;
             /**
              * Component to render work elections jurisdiction data.
              */
-            "ptp-info-jurisdiction": LocalJSX.PtpInfoJurisdiction &
-                JSXBase.HTMLAttributes<HTMLPtpInfoJurisdictionElement>;
+            "ptp-info-jurisdiction": LocalJSX.PtpInfoJurisdiction & JSXBase.HTMLAttributes<HTMLPtpInfoJurisdictionElement>;
             /**
              * Display state or specific jurisdiction information for poll workers based on whether
              * the provided `state`, `county`, and `city` match a jurisdiction or not.
              */
-            "ptp-info-poll-worker": LocalJSX.PtpInfoPollWorker &
-                JSXBase.HTMLAttributes<HTMLPtpInfoPollWorkerElement>;
+            "ptp-info-poll-worker": LocalJSX.PtpInfoPollWorker & JSXBase.HTMLAttributes<HTMLPtpInfoPollWorkerElement>;
             /**
              * When we have no specific polling jurisdiction for a user and just their state we
              * display a list of all the counties for them to choose from.
              */
-            "ptp-info-state": LocalJSX.PtpInfoState &
-                JSXBase.HTMLAttributes<HTMLPtpInfoStateElement>;
-            "ui-geojson-to-svg": LocalJSX.UiGeojsonToSvg &
-                JSXBase.HTMLAttributes<HTMLUiGeojsonToSvgElement>;
-            "ui-loading-spinner": LocalJSX.UiLoadingSpinner &
-                JSXBase.HTMLAttributes<HTMLUiLoadingSpinnerElement>;
+            "ptp-info-state": LocalJSX.PtpInfoState & JSXBase.HTMLAttributes<HTMLPtpInfoStateElement>;
+            "ui-geojson-to-svg": LocalJSX.UiGeojsonToSvg & JSXBase.HTMLAttributes<HTMLUiGeojsonToSvgElement>;
+            "ui-loading-spinner": LocalJSX.UiLoadingSpinner & JSXBase.HTMLAttributes<HTMLUiLoadingSpinnerElement>;
         }
     }
 }
