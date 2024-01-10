@@ -65,7 +65,7 @@ function getSQL(jurisdictionName, state, jurisdictionType) {
    // language=MySQL
    if (jurisdictionType == "County") {
       console.log(
-         `That is a county-- ${jurisdictionType} named ${jurisdictionName}`,
+         `That is a county-- ${jurisdictionType} named ${jurisdictionName} in ${state}`,
       );
       return `SELECT u.first_name
      , u.last_name
@@ -132,7 +132,7 @@ function getBody({
 }) {
    return {
       name: `Power the Polls Test Election Admin Report 1: ${jurisdictionName} ${jurisdictionType}`,
-      short_name: `test_admin_0`,
+      short_name: `test_admin_1`,
       description: `election admin report`,
       sql: getSQL(jurisdictionName, state, jurisdictionType),
       run_every: frequency,
