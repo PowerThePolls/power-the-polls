@@ -100,8 +100,8 @@ function sanitizeEmails(emails) {
 }
 
 function getBody({
-   admin,
-   State,
+   name,
+   state,
    jurisdictionName,
    jurisdictionType,
    frequency,
@@ -110,8 +110,8 @@ function getBody({
    return {
       name: `Power the Polls Test Election Admin Report 1: ${organization}`,
       short_name: `test_admin_0`,
-      description: sourceCodes[0],
-      sql: getSQL(sourceCodes, jurisdictionName, jurisdictionType),
+      description: `election admin report`,
+      sql: getSQL(name, jurisdictionName, state, jurisdictionType),
       run_every: frequency,
       to_emails: emails.replace(/ /g, ""),
       email_always_csv: true,
@@ -127,8 +127,10 @@ async function createReport(reportConfig) {
 
 function getReportConfig(admin) {
    return {
-      organization: admin.get("organization").trim(),
-      sourceCodes: [admin.get("source_code").trim()],
+      name: admin.get("name"),
+      jurisdictionName: admin.get("Jurisdiction Name"),
+      state: admin.get("State"),
+      jurisdictionType: admin.get("Jurisdiction Type"),
       frequency: getFrequency(admin),
       emails: sanitizeEmails(admin.get("Emails")),
    };
@@ -157,10 +159,10 @@ async function createNewReports(approvedAdmins, reportList) {
       if (hasReportEmails(admin)) {
          try {
             await createReport(getReportConfig(admin));
-            console.log("Report created for: ", admin.get("organization"));
+            console.log("Report created for: ", admin.get("Name"));
          } catch (e) {
             errorThrown = true;
-            console.log("Error processing: ", admin.get("organization"));
+            console.log("Error processing: ", admin.get("Name"));
             console.error(e);
          }
       } else {
