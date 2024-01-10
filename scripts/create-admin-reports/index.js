@@ -185,7 +185,7 @@ function getBody({
    }
    return {
       name: name,
-      short_name: `election-admin-report-${jurisdictionName.replace(/\s/g, '')}-${jurisdictionType}`,
+      short_name: `election-admin-report-2024-${jurisdictionName.replace(/\s/g, '')}-${jurisdictionType}`,
       description: description,
       sql: getSQL(jurisdictionName, state, jurisdictionType),
       run_every: frequency,
