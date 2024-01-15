@@ -4,12 +4,12 @@ import Airtable from "airtable";
 async function getApprovedRecords() {
    const base = new Airtable().base("appwfzqCbSifnwrme");
    const fields = [
-      "Name",
-      "Jurisdiction Name",
       "State",
+      "Jurisdiction Name",
       "Jurisdiction Type",
       "Emails",
       "report_frequency",
+      "Report Requested",
    ];
    return base("Election Administrators").select({ fields }).all();
 }
@@ -209,9 +209,8 @@ async function createReport(reportConfig) {
 
 function getReportConfig(admin) {
    return {
-      name: admin.get("Name"),
-      jurisdictionName: admin.get("Jurisdiction Name"),
       state: admin.get("State"),
+      jurisdictionName: admin.get("Jurisdiction Name"),
       jurisdictionType: admin.get("Jurisdiction Type"),
       frequency: getFrequency(admin),
       emails: sanitizeEmails(admin.get("Emails")),
@@ -219,7 +218,7 @@ function getReportConfig(admin) {
 }
 
 function logAdmins(admin) {
-   const sourceCodes = admin.map((admin) => admin.get("Name"));
+   const sourceCodes = admin.map((admin) => admin.get("Jurisdiction Name"));
    console.log(JSON.stringify(sourceCodes, null, 2));
 }
 
@@ -228,7 +227,7 @@ async function createNewReports(approvedAdmins, reportList) {
 
    const newAdmins = approvedAdmins.filter((admin) => {
       const found = reportList.find(
-         (report) => report.description === admin.get("Name"),
+         (report) => report.description === admin.get("Jurisdiction Name"),
       );
       return !found;
    });
@@ -241,14 +240,14 @@ async function createNewReports(approvedAdmins, reportList) {
       if (hasReportEmails(admin)) {
          try {
             await createReport(getReportConfig(admin));
-            console.log("Report created for: ", admin.get("Name"));
+            console.log("Report created for: ", admin.get("Jurisdiction Name"));
          } catch (e) {
             errorThrown = true;
-            console.log("Error processing: ", admin.get("Name"));
+            console.log("Error processing: ", admin.get("Jurisdiction Name"));
             console.error(e);
          }
       } else {
-         console.log("No report emails found for: ", admin.get("Name"));
+         console.log("No report emails found for: ", admin.get("Jurisdiction Name"));
       }
    }
    return errorThrown;
@@ -297,7 +296,7 @@ async function updateModifiedReports(approvedAdmins, reportList) {
 
    const modifiedAdmins = approvedAdmins.reduce((modified, admin) => {
       const report = reportList.find(
-         (report) => report.description === admin.get("jurisdictionName"),
+         (report) => report.description === admin.get("Jurisdiction Name"),
       );
       if (!report || !isModified(admin, report)) {
          return modified;
