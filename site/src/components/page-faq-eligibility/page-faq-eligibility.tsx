@@ -17,7 +17,7 @@ export class PageFaqEligibility {
    }[];
 
    public render() {
-      //TODO: fix data rendering (if still relevant after FAQ redesign)
+      // TODO: fix data rendering (if still relevant after FAQ redesign)
       // const data = this.data || [];
       // return (
       //    <Host>
