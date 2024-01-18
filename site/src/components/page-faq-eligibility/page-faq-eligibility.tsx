@@ -18,39 +18,39 @@ export class PageFaqEligibility {
 
    public render() {
       // TODO: fix data rendering (if still relevant after FAQ redesign)
-      // const data = this.data || [];
-      // return (
-      //    <Host>
-      //       <a href="/faq">
-      //          <button class="back-button">Back</button>
-      //       </a>
-      //       <h1>ELIGIBILITY FAQS</h1>
-      //       {data.map(({ sectionTitle, questions }) => (
-      //          <question-section
-      //             key={sectionTitle}
-      //             sectionTitle={sectionTitle}
-      //             questions={questions}
-      //          />
-      //       ))}
-      //       <p>
-      //          <a
-      //             href="https://www.powerthepolls.org/faq-application-status"
-      //             target="_self"
-      //          >
-      //             {" "}
-      //             Application Status FAQs
-      //          </a>
-      //       </p>
-      //       <p>
-      //          <a
-      //             href="https://www.powerthepolls.org/faq-poll-worker"
-      //             target="_self"
-      //          >
-      //             {" "}
-      //             Poll Worker FAQs
-      //          </a>
-      //       </p>
-      //    </Host>
-      // );
+      const data = this.data || [];
+      return (
+         <Host>
+            <a href="/faq">
+               <button class="back-button">Back</button>
+            </a>
+            <h1>ELIGIBILITY FAQS</h1>
+            {data.map(({ sectionTitle, questions }) => (
+               <question-section
+                  key={sectionTitle}
+                  sectionTitle={sectionTitle}
+                  questions={questions}
+               />
+            ))}
+            <p>
+               <a
+                  href="https://www.powerthepolls.org/faq-application-status"
+                  target="_self"
+               >
+                  {" "}
+                  Application Status FAQs
+               </a>
+            </p>
+            <p>
+               <a
+                  href="https://www.powerthepolls.org/faq-poll-worker"
+                  target="_self"
+               >
+                  {" "}
+                  Poll Worker FAQs
+               </a>
+            </p>
+         </Host>
+      );
    }
 }
