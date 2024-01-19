@@ -12,13 +12,6 @@ export namespace Components {
     }
     interface ComponentList {
     }
-    interface ContactForm {
-        "formError": boolean;
-        "submitForm"?: ( e: Event ) => void;
-    }
-    interface ContactModal {
-        "isOpen": boolean;
-    }
     interface PageAbout {
     }
     interface PageAllMedia {
@@ -43,19 +36,25 @@ export namespace Components {
         /**
           * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
          */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+        "data"?: {
+      sectionTitle: string;
+      questions: { question: string; answer: () => string }[];
+   }[];
     }
     interface PageFaqEligibility {
         /**
           * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
          */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+        "data"?: {
+      sectionTitle: string;
+      questions: { question: string; answer: () => string }[];
+   }[];
     }
     interface PageFaqEs {
         /**
           * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
          */
-        "data"?: { question: string, answer: string }[];
+        "data"?: { question: string; answer: string }[];
         /**
           * The page's title
          */
@@ -65,7 +64,10 @@ export namespace Components {
         /**
           * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
          */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+        "data"?: {
+      sectionTitle: string;
+      questions: { question: string; answer: () => string }[];
+   }[];
     }
     interface PageForm {
         /**
@@ -112,10 +114,6 @@ export namespace Components {
         "history": RouterHistory;
     }
     interface PageTestimonial {
-    }
-    interface QuestionSection {
-        "questions"?: { question: string, answer: () => string }[];
-        "sectionTitle"?: string;
     }
     interface UiH3Bar {
     }
@@ -186,18 +184,6 @@ declare global {
     var HTMLComponentListElement: {
         prototype: HTMLComponentListElement;
         new (): HTMLComponentListElement;
-    };
-    interface HTMLContactFormElement extends Components.ContactForm, HTMLStencilElement {
-    }
-    var HTMLContactFormElement: {
-        prototype: HTMLContactFormElement;
-        new (): HTMLContactFormElement;
-    };
-    interface HTMLContactModalElement extends Components.ContactModal, HTMLStencilElement {
-    }
-    var HTMLContactModalElement: {
-        prototype: HTMLContactModalElement;
-        new (): HTMLContactModalElement;
     };
     interface HTMLPageAboutElement extends Components.PageAbout, HTMLStencilElement {
     }
@@ -367,12 +353,6 @@ declare global {
         prototype: HTMLPageTestimonialElement;
         new (): HTMLPageTestimonialElement;
     };
-    interface HTMLQuestionSectionElement extends Components.QuestionSection, HTMLStencilElement {
-    }
-    var HTMLQuestionSectionElement: {
-        prototype: HTMLQuestionSectionElement;
-        new (): HTMLQuestionSectionElement;
-    };
     interface HTMLUiH3BarElement extends Components.UiH3Bar, HTMLStencilElement {
     }
     var HTMLUiH3BarElement: {
@@ -406,8 +386,6 @@ declare global {
     interface HTMLElementTagNameMap {
         "app-root": HTMLAppRootElement;
         "component-list": HTMLComponentListElement;
-        "contact-form": HTMLContactFormElement;
-        "contact-modal": HTMLContactModalElement;
         "page-about": HTMLPageAboutElement;
         "page-all-media": HTMLPageAllMediaElement;
         "page-all-press-releases": HTMLPageAllPressReleasesElement;
@@ -436,7 +414,6 @@ declare global {
         "page-resources": HTMLPageResourcesElement;
         "page-search": HTMLPageSearchElement;
         "page-testimonial": HTMLPageTestimonialElement;
-        "question-section": HTMLQuestionSectionElement;
         "ui-h3-bar": HTMLUiH3BarElement;
         "ui-impact-box": HTMLUiImpactBoxElement;
         "ui-menu-button": HTMLUiMenuButtonElement;
@@ -448,14 +425,6 @@ declare namespace LocalJSX {
     interface AppRoot {
     }
     interface ComponentList {
-    }
-    interface ContactForm {
-        "formError"?: boolean;
-        "submitForm"?: ( e: Event ) => void;
-    }
-    interface ContactModal {
-        "isOpen"?: boolean;
-        "onClose"?: (event: CustomEvent<any>) => void;
     }
     interface PageAbout {
     }
@@ -481,19 +450,25 @@ declare namespace LocalJSX {
         /**
           * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
          */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+        "data"?: {
+      sectionTitle: string;
+      questions: { question: string; answer: () => string }[];
+   }[];
     }
     interface PageFaqEligibility {
         /**
           * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
          */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+        "data"?: {
+      sectionTitle: string;
+      questions: { question: string; answer: () => string }[];
+   }[];
     }
     interface PageFaqEs {
         /**
           * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
          */
-        "data"?: { question: string, answer: string }[];
+        "data"?: { question: string; answer: string }[];
         /**
           * The page's title
          */
@@ -503,7 +478,10 @@ declare namespace LocalJSX {
         /**
           * A list of entries to display in the FAQ see: FaqData.ts see: app-root.tsx
          */
-        "data"?: { sectionTitle: string, questions: { question: string, answer: () => string }[] }[];
+        "data"?: {
+      sectionTitle: string;
+      questions: { question: string; answer: () => string }[];
+   }[];
     }
     interface PageForm {
         /**
@@ -550,10 +528,6 @@ declare namespace LocalJSX {
         "history": RouterHistory;
     }
     interface PageTestimonial {
-    }
-    interface QuestionSection {
-        "questions"?: { question: string, answer: () => string }[];
-        "sectionTitle"?: string;
     }
     interface UiH3Bar {
     }
@@ -615,8 +589,6 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "app-root": AppRoot;
         "component-list": ComponentList;
-        "contact-form": ContactForm;
-        "contact-modal": ContactModal;
         "page-about": PageAbout;
         "page-all-media": PageAllMedia;
         "page-all-press-releases": PageAllPressReleases;
@@ -645,7 +617,6 @@ declare namespace LocalJSX {
         "page-resources": PageResources;
         "page-search": PageSearch;
         "page-testimonial": PageTestimonial;
-        "question-section": QuestionSection;
         "ui-h3-bar": UiH3Bar;
         "ui-impact-box": UiImpactBox;
         "ui-menu-button": UiMenuButton;
@@ -659,8 +630,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "component-list": LocalJSX.ComponentList & JSXBase.HTMLAttributes<HTMLComponentListElement>;
-            "contact-form": LocalJSX.ContactForm & JSXBase.HTMLAttributes<HTMLContactFormElement>;
-            "contact-modal": LocalJSX.ContactModal & JSXBase.HTMLAttributes<HTMLContactModalElement>;
             "page-about": LocalJSX.PageAbout & JSXBase.HTMLAttributes<HTMLPageAboutElement>;
             "page-all-media": LocalJSX.PageAllMedia & JSXBase.HTMLAttributes<HTMLPageAllMediaElement>;
             "page-all-press-releases": LocalJSX.PageAllPressReleases & JSXBase.HTMLAttributes<HTMLPageAllPressReleasesElement>;
@@ -689,7 +658,6 @@ declare module "@stencil/core" {
             "page-resources": LocalJSX.PageResources & JSXBase.HTMLAttributes<HTMLPageResourcesElement>;
             "page-search": LocalJSX.PageSearch & JSXBase.HTMLAttributes<HTMLPageSearchElement>;
             "page-testimonial": LocalJSX.PageTestimonial & JSXBase.HTMLAttributes<HTMLPageTestimonialElement>;
-            "question-section": LocalJSX.QuestionSection & JSXBase.HTMLAttributes<HTMLQuestionSectionElement>;
             "ui-h3-bar": LocalJSX.UiH3Bar & JSXBase.HTMLAttributes<HTMLUiH3BarElement>;
             "ui-impact-box": LocalJSX.UiImpactBox & JSXBase.HTMLAttributes<HTMLUiImpactBoxElement>;
             "ui-menu-button": LocalJSX.UiMenuButton & JSXBase.HTMLAttributes<HTMLUiMenuButtonElement>;

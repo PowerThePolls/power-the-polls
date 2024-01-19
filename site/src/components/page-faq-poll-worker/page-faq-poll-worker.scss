@@ -1,5 +1,23 @@
 page-faq-poll-worker {
 
+   .accordion {
+      display: block;
+      border: solid 1px black;
+      margin: 1rem;
+   }
+
+   .accordion__title {
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+   }
+
+   .accordion__content {
+      padding: 0.5rem 1rem 1rem;
+      p:last-child {
+         margin: 0;
+      }
+   }
+
    input[type=submit]{
     font-family: 'Orator Std';
    }

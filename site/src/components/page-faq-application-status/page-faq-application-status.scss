@@ -1,7 +1,24 @@
 page-faq-application-status {
+   .accordion {
+      display: block;
+      border: solid 1px black;
+      margin: 1rem;
+   }
 
-   input[type=submit]{
-    font-family: 'Orator Std';
+   .accordion__title {
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+   }
+
+   .accordion__content {
+      padding: 0.5rem 1rem 1rem;
+      p:last-child {
+         margin: 0;
+      }
+   }
+
+   input[type="submit"] {
+      font-family: "Orator Std";
    }
 
    .back-button {
@@ -15,15 +32,15 @@ page-faq-application-status {
    }
 
    h2 {
-      padding-top: .5em;
+      padding-top: 0.5em;
       font-size: 30px;
-      color: #FF5554;
+      color: #ff5554;
    }
 
    p {
-      display:block;
+      display: block;
       font-size: 20px;
-      padding: .5em;
+      padding: 0.5em;
    }
 
    a > h3 {
