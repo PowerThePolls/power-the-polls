@@ -76,15 +76,6 @@ const data: { sectionTitle: string, questions: { question: string, answer: Funct
                     polls.
                 </p>,
             },
-            {
-                question: "When will the training start?",
-                answer: () => <p>
-                    Check in to see if your local administrator has posted new training information. In some places,
-                    there are online trainings you can start immediately, though many may not be scheduled until closer
-                    to the election. If there is no information about training online, reach out to your election
-                    administrator directly to ask when training is and how to schedule yourself to attend.
-                </p>,
-            },
         ],
     },
     {
