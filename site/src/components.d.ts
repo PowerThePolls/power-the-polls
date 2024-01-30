@@ -96,6 +96,8 @@ export namespace Components {
     }
     interface PagePressRelease20240130 {
     }
+    interface PagePressRelease20240130Es {
+    }
     interface PagePressReleaseFive {
     }
     interface PagePressReleaseFour {
@@ -301,6 +303,12 @@ declare global {
         prototype: HTMLPagePressRelease20240130Element;
         new (): HTMLPagePressRelease20240130Element;
     };
+    interface HTMLPagePressRelease20240130EsElement extends Components.PagePressRelease20240130Es, HTMLStencilElement {
+    }
+    var HTMLPagePressRelease20240130EsElement: {
+        prototype: HTMLPagePressRelease20240130EsElement;
+        new (): HTMLPagePressRelease20240130EsElement;
+    };
     interface HTMLPagePressReleaseFiveElement extends Components.PagePressReleaseFive, HTMLStencilElement {
     }
     var HTMLPagePressReleaseFiveElement: {
@@ -413,6 +421,7 @@ declare global {
         "page-partners-table": HTMLPagePartnersTableElement;
         "page-press-release-2023-03-28": HTMLPagePressRelease20230328Element;
         "page-press-release-2024-01-30": HTMLPagePressRelease20240130Element;
+        "page-press-release-2024-01-30-es": HTMLPagePressRelease20240130EsElement;
         "page-press-release-five": HTMLPagePressReleaseFiveElement;
         "page-press-release-four": HTMLPagePressReleaseFourElement;
         "page-press-release-one": HTMLPagePressReleaseOneElement;
@@ -519,6 +528,8 @@ declare namespace LocalJSX {
     }
     interface PagePressRelease20240130 {
     }
+    interface PagePressRelease20240130Es {
+    }
     interface PagePressReleaseFive {
     }
     interface PagePressReleaseFour {
@@ -619,6 +630,7 @@ declare namespace LocalJSX {
         "page-partners-table": PagePartnersTable;
         "page-press-release-2023-03-28": PagePressRelease20230328;
         "page-press-release-2024-01-30": PagePressRelease20240130;
+        "page-press-release-2024-01-30-es": PagePressRelease20240130Es;
         "page-press-release-five": PagePressReleaseFive;
         "page-press-release-four": PagePressReleaseFour;
         "page-press-release-one": PagePressReleaseOne;
@@ -661,6 +673,7 @@ declare module "@stencil/core" {
             "page-partners-table": LocalJSX.PagePartnersTable & JSXBase.HTMLAttributes<HTMLPagePartnersTableElement>;
             "page-press-release-2023-03-28": LocalJSX.PagePressRelease20230328 & JSXBase.HTMLAttributes<HTMLPagePressRelease20230328Element>;
             "page-press-release-2024-01-30": LocalJSX.PagePressRelease20240130 & JSXBase.HTMLAttributes<HTMLPagePressRelease20240130Element>;
+            "page-press-release-2024-01-30-es": LocalJSX.PagePressRelease20240130Es & JSXBase.HTMLAttributes<HTMLPagePressRelease20240130EsElement>;
             "page-press-release-five": LocalJSX.PagePressReleaseFive & JSXBase.HTMLAttributes<HTMLPagePressReleaseFiveElement>;
             "page-press-release-four": LocalJSX.PagePressReleaseFour & JSXBase.HTMLAttributes<HTMLPagePressReleaseFourElement>;
             "page-press-release-one": LocalJSX.PagePressReleaseOne & JSXBase.HTMLAttributes<HTMLPagePressReleaseOneElement>;
