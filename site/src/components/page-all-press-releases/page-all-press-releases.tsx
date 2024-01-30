@@ -22,7 +22,6 @@ export class PageAllPressReleases {
                         January 30, 2024.
                     </a>
                 </div>
-                ;
                 <div class="card">
                     <a
                         href="/press-release-2023-05-03"
