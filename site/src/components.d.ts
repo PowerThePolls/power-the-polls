@@ -303,7 +303,7 @@ declare global {
         prototype: HTMLPagePressRelease20240130Element;
         new (): HTMLPagePressRelease20240130Element;
     };
-    interface HTMLPagePressRelease20240130EsElement extends Components.PagePressRelease20240130, HTMLStencilElement {
+    interface HTMLPagePressRelease20240130EsElement extends Components.PagePressRelease20240130Es, HTMLStencilElement {
     }
     var HTMLPagePressRelease20240130EsElement: {
         prototype: HTMLPagePressRelease20240130EsElement;
