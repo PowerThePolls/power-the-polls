@@ -233,6 +233,10 @@ export class AppRoot {
             component: "page-all-media",
          },
          {
+            url: "/press-release-2024-01-30",
+            component: "page-press-release-2024-01-30",
+         },
+         {
             url: "/press-releases",
             component: "page-all-press-releases",
          },
