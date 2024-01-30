@@ -71,7 +71,7 @@ export class PagePressRelease20240130 {
                     toolkit graphics also include in-language alt text for
                     screen readers to help further enhance their accessibility.
                 </p>
-                <img src="/assets/images/resources/questions.png"></img>
+                <img src="/assets/images/resources/bilingual_toolkit_demo.png"></img>
                 <p>
                     The release of the toolkit reflects the increasing demand
                     for bilingual poll workers to serve diverse communities of
