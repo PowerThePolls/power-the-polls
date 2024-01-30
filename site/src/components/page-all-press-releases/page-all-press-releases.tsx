@@ -12,6 +12,19 @@ export class PageAllPressReleases {
                 <h2>Selected Press Releases</h2>
                 <div class="card">
                     <a
+                        href="/press-release-2024-01-30"
+                        rel="noopener noreferrer"
+                    >
+                        <h3>
+                            Power the Polls Announces New Bilingual Poll Worker
+                            Recruitment Toolkit{" "}
+                        </h3>{" "}
+                        January 30, 2024.
+                    </a>
+                </div>
+                ;
+                <div class="card">
+                    <a
                         href="/press-release-2023-05-03"
                         rel="noopener noreferrer"
                     >

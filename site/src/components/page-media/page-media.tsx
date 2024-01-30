@@ -15,6 +15,18 @@ export class PageMedia {
                 </div>
                 <div class="card">
                     <a
+                        href="/press-release-2024-01-30"
+                        rel="noopener noreferrer"
+                    >
+                        <h3>
+                            Power the Polls Announces New Bilingual Poll Worker
+                            Recruitment Toolkit{" "}
+                        </h3>{" "}
+                        January 30, 2024.
+                    </a>
+                </div>
+                <div class="card">
+                    <a
                         href="/press-release-2023-05-03"
                         rel="noopener noreferrer"
                     >
@@ -36,18 +48,6 @@ export class PageMedia {
                             Workers in Future Elections{" "}
                         </h3>{" "}
                         March 28, 2023.
-                    </a>
-                </div>
-                <div class="card">
-                    <a
-                        href="/press-release-2022-11-03"
-                        rel="noopener noreferrer"
-                    >
-                        <h3>
-                            Power the Polls Announces Recruitment of 265,000
-                            Potential Poll Workers Ahead of 2022 Election{" "}
-                        </h3>{" "}
-                        November 3, 2022.
                     </a>
                 </div>
                 <div class="button-container">

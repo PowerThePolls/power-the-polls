@@ -71,7 +71,7 @@ export class PagePressRelease20240130 {
                     toolkit graphics also include in-language alt text for
                     screen readers to help further enhance their accessibility.
                 </p>
-                <img src="/assets/images/resources/bilingual_toolkit_demo.png"></img>
+                <img src="/assets/images/bilingual_toolkit_demo.png"></img>
                 <p>
                     The release of the toolkit reflects the increasing demand
                     for bilingual poll workers to serve diverse communities of
@@ -204,7 +204,7 @@ export class PagePressRelease20240130 {
                     alternativo en su idioma para los lectores de pantalla, con
                     el fin de mejorar aún más su accesibilidad.
                 </p>
-                <img src="/assets/images/resources/bilingual_toolkit_demo_es.png"></img>
+                <img src="/assets/images/bilingual_toolkit_demo_es.png"></img>
                 <p>
                     La publicación del conjunto de herramientas refleja la
                     creciente demanda de trabajadores electorales bilingües para
