@@ -99,7 +99,9 @@ export class PagePressRelease20240130 {
                     </a>
                     .
                 </p>
-                <p class="divider">###</p>
+                <p class="divider">
+                    <b>###</b>
+                </p>
                 <p>
                     <b>About Power the Polls</b>
                     <br />
