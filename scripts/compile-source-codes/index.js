@@ -4,8 +4,8 @@ const Airtable = require("airtable");
 const getApprovedRecords = async () => {
    const base = new Airtable().base("appc14jHeQ2v7FhU9");
 
-   const filterByFormula = "{2022_status} = 'Approved'";
-   const fields = ["organization", "source_code", "2022_status"];
+   const filterByFormula = "{source_code_enabled} = 'Approved'";
+   const fields = ["organization", "source_code", "source_code_enabled"];
 
    return base("Partners").select({ filterByFormula, fields }).all();
 };
