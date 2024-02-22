@@ -3,9 +3,8 @@ import Airtable from "airtable";
 
 async function getApprovedRecords() {
    const base = new Airtable().base("appc14jHeQ2v7FhU9");
-   //const filterByFormula = "{report_status} = 'Approved'";
-   // add filter for 2023 reports, to be removed when all reports resume
-   const filterByFormula = "{2023_reports} = 'Active'";
+   // add filter for 2024 reports
+   const filterByFormula = "{2024_reports_enabled} = 'Approved'";
    const fields = [
       "organization",
       "report_type",
@@ -68,7 +67,6 @@ function getSQL(sourceCodes, isAggregate) {
    return isAggregate
       ? `SELECT count(1) AS signups
               , 'ALL' AS state
-              , 'ALL' AS city
               , sign_ups.source
          FROM core_user
          JOIN (SELECT user_id
@@ -76,13 +74,12 @@ function getSQL(sourceCodes, isAggregate) {
                     , min(created_at) AS created_at
                FROM core_action
                WHERE lower(source) IN (${convertArray(sourceCodes)})
-                 AND created_at > date('2020-12-31')
+                 AND created_at > date('2019-12-31')
                GROUP BY user_id, source) sign_ups
          ON core_user.id = sign_ups.user_id
          UNION
          (SELECT count(1) AS signups
                , core_user.state
-               , core_user.city
                , sign_ups.source
           FROM core_user
           JOIN (SELECT user_id
@@ -90,11 +87,14 @@ function getSQL(sourceCodes, isAggregate) {
                      , min(created_at) AS created_at
                 FROM core_action
                 WHERE lower(source) IN (${convertArray(sourceCodes)})
-                  AND created_at > date('2022-12-31')
+                  AND created_at > date('2019-12-31')
                 GROUP BY user_id, source) sign_ups
           ON core_user.id = sign_ups.user_id
-          GROUP BY core_user.state, core_user.city, sign_ups.source
-          ORDER BY core_user.state, core_user.city, sign_ups.source)`
+          GROUP BY core_user.state, sign_ups.source
+          ORDER BY core_user.state, sign_ups.source)
+ORDER BY
+case when state = 'ALL' then 0 else 1 end,
+  state;`
       : `SELECT sign_ups.created_at AS date_joined
               , core_user.first_name
               , core_user.last_name
@@ -139,7 +139,7 @@ function getSQL(sourceCodes, isAggregate) {
                     , min(created_at) AS created_at
                FROM core_action
                WHERE lower(source) IN (${convertArray(sourceCodes)})
-                 AND created_at > date('2022-12-31')
+                 AND created_at > date('2019-12-31')
                GROUP BY user_id, source) sign_ups
          ON core_user.id = sign_ups.user_id
 WHERE hostile.user_id IS NULL
@@ -174,8 +174,8 @@ function getBody({
    emails,
 }) {
    return {
-      name: `Power the Polls Report 2023: ${organization}`,
-      short_name: `PowerThePolls-${sourceCodes[0]}-report-updated-fix-2023`,
+      name: `Power the Polls Report 2024: ${organization}`,
+      short_name: `PowerThePolls-${sourceCodes[0]}-report-2024`,
       description: sourceCodes[0],
       sql: getSQL(sourceCodes, isAggregate),
       run_every: frequency,
