@@ -22,4 +22,3 @@ jobs:
           ACTION_KIT_USERNAME: ${{ secrets.ACTION_KIT_USERNAME }}
           ACTION_KIT_PASSWORD: ${{ secrets.ACTION_KIT_PASSWORD }}
           AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
-          AIRTABLE_PARTNERS_BASE: ${{ secrets.AIRTABLE_PARTNERS_BASE }}
