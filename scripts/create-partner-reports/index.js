@@ -65,12 +65,11 @@ async function getPartnerReportList() {
 function getSQL(sourceCodes, isAggregate) {
    // language=MySQL
    return isAggregate
-      ? ` <h2>Signup Totals by Year</h2>
-{% report 'signups_year' with (${convertArray(sourceCodes)}) as source %}
+      ? `<h2>Signup Totals by Year</h2>
+\{% report 'signups_year' with (${convertArray(sourceCodes)}) as source %\}
 
 <h2>2024 Signups by State</h2>
-{% report '2024_report_aggregate' with (${convertArray(sourceCodes)}) as source %}
-                 `
+\{% report '2024_report_aggregate' with (${convertArray(sourceCodes)}) as source %\}`
       : `SELECT sign_ups.created_at AS date_joined
               , core_user.first_name
               , core_user.last_name
@@ -337,3 +336,4 @@ try {
    console.error(e);
    process.exit(11);
 }
+
