@@ -150,8 +150,8 @@ function getBody({
 }) {
    if (isAggregate) {
       return {
-         name: `Power the Polls Report Test 1 2024: ${organization}`,
-         short_name: `PowerThePolls-${sourceCodes[0]}-report-test-1-2024`,
+         name: `Power the Polls Report Test 2 2024: ${organization}`,
+         short_name: `PowerThePolls-${sourceCodes[0]}-report-test-2-2024`,
          description: sourceCodes[0],
          template:  getSQL(sourceCodes, isAggregate),
          run_every: frequency,
@@ -162,8 +162,8 @@ function getBody({
       };
    } else {
       return {
-         name: `Power the Polls Report Test 1 2024: ${organization}`,
-         short_name: `PowerThePolls-${sourceCodes[0]}-report-test-1-2024`,
+         name: `Power the Polls Report Test 2 2024: ${organization}`,
+         short_name: `PowerThePolls-${sourceCodes[0]}-report-test-2-2024`,
          description: sourceCodes[0],
          sql: getSQL(sourceCodes, isAggregate),
          run_every: frequency,
