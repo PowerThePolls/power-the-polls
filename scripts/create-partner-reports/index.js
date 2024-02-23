@@ -330,7 +330,7 @@ async function run() {
 }
 
 try {
-   run();
+   await run();
    console.log("Done creating reports");
    process.exit(0);
 } catch (e) {
