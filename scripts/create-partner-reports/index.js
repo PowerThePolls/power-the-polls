@@ -57,7 +57,7 @@ async function getPartnerReportList() {
    let dashboardResponse = await callActionKit(`/rest/v1/dashboardreport?${getParams()}`);
    let response = [
       queryResponse,
-      dashboardResponse),
+      dashboardResponse,
    ];
    let reportList = response.objects;
    while (response.meta.next) {
