@@ -65,11 +65,11 @@ async function getPartnerReportList() {
 function getSQL(sourceCodes, isAggregate) {
    // language=MySQL
    return isAggregate
-      ? `<h2>Signup Totals by Year</h2>
-\{% report 'signups_year' with (${convertArray(sourceCodes)}) as source %\}
-
-<h2>2024 Signups by State</h2>
-\{% report '2024_report_aggregate' with (${convertArray(sourceCodes)}) as source %\}`
+      ? `<h2>Signup Totals by Year</h2> {% report 'signups_year' with (${convertArray(
+           sourceCodes,
+        )}) as source %}<h2>2024 Signups by State</h2>{% report '2024_report_aggregate' with (${convertArray(
+           sourceCodes,
+        )}) as source %}`
       : `SELECT sign_ups.created_at AS date_joined
               , core_user.first_name
               , core_user.last_name
@@ -148,10 +148,9 @@ function getBody({
    frequency,
    emails,
 }) {
-   if(isAggregate) {
    return {
-      name: `Power the Polls Report 2024: ${organization}`,
-      short_name: `PowerThePolls-${sourceCodes[0]}-report-fixed-2024`,
+      name: `Power the Polls Report Test 2024: ${organization}`,
+      short_name: `PowerThePolls-${sourceCodes[0]}-report-test-0-2024`,
       description: sourceCodes[0],
       sql: getSQL(sourceCodes, isAggregate),
       run_every: frequency,
@@ -160,26 +159,22 @@ function getBody({
       send_if_no_rows: false,
       categories: ["/rest/v1/reportcategory/18/"],
    };
-   } else {
-      return {
-      name: `Power the Polls Report 2024: ${organization}`,
-      short_name: `PowerThePolls-${sourceCodes[0]}-report-fixed-2024`,
-      description: sourceCodes[0],
-      template: getSQL(sourceCodes, isAggregate),
-      run_every: frequency,
-      to_emails: emails.replace(/ /g, ""),
-      email_always_csv: true,
-      send_if_no_rows: false,
-      categories: ["/rest/v1/reportcategory/18/"],
-   }
 }
 
 async function createReport(reportConfig) {
    const body = getBody(reportConfig);
    if (reportConfig.isAggregate) {
-   await callActionKit("/rest/v1/dashboardreport/", "post", JSON.stringify(body));
+      await callActionKit(
+         "/rest/v1/dashboardreport/",
+         "post",
+         JSON.stringify(body),
+      );
    } else {
-      await callActionKit("/rest/v1/queryreport/", "post", JSON.stringify(body));
+      await callActionKit(
+         "/rest/v1/queryreport/",
+         "post",
+         JSON.stringify(body),
+      );
    }
 }
 
@@ -263,19 +258,11 @@ function isModified(partner, report) {
 
 async function updateReport(reportId, reportConfig) {
    const body = getBody(reportConfig);
-   if (reportConfig.isAggregate) {
    await callActionKit(
-      `/rest/v1/dashboardreport/${reportId}`,
-      "patch",
-      JSON.stringify(body),
-   );
-   } else {
-      await callActionKit(
       `/rest/v1/queryreport/${reportId}`,
       "patch",
       JSON.stringify(body),
    );
-   }
 }
 
 async function updateModifiedReports(approvedPartners, reportList) {
@@ -336,4 +323,3 @@ try {
    console.error(e);
    process.exit(11);
 }
-
