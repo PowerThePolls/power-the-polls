@@ -1,8 +1,8 @@
 name: create partner reports
 
-on: # workflow_dispatch
-  schedule:
-    - cron: "0 * * * *" # run every hour
+on: workflow_dispatch
+ # schedule:
+ #   - cron: "0 * * * *" # run every hour
 
 jobs:
   build:
