@@ -148,9 +148,10 @@ function getBody({
    frequency,
    emails,
 }) {
+    if(isAggregate) {
    return {
-      name: `Power the Polls Report Test 2024: ${organization}`,
-      short_name: `PowerThePolls-${sourceCodes[0]}-report-test-0-2024`,
+      name: `Power the Polls Report Test 1 2024: ${organization}`,
+      short_name: `PowerThePolls-${sourceCodes[0]}-report-test-1-2024`,
       description: sourceCodes[0],
       sql: getSQL(sourceCodes, isAggregate),
       run_every: frequency,
@@ -159,6 +160,18 @@ function getBody({
       send_if_no_rows: false,
       categories: ["/rest/v1/reportcategory/18/"],
    };
+   } else {
+      return {
+      name: `Power the Polls Report Test 1 2024: ${organization}`,
+      short_name: `PowerThePolls-${sourceCodes[0]}-report-test-1-2024`,
+      description: sourceCodes[0],
+      template: getSQL(sourceCodes, isAggregate),
+      run_every: frequency,
+      to_emails: emails.replace(/ /g, ""),
+      email_always_csv: true,
+      send_if_no_rows: false,
+      categories: ["/rest/v1/reportcategory/18/"],
+   }
 }
 
 async function createReport(reportConfig) {
