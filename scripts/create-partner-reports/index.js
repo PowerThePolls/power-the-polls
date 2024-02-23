@@ -53,7 +53,7 @@ function getParams() {
 }
 
 async function getPartnerReportList() {
-   let response = await callActionKit(`/rest/v1/queryreport?${getParams()}`);
+   let response = [ await callActionKit(`/rest/v1/queryreport?${getParams()}`), await callActionKit(`/rest/v1/dashboardreport?${getParams()}`)];
    let reportList = response.objects;
    while (response.meta.next) {
       response = await callActionKit(response.meta.next);
@@ -65,36 +65,12 @@ async function getPartnerReportList() {
 function getSQL(sourceCodes, isAggregate) {
    // language=MySQL
    return isAggregate
-      ? `SELECT count(1) AS signups
-              , 'ALL' AS state
-              , sign_ups.source
-         FROM core_user
-         JOIN (SELECT user_id
-                    , source
-                    , min(created_at) AS created_at
-               FROM core_action
-               WHERE lower(source) IN (${convertArray(sourceCodes)})
-                 AND created_at > date('2019-12-31')
-               GROUP BY user_id, source) sign_ups
-         ON core_user.id = sign_ups.user_id
-         UNION
-         (SELECT count(1) AS signups
-               , core_user.state
-               , sign_ups.source
-          FROM core_user
-          JOIN (SELECT user_id
-                     , source
-                     , min(created_at) AS created_at
-                FROM core_action
-                WHERE lower(source) IN (${convertArray(sourceCodes)})
-                  AND created_at > date('2019-12-31')
-                GROUP BY user_id, source) sign_ups
-          ON core_user.id = sign_ups.user_id
-          GROUP BY core_user.state, sign_ups.source
-          ORDER BY core_user.state, sign_ups.source)
-ORDER BY
-case when state = 'ALL' then 0 else 1 end,
-  state;`
+      ? ` <h2>Signup Totals by Year</h2>
+{% report 'signups_year' with (${convertArray(sourceCodes)}) as source %}
+
+<h2>2024 Signups by State</h2>
+{% report '2024_report_aggregate' with (${convertArray(sourceCodes)}) as source %}
+                 `
       : `SELECT sign_ups.created_at AS date_joined
               , core_user.first_name
               , core_user.last_name
@@ -173,9 +149,10 @@ function getBody({
    frequency,
    emails,
 }) {
+   if(isAggregate) {
    return {
       name: `Power the Polls Report 2024: ${organization}`,
-      short_name: `PowerThePolls-${sourceCodes[0]}-report-2024`,
+      short_name: `PowerThePolls-${sourceCodes[0]}-report-fixed-2024`,
       description: sourceCodes[0],
       sql: getSQL(sourceCodes, isAggregate),
       run_every: frequency,
@@ -184,11 +161,27 @@ function getBody({
       send_if_no_rows: false,
       categories: ["/rest/v1/reportcategory/18/"],
    };
+   } else {
+      return {
+      name: `Power the Polls Report 2024: ${organization}`,
+      short_name: `PowerThePolls-${sourceCodes[0]}-report-fixed-2024`,
+      description: sourceCodes[0],
+      template: getSQL(sourceCodes, isAggregate),
+      run_every: frequency,
+      to_emails: emails.replace(/ /g, ""),
+      email_always_csv: true,
+      send_if_no_rows: false,
+      categories: ["/rest/v1/reportcategory/18/"],
+   }
 }
 
 async function createReport(reportConfig) {
    const body = getBody(reportConfig);
-   await callActionKit("/rest/v1/queryreport/", "post", JSON.stringify(body));
+   if (reportConfig.isAggregate) {
+   await callActionKit("/rest/v1/dashboardreport/", "post", JSON.stringify(body));
+   } else {
+      await callActionKit("/rest/v1/queryreport/", "post", JSON.stringify(body));
+   }
 }
 
 function getReportConfig(partner) {
@@ -271,11 +264,19 @@ function isModified(partner, report) {
 
 async function updateReport(reportId, reportConfig) {
    const body = getBody(reportConfig);
+   if (reportConfig.isAggregate) {
    await callActionKit(
+      `/rest/v1/dashboardreport/${reportId}`,
+      "patch",
+      JSON.stringify(body),
+   );
+   } else {
+      await callActionKit(
       `/rest/v1/queryreport/${reportId}`,
       "patch",
       JSON.stringify(body),
    );
+   }
 }
 
 async function updateModifiedReports(approvedPartners, reportList) {
