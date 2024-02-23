@@ -55,7 +55,7 @@ function getParams() {
 async function getPartnerReportList() {
    let queryResponse = await callActionKit(`/rest/v1/queryreport?${getParams()}`);
    let dashboardResponse = await callActionKit(`/rest/v1/dashboardreport?${getParams()}`);
-   let response = [
+   let response = await [
       queryResponse,
       dashboardResponse,
    ];
