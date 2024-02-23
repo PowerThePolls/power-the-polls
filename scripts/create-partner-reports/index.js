@@ -65,11 +65,11 @@ async function getPartnerReportList() {
 function getSQL(sourceCodes, isAggregate) {
    // language=MySQL
    return isAggregate
-      ? `<h2>Signup Totals by Year</h2> {% report 'signups_year' with (${convertArray(
+      ? `<h2>Signup Totals by Year</h2> {% report 'signups_year' with ${convertArray(
            sourceCodes,
-        )}) as source %}<h2>2024 Signups by State</h2>{% report '2024_report_aggregate' with (${convertArray(
+        )} as source %}<h2>2024 Signups by State</h2>{% report '2024_report_aggregate' with ${convertArray(
            sourceCodes,
-        )}) as source %}`
+        )} as source %}`
       : `SELECT sign_ups.created_at AS date_joined
               , core_user.first_name
               , core_user.last_name
@@ -150,8 +150,8 @@ function getBody({
 }) {
    if (isAggregate) {
       return {
-         name: `Power the Polls Report Test 2 2024: ${organization}`,
-         short_name: `PowerThePolls-${sourceCodes[0]}-report-test-2-2024`,
+         name: `Power the Polls Report 2024: ${organization}`,
+         short_name: `PowerThePolls-${sourceCodes[0]}-report-2024`,
          description: sourceCodes[0],
          template:  getSQL(sourceCodes, isAggregate),
          run_every: frequency,
@@ -162,8 +162,8 @@ function getBody({
       };
    } else {
       return {
-         name: `Power the Polls Report Test 2 2024: ${organization}`,
-         short_name: `PowerThePolls-${sourceCodes[0]}-report-test-2-2024`,
+         name: `Power the Polls Report 2024: ${organization}`,
+         short_name: `PowerThePolls-${sourceCodes[0]}-report-2024`,
          description: sourceCodes[0],
          sql: getSQL(sourceCodes, isAggregate),
          run_every: frequency,
