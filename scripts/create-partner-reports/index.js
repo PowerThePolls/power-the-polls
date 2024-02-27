@@ -129,7 +129,7 @@ function convertArray(array) {
 }
 
 function isAggregate(partner) {
-   return !partner.get("report_type").startsWith("List");
+   return !partner.get("report_type").startsWith("I would like");
 }
 
 function getFrequency(partner) {
