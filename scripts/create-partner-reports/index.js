@@ -48,7 +48,7 @@ async function callActionKit(path, method = "get", body) {
 function getParams() {
    const params = new URLSearchParams();
    params.set("_limit", "100");
-   params.set("categories__name", "partners");
+   params.set("categories__id__exact", "18");
    return params.toString();
 }
 
@@ -212,6 +212,9 @@ function logPartners(partners) {
 
 async function createNewReports(approvedPartners, reportList) {
    let errorThrown = false;
+
+   console.log("Reports List");
+   console.log(reportList);
 
    const newPartners = approvedPartners.filter((partner) => {
       const found = reportList.find(
