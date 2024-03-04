@@ -48,7 +48,7 @@ async function callActionKit(path, method = "get", body) {
 function getParams() {
    const params = new URLSearchParams();
    params.set("_limit", "100");
-   params.set("categories__id__exact", "18");
+   params.set("categories__name", "partners");
    return params.toString();
 }
 
