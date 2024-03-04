@@ -53,17 +53,7 @@ function getParams() {
 }
 
 async function getPartnerReportList() {
-    let response = await callActionKit(`/rest/v1/queryreport?${getParams()}`);
-    let reportList = response.objects;
-    while (response.meta.next) {
-       response = await callActionKit(response.meta.next);
-       reportList = reportList.concat(response.objects);
-   }
-   return reportList;
-}
-
-async function getDashboardPartnerReportList() {
-    let response = await callActionKit(`/rest/v1/dashboardreport?${getParams()}`);
+    let response = await callActionKit(`/rest/v1/report?${getParams()}`);
     let reportList = response.objects;
     while (response.meta.next) {
        response = await callActionKit(response.meta.next);
@@ -221,7 +211,7 @@ async function createNewReports(approvedPartners, reportList) {
    let errorThrown = false;
 
    console.log("Report List:");
-  console.log(reportList);
+   console.log(reportList);
 
    const newPartners = approvedPartners.filter((partner) => {
       const found = reportList.find(
@@ -327,11 +317,6 @@ async function run() {
 
    // get partner reports from ActionKit
    const reportList = await getPartnerReportList();
-
-   // get dashboard partner reports from ActionKit
-   const dashboardReportList = await getDashboardPartnerReportList();
-
-   reportList.concat(dashboardReportList);
 
    // create new reports
    const creatErrorThrown = await createNewReports(approvedRecords, reportList);
