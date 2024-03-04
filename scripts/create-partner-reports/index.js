@@ -220,6 +220,9 @@ function logPartners(partners) {
 async function createNewReports(approvedPartners, reportList) {
    let errorThrown = false;
 
+   console.log("Report List:");
+  console.log(reportList);
+
    const newPartners = approvedPartners.filter((partner) => {
       const found = reportList.find(
          (report) => report.description === partner.get("source_code"),
