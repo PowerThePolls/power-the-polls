@@ -129,7 +129,7 @@ function convertArray(array) {
 }
 
 function isAggregate(partner) {
-   return !partner.get("report_type").startsWith("List");
+   return !partner.get("report_type").startsWith("I would like");
 }
 
 function getFrequency(partner) {
@@ -154,7 +154,7 @@ function getBody({
    if (isAggregate) {
       return {
          name: `Power the Polls Report 2024: ${organization}`,
-         short_name: `PowerThePolls-${sourceCodes[0]}-report-2024`,
+         short_name: `PowerThePolls-${sourceCodes[0]}-report-agfix--2024`,
          description: sourceCodes[0],
          template:  getSQL(sourceCodes, isAggregate),
          run_every: frequency,
@@ -166,7 +166,7 @@ function getBody({
    } else {
       return {
          name: `Power the Polls Report 2024: ${organization}`,
-         short_name: `PowerThePolls-${sourceCodes[0]}-report-2024`,
+         short_name: `PowerThePolls-${sourceCodes[0]}-report-agfix-2024`,
          description: sourceCodes[0],
          sql: getSQL(sourceCodes, isAggregate),
          run_every: frequency,

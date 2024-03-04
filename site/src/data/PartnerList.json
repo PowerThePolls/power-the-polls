@@ -2780,6 +2780,9 @@
     "partnerId": "representus-ads",
     "name": "Represent Us - ADS only"
   },
+   {"partnerId": "representus-ads",
+    "name": "Represent Us - ADS only"
+   },
   {
     "partnerId": "HealingPolitics",
     "name": "Healing Politics"
@@ -2791,6 +2794,10 @@
    {
     "partnerId": "Vot-ER",
     "name": "Vot-ER"
+  },
+   {
+    "partnerId": "SMEF",
+    "name": "Supermajority Education Fund"
   },
    {
     "partnerId": "UnifyAmerica",
