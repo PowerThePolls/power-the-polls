@@ -2802,5 +2802,9 @@
    {
     "partnerId": "UnifyAmerica",
     "name": "Unify America"
-  }
+  },
+   {
+      "partnerId": "TheCivicTrust",
+      "name": "U.S. Chamber of Commerce Foundation"
+   }
 ]
