@@ -2248,7 +2248,7 @@
     "name": "CivicGeorgia"
   },
   {
-    "partnerId": "BGCA22",
+    "partnerId": "BGCA",
     "name": "Boys & Girls Clubs of America"
   },
   {
@@ -2802,5 +2802,25 @@
    {
     "partnerId": "UnifyAmerica",
     "name": "Unify America"
-  }
+  },
+   {
+      "partnerId": "TheCivicTrust",
+      "name": "U.S. Chamber of Commerce Foundation"
+   },
+   {
+      "partnerId": "MorePerfect",
+      "name": "More Perfect"
+   },
+    {
+      "partnerId": "MLCVEF",
+      "name": "Michigan League of Conservation Voters Education Fund"
+   },
+    {
+      "partnerId": "NYLCVEF",
+      "name": "New York League of Conservation Voters Education Fund"
+   },
+    {
+      "partnerId": "Catchafire",
+      "name": "Catchafire"
+   }
 ]
