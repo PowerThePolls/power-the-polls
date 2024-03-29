@@ -47,7 +47,7 @@ async function callActionKit(path, method = "get", body) {
 function getParams() {
    const params = new URLSearchParams();
    params.set("_limit", "100");
-   params.set("categories__name", "testing");
+   params.set("categories__name", "election_admin_automated_reports");
    return params.toString();
 }
 
