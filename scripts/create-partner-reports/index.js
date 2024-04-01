@@ -282,7 +282,7 @@ function isModified(partner, report) {
       to_emails,
       send_if_no_rows,
       categories,
-   } = report;
+   } = body;
 
    const reportBody = {
       name,
