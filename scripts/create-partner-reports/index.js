@@ -244,6 +244,16 @@ async function createNewReports(approvedPartners, reportList) {
 function isModified(partner, report) {
    const body = getBody(getReportConfig(partner));
 
+   const {
+      name,
+      short_name,
+      description,
+      run_every,
+      to_emails,
+      send_if_no_rows,
+      categories,
+   } = body;
+
    const reportBody = {
       name,
       short_name,
