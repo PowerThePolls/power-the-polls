@@ -256,7 +256,7 @@ async function updateReport(reportId, reportConfig) {
    const body = getBody(reportConfig);
    await callActionKit(
       `/rest/v1/queryreport/${reportId}`,
-      "patch",
+      "put",
       JSON.stringify(body),
    );
 }
