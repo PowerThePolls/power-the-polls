@@ -247,21 +247,15 @@ function isModified(partner, report) {
    const {
       name,
       short_name,
-      description,
       run_every,
       to_emails,
-      send_if_no_rows,
-      categories,
-   } = body;
+   } = report;
 
    const reportBody = {
-      name,
-      short_name,
-      description,
-      run_every,
-      to_emails,
-      send_if_no_rows,
-      categories,
+      name: report.name,
+      short_name: report.short_name,
+      run_every: report.run_every,
+      to_emails: report.to_emails,
    };
 
    console.log("TESTESTESBODY1" + JSON.stringify(body));
