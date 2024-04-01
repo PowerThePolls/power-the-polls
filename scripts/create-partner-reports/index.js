@@ -268,7 +268,7 @@ function isModified(partner, report) {
       categories,
    };
 
-   console.log("TESTESTESBODY1" + JSON.stringify(report));
+   console.log("TESTESTESBODY1" + JSON.stringify(body));
    console.log("TESTESTESBODY2" + JSON.stringify(reportBody));
 
    return JSON.stringify(body) !== JSON.stringify(reportBody);
