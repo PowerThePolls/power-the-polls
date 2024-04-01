@@ -245,23 +245,13 @@ async function createNewReports(approvedPartners, reportList) {
 }
 
 function isModified(partner, report) {
-   const body = getBody(getReportConfig(partner));
-   var obj1 = JSON.stringify(body);
-   var obj2 = JSON.stringify(reportBody);
-   const keys1 = Object.keys(obj1);
-   const keys2 = Object.keys(obj2);
+   const body1 = getBody(getReportConfig(partner));
+   const body2 = getBody(report);
 
-    if (keys1.length !== keys2.length) {
-        return true;
-    }
+   console.log("TESTESTESBODY1" + JSON.stringify(body1));
+   console.log("TESTESTESBODY2" + JSON.stringify(body2));
 
-    for (const key of keys1) {
-        if (obj1[key] !== obj2[key]) {
-            return true;
-        }
-    }
-
-    return false;
+   return JSON.stringify(body1) !== JSON.stringify(body2);
 }
 
 async function updateReport(reportId, reportConfig) {

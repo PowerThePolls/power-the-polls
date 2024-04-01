@@ -254,32 +254,9 @@ async function createNewReports(approvedAdmins, reportList) {
 }
 
 function isModified(admin, report) {
-   const body = getBody(getReportConfig(admin));
-
-   const {
-      name,
-      short_name,
-      description,
-      sql,
-      run_every,
-      to_emails,
-      email_always_csv,
-      send_if_no_rows,
-      categories,
-   } = report;
-
-   const reportBody = {
-      name,
-      short_name,
-      description,
-      sql,
-      run_every,
-      to_emails,
-      email_always_csv,
-      send_if_no_rows,
-      categories,
-   };
-   return JSON.stringify(body) !== JSON.stringify(reportBody);
+   const body1 = getBody(getReportConfig(admin));
+   const body2 = getBody(report);
+   return JSON.stringify(body1) !== JSON.stringify(body2);
 }
 
 async function updateReport(reportId, reportConfig) {
