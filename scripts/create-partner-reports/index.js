@@ -246,31 +246,22 @@ async function createNewReports(approvedPartners, reportList) {
 
 function isModified(partner, report) {
    const body = getBody(getReportConfig(partner));
+   var obj1 = JSON.stringify(body);
+   var obj2 = JSON.stringify(reportBody);
+   const keys1 = Object.keys(obj1);
+   const keys2 = Object.keys(obj2);
 
-   const {
-      name,
-      short_name,
-      description,
-      sql,
-      run_every,
-      to_emails,
-      email_always_csv,
-      send_if_no_rows,
-      categories,
-   } = report;
+    if (keys1.length !== keys2.length) {
+        return true;
+    }
 
-   const reportBody = {
-      name,
-      short_name,
-      description,
-      sql,
-      run_every,
-      to_emails,
-      email_always_csv,
-      send_if_no_rows,
-      categories,
-   };
-   return JSON.stringify(body) !== JSON.stringify(reportBody);
+    for (const key of keys1) {
+        if (obj1[key] !== obj2[key]) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 async function updateReport(reportId, reportConfig) {
