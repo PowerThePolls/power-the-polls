@@ -153,6 +153,7 @@ function getBody({
          name: `Power the Polls Report 2024: ${organization}`,
          short_name: `PowerThePolls-${sourceCodes[0]}-report-agfix--2024`,
          description: sourceCodes[0],
+         template:  getSQL(sourceCodes, isAggregate),
          run_every: frequency,
          to_emails: emails.replace(/ /g, ""),
          email_always_csv: true,
@@ -164,9 +165,40 @@ function getBody({
          name: `Power the Polls Report 2024: ${organization}`,
          short_name: `PowerThePolls-${sourceCodes[0]}-report-agfix-2024`,
          description: sourceCodes[0],
+         sql: getSQL(sourceCodes, isAggregate),
          run_every: frequency,
          to_emails: emails.replace(/ /g, ""),
          email_always_csv: true,
+         send_if_no_rows: false,
+         categories: ["/rest/v1/reportcategory/18/"],
+      };
+   }
+}
+
+function getModifiedBody({
+   organization,
+   sourceCodes,
+   isAggregate,
+   frequency,
+   emails,
+}) {
+   if (isAggregate) {
+      return {
+         name: `Power the Polls Report 2024: ${organization}`,
+         short_name: `PowerThePolls-${sourceCodes[0]}-report-agfix--2024`,
+         description: sourceCodes[0],
+         run_every: frequency,
+         to_emails: emails.replace(/ /g, ""),
+         send_if_no_rows: false,
+         categories: ["/rest/v1/reportcategory/18/"],
+      };
+   } else {
+      return {
+         name: `Power the Polls Report 2024: ${organization}`,
+         short_name: `PowerThePolls-${sourceCodes[0]}-report-agfix-2024`,
+         description: sourceCodes[0],
+         run_every: frequency,
+         to_emails: emails.replace(/ /g, ""),
          send_if_no_rows: false,
          categories: ["/rest/v1/reportcategory/18/"],
       };
@@ -240,16 +272,14 @@ async function createNewReports(approvedPartners, reportList) {
 }
 
 function isModified(partner, report) {
-   const body = getBody(getReportConfig(partner));
+   const body = getModifiedBody(getReportConfig(partner));
 
    const {
       name,
       short_name,
       description,
-      sql,
       run_every,
       to_emails,
-      email_always_csv,
       send_if_no_rows,
       categories,
    } = report;
@@ -258,10 +288,8 @@ function isModified(partner, report) {
       name,
       short_name,
       description,
-      sql,
       run_every,
       to_emails,
-      email_always_csv,
       send_if_no_rows,
       categories,
    };
