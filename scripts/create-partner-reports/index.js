@@ -244,24 +244,12 @@ async function createNewReports(approvedPartners, reportList) {
 function isModified(partner, report) {
    const body = getBody(getReportConfig(partner));
 
-   const {
-      name,
-      short_name,
-      run_every,
-      to_emails,
-   } = report;
-
-   const reportBody = {
-      name: report.name,
-      short_name: report.short_name,
-      run_every: report.run_every,
-      to_emails: report.to_emails,
-   };
-
-   console.log("TESTESTESBODY1" + JSON.stringify(body));
-   console.log("TESTESTESBODY2" + JSON.stringify(reportBody));
-
-   return JSON.stringify(body) !== JSON.stringify(reportBody);
+   return (
+      report.name !== body.name ||
+      report.short_name !== body.short_name ||
+      report.run_every !== body.run_every ||
+      report.to_emails !== body.to_emails
+   );
 }
 
 async function updateReport(reportId, reportConfig) {
