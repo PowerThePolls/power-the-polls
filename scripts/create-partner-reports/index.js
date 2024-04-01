@@ -53,11 +53,11 @@ function getParams() {
 }
 
 async function getPartnerReportList() {
-    let response = await callActionKit(`/rest/v1/report?${getParams()}`);
-    let reportList = response.objects;
-    while (response.meta.next) {
-       response = await callActionKit(response.meta.next);
-       reportList = reportList.concat(response.objects);
+   let response = await callActionKit(`/rest/v1/report?${getParams()}`);
+   let reportList = response.objects;
+   while (response.meta.next) {
+      response = await callActionKit(response.meta.next);
+      reportList = reportList.concat(response.objects);
    }
    return reportList;
 }
@@ -153,7 +153,7 @@ function getBody({
          name: `Power the Polls Report 2024: ${organization}`,
          short_name: `PowerThePolls-${sourceCodes[0]}-report-agfix--2024`,
          description: sourceCodes[0],
-         template:  getSQL(sourceCodes, isAggregate),
+         template: getSQL(sourceCodes, isAggregate),
          run_every: frequency,
          to_emails: emails.replace(/ /g, ""),
          email_always_csv: true,
@@ -258,10 +258,8 @@ function isModified(partner, report) {
       name,
       short_name,
       description,
-      sql,
       run_every,
       to_emails,
-      email_always_csv,
       send_if_no_rows,
       categories,
    };
