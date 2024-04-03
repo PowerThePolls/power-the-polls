@@ -24919,9 +24919,9 @@ const data: { [state: string]: StateInfo } = {
                     slug: "fauquier",
                 },
                 Fairfax: {
-                    id: 10386,
+                    id: 10387,
                     name: "Fairfax",
-                    slug: "fairfax-2",
+                    slug: "fairfax-3",
                 },
                 Essex: {
                     id: 10385,
