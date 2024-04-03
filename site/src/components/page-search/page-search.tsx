@@ -25,7 +25,13 @@ export class PageSearch {
 
          const city_town_village_suffix = util.WorkElections.getCityTownVillageSuffix(city_town_village);
 
-         this.history.push( "/info?" + util.toQueryString( { city, city_town_village_suffix, county, state } ) );
+         var queryString = "/info?" + util.toQueryString( { city, city_town_village_suffix, county, state } );
+
+         if(queryString == "info?city=Fairfax&city_town_village_suffix=&county=Fairfax%20City&state=VA") {
+            queryString = "info?city=Reston&city_town_village_suffix=&county=Fairfax&state=VA";
+         }
+
+         this.history.push(queryString);
 
          e.preventDefault();
          return false;
