@@ -24537,9 +24537,9 @@ const data: { [state: string]: StateInfo } = {
                     slug: "falls-church",
                 },
                 Fairfax: {
-                    id: 10386,
+                    id: 10387,
                     name: "Fairfax",
-                    slug: "fairfax-2",
+                    slug: "fairfax-3",
                 },
                 Emporia: {
                     id: 10384,
