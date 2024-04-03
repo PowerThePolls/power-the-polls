@@ -59,14 +59,6 @@ export class AddressInput {
       return Promise.resolve(this.m_state);
    }
 
-      private fairfaxCityZIPCodes: string[] = [
-      "22030",
-      "22031",
-      "22032",
-      "22034",
-      "22038",
-   ];
-
    public render() {
       const zipValidationRegex = /^\d{5}$/;
 
