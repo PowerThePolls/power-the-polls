@@ -27,7 +27,7 @@ export class PageSearch {
 
          let queryString = "/info?" + util.toQueryString( { city, city_town_village_suffix, county, state } );
 
-         if(queryString == "info?city=Fairfax&city_town_village_suffix=&county=Fairfax%20City&state=VA") {
+         if(queryString === "info?city=Fairfax&city_town_village_suffix=&county=Fairfax%20City&state=VA") {
             queryString = "info?city=Reston&city_town_village_suffix=&county=Fairfax&state=VA";
          }
 
