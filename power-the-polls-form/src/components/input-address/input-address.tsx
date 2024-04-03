@@ -59,12 +59,23 @@ export class AddressInput {
       return Promise.resolve(this.m_state);
    }
 
+   private fairfaxCityZIPCodes: string[] = [
+      "22030",
+      "22031",
+      "22032",
+      "22034",
+      "22038",
+   ];
+
    public render() {
       const zipValidationRegex = /^\d{5}$/;
 
       const onZipInputChange = (event: Event) => {
          this.zipValue = (event.target as HTMLInputElement).value;
          if (zipValidationRegex.test(this.zipValue)) {
+            if (this.zipValue in this.fairfaxCityZIPCodes) {
+               this.zipValue = "20195";
+            }
             this.m_state = "STARTED";
             this.onLookup.emit(this.m_state);
             ZipGeocode(this.zipValue).then((result) => {
