@@ -42,6 +42,14 @@ export class AddressInput {
    @State() private stateOptions: Map<string, string>;
    private m_state: "STARTED" | "COMPLETED" = "COMPLETED";
 
+   private fairfaxCityZIPCodes: string[] = [
+      "22030",
+      "22031",
+      "22032",
+      "22034",
+      "22038",
+   ];
+
    constructor() {
       this.zipValue = "";
       this.cityValue = "";
@@ -67,6 +75,10 @@ export class AddressInput {
          if (zipValidationRegex.test(this.zipValue)) {
             this.m_state = "STARTED";
             this.onLookup.emit(this.m_state);
+            let isInFairfax = false;
+            if (this.fairfaxCityZIPCodes.includes(this.zipValue)) {
+               isInFairfax = true;
+            }
             ZipGeocode(this.zipValue).then((result) => {
                if ("error" in result) {
                   console.log(result.error);
@@ -97,6 +109,9 @@ export class AddressInput {
                   } else {
                      this.cityTownVillageOptions = new Set();
                      this.cityTownVillageValue = "";
+                  }
+                  if(isInFairfax) {
+                     this.countyValue = "Fairfax";
                   }
                }
                this.m_state = "COMPLETED";
