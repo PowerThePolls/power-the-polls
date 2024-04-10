@@ -2822,5 +2822,21 @@
     {
       "partnerId": "Catchafire",
       "name": "Catchafire"
+   },
+    {
+      "partnerId": "ESBuchmanTestOrg",
+      "name": "ESBuchman's Test Org"
+   },
+    {
+      "partnerId": "ESBuchmanTestOrg",
+      "name": "ESBuchman's Test Org"
+   },
+    {
+      "partnerId": "ESBuchman",
+      "name": "BuchmanTest"
+   },
+    {
+      "partnerId": "ESBuchman",
+      "name": "BuchmanTest"
    }
 ]
