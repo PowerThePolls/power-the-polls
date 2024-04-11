@@ -2842,5 +2842,9 @@
     {
       "partnerId": "nationswell",
       "name": "NationSwell"
+   },
+    {
+      "partnerId": "AmericorpsAlumni",
+      "name": "AmeriCorps Alumni Democracy Project"
    }
 ]
