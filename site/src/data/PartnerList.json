@@ -2850,5 +2850,9 @@
     {
       "partnerId": "YoungGensVote",
       "name": "Young Gens Vote"
+   },
+    {
+      "partnerId": "UMD24",
+      "name": "UMD Poll Worker Recruitment Test"
    }
 ]
