@@ -2854,5 +2854,9 @@
     {
       "partnerId": "UMD24",
       "name": "UMD Poll Worker Recruitment Test"
+   },
+    {
+      "partnerId": "ipaper",
+      "name": "International Paper"
    }
 ]
