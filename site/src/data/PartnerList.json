@@ -2860,7 +2860,15 @@
       "name": "International Paper"
    },
     {
-      "partnerId": "WelcomingAmerica",
-      "name": "Welcoming America"
+      "partnerId": "Fulcrum",
+      "name": "Fulcrum"
+   },
+    {
+      "partnerId": "BigTentUSAa",
+      "name": "Big Tent USA"
+   },
+    {
+      "partnerId": "voteamericaa",
+      "name": "VoteAmerica"
    }
 ]
