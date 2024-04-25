@@ -2864,11 +2864,15 @@
       "name": "Fulcrum"
    },
     {
-      "partnerId": "BigTentUSAa",
+      "partnerId": "BigTentUSA",
       "name": "Big Tent USA"
    },
     {
-      "partnerId": "voteamericaa",
+      "partnerId": "voteamerica",
       "name": "VoteAmerica"
+   },
+    {
+      "partnerId": "AC",
+      "name": "PTP Advisory Council"
    }
 ]
