@@ -1,0 +1,33 @@
+.card {
+      border-bottom: 1px solid #F5F3F1;
+
+      a:link { text-decoration: none; }
+
+      a:visited { text-decoration: none; }
+
+      a:active { text-decoration: none; }
+
+      a:hover { text-decoration: underline; }
+
+      padding: 8px;
+
+      h3 {
+         color: #F5F3F1;
+         line-height: 38px;
+      }
+
+      a {
+         color: #F5F3F1;
+      }
+
+   }
+
+.council-description {
+   margin-top: 30px;
+   margin-bottom: 30px;
+   }
+
+.council-container {
+  display: inline-block;
+  border: 1px solid #ccc;
+}

@@ -88,6 +88,15 @@ const Nav: FunctionalComponent<NavProps> = ({
                </li>
                <li>
                   <stencil-route-link
+                     url="/advisory"
+                     urlMatch={["/advisory"]}
+                     onClick={onSelectNavItem}
+                  >
+                     Advisory Council
+                  </stencil-route-link>
+               </li>
+               <li>
+                  <stencil-route-link
                      url="/contact"
                      urlMatch={["/contact"]}
                      onClick={onSelectNavItem}
@@ -134,6 +143,13 @@ export class AppRoot {
          {
             url: "/about",
             component: "page-about",
+         },
+         {
+            url: "/advisory",
+            component: "page-advisory",
+            componentProps: {
+               pageTitle: "Advisory Council",
+            },
          },
          {
             // display all the components in the app in one pace

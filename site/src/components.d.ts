@@ -14,6 +14,12 @@ export namespace Components {
     }
     interface PageAbout {
     }
+    interface PageAdvisory {
+        /**
+          * The page's title
+         */
+        "pageTitle"?: string;
+    }
     interface PageAllMedia {
     }
     interface PageAllPressReleases {
@@ -194,6 +200,12 @@ declare global {
     var HTMLPageAboutElement: {
         prototype: HTMLPageAboutElement;
         new (): HTMLPageAboutElement;
+    };
+    interface HTMLPageAdvisoryElement extends Components.PageAdvisory, HTMLStencilElement {
+    }
+    var HTMLPageAdvisoryElement: {
+        prototype: HTMLPageAdvisoryElement;
+        new (): HTMLPageAdvisoryElement;
     };
     interface HTMLPageAllMediaElement extends Components.PageAllMedia, HTMLStencilElement {
     }
@@ -403,6 +415,7 @@ declare global {
         "app-root": HTMLAppRootElement;
         "component-list": HTMLComponentListElement;
         "page-about": HTMLPageAboutElement;
+        "page-advisory": HTMLPageAdvisoryElement;
         "page-all-media": HTMLPageAllMediaElement;
         "page-all-press-releases": HTMLPageAllPressReleasesElement;
         "page-contact": HTMLPageContactElement;
@@ -445,6 +458,12 @@ declare namespace LocalJSX {
     interface ComponentList {
     }
     interface PageAbout {
+    }
+    interface PageAdvisory {
+        /**
+          * The page's title
+         */
+        "pageTitle"?: string;
     }
     interface PageAllMedia {
     }
@@ -612,6 +631,7 @@ declare namespace LocalJSX {
         "app-root": AppRoot;
         "component-list": ComponentList;
         "page-about": PageAbout;
+        "page-advisory": PageAdvisory;
         "page-all-media": PageAllMedia;
         "page-all-press-releases": PageAllPressReleases;
         "page-contact": PageContact;
@@ -655,6 +675,7 @@ declare module "@stencil/core" {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "component-list": LocalJSX.ComponentList & JSXBase.HTMLAttributes<HTMLComponentListElement>;
             "page-about": LocalJSX.PageAbout & JSXBase.HTMLAttributes<HTMLPageAboutElement>;
+            "page-advisory": LocalJSX.PageAdvisory & JSXBase.HTMLAttributes<HTMLPageAdvisoryElement>;
             "page-all-media": LocalJSX.PageAllMedia & JSXBase.HTMLAttributes<HTMLPageAllMediaElement>;
             "page-all-press-releases": LocalJSX.PageAllPressReleases & JSXBase.HTMLAttributes<HTMLPageAllPressReleasesElement>;
             "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
