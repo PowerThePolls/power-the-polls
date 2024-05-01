@@ -48,15 +48,16 @@
 
 .quote-container {
    position: relative;
-    top: 43%;
+   top: 43%;
 }
 
 .quote {
-color: $color-accent;
-   width: 96%;
+   color: $color-accent;
+   width: 68%;
    text-align: justify;
     line-height: 1.6em;
-    margin: 20px auto;
+    margin: 5% 30% 0 39%;
+    padding-right:10%;
     font-size: 1.4em;
    quotes: "\201C" "\201D" "\2018" "\2019";
 

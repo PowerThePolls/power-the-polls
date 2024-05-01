@@ -15,6 +15,43 @@ interface CouncilMemberData {
 export class PageCouncilMember {
  @Prop() public match!: MatchResults;
 
+ public render() {
+    const memberName = this.match.params.memberName; // Extract route parameter
+
+    const memberData = this.councilData[memberName]; // Get the relevant data
+
+    if (!memberData) {
+      return (
+        <div class="council-member-page">
+          <button class="back-button" onClick={() => this.navigateBack()}>
+            Back
+          </button>
+          <div>Council member not found</div>
+        </div>
+      );
+    }
+
+    return (
+      <div class="council-member-page">
+      <div class="council-member-content">
+          <button class="back-button" onClick={() => this.navigateBack()}>
+            Back
+          </button>
+          <h1 class ="member-name">{memberName}</h1>
+          <img
+            class="headshot"
+            src={memberData.imgSrc}
+            alt={`Headshot of ${memberName}`}
+          />
+          <h2 class="council-title">{memberData.title}</h2>
+          <div class="quote-container">
+            <blockquote class="quote">{memberData.quote}</blockquote>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
  // Define quotes, titles, and images for each council member
   private councilData: { [key: string]: CouncilMemberData } = {
     "Kerry Washington": {
@@ -82,42 +119,5 @@ export class PageCouncilMember {
   // Navigate back to the previous page
   private navigateBack() {
     window.history.back();
-  }
-
-  public render() {
-    const memberName = this.match.params.memberName; // Extract route parameter
-
-    const memberData = this.councilData[memberName]; // Get the relevant data
-
-    if (!memberData) {
-      return (
-        <div class="council-member-page">
-          <button class="back-button" onClick={() => this.navigateBack()}>
-            Back
-          </button>
-          <div>Council member not found</div>
-        </div>
-      );
-    }
-
-    return (
-      <div class="council-member-page">
-      <div class="council-member-content">
-          <button class="back-button" onClick={() => this.navigateBack()}>
-            Back
-          </button>
-          <h1 class ="member-name">{memberName}</h1>
-          <img
-            class="headshot"
-            src={memberData.imgSrc}
-            alt={`Headshot of ${memberName}`}
-          />
-          <h2 class="council-title">{memberData.title}</h2>
-          <div class="quote-container">
-            <blockquote class="quote">{memberData.quote}</blockquote>
-          </div>
-        </div>
-      </div>
-    );
   }
 }
