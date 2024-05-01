@@ -1,0 +1,84 @@
+.back-button {
+   border: 0;
+   background-color: $color-font-highlight-contrast;
+   padding: 0.8em 1em;
+   margin: 1em 0em;
+   text-transform: uppercase;
+   font-weight: bold;
+   cursor: pointer;
+   margin-bottom: 5%;
+}
+
+.back-button:hover {
+   background-color: $color-background-app;
+   color: $color-font-highlight-contrast;
+   outline: 2px solid $color-font-highlight-contrast;
+}
+
+.council-member-content {
+   width: 60vw;
+}
+
+.council-title {
+   color: $color-font-highlight-contrast;
+}
+
+.cta-footer {
+   display: block;
+   clear: both;
+}
+
+.headshot {
+   margin: 0 10% 0 0;
+   object-fit: cover;
+   max-height: 400px;
+   width: 30%;
+   float: left;
+}
+
+.member-name {
+   text-transform: none;
+   margin-bottom: 5%;
+   color: $color-accent;
+   font-size: 5em;
+   font-weight: 800;
+   border-bottom: 2px solid #33a4ff;
+   width: 100vw;
+}
+
+.quote-container {
+   position: relative;
+    top: 43%;
+}
+
+.quote {
+color: $color-accent;
+   width: 96%;
+   text-align: justify;
+    line-height: 1.6em;
+    margin: 20px auto;
+    font-size: 1.4em;
+   quotes: "\201C" "\201D" "\2018" "\2019";
+
+   br {
+      line-height: -5%;
+   }
+}
+
+.quote:before {
+   content: open-quote;
+    font-weight: bold;
+    font-size:35px;
+    line-height: 110%;
+    color:#33a4ff;
+    padding: 20px;
+}
+
+.quote:after {
+   content: close-quote;
+    font-weight: bold;
+    font-size:35px;
+    line-height: 110%;
+    color:#33a4ff;
+    padding: 20px;
+}

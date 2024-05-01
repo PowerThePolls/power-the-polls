@@ -152,6 +152,10 @@ export class AppRoot {
             },
          },
          {
+            url: "/council-member/:memberName",
+            component:"page-council-member",
+         },
+         {
             // display all the components in the app in one pace
             url: "/dev",
             component: "component-list",

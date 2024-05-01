@@ -15,9 +15,6 @@ export namespace Components {
     interface PageAbout {
     }
     interface PageAdvisory {
-        /**
-          * The page's title
-         */
         "pageTitle"?: string;
     }
     interface PageAllMedia {
@@ -29,6 +26,9 @@ export namespace Components {
           * The page's title
          */
         "pageTitle"?: string;
+    }
+    interface PageCouncilMember {
+        "match": MatchResults;
     }
     interface PageElectionOfficials {
     }
@@ -225,6 +225,12 @@ declare global {
         prototype: HTMLPageContactElement;
         new (): HTMLPageContactElement;
     };
+    interface HTMLPageCouncilMemberElement extends Components.PageCouncilMember, HTMLStencilElement {
+    }
+    var HTMLPageCouncilMemberElement: {
+        prototype: HTMLPageCouncilMemberElement;
+        new (): HTMLPageCouncilMemberElement;
+    };
     interface HTMLPageElectionOfficialsElement extends Components.PageElectionOfficials, HTMLStencilElement {
     }
     var HTMLPageElectionOfficialsElement: {
@@ -419,6 +425,7 @@ declare global {
         "page-all-media": HTMLPageAllMediaElement;
         "page-all-press-releases": HTMLPageAllPressReleasesElement;
         "page-contact": HTMLPageContactElement;
+        "page-council-member": HTMLPageCouncilMemberElement;
         "page-election-officials": HTMLPageElectionOfficialsElement;
         "page-faq": HTMLPageFaqElement;
         "page-faq-application-status": HTMLPageFaqApplicationStatusElement;
@@ -460,9 +467,6 @@ declare namespace LocalJSX {
     interface PageAbout {
     }
     interface PageAdvisory {
-        /**
-          * The page's title
-         */
         "pageTitle"?: string;
     }
     interface PageAllMedia {
@@ -474,6 +478,9 @@ declare namespace LocalJSX {
           * The page's title
          */
         "pageTitle"?: string;
+    }
+    interface PageCouncilMember {
+        "match": MatchResults;
     }
     interface PageElectionOfficials {
     }
@@ -635,6 +642,7 @@ declare namespace LocalJSX {
         "page-all-media": PageAllMedia;
         "page-all-press-releases": PageAllPressReleases;
         "page-contact": PageContact;
+        "page-council-member": PageCouncilMember;
         "page-election-officials": PageElectionOfficials;
         "page-faq": PageFaq;
         "page-faq-application-status": PageFaqApplicationStatus;
@@ -679,6 +687,7 @@ declare module "@stencil/core" {
             "page-all-media": LocalJSX.PageAllMedia & JSXBase.HTMLAttributes<HTMLPageAllMediaElement>;
             "page-all-press-releases": LocalJSX.PageAllPressReleases & JSXBase.HTMLAttributes<HTMLPageAllPressReleasesElement>;
             "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
+            "page-council-member": LocalJSX.PageCouncilMember & JSXBase.HTMLAttributes<HTMLPageCouncilMemberElement>;
             "page-election-officials": LocalJSX.PageElectionOfficials & JSXBase.HTMLAttributes<HTMLPageElectionOfficialsElement>;
             "page-faq": LocalJSX.PageFaq & JSXBase.HTMLAttributes<HTMLPageFaqElement>;
             "page-faq-application-status": LocalJSX.PageFaqApplicationStatus & JSXBase.HTMLAttributes<HTMLPageFaqApplicationStatusElement>;

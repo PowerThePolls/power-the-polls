@@ -1,7 +1,13 @@
+.council-content:hover .council-name, .council-container.hover .council-name { color: #33A4FF; }
+
+.council-content:hover .council-title, .council-container.hover .council-title { color: #33A4FF; }
+
+.council-content:hover .council-headshot, .council-headshot.hover .council-headshot { outline: 3px solid #33A4FF;}
+
 .council-description {
    padding-bottom: 30px;
-   font-size: 1.5em;
-   width: 50vw;
+   font-size: 1em;
+   width: 40vw;
    text-align: justify;
    text-justify: inter-word;
 }
@@ -9,6 +15,7 @@
 .council-container {
   display: inline-flex;
   width: 65vw;
+  margin-left: -8%;
 }
 
 .council-headshot {
@@ -22,27 +29,25 @@
 }
 
 .council-content {
-   margin-top:2%;
+   margin:2% 1% 1% 1%;
    display: inline-block;
-   text-decoration: none;
    text-align: center;
    width: 20%;
+   a {
+      text-decoration: none;
+   }
 }
 
 .council-name {
    text-transform: uppercase;
    margin-bottom: 10%;
+   color: $color-accent;
+   font-size: 1.3em;
+   font-weight: 800;
 }
 
 .council-title {
    margin-top: 0;
-}
-
-.quote {
- width: 50vw;
- font-size: 1.5em;
- font-weight: 800;
- margin: 2%;
 }
 
 .right {
