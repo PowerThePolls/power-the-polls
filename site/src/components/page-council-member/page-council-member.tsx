@@ -13,10 +13,10 @@ interface CouncilMemberData {
   shadow: false,
 })
 export class PageCouncilMember {
-  @Prop() match!: MatchResults;
+  private @Prop() match!: MatchResults;
 
   // Navigate back to the previous page
-  navigateBack() {
+  private navigateBack() {
     window.history.back();
   }
 

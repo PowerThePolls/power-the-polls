@@ -153,7 +153,7 @@ export class AppRoot {
          },
          {
             url: "/council-member/:memberName",
-            component:"page-council-member",
+            component: "page-council-member",
          },
          {
             // display all the components in the app in one pace
