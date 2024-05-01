@@ -15,12 +15,7 @@ interface CouncilMemberData {
 export class PageCouncilMember {
  @Prop() public match!: MatchResults;
 
-  // Navigate back to the previous page
-  private navigateBack() {
-    window.history.back();
-  }
-
-  // Define quotes, titles, and images for each council member
+ // Define quotes, titles, and images for each council member
   private councilData: { [key: string]: CouncilMemberData } = {
     "Kerry Washington": {
       title: "Actress, Producer/Director, Activist",
@@ -83,6 +78,11 @@ export class PageCouncilMember {
       imgSrc: "/assets/images/council_headshots/TiffanyYu_APPROVED.jpg",
     },
   };
+
+  // Navigate back to the previous page
+  private navigateBack() {
+    window.history.back();
+  }
 
   public render() {
     const memberName = this.match.params.memberName; // Extract route parameter
