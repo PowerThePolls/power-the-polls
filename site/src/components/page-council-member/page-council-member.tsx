@@ -13,7 +13,7 @@ interface CouncilMemberData {
   shadow: false,
 })
 export class PageCouncilMember {
-  private @Prop() match!: MatchResults;
+ @Prop() public match!: MatchResults;
 
   // Navigate back to the previous page
   private navigateBack() {
@@ -21,7 +21,7 @@ export class PageCouncilMember {
   }
 
   // Define quotes, titles, and images for each council member
-  public councilData: { [key: string]: CouncilMemberData } = {
+  private councilData: { [key: string]: CouncilMemberData } = {
     "Kerry Washington": {
       title: "Actress, Producer/Director, Activist",
       quote: `Poll workers strengthen our democracy by helping ensure our elections are safe, secure, and accessible for all voters. Power the Polls has proven its ability to help ensure democracy is a positive and empowering experience for all voters, and I’m honored to serve as a co-chair of the effort and help support their crucial work to recruit the next generation of poll workers.`,
