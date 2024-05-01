@@ -1,33 +1,52 @@
-.card {
-      border-bottom: 1px solid #F5F3F1;
-
-      a:link { text-decoration: none; }
-
-      a:visited { text-decoration: none; }
-
-      a:active { text-decoration: none; }
-
-      a:hover { text-decoration: underline; }
-
-      padding: 8px;
-
-      h3 {
-         color: #F5F3F1;
-         line-height: 38px;
-      }
-
-      a {
-         color: #F5F3F1;
-      }
-
-   }
-
 .council-description {
-   margin-top: 30px;
-   margin-bottom: 30px;
-   }
+   padding-bottom: 30px;
+   font-size: 1.5em;
+   width: 50vw;
+   text-align: justify;
+   text-justify: inter-word;
+}
 
 .council-container {
-  display: inline-block;
-  border: 1px solid #ccc;
+  display: inline-flex;
+  width: 65vw;
+}
+
+.council-headshot {
+   margin-right: auto;
+   margin-left: auto;
+   border-radius: 50%;
+   height:42%;
+   width:70%;
+   object-fit: cover;
+   max-height: 180px;
+}
+
+.council-content {
+   margin-top:2%;
+   display: inline-block;
+   text-decoration: none;
+   text-align: center;
+   width: 20%;
+}
+
+.council-name {
+   text-transform: uppercase;
+   margin-bottom: 10%;
+}
+
+.council-title {
+   margin-top: 0;
+}
+
+.quote {
+ width: 50vw;
+ font-size: 1.5em;
+ font-weight: 800;
+ margin: 2%;
+}
+
+.right {
+   margin-right:0;
+   text-align: right;
+   color: $color-accent;
 }
