@@ -13,9 +13,9 @@ interface CouncilMemberData {
   shadow: false,
 })
 export class PageCouncilMember {
- @Prop() public match!: MatchResults;
+  @Prop() public match!: MatchResults;
 
- // Define quotes, titles, and images for each council member
+  // Define quotes, titles, and images for each council member
   public councilData: { [key: string]: CouncilMemberData } = {
     "Kerry Washington": {
       title: "Actress, Producer/Director, Activist",
@@ -35,17 +35,29 @@ export class PageCouncilMember {
     "Brad Raffensperger": {
       title: "Georgia Secretary of State",
       quote: `Accurate and fair elections are the backbone of our democracy, and poll workers help ensure elections run smoothly. Serving as a poll worker is a valuable public service and a way to give back. I’m honored to be supporting Power the Polls as they encourage more Americans to participate in this important work.`,
-      imgSrc: "/assets/images/council_headshots/BradRaffensperger_official.jpeg",
+      imgSrc:
+        "/assets/images/council_headshots/BradRaffensperger_official.jpeg",
     },
     "Rye Barcott": {
       title: "Co-founder, With Honor",
       quote: `With Honor Action is focused on finding leaders in our communities who will serve with civility, integrity, and courage. It's these same principles we hope to find in citizens from across party lines who will step up as poll workers and keep our elections running smoothly. Power the Polls has helped recruit hundreds of thousands of poll workers since 2020, and I’m excited to support their ongoing work during this election season.`,
       imgSrc: "/assets/images/council_headshots/RyeBarcott_official.jpg",
     },
+    "Crystal Echo Hawk": {
+      title: "Founder and Chief Executive Officer, IllumiNative",
+      quote: `Empowering Indigenous communities to be the authors and champions of their own stories, especially as we commemorate the 100th anniversary of the Native right to vote, is essential for strengthening our democratic system. One of the most impactful ways to engage is by serving as a poll worker, ensuring that our polling stations reflect the diversity of the communities they serve. I’m looking forward to supporting Power the Polls’ continued efforts to foster inclusivity and representation at the polls this election season.`,
+      imgSrc: "/assets/images/council_headshots/cropped_headshots/CrystalEchoHawk_APPROVED_cropped.jpg",
+    },
+    "Annie Gonzalez": {
+      title: "Actress",
+      quote: `quote to come soon`,
+      imgSrc: "/assets/images/council_headshots/AnnieGonzalez_1.jpeg",
+    },
     "Arndrea Waters King": {
       title: "President, Drum Major Institute",
       quote: `It's up to each one of us to move our society toward a vision of equality and justice for all, and the ballot box is one essential place where that change is made. The freedom to vote is sacred, and Power the Polls’ work to recruit, support, and empower poll workers makes our democracy stronger.`,
-      imgSrc: "/assets/images/council_headshots/Arndrea Waters King_official.jpeg",
+      imgSrc:
+        "/assets/images/council_headshots/Arndrea Waters King_official.jpeg",
     },
     "Santiago Mayer": {
       title: "Founder and Executive Director, Voters of Tomorrow",
@@ -53,7 +65,8 @@ export class PageCouncilMember {
       imgSrc: "/assets/images/council_headshots/SantiagoMayer_1.jpeg",
     },
     "Desmond Meade": {
-      title: "President and Executive Director, Florida Rights Restoration Coalition",
+      title:
+        "President and Executive Director, Florida Rights Restoration Coalition",
       quote: `A key part of promoting inclusion in our society is giving people – including people with disabilities – the opportunity to participate fully in our elections. As a former disabled poll worker supervisor, I’m proud to support Power the Polls’ efforts to ensure that all voters have access to the ballot box, and that people with disabilities can make their voices heard in our democracy.`,
       imgSrc: "/assets/images/council_headshots/DesmondMeade_APPROVED.jpeg",
     },
@@ -84,7 +97,7 @@ export class PageCouncilMember {
     window.history.back();
   }
 
-   public render() {
+  public render() {
     const memberName = this.match.params.memberName; // Extract route parameter
 
     const memberData = this.councilData[memberName]; // Get the relevant data
@@ -102,11 +115,11 @@ export class PageCouncilMember {
 
     return (
       <div class="council-member-page">
-      <div class="council-member-content">
+        <div class="council-member-content">
           <button class="back-button" onClick={() => this.navigateBack()}>
             Back
           </button>
-          <h1 class ="member-name">{memberName}</h1>
+          <h1 class="member-name">{memberName}</h1>
           <img
             class="headshot"
             src={memberData.imgSrc}
