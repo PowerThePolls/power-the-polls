@@ -29,7 +29,7 @@
 }
 
 .headshot {
-   margin: 0 10% 0 0;
+   margin: 4vh 8% auto 0;
    object-fit: cover;
    max-height: 400px;
    width: 30%;
@@ -39,10 +39,10 @@
 .member-name {
    text-transform: none;
    margin-bottom: 5%;
-   color: $color-accent;
+   color: #F5F3F1;
    font-size: 5em;
    font-weight: 800;
-   border-bottom: 2px solid #33a4ff;
+   border-bottom: 2px solid #FF5554;
    width: 100vw;
 }
 
@@ -71,8 +71,8 @@
     font-weight: bold;
     font-size:35px;
     line-height: 110%;
-    color:#33a4ff;
-    padding: 20px;
+    color:#121AFC;
+    padding: 0px;
 }
 
 .quote:after {
@@ -80,6 +80,6 @@
     font-weight: bold;
     font-size:35px;
     line-height: 110%;
-    color:#33a4ff;
-    padding: 20px;
+    color:#121AFC;
+    padding: 0px;
 }

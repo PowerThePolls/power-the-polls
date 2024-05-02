@@ -1,13 +1,36 @@
-.council-content:hover .council-name, .council-container.hover .council-name { color: #33A4FF; }
+.advisory-council-page {
+   margin-left: -8.5%;
+   margin-top: -8%;
+}
 
-.council-content:hover .council-title, .council-container.hover .council-title { color: #33A4FF; }
+.co-chair {
+   margin-right: auto;
+   margin-left: auto;
+   border-radius: 50%;
+   max-height: 170px;
+   aspect-ratio: 1 / 1;
+   object-fit: cover;
+}
 
-.council-content:hover .council-headshot, .council-headshot.hover .council-headshot { outline: 3px solid #33A4FF;}
+.co-chair-container {
+   display: block;
+   width: 70vw;
+   margin: 0 auto 0 29.5%;
+   display: inline-flex;
+}
+
+.council-content:hover .co-chair, .council-content.hover .co-chair { outline: 3px solid #121AFC;}
+
+.council-content:hover .council-name, .council-container.hover .council-name { color: #121AFC;}
+
+.council-content:hover .council-title, .council-container.hover .council-title { color: #121AFC;}
+
+.council-content:hover .council-headshot, .council-headshot.hover .council-headshot { outline: 3px solid #121AFC;}
 
 .council-description {
    padding-bottom: 30px;
    font-size: 1em;
-   width: 40vw;
+   width: 50vw;
    text-align: justify;
    text-justify: inter-word;
 }
@@ -15,17 +38,15 @@
 .council-container {
   display: inline-flex;
   width: 65vw;
-  margin-left: -8%;
 }
 
 .council-headshot {
    margin-right: auto;
    margin-left: auto;
    border-radius: 50%;
-   height:42%;
-   width:70%;
+   max-height: 130px;
+   aspect-ratio: 1 / 1;
    object-fit: cover;
-   max-height: 180px;
 }
 
 .council-content {
