@@ -7,7 +7,7 @@
    margin-right: auto;
    margin-left: auto;
    border-radius: 50%;
-   max-height: 170px;
+   max-height: 190px;
    aspect-ratio: 1 / 1;
    object-fit: cover;
 }
@@ -57,13 +57,14 @@
    a {
       text-decoration: none;
    }
+   padding:5px;
 }
 
 .council-name {
    text-transform: uppercase;
    margin-bottom: 10%;
    color: $color-accent;
-   font-size: 1.3em;
+   font-size: 1.1em;
    font-weight: 800;
 }
 
