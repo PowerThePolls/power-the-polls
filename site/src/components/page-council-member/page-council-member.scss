@@ -39,10 +39,10 @@
 .member-name {
    text-transform: none;
    margin-bottom: 5%;
-   color: #F5F3F1;
+   color: #f5f3f1;
    font-size: 5em;
    font-weight: 800;
-   border-bottom: 2px solid #FF5554;
+   border-bottom: 2px solid #ff5554;
    width: 100vw;
 }
 
@@ -55,10 +55,10 @@
    color: $color-accent;
    width: 68%;
    text-align: justify;
-    line-height: 1.6em;
-    margin: 5% 30% 0 39%;
-    padding-right:10%;
-    font-size: 1.4em;
+   line-height: 1.6em;
+   margin: 5% 30% 0 39%;
+   padding-right: 10%;
+   font-size: 1.4em;
    quotes: "\201C" "\201D" "\2018" "\2019";
 
    br {
@@ -68,18 +68,51 @@
 
 .quote:before {
    content: open-quote;
-    font-weight: bold;
-    font-size:35px;
-    line-height: 110%;
-    color: #767CFE;
-    padding: 0px;
+   font-weight: bold;
+   font-size: 35px;
+   line-height: 110%;
+   color: #767cfe;
+   padding: 0px;
 }
 
 .quote:after {
    content: close-quote;
-    font-weight: bold;
-    font-size:35px;
-    line-height: 110%;
-    color: #767CFE;
-    padding: 0px;
+   font-weight: bold;
+   font-size: 35px;
+   line-height: 110%;
+   color: #767cfe;
+   padding: 0px;
+}
+
+@media all and (max-width: 800px) {
+
+   .member-name {
+      font-size: 2em;
+   }
+
+   .council-title {
+      font-size: 1em;
+      padding: 5% 0 5% 0;
+      width: 80vw;
+   }
+
+   .headshot {
+      display:none;
+   }
+
+   .quote {
+      line-height: 1em;
+      font-size: 1em;
+      width: 85vw;
+      margin: 0;
+      padding: 0;
+   }
+
+   .quote:before {
+      font-size: 15px;
+   }
+
+   .quote:after {
+      font-size: 15px;
+   }
 }
