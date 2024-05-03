@@ -13,19 +13,30 @@
 }
 
 .co-chair-container {
-   display: block;
    width: 70vw;
    margin: 0 auto 0 13vw;
    display: inline-flex;
 }
 
-.council-content:hover .co-chair, .council-content.hover .co-chair { outline: 3px solid #767CFE;}
+.council-content:hover .co-chair,
+.council-content.hover .co-chair {
+   outline: 3px solid #767cfe;
+}
 
-.council-content:hover .council-name, .council-container.hover .council-name { color: #767CFE}
+.council-content:hover .council-name,
+.council-container.hover .council-name {
+   color: #767cfe;
+}
 
-.council-content:hover .council-title, .council-container.hover .council-title { color: #767CFE}
+.council-content:hover .council-title,
+.council-container.hover .council-title {
+   color: #767cfe;
+}
 
-.council-content:hover .council-headshot, .council-headshot.hover .council-headshot { outline: 3px solid #767CFE}
+.council-content:hover .council-headshot,
+.council-headshot.hover .council-headshot {
+   outline: 3px solid #767cfe;
+}
 
 .council-description {
    padding-bottom: 30px;
@@ -36,8 +47,8 @@
 }
 
 .council-container {
-  display: inline-flex;
-  width: 65vw;
+   display: inline-flex;
+   width: 65vw;
 }
 
 .council-headshot {
@@ -50,14 +61,14 @@
 }
 
 .council-content {
-   margin:2% 1% 1% 1%;
+   margin: 2% 1% 1% 1%;
    display: inline-block;
    text-align: center;
    width: 20%;
    a {
       text-decoration: none;
    }
-   padding:5px;
+   padding: 5px;
 }
 
 .council-name {
@@ -72,8 +83,27 @@
    margin-top: 0;
 }
 
-.right {
-   margin-right:0;
-   text-align: right;
-   color: $color-accent;
+@media all and (max-width: 800px) {
+   .council-content {
+      display: block;
+      width: 100%;
+   }
+
+   .council-container {
+      display: block;
+      float: none;
+      width: 100%;
+   }
+
+   .co-chair-container {
+      display: block;
+      float: none;
+      width: 100%;
+      margin: 0;
+   }
+
+   .council-description {
+      padding: 5px;
+      width: 100%;
+   }
 }
