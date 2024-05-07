@@ -98,7 +98,6 @@ export class PageCouncilMember {
   }
 
   public render() {
-    const parser = new DOMParser();
 
     const memberName = this.match.params.memberName; // Extract route parameter
 
