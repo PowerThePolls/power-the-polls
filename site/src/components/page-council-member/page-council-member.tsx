@@ -18,18 +18,18 @@ export class PageCouncilMember {
   // Define quotes, titles, and images for each council member
   public councilData: { [key: string]: CouncilMemberData } = {
     "Kerry Washington": {
-      title: "Actress, Producer/Director, Activist",
-      quote: `Poll workers strengthen our democracy by helping ensure our elections are safe, secure, and accessible for all voters. Power the Polls has proven its ability to help ensure democracy is a positive and empowering experience for all voters, and I’m honored to serve as a co-chair of the effort and help support their crucial work to recruit the next generation of poll workers.`,
-      imgSrc: "/assets/images/council_headshots/KerryWashington_1.png",
+      title: "Actor, Producer, Director, Author & Activist",
+      quote: `Poll workers are frontline heroes of democracy! Their work helps to ensure that ALL Americans are able to cast our votes safely and securely. By recruiting poll workers who are excited to serve their communities, Power the Polls has proven its ability to preserve trust in our electoral system, especially when democracy is under threat. It is an honor to serve as co-chair of the effort to support their commitment to democracy and recruit the next generation of poll workers.`,
+      imgSrc: "/assets/images/council_headshots/KerryWashington_1.jpg",
     },
-    "Adam Kinzinger": {
+    "Rep. Adam Kinzinger": {
       title: "Former Member of Congress (R-IL)",
-      quote: `At a time when our democracy is facing unique and historic threats, the role poll workers play in keeping our elections free and fair has never been more important. That’s why Power the Polls’ work is so important and why I’m proud to serve as the Advisory Council’s Co-Chair.`,
+      quote: `At a time when our democracy is facing unique and historic threats, the role poll workers play in keeping our elections free and fair has never been more important. That’s why Power the Polls’ work is so important and why I’m proud to serve as the Advisory Council’s Co-Chair. I encourage all Americans to sign up to be poll workers through Power the Polls as a great way to serve our communities.`,
       imgSrc: "/assets/images/council_headshots/RepAdamKinzinger_APPROVED.jpeg",
     },
     "Francisco Aguilar": {
       title: "Nevada Secretary of State",
-      quote: `Poll workers are on the frontlines of our democracy, and it is crucial that they receive the support and training they need to ensure that we all have the opportunity to exercise our right to vote. By connecting election officials with potential poll workers, Power the Polls helps jurisdictions across the country serve voters and ensure safe and fair elections.`,
+      quote: `Poll workers are the unsung heroes of our democracy, and it is crucial that they receive the support and training they need to ensure that we all have the opportunity to exercise our right to vote. By connecting election officials with potential poll workers, Power the Polls helps jurisdictions across the country serve voters and ensure safe and fair elections.`,
       imgSrc: "/assets/images/council_headshots/FranciscoAguilar_official.jpg",
     },
     "Brad Raffensperger": {
@@ -40,17 +40,17 @@ export class PageCouncilMember {
     },
     "Rye Barcott": {
       title: "Co-founder, With Honor",
-      quote: `With Honor Action is focused on finding leaders in our communities who will serve with civility, integrity, and courage. It's these same principles we hope to find in citizens from across party lines who will step up as poll workers and keep our elections running smoothly. Power the Polls has helped recruit hundreds of thousands of poll workers since 2020, and I’m excited to support their ongoing work during this election season.`,
+      quote: `<a href="https://withhonor.org/">With Honor Action</a> is focused on finding leaders in our communities who will serve with civility, integrity, and courage. It's these same principles we hope to find in citizens from across party lines who will step up as poll workers and keep our elections running smoothly. Power the Polls has helped recruit hundreds of thousands of poll workers since 2020, and I’m excited to support their ongoing work during this election season.`,
       imgSrc: "/assets/images/council_headshots/RyeBarcott_official.jpg",
     },
     "Crystal Echo Hawk": {
       title: "Founder and Chief Executive Officer, IllumiNative",
       quote: `Empowering Indigenous communities to be the authors and champions of their own stories, especially as we commemorate the 100th anniversary of the Native right to vote, is essential for strengthening our democratic system. One of the most impactful ways to engage is by serving as a poll worker, ensuring that our polling stations reflect the diversity of the communities they serve. I’m looking forward to supporting Power the Polls’ continued efforts to foster inclusivity and representation at the polls this election season.`,
-      imgSrc: "/assets/images/council_headshots/cropped_headshots/CrystalEchoHawk_APPROVED_cropped.jpg",
+      imgSrc: "/assets/images/council_headshots/CrystalEchoHawk_APPROVED.jpg",
     },
     "Annie Gonzalez": {
-      title: "Actress",
-      quote: `quote to come soon`,
+      title: "Producer, Actress, Activist",
+      quote: `With so many critical issues at stake in the coming election, getting involved is more important than ever. We can fake support, but we can’t fake showing up! One great way to make a difference is to show up in your community by signing up to be a poll worker. Not only can you get paid, but you can also make sure that when people show up to vote, they see friendly faces. For people who haven’t traditionally been involved in the civic process, that can make all the difference and spark a lifelong habit of community engagement.`,
       imgSrc: "/assets/images/council_headshots/AnnieGonzalez_1.jpeg",
     },
     "Arndrea Waters King": {
@@ -67,12 +67,12 @@ export class PageCouncilMember {
     "Desmond Meade": {
       title:
         "President and Executive Director, Florida Rights Restoration Coalition",
-      quote: `A key part of promoting inclusion in our society is giving people – including people with disabilities – the opportunity to participate fully in our elections. As a former disabled poll worker supervisor, I’m proud to support Power the Polls’ efforts to ensure that all voters have access to the ballot box, and that people with disabilities can make their voices heard in our democracy.`,
+      quote: `We must never take our democracy or our right to vote for granted. By recruiting poll workers to serve in our elections, Power the Polls is helping to build a culture of civic participation and engagement. With a historic election coming up this November, these efforts have never been more crucial.`,
       imgSrc: "/assets/images/council_headshots/DesmondMeade_APPROVED.jpeg",
     },
     "Ashley Spillane": {
       title: "Founder, Civic Responsibility Project",
-      quote: `Civic responsibility and engagement are foundational to a healthy democracy. Power the Polls' mission of recruiting poll workers is a tangible way for people to take part in the democratic process. I'm thrilled to support their efforts to engage more citizens in public service.`,
+      quote: `This year, as Americans prepare to vote in this critical election, it is absolutely vital that we have plenty of enthusiastic, well-trained poll workers who are committed to ensuring our elections run smoothly. It's such a great way to give back to your community, support your neighbors, and help protect democracy. I am so lucky that I get to hear from many friends and thousands of volunteers at Power the Polls about what a fun and rewarding experience they have serving as poll workers.`,
       imgSrc: "/assets/images/council_headshots/AshleySpillane_APPROVED.jpeg",
     },
     "Gabriel Sterling": {
@@ -86,8 +86,8 @@ export class PageCouncilMember {
       imgSrc: "/assets/images/council_headshots/CharlieSykes_official.jpeg",
     },
     "Tiffany Yu": {
-      title: "Founder and Author, Diversability",
-      quote: `A vital part of building a more inclusive society is ensuring that everyone has the opportunity to engage in the democratic process. Serving as a poll worker is a great way to do that, and I'm proud to support Power the Polls in their efforts to promote accessibility and inclusion at the ballot box.`,
+      title: "Author, The Anti-Ableist Manifesto, and Founder, Diversability",
+      quote: `A key part of promoting inclusion in our society is giving people – including people with disabilities – the opportunity to participate fully in our elections. As a former disabled poll worker supervisor, I’m proud to support Power the Polls’ efforts to ensure that all voters have access to the ballot box, and that people with disabilities can make their voices heard in our democracy.`,
       imgSrc: "/assets/images/council_headshots/TiffanyYu_APPROVED.jpg",
     },
   };
@@ -98,6 +98,8 @@ export class PageCouncilMember {
   }
 
   public render() {
+    const parser = new DOMParser();
+
     const memberName = this.match.params.memberName; // Extract route parameter
 
     const memberData = this.councilData[memberName]; // Get the relevant data

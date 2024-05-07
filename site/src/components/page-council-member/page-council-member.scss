@@ -70,7 +70,7 @@
    content: open-quote;
    font-weight: bold;
    font-size: 35px;
-   line-height: 110%;
+   line-height: 130%;
    color: #767cfe;
    padding: 0px;
 }
@@ -79,12 +79,11 @@
    content: close-quote;
    font-weight: bold;
    font-size: 35px;
-   line-height: 110%;
+   line-height: 10%;
    color: #767cfe;
-   padding: 0px;
 }
 
-@media all and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
 
    .member-name {
       font-size: 2em;
@@ -96,16 +95,11 @@
       width: 80vw;
    }
 
-   .headshot {
-      display:none;
-   }
-
    .quote {
       line-height: 1em;
       font-size: 1em;
-      width: 85vw;
-      margin: 0;
-      padding: 0;
+      width: 68%;
+      margin: 5% 30% 0 39%;
    }
 
    .quote:before {

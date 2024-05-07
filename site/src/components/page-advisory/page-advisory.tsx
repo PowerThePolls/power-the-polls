@@ -41,12 +41,12 @@ export class PageAdvisory {
                     />
                     <p class="council-name">Kerry Washington</p>
                     <p class="council-title">
-                      Actress, Producer/Director, Activist
+                      Actor, Producer, Director, Author & Activist
                     </p>
                   </stencil-route-link>
                 </div>
                 <div class="council-content">
-                  <stencil-route-link url="/council-member/Adam Kinzinger">
+                  <stencil-route-link url="/council-member/Rep. Adam Kinzinger">
                     <img
                       class="co-chair"
                       src="/assets/images/council_headshots/cropped_headshots/RepAdamKinzinger_APPROVED_cropped.jpg"
@@ -120,7 +120,7 @@ export class PageAdvisory {
                       alt="Headshot of Annie Gonzalez"
                     />
                     <p class="council-name">Annie Gonzalez</p>
-                    <p class="council-title">Actress</p>
+                    <p class="council-title">Producer, Actress, Activist</p>
                   </stencil-route-link>
                 </div>
 
