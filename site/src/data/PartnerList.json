@@ -2878,5 +2878,13 @@
     {
       "partnerId": "goodwillsocal",
       "name": "Goodwill So Cal"
+    },
+    {
+      "partnerId": "NUL",
+      "name": "National Urban League"
+    },
+    {
+      "partnerId": "DemocracyWatch",
+      "name": "Democracy Watch"
     }
 ]
