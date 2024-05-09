@@ -2886,5 +2886,13 @@
     {
       "partnerId": "DemocracyWatch",
       "name": "Democracy Watch"
+    },
+    {
+      "partnerId": "PowerthePolls/CommonCauseFL",
+      "name": "Common Cause Florida"
+    },
+    {
+      "partnerId": "DemocracyWatch",
+      "name": "Healthy Democracy Healthy People"
     }
 ]
