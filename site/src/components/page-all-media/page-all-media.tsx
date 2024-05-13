@@ -10,6 +10,32 @@ export class PageAllMedia {
         return (
             <Host>
                 <h2> In the News: Selected Media </h2>
+                                <div class="card">
+                    <a
+                        href="https://thefulcrum.us/civic-engagement-education/poll-workers"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <h3>
+                            America needs poll workers, now more than ever. The
+                            Fulcrum.{" "}
+                        </h3>{" "}
+                        Marta Hanson. May 6, 2024.
+                    </a>
+                </div>
+                <div class="card">
+                    <a
+                        href="https://19thnews.org/2024/04/election-workers-safety-support-threats-2024/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <h3>
+                            Election workers are committed to 2024 — despite
+                            threats, harassment and turnover. The 19th.{" "}
+                        </h3>{" "}
+                        Barbara Rodriguez. April 17, 2024. 
+                    </a>
+                </div>
                 <div class="card">
                     <a
                         href="https://www.women.com/1336248/get-involved-local-politics-more-women-power/"
