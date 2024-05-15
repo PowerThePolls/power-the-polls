@@ -61,15 +61,28 @@ export class PageMedia {
                 </div>
                 <div class="card">
                     <a
-                        href="https://www.women.com/1336248/get-involved-local-politics-more-women-power/"
+                        href="https://thefulcrum.us/civic-engagement-education/poll-workers"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         <h3>
-                            How To Get Involved In Local Politics - Because More
-                            Women In Power Starts At Home. Women.com.
+                            America needs poll workers, now more than ever. The
+                            Fulcrum.{" "}
                         </h3>{" "}
-                        Amanda Ray Byerly. July 14, 2023.
+                        Marta Hanson. May 6, 2024.
+                    </a>
+                </div>
+                <div class="card">
+                    <a
+                        href="https://19thnews.org/2024/04/election-workers-safety-support-threats-2024/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <h3>
+                            Election workers are committed to 2024 — despite
+                            threats, harassment and turnover. The 19th.{" "}
+                        </h3>{" "}
+                        Barbara Rodriguez. April 17, 2024.
                     </a>
                 </div>
                 <div class="card">
@@ -83,20 +96,6 @@ export class PageMedia {
                             Volunteer as Poll Workers. The Bulwark.{" "}
                         </h3>{" "}
                         Jim Swift. June 13, 2023.
-                    </a>
-                </div>
-                <div class="card">
-                    <a
-                        href="https://electionline.org/electionline-weekly/2023/05-11/#tab-4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <h3>
-                            Power the Polls named honorable mention in Fast
-                            Company’s 2023 World Changing Ideas Awards.
-                            electionline Weekly. The Election Center.{" "}
-                        </h3>{" "}
-                        May 11, 2023.
                     </a>
                 </div>
                 <div class="button-container">
