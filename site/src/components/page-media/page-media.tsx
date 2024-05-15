@@ -82,7 +82,7 @@ export class PageMedia {
                             Election workers are committed to 2024 — despite
                             threats, harassment and turnover. The 19th.{" "}
                         </h3>{" "}
-                        Barbara Rodriguez. April 17, 2024. 
+                        Barbara Rodriguez. April 17, 2024.
                     </a>
                 </div>
                 <div class="card">
