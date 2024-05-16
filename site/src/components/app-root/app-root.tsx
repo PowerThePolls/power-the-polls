@@ -344,9 +344,9 @@ export class AppRoot {
                  (p) =>
                     (p.additionalVanityUrls &&
                        p.additionalVanityUrls.filter(
-                          (x) => x.toLowerCase() === partnerIdMatch
+                          (x) => x.toLowerCase() === partnerIdMatch,
                        ).length > 0) ||
-                    p.partnerId.toLowerCase() === partnerIdMatch
+                    p.partnerId.toLowerCase() === partnerIdMatch,
               ) || [null])[0]
             : null;
 
@@ -359,7 +359,7 @@ export class AppRoot {
          console.warn(
             `Error. Partner ID conflict:`,
             partner?.partnerId,
-            queryStringParam
+            queryStringParam,
          );
       }
 
@@ -382,7 +382,7 @@ export class AppRoot {
             window.history.replaceState(
                {},
                "",
-               "/" + path[0] + "#" + partner.partnerId
+               "/" + path[0] + "#" + partner.partnerId,
             );
          } else {
             // else we've matched the partner on their vanity URL, so make sure it is normalized in case and URL type (vanity vs partnerId)
@@ -398,7 +398,7 @@ export class AppRoot {
                   "/" +
                      (partner.additionalVanityUrls != null
                         ? partner.additionalVanityUrls[0]
-                        : partner.partnerId)
+                        : partner.partnerId),
                );
             }
          }
@@ -561,7 +561,7 @@ export class AppRoot {
          this.routes.filter(
             (x) =>
                x.url &&
-               x.url.split("/").filter((y) => y !== "")[0] === firstPathSection
+               x.url.split("/").filter((y) => y !== "")[0] === firstPathSection,
          ).length > 0
       );
    }
