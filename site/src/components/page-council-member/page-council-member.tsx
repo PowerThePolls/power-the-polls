@@ -34,7 +34,7 @@ export class PageCouncilMember {
     },
     "Brad Raffensperger": {
       title: "Georgia Secretary of State",
-      quote: `Accurate and fair elections are the backbone of our democracy, and poll workers help ensure elections run smoothly. Serving as a poll worker is a valuable public service and a way to give back. I’m honored to be supporting Power the Polls as they encourage more Americans to participate in this important work.`,
+      quote: `Accurate and fair elections are the backbone of our republic, and poll workers help ensure elections run smoothly. Serving as a poll worker is a valuable public service and a way to give back. I’m honored to be supporting Power the Polls as they encourage more Americans to participate in this important work.`,
       imgSrc:
         "/assets/images/council_headshots/BradRaffensperger_official.jpeg",
     },
