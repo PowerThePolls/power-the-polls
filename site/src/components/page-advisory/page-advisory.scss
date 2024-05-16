@@ -1,0 +1,109 @@
+.advisory-council-page {
+   margin-left: -7.2%;
+   margin-top: -6%;
+}
+
+.co-chair {
+   margin-right: auto;
+   margin-left: auto;
+   border-radius: 50%;
+   max-height: 190px;
+   aspect-ratio: 1 / 1;
+   object-fit: cover;
+}
+
+.co-chair-container {
+   width: 70vw;
+   margin: 0 auto 0 13vw;
+   display: inline-flex;
+}
+
+.council-content:hover .co-chair,
+.council-content.hover .co-chair {
+   outline: 3px solid #767cfe;
+}
+
+.council-content:hover .council-name,
+.council-container.hover .council-name {
+   color: #767cfe;
+}
+
+.council-content:hover .council-title,
+.council-container.hover .council-title {
+   color: #767cfe;
+}
+
+.council-content:hover .council-headshot,
+.council-headshot.hover .council-headshot {
+   outline: 3px solid #767cfe;
+}
+
+.council-description {
+   padding-bottom: 30px;
+   font-size: 1em;
+   width: 50vw;
+   text-align: justify;
+   text-justify: inter-word;
+}
+
+.council-container {
+   display: inline-flex;
+   width: 65vw;
+}
+
+.council-headshot {
+   margin-right: auto;
+   margin-left: auto;
+   border-radius: 50%;
+   max-height: 130px;
+   aspect-ratio: 1 / 1;
+   object-fit: cover;
+}
+
+.council-content {
+   margin: 2% 1% 1% 1%;
+   display: inline-block;
+   text-align: center;
+   width: 20%;
+   a {
+      text-decoration: none;
+   }
+   padding: 5px;
+}
+
+.council-name {
+   text-transform: uppercase;
+   margin-bottom: 10%;
+   color: $color-accent;
+   font-size: 1.1em;
+   font-weight: 800;
+}
+
+.council-title {
+   margin-top: 0;
+}
+
+@media all and (max-width: 800px) {
+   .council-content {
+      display: block;
+      width: 100%;
+   }
+
+   .council-container {
+      display: block;
+      float: none;
+      width: 100%;
+   }
+
+   .co-chair-container {
+      display: block;
+      float: none;
+      width: 100%;
+      margin: 0;
+   }
+
+   .council-description {
+      padding: 5px;
+      width: 100%;
+   }
+}
