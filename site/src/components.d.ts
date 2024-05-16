@@ -14,6 +14,9 @@ export namespace Components {
     }
     interface PageAbout {
     }
+    interface PageAdvisory {
+        "pageTitle"?: string;
+    }
     interface PageAllMedia {
     }
     interface PageAllPressReleases {
@@ -23,6 +26,9 @@ export namespace Components {
           * The page's title
          */
         "pageTitle"?: string;
+    }
+    interface PageCouncilMember {
+        "match": MatchResults;
     }
     interface PageElectionOfficials {
     }
@@ -195,6 +201,12 @@ declare global {
         prototype: HTMLPageAboutElement;
         new (): HTMLPageAboutElement;
     };
+    interface HTMLPageAdvisoryElement extends Components.PageAdvisory, HTMLStencilElement {
+    }
+    var HTMLPageAdvisoryElement: {
+        prototype: HTMLPageAdvisoryElement;
+        new (): HTMLPageAdvisoryElement;
+    };
     interface HTMLPageAllMediaElement extends Components.PageAllMedia, HTMLStencilElement {
     }
     var HTMLPageAllMediaElement: {
@@ -212,6 +224,12 @@ declare global {
     var HTMLPageContactElement: {
         prototype: HTMLPageContactElement;
         new (): HTMLPageContactElement;
+    };
+    interface HTMLPageCouncilMemberElement extends Components.PageCouncilMember, HTMLStencilElement {
+    }
+    var HTMLPageCouncilMemberElement: {
+        prototype: HTMLPageCouncilMemberElement;
+        new (): HTMLPageCouncilMemberElement;
     };
     interface HTMLPageElectionOfficialsElement extends Components.PageElectionOfficials, HTMLStencilElement {
     }
@@ -403,9 +421,11 @@ declare global {
         "app-root": HTMLAppRootElement;
         "component-list": HTMLComponentListElement;
         "page-about": HTMLPageAboutElement;
+        "page-advisory": HTMLPageAdvisoryElement;
         "page-all-media": HTMLPageAllMediaElement;
         "page-all-press-releases": HTMLPageAllPressReleasesElement;
         "page-contact": HTMLPageContactElement;
+        "page-council-member": HTMLPageCouncilMemberElement;
         "page-election-officials": HTMLPageElectionOfficialsElement;
         "page-faq": HTMLPageFaqElement;
         "page-faq-application-status": HTMLPageFaqApplicationStatusElement;
@@ -446,6 +466,9 @@ declare namespace LocalJSX {
     }
     interface PageAbout {
     }
+    interface PageAdvisory {
+        "pageTitle"?: string;
+    }
     interface PageAllMedia {
     }
     interface PageAllPressReleases {
@@ -455,6 +478,9 @@ declare namespace LocalJSX {
           * The page's title
          */
         "pageTitle"?: string;
+    }
+    interface PageCouncilMember {
+        "match": MatchResults;
     }
     interface PageElectionOfficials {
     }
@@ -612,9 +638,11 @@ declare namespace LocalJSX {
         "app-root": AppRoot;
         "component-list": ComponentList;
         "page-about": PageAbout;
+        "page-advisory": PageAdvisory;
         "page-all-media": PageAllMedia;
         "page-all-press-releases": PageAllPressReleases;
         "page-contact": PageContact;
+        "page-council-member": PageCouncilMember;
         "page-election-officials": PageElectionOfficials;
         "page-faq": PageFaq;
         "page-faq-application-status": PageFaqApplicationStatus;
@@ -655,9 +683,11 @@ declare module "@stencil/core" {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "component-list": LocalJSX.ComponentList & JSXBase.HTMLAttributes<HTMLComponentListElement>;
             "page-about": LocalJSX.PageAbout & JSXBase.HTMLAttributes<HTMLPageAboutElement>;
+            "page-advisory": LocalJSX.PageAdvisory & JSXBase.HTMLAttributes<HTMLPageAdvisoryElement>;
             "page-all-media": LocalJSX.PageAllMedia & JSXBase.HTMLAttributes<HTMLPageAllMediaElement>;
             "page-all-press-releases": LocalJSX.PageAllPressReleases & JSXBase.HTMLAttributes<HTMLPageAllPressReleasesElement>;
             "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
+            "page-council-member": LocalJSX.PageCouncilMember & JSXBase.HTMLAttributes<HTMLPageCouncilMemberElement>;
             "page-election-officials": LocalJSX.PageElectionOfficials & JSXBase.HTMLAttributes<HTMLPageElectionOfficialsElement>;
             "page-faq": LocalJSX.PageFaq & JSXBase.HTMLAttributes<HTMLPageFaqElement>;
             "page-faq-application-status": LocalJSX.PageFaqApplicationStatus & JSXBase.HTMLAttributes<HTMLPageFaqApplicationStatusElement>;
