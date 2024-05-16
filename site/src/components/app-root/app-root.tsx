@@ -261,6 +261,10 @@ export class AppRoot {
             component: "page-press-release-2024-01-30-es",
          },
          {
+            url: "/press-release-2024-05-16",
+            component: "page-press-release-2024-05-16",
+         },
+         {
             url: "/press-releases",
             component: "page-all-press-releases",
          },
@@ -340,9 +344,9 @@ export class AppRoot {
                  (p) =>
                     (p.additionalVanityUrls &&
                        p.additionalVanityUrls.filter(
-                          (x) => x.toLowerCase() === partnerIdMatch,
+                          (x) => x.toLowerCase() === partnerIdMatch
                        ).length > 0) ||
-                    p.partnerId.toLowerCase() === partnerIdMatch,
+                    p.partnerId.toLowerCase() === partnerIdMatch
               ) || [null])[0]
             : null;
 
@@ -355,7 +359,7 @@ export class AppRoot {
          console.warn(
             `Error. Partner ID conflict:`,
             partner?.partnerId,
-            queryStringParam,
+            queryStringParam
          );
       }
 
@@ -378,7 +382,7 @@ export class AppRoot {
             window.history.replaceState(
                {},
                "",
-               "/" + path[0] + "#" + partner.partnerId,
+               "/" + path[0] + "#" + partner.partnerId
             );
          } else {
             // else we've matched the partner on their vanity URL, so make sure it is normalized in case and URL type (vanity vs partnerId)
@@ -394,7 +398,7 @@ export class AppRoot {
                   "/" +
                      (partner.additionalVanityUrls != null
                         ? partner.additionalVanityUrls[0]
-                        : partner.partnerId),
+                        : partner.partnerId)
                );
             }
          }
@@ -410,13 +414,13 @@ export class AppRoot {
          source == null
             ? SIGNUP_PATH
             : source.partner == null
-              ? // if source is not a partner, use the source value directly
-                SIGNUP_PATH + "?source=" + source.value
-              : // else use the partner's vanity URL or partner ID
-                source.partner.additionalVanityUrls != null &&
-                  source.partner.additionalVanityUrls.length > 0
-                ? source.partner.additionalVanityUrls[0]
-                : source.partner.partnerId;
+            ? // if source is not a partner, use the source value directly
+              SIGNUP_PATH + "?source=" + source.value
+            : // else use the partner's vanity URL or partner ID
+            source.partner.additionalVanityUrls != null &&
+              source.partner.additionalVanityUrls.length > 0
+            ? source.partner.additionalVanityUrls[0]
+            : source.partner.partnerId;
 
       const toggleMenu = () => {
          this.menuIsActive = !this.menuIsActive;
@@ -557,7 +561,7 @@ export class AppRoot {
          this.routes.filter(
             (x) =>
                x.url &&
-               x.url.split("/").filter((y) => y !== "")[0] === firstPathSection,
+               x.url.split("/").filter((y) => y !== "")[0] === firstPathSection
          ).length > 0
       );
    }
