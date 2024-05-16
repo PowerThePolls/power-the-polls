@@ -261,6 +261,10 @@ export class AppRoot {
             component: "page-press-release-2024-01-30-es",
          },
          {
+            url: "/press-release-2024-05-16",
+            component: "page-press-release-2024-05-16",
+         },
+         {
             url: "/press-releases",
             component: "page-all-press-releases",
          },
@@ -410,13 +414,13 @@ export class AppRoot {
          source == null
             ? SIGNUP_PATH
             : source.partner == null
-              ? // if source is not a partner, use the source value directly
-                SIGNUP_PATH + "?source=" + source.value
-              : // else use the partner's vanity URL or partner ID
-                source.partner.additionalVanityUrls != null &&
-                  source.partner.additionalVanityUrls.length > 0
-                ? source.partner.additionalVanityUrls[0]
-                : source.partner.partnerId;
+            ? // if source is not a partner, use the source value directly
+              SIGNUP_PATH + "?source=" + source.value
+            : // else use the partner's vanity URL or partner ID
+            source.partner.additionalVanityUrls != null &&
+              source.partner.additionalVanityUrls.length > 0
+            ? source.partner.additionalVanityUrls[0]
+            : source.partner.partnerId;
 
       const toggleMenu = () => {
          this.menuIsActive = !this.menuIsActive;
