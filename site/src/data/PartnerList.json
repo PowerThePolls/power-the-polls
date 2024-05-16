@@ -2894,5 +2894,21 @@
     {
       "partnerId": "hdhp",
       "name": "Healthy Democracy Healthy People"
+    },
+    {
+      "partnerId": "ACLU",
+      "name": "ACLU"
+    },
+    {
+      "partnerId": "NOW",
+      "name": "National Organization for Women"
+    },
+    {
+      "partnerId": "WBD",
+      "name": "Warner Brothers Discovery"
+    },
+    {
+      "partnerId": "NOWYoungFeminists",
+      "name": "National Organization for Women Young Feminists"
     }
 ]
