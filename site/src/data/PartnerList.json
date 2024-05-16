@@ -2822,5 +2822,93 @@
     {
       "partnerId": "Catchafire",
       "name": "Catchafire"
-   }
+   },
+    {
+      "partnerId": "ESBuchmanTestOrg",
+      "name": "ESBuchman's Test Org"
+   },
+    {
+      "partnerId": "ESBuchmanTestOrg",
+      "name": "ESBuchman's Test Org"
+   },
+    {
+      "partnerId": "ESBuchman",
+      "name": "BuchmanTest"
+   },
+    {
+      "partnerId": "ESBuchman",
+      "name": "BuchmanTest"
+   },
+    {
+      "partnerId": "nationswell",
+      "name": "NationSwell"
+   },
+    {
+      "partnerId": "AmericorpsAlumni",
+      "name": "AmeriCorps Alumni Democracy Project"
+   },
+    {
+      "partnerId": "YoungGensVote",
+      "name": "Young Gens Vote"
+   },
+    {
+      "partnerId": "UMD24",
+      "name": "UMD Poll Worker Recruitment Test"
+   },
+    {
+      "partnerId": "ipaper",
+      "name": "International Paper"
+   },
+    {
+      "partnerId": "Fulcrum",
+      "name": "Fulcrum"
+   },
+    {
+      "partnerId": "BigTentUSA",
+      "name": "Big Tent USA"
+   },
+    {
+      "partnerId": "voteamerica",
+      "name": "VoteAmerica"
+   },
+    {
+      "partnerId": "AC",
+      "name": "PTP Advisory Council"
+   },
+    {
+      "partnerId": "goodwillsocal",
+      "name": "Goodwill So Cal"
+    },
+    {
+      "partnerId": "NUL",
+      "name": "National Urban League"
+    },
+    {
+      "partnerId": "DemocracyWatch",
+      "name": "Democracy Watch"
+    },
+    {
+      "partnerId": "CommonCauseFL",
+      "name": "Common Cause Florida"
+    },
+    {
+      "partnerId": "hdhp",
+      "name": "Healthy Democracy Healthy People"
+    },
+    {
+      "partnerId": "ACLU",
+      "name": "ACLU"
+    },
+    {
+      "partnerId": "NOW",
+      "name": "National Organization for Women"
+    },
+    {
+      "partnerId": "WBD",
+      "name": "Warner Brothers Discovery"
+    },
+    {
+      "partnerId": "NOWYoungFeminists",
+      "name": "National Organization for Women Young Feminists"
+    }
 ]
