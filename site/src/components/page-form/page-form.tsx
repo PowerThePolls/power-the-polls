@@ -26,13 +26,44 @@ export class PageForm {
         this.formComplete = false;
     }
 
+    componentDidLoad() {
+        const partnerId = this.partnerId;
+        const partner =
+            partnerId != null
+                ? (PartnerList.filter((p) => p.partnerId === partnerId) || [null])[0]
+                : null;
+
+        if (partner?.pixelCode) {
+            this.addMetaPixel(partner.pixelCode);
+        }
+    }
+
+    private addMetaPixel(pixelCode: string) {
+        !(function(f: any, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s);
+        })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', pixelCode);
+        fbq('track', 'PageView');
+    }
+
     public render() {
         const partnerId = this.partnerId;
         const partner =
             partnerId != null
-                ? (PartnerList.filter((p) => p.partnerId === partnerId) || [
-                      null,
-                  ])[0]
+                ? (PartnerList.filter((p) => p.partnerId === partnerId) || [null])[0]
                 : null;
 
         const formCompleted = () => {
@@ -51,8 +82,7 @@ export class PageForm {
                         <img
                             class={{
                                 "main-logo": true,
-                                partner:
-                                    partner?.logoAppearsOnLandingPage ?? false,
+                                partner: partner?.logoAppearsOnLandingPage ?? false,
                             }}
                             alt="Power the Polls"
                             src="/assets/images/logo-icon-pink.png"
@@ -69,8 +99,7 @@ export class PageForm {
                         )}
                         <h1
                             class={{
-                                partner:
-                                    partner?.logoAppearsOnLandingPage ?? false,
+                                partner: partner?.logoAppearsOnLandingPage ?? false,
                             }}
                         >
                             Help staff your local polling place
