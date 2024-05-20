@@ -21,6 +21,10 @@ export namespace Components {
         "data": PtpFormData;
         "jurisdiction"?: JurisdictionInfo;
     }
+    /**
+     * An input and (optional) select element for a US postal address and state which will look up address values based on
+     * the user's input to allow the user to select from.
+     */
     interface InputAddress {
         "state": () => Promise<"STARTED" | "COMPLETED">;
     }
@@ -150,6 +154,10 @@ declare global {
         prototype: HTMLEmailApplicationFormElement;
         new (): HTMLEmailApplicationFormElement;
     };
+    /**
+     * An input and (optional) select element for a US postal address and state which will look up address values based on
+     * the user's input to allow the user to select from.
+     */
     interface HTMLInputAddressElement extends Components.InputAddress, HTMLStencilElement {
     }
     var HTMLInputAddressElement: {
@@ -236,6 +244,10 @@ declare namespace LocalJSX {
         "jurisdiction"?: JurisdictionInfo;
         "onSubmitted"?: (event: EmailApplicationFormCustomEvent<any>) => void;
     }
+    /**
+     * An input and (optional) select element for a US postal address and state which will look up address values based on
+     * the user's input to allow the user to select from.
+     */
     interface InputAddress {
         "onLookup"?: (event: InputAddressCustomEvent<"STARTED" | "COMPLETED">) => void;
     }
@@ -365,6 +377,10 @@ declare module "@stencil/core" {
              * Email application that will only render if there is no application link for the jurisdiction
              */
             "email-application-form": LocalJSX.EmailApplicationForm & JSXBase.HTMLAttributes<HTMLEmailApplicationFormElement>;
+            /**
+             * An input and (optional) select element for a US postal address and state which will look up address values based on
+             * the user's input to allow the user to select from.
+             */
             "input-address": LocalJSX.InputAddress & JSXBase.HTMLAttributes<HTMLInputAddressElement>;
             /**
              * Render a `<select>` if `options` has values, else render `<input type="hidden">` with `selected` as the value.
