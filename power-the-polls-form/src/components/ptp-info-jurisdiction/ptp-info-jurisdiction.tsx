@@ -222,9 +222,9 @@ export class JurisdictionInfoComponent {
                 !j.is_the_jurisdiction_a_city &&
                 j.state.alpha !== "AK"
             ) {
-                return `${j.name} ${stateInfo.subdivision_name}, ${j.state.alpha}`;
+                return `${j.name.toString().replace(/&#8217;/g, "'")} ${stateInfo.subdivision_name}, ${j.state.alpha}`;
             }
-            return `${j.name.toString()}, ${j.state.alpha}`;
+            return `${j.name.toString().replace(/&#8217;/g, "'")}, ${j.state.alpha}`;
         };
 
         return (
