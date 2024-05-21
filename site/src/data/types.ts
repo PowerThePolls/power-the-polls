@@ -57,6 +57,11 @@ export interface Partner {
     * despite them having a `logo` assigned.
     */
    readonly excludeFromPartnerList?: boolean;
+
+   /**
+    * Optional meta pixel code.
+    */
+   readonly pixelCode?: string;
 }
 
 export type PartnerList = Partner[];
