@@ -2914,5 +2914,13 @@
     {
       "partnerId": "NRF",
       "name": "National Redistricting Foundation"
+    },
+    {
+      "partnerId": "TCRP",
+      "name": "Texas Civil Rights Project"
+    },
+    {
+      "partnerId": "Leadership-Now",
+      "name": "Leadership Now Project"
     }
 ]
