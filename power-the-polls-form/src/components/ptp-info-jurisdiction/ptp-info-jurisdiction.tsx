@@ -214,7 +214,7 @@ export class JurisdictionInfoComponent {
             j?.online_application == null || j?.online_application === ""
         );
 
-        const sanitizedJurisdictionName = j.name.replace(/&#8217;/g, "&#39;");
+        const sanitizedJurisdictionName = j.name.replace(/&#8217;/g, "\'");
 
         const getFullName = (jurisdictionInfo: JurisdictionInfo): string => {
             if (
