@@ -2922,5 +2922,9 @@
     {
       "partnerId": "Leadership-Now",
       "name": "Leadership Now Project"
+    },
+    {
+      "partnerId": "CampusCompact",
+      "name": "Campus Compact"
     }
 ]
