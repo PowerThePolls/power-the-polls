@@ -333,14 +333,14 @@
   },
   {
     "partnerId": "campus",
-    "name": "Campus Compact",
-    "logo": "campus-compact.png",
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
     "logoAppearsOnLandingPage": true
   },
   {
     "partnerId": "campusvote",
     "name": "Campus Vote Project",
-    "logo": "campus-vote-project.png",
+    "logo": "",
     "logoAppearsOnLandingPage": true
   },
   {
