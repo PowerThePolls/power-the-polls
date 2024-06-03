@@ -3256,5 +3256,9 @@
     "name": "Campus Vote Project",
     "logo": "CVP_Anniversary_Logo.png",
     "logoAppearsOnLandingPage": true
-  }
+  },
+   {
+    "partnerId": "BowersNewsMedia",
+    "name": "Bowers News Media"
+  },
 ]
