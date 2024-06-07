@@ -3264,5 +3264,17 @@
    {
     "partnerId": "ACLUTX",
     "name": "ACLU of Texas"
+  },
+   {
+    "partnerId": "truah",
+    "name": "T'ruah: The Rabbinic Call for Human Rights"
+  },
+   {
+    "partnerId": "IllumiNative",
+    "name": "IllumiNative"
+  },
+   {
+    "partnerId": "IncludUs",
+    "name": "Grita Canta Vota / IncludUs Fund"
   }
 ]
