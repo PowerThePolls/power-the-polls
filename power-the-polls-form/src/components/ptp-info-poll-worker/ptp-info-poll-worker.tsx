@@ -66,32 +66,94 @@ export class PollWorkerInfo {
             if (stateInfo?.name === "Washington") {
                 return (
                     <Fragment>
-                        <h1>Thanks for signing up to Power the Polls!</h1>
-                        <p>
+                        <h1>
                             Thank you so much for your interest in being a poll
                             worker.
-                        </p>
+                        </h1>
                         <p>
                             Washington conducts elections by mail, meaning that
-                            the need for poll workers is generally lower than
-                            many other states. However, some election
-                            administrators in Washington may still need
-                            temporary workers for support around upcoming
-                            elections.
+                            the need for poll workers or seasonal election
+                            workers is generally lower than many other states.
                         </p>
                         <p>
-                            We encourage you to call or email your county
-                            election office directly to find out about any
-                            opportunities to get involved.{" "}
+                            Most Washington counties are currently fully staffed
+                            for 2024, which is great news!
+                        </p>
+                        <p>Several jurisdictions are hiring, including:</p>
+                        <ul>
+                            <li>
+                                <strong>Island County</strong> - Desire workers
+                                that are interested in working multiple election
+                                seasons, must commit to serve ongoing, year over
+                                year. Please call HR at{" "}
+                                <a href="tel:+13606797372">360-679-7372</a> to
+                                apply!
+                            </li>
+                            <li>
+                                <strong>King County</strong> - Seeking several
+                                hundred workers for August and November.{" "}
+                                <a
+                                    href="https://www.kingcounty.gov/depts/elections.aspx"
+                                    target="_blank"
+                                >
+                                    Learn more and apply online here
+                                </a>
+                                .
+                            </li>
+                            <li>
+                                <strong>Skagit County</strong> -{" "}
+                                <a
+                                    href="https://www.skagitcounty.net/Departments/Elections/Main.htm"
+                                    target="_blank"
+                                >
+                                    Learn more and apply online here
+                                </a>
+                                .
+                            </li>
+                            <li>
+                                <strong>Snohomish County</strong> - Apply by
+                                9/23/24 to work 10/28/24-11/15/24. Email{" "}
+                                <a href="mailto:Elections@snoco.org">
+                                    Elections@snoco.org
+                                </a>{" "}
+                                using the template below.
+                            </li>
+                            <li>
+                                <strong>Spokane County</strong> -{" "}
+                                <a
+                                    href="https://www.spokanecounty.org/160/Elections"
+                                    target="_blank"
+                                >
+                                    Learn more and apply online here
+                                </a>
+                                .
+                            </li>
+                            <li>
+                                <strong>Whatcom County</strong> -{" "}
+                                <a
+                                    href="https://www.whatcomcounty.us/1732/Elections"
+                                    target="_blank"
+                                >
+                                    Learn more and apply online here
+                                </a>
+                                .
+                            </li>
+                        </ul>
+                        <p>
+                            If you still have questions about your own election
+                            office’s needs, we encourage you to call or email
+                            your county election office directly to find out
+                            about any opportunities to get involved.
                             <a
-                                href="https://www.sos.wa.gov/elections/viewauditors.aspx"
+                                href="https://www.sos.wa.gov/elections/auditors.aspx"
                                 target="_blank"
                             >
                                 Click here to find the contact information for
-                                your county election office{" "}
+                                your county election office
                             </a>{" "}
                             and see below for a sample email.
                         </p>
+
                         <p>--</p>
                         <p>
                             <i>Sample email: </i>
