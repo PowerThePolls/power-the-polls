@@ -67,9 +67,12 @@ export class PollWorkerInfo {
                 return (
                     <Fragment>
                         <h1>
+                            Thanks for signing up to power the polls!
+                        </h1>
+                        <p>
                             Thank you so much for your interest in being a poll
                             worker.
-                        </h1>
+                        </p>
                         <p>
                             Washington conducts elections by mail, meaning that
                             the need for poll workers or seasonal election
