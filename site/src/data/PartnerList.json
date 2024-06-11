@@ -3276,5 +3276,17 @@
    {
     "partnerId": "IncludUs",
     "name": "Grita Canta Vota / IncludUs Fund"
-  }
+  },
+   {
+    "partnerId": "feministmajorityfoundation",
+    "name": "Feminist Majority Foundation"
+  },
+   {
+    "partnerId": "LatinasRepresent",
+    "name": "Latinas Represent"
+  },
+   {
+    "partnerId": "righttobe",
+    "name": "Right To Be"
+  },
 ]
