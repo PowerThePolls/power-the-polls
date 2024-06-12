@@ -106,7 +106,7 @@ export class PollWorkerInfo {
                             <li>
                                 <strong>Skagit County</strong> -{" "}
                                 <a
-                                    href="https://www.skagitcounty.net/Departments/Elections/Main.htm"
+                                    href="https://www.governmentjobs.com/careers/skagitwa/jobs/4325764/on-call-elections-technician?keywords=election&pagetype=jobOpportunitiesJobs"
                                     target="_blank"
                                 >
                                     Learn more and apply online here
@@ -124,7 +124,7 @@ export class PollWorkerInfo {
                             <li>
                                 <strong>Spokane County</strong> -{" "}
                                 <a
-                                    href="https://www.spokanecounty.org/160/Elections"
+                                    href="https://www.governmentjobs.com/careers/spokanecountywa/jobs/4122864/election-worker-1-extra-help"
                                     target="_blank"
                                 >
                                     Learn more and apply online here
