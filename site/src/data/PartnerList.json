@@ -2931,223 +2931,386 @@
     "partnerId": "campus1",
     "name": "Campus Vote Project",
     "logo": "CVP_Anniversary_Logo.png",
-    "logoAppearsOnLandingPage": true
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus2",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus3",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus4",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus5",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus6",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus7",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus8",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus9",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus10",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus11",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus12",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus13",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus14",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus15",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus16",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus17",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus18",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus19",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus20",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus21",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus22",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus23",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus24",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus25",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus26",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus27",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus28",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus29",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus30",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus31",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus32",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus33",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus34",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus35",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus36",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus37",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus38",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus39",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus40",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus41",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus42",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus43",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus44",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus45",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus46",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus47",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus48",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus49",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus50",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus51",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus52",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus53",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus54",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
   {
     "partnerId": "campus55",
-    "name": "Campus Vote Project"
+    "name": "Campus Vote Project",
+    "logo": "CVP_Anniversary_Logo.png",
+    "logoAppearsOnLandingPage": true,
+    "excludeFromPartnerList": true
   },
    {
     "partnerId": "BowersNewsMedia",
