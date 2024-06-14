@@ -1,44 +1,43 @@
 name: update partner list json
 
 on:
-  issues:
-    types: [opened]
+  schedule:
+    - cron: "0 0 * * *" # This runs the action every day at midnight UTC
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
 
-      - name: Update Partner List JSON
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 14
-      - run: cd scripts/compile-source-codes && npm install
-      - run: cd scripts/compile-source-codes && npm run start
+
+      - name: Install dependencies
+        run: cd scripts/compile-source-codes && npm install
+
+      - name: Update Partner List JSON
+        run: cd scripts/compile-source-codes && npm run start
         env:
           AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
           AIRTABLE_PARTNERS_BASE: ${{ secrets.AIRTABLE_PARTNERS_BASE }}
-      - run: cd scripts/compile-source-codes && npm run test
 
-      - name: Check if there is any change
+      - name: Run tests
+        run: cd scripts/compile-source-codes && npm run test
+
+      - name: Check if there are changes
         id: changes
-        run: echo "name=changed::$(git status --porcelain | wc -l)"  >> $GITHUB_OUTPUT
+        run: echo "name=changed::$(git status --porcelain | wc -l)" >> $GITHUB_OUTPUT
 
-      - name: Create Commits
+      - name: Commit and push changes if any
+        if: steps.changes.outputs.changed != '0'
         run: |
-          git config user.name 'Sage Vouse'
-          git config user.email 's.vouse@gmail.com'
+          git config user.name 'GitHub Action'
+          git config user.email 'action@github.com'
           git add .
           git commit -m "automated: update partner list"
-
-      - name: Submit Pull Request
-        uses: peter-evans/create-pull-request@v4
-        with:
-          title: Update Partner List
-          commit-message: "[update-partner-list] add new partners"
-          assignees: PowerThePollsAdmin
-          branch: update-partner-list
-          delete-branch: true
+          git push origin HEAD:${{ github.ref }}
