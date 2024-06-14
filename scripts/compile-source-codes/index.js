@@ -1,11 +1,34 @@
-const fs = require("fs/promises");
+const fs = require("fs");
+const fsPromises = require("fs/promises");
 const Airtable = require("airtable");
+const axios = require("axios");
+const path = require("path");
+
+// Function to download an image
+const downloadImage = async (url, filepath) => {
+   const response = await axios({
+      url,
+      method: "GET",
+      responseType: "stream",
+   });
+   return new Promise((resolve, reject) => {
+      const writer = fs.createWriteStream(filepath);
+      response.data.pipe(writer);
+      writer.on("finish", resolve);
+      writer.on("error", reject);
+   });
+};
 
 const getApprovedRecords = async () => {
    const base = new Airtable().base("appc14jHeQ2v7FhU9");
 
    const filterByFormula = "{source_code_enabled} = 'Approved'";
-   const fields = ["organization", "source_code", "source_code_enabled"];
+   const fields = [
+      "organization",
+      "source_code",
+      "source_code_enabled",
+      "logo",
+   ];
 
    return base("Partners").select({ filterByFormula, fields }).all();
 };
@@ -22,8 +45,8 @@ const findDuplicates = (records, partnerList) => {
    return records.reduce((result, record) => {
       const duplicate = partnerList.find((partner) =>
          getSourceCodes(partner).includes(
-            record.get("source_code").toLowerCase(),
-         ),
+            record.get("source_code").toLowerCase()
+         )
       );
       return duplicate ? [...result, duplicate] : result;
    }, []);
@@ -33,18 +56,46 @@ const removeDuplicates = (records, duplicates) => {
    return records.filter((record) => {
       return !duplicates.find((duplicate) =>
          getSourceCodes(duplicate).includes(
-            record.get("source_code").toLowerCase(),
-         ),
+            record.get("source_code").toLowerCase()
+         )
       );
    });
 };
 
 const writeFile = async (partnerList) => {
    try {
-      await fs.writeFile("../../site/src/data/PartnerList.json", partnerList);
+      await fsPromises.writeFile(
+         "../../site/src/data/PartnerList.json",
+         JSON.stringify(partnerList, null, 2)
+      );
    } catch (err) {
       console.error(err);
    }
+};
+
+const downloadLogos = async (records) => {
+   const downloadDir = "../../site/public/assets/images/partners";
+   await fsPromises.mkdir(downloadDir, { recursive: true });
+
+   const downloadPromises = records.map(async (record) => {
+      const logoField = record.get("logo");
+      if (logoField && logoField.length > 0) {
+         const logoUrl = logoField[0].url;
+         const sourceCode = record.get("source_code").toLowerCase();
+         const filePath = path.join(downloadDir, `${sourceCode}.png`);
+         try {
+            await downloadImage(logoUrl, filePath);
+            return sourceCode; // Return source code if download is successful
+         } catch (error) {
+            console.error(`Failed to download logo for ${sourceCode}:`, error);
+            return null;
+         }
+      }
+      return null;
+   });
+
+   const downloadedLogos = await Promise.all(downloadPromises);
+   return downloadedLogos.filter(Boolean); // Filter out null values
 };
 
 const run = async () => {
@@ -67,16 +118,27 @@ const run = async () => {
       console.log("New records:");
       console.log(newRecords.map(({ fields }) => fields));
 
+      // download logos for new records
+      const downloadedLogos = await downloadLogos(newRecords);
+
       // add new source codes to JSON
       const newPartnerList = [
          ...partnerList,
-         ...newRecords.map((record) => ({
-            partnerId: record.get("source_code"),
-            name: record.get("organization"),
-         })),
+         ...newRecords.map((record) => {
+            const sourceCode = record.get("source_code").toLowerCase();
+            const newPartner = {
+               partnerId: sourceCode,
+               name: record.get("organization"),
+            };
+            if (downloadedLogos.includes(sourceCode)) {
+               newPartner.logo = `${sourceCode}.png`;
+            }
+            return newPartner;
+         }),
       ];
 
-      await writeFile(JSON.stringify(newPartnerList, null, 2));
+      // write the updated partner list to file once
+      await writeFile(newPartnerList);
    }
 };
 
