@@ -3370,5 +3370,9 @@
     "partnerId": "welcomingamerica",
     "name": "Welcoming America",
     "logo": "welcomingamerica.png"
+  },
+   {
+    "partnerId": "umcp",
+    "name": "University of Maryland, College Park"
   }
 ]
