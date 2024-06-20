@@ -3374,5 +3374,8 @@
    {
     "partnerId": "umcp",
     "name": "University of Maryland, College Park"
-  }
+  },
+   {"partnerId": "VerifiedVoting",
+    "name": "Verified Voting"
+   }
 ]
