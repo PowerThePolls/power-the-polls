@@ -8,6 +8,23 @@ ptp-info-jurisdiction {
       column-gap: 3em;
    }
 
+   .special-info {
+      display: block;
+      width: 100%;
+      color: #1c1834;
+      border: 5px double #1C1834;
+      border-radius: 10px;
+      padding: 20px 20px 10px 5px;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      margin-top: 10px;
+      outline: 2px solid #1C1834;
+   }
+
+   .special-info h2 {
+    color: $color-highlight;
+   }
+
    a.poll-worker-action {
       border: 2px solid;
       padding: 0.5em 1em;
