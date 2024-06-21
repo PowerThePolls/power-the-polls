@@ -70,21 +70,19 @@ export class JurisdictionInfoComponent {
         this.additionalInfoFormStatus = "submitted";
     }
 
- public componentWillLoad() {
-    this.formData = this.initialFormData || {};
-    if (this.jurisdictionId && this.jurisdictionId !== -1) {
-        fetchJurisdictionInfo(this.jurisdictionId).then(
-            (x) => {
+    public componentWillLoad() {
+        this.formData = this.initialFormData || {};
+        if (this.jurisdictionId && this.jurisdictionId !== -1) {
+            fetchJurisdictionInfo(this.jurisdictionId).then((x) => {
                 this.jurisdiction = x;
                 this.fetchSpecialInfo(x);
-            },
-        );
-        // Not currently supported by WE
-        // fetchJurisdictionGeoJson( this.jurisdictionId ).then( x => this.jurisdictionShape = x );
+            });
+            // Not currently supported by WE
+            // fetchJurisdictionGeoJson( this.jurisdictionId ).then( x => this.jurisdictionShape = x );
+        }
     }
-}
 
-public fetchSpecialInfo(jurisdiction: JurisdictionInfo) {
+    public fetchSpecialInfo(jurisdiction: JurisdictionInfo) {
         if (jurisdiction && jurisdiction.id) {
             const specialInfo = this.specialInfoMap[jurisdiction.id.toString()];
             this.specialInfo = specialInfo || undefined;
