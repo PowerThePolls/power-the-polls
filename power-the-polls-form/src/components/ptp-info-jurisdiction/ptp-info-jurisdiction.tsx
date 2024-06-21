@@ -56,6 +56,13 @@ export class JurisdictionInfoComponent {
         | "submitting"
         | "submitted";
 
+    @State() private specialInfo?: string;
+
+    private specialInfoMap: Record<string, string> = {
+        11703: "Special information for Kings County! Contact Sage Vousé.",
+        9132: "Special information for Schenectady County! Do some stuff, which is specific to this county. it is important stuff, and this message is notably longer than the kings county information because it is a test of how this looks in general, but especially on mobile.",
+    };
+
     constructor() {
         this.isMailToFormComplete = false;
         this.showNextSteps = false;
@@ -63,14 +70,26 @@ export class JurisdictionInfoComponent {
         this.additionalInfoFormStatus = "submitted";
     }
 
-    public componentWillLoad() {
-        this.formData = this.initialFormData || {};
-        if (this.jurisdictionId && this.jurisdictionId !== -1) {
-            fetchJurisdictionInfo(this.jurisdictionId).then(
-                (x) => (this.jurisdiction = x),
-            );
-            // Not currently supported by WE
-            // fetchJurisdictionGeoJson( this.jurisdictionId ).then( x => this.jurisdictionShape = x );
+ public componentWillLoad() {
+    this.formData = this.initialFormData || {};
+    if (this.jurisdictionId && this.jurisdictionId !== -1) {
+        fetchJurisdictionInfo(this.jurisdictionId).then(
+            (x) => {
+                this.jurisdiction = x;
+                this.fetchSpecialInfo(x);
+            },
+        );
+        // Not currently supported by WE
+        // fetchJurisdictionGeoJson( this.jurisdictionId ).then( x => this.jurisdictionShape = x );
+    }
+}
+
+public fetchSpecialInfo(jurisdiction: JurisdictionInfo) {
+        if (jurisdiction && jurisdiction.id) {
+            const specialInfo = this.specialInfoMap[jurisdiction.id.toString()];
+            this.specialInfo = specialInfo || undefined;
+        } else {
+            this.specialInfo = undefined;
         }
     }
 
@@ -214,7 +233,7 @@ export class JurisdictionInfoComponent {
             j?.online_application == null || j?.online_application === ""
         );
 
-        const sanitizedJurisdictionName = j.name.replace(/&#8217;/g, "\'");
+        const sanitizedJurisdictionName = j.name.replace(/&#8217;/g, "'");
 
         const getFullName = (jurisdictionInfo: JurisdictionInfo): string => {
             if (
@@ -224,7 +243,9 @@ export class JurisdictionInfoComponent {
                 !j.is_the_jurisdiction_a_city &&
                 j.state.alpha !== "AK"
             ) {
-                return `${sanitizedJurisdictionName.toString()} ${stateInfo.subdivision_name}, ${j.state.alpha}`;
+                return `${sanitizedJurisdictionName.toString()} ${
+                    stateInfo.subdivision_name
+                }, ${j.state.alpha}`;
             }
             return `${sanitizedJurisdictionName.toString()}, ${j.state.alpha}`;
         };
@@ -247,6 +268,13 @@ export class JurisdictionInfoComponent {
 
                 <h5> Your {stateInfo.subdivision_name} is</h5>
                 <h2>{getFullName(j)}</h2>
+
+                {this.specialInfo && (
+                    <div class="special-info">
+                        <h2>Special Information</h2>
+                        <p>{this.specialInfo}</p>
+                    </div>
+                )}
 
                 {this.showNextSteps &&
                 hasApplication &&
