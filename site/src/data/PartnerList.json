@@ -3377,5 +3377,40 @@
   },
    {"partnerId": "VerifiedVoting",
     "name": "Verified Voting"
-   }
+   },
+   {"partnerId": "mattressfirm",
+    "name": "Mattress Firm"
+   },
+   {
+        "partnerId": "warbyparker",
+        "name": "Warby Parker"
+    },
+    {
+        "partnerId": "vimeo",
+        "name": "Vimeo"
+    },
+    {
+        "partnerId": "picturemotion",
+        "name": "Picture Motion"
+    },
+    {
+        "partnerId": "pepsico",
+        "name": "PepsiCo, Inc."
+    },
+    {
+        "partnerId": "newbelgium",
+        "name": "New Belgium"
+    },
+    {
+        "partnerId": "chicorywealth",
+        "name": "Chicory Wealth"
+    },
+    {
+        "partnerId": "bluecrossmn",
+        "name": "Blue Cross Blue Shield Minnesota"
+    },
+    {
+        "partnerId": "MichiganVoices",
+        "name": "Michigan Voices"
+    }
 ]
