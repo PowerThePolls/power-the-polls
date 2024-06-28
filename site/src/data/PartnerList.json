@@ -3371,46 +3371,110 @@
     "name": "Welcoming America",
     "logo": "welcomingamerica.png"
   },
-   {
+  {
     "partnerId": "umcp",
     "name": "University of Maryland, College Park"
   },
-   {"partnerId": "VerifiedVoting",
+  {
+    "partnerId": "VerifiedVoting",
     "name": "Verified Voting"
-   },
-   {"partnerId": "mattressfirm",
+  },
+  {
+    "partnerId": "mattressfirm",
     "name": "Mattress Firm"
-   },
-   {
-        "partnerId": "warbyparker",
-        "name": "Warby Parker"
-    },
-    {
-        "partnerId": "vimeo",
-        "name": "Vimeo"
-    },
-    {
-        "partnerId": "picturemotion",
-        "name": "Picture Motion"
-    },
-    {
-        "partnerId": "pepsico",
-        "name": "PepsiCo, Inc."
-    },
-    {
-        "partnerId": "newbelgium",
-        "name": "New Belgium"
-    },
-    {
-        "partnerId": "chicorywealth",
-        "name": "Chicory Wealth"
-    },
-    {
-        "partnerId": "bluecrossmn",
-        "name": "Blue Cross Blue Shield Minnesota"
-    },
-    {
-        "partnerId": "MichiganVoices",
-        "name": "Michigan Voices"
-    }
+  },
+  {
+    "partnerId": "warbyparker",
+    "name": "Warby Parker"
+  },
+  {
+    "partnerId": "vimeo",
+    "name": "Vimeo"
+  },
+  {
+    "partnerId": "picturemotion",
+    "name": "Picture Motion"
+  },
+  {
+    "partnerId": "pepsico",
+    "name": "PepsiCo, Inc."
+  },
+  {
+    "partnerId": "newbelgium",
+    "name": "New Belgium"
+  },
+  {
+    "partnerId": "chicorywealth",
+    "name": "Chicory Wealth"
+  },
+  {
+    "partnerId": "bluecrossmn",
+    "name": "Blue Cross Blue Shield Minnesota"
+  },
+  {
+    "partnerId": "MichiganVoices",
+    "name": "Michigan Voices"
+  },
+  {
+    "partnerId": "aclunebraska",
+    "name": "ACLU of Nebraska",
+    "logo": "aclunebraska.png"
+  },
+  {
+    "partnerId": "changeagency",
+    "name": "The Change Agent·cy"
+  },
+  {
+    "partnerId": "bsuboldpoll",
+    "name": "\nBowie State University \n"
+  },
+  {
+    "partnerId": "salisbury",
+    "name": "\nSalisbury University\n"
+  },
+  {
+    "partnerId": "acluofnc",
+    "name": "ACLU of North Carolina"
+  },
+  {
+    "partnerId": "bvm",
+    "name": "Black Voters Matter"
+  },
+  {
+    "partnerId": "mimoto",
+    "name": "Mimoto"
+  },
+  {
+    "partnerId": "umbvotes",
+    "name": "\nUniversity of Maryland, Baltimore\n"
+  },
+  {
+    "partnerId": "integral",
+    "name": "Integral"
+  },
+  {
+    "partnerId": "frostburgstate",
+    "name": "Frostburg State University",
+    "logo": "frostburgstate.png"
+  },
+  {
+    "partnerId": "ubalt",
+    "name": "\nUniversity of Baltimore\n"
+  },
+  {
+    "partnerId": "polls",
+    "name": "Poll Worker Recruitment Day 2024"
+  },
+  {
+    "partnerId": "athena",
+    "name": "Athena"
+  },
+  {
+    "partnerId": "higherring",
+    "name": "HigherRing"
+  },
+  {
+    "partnerId": "rivanna",
+    "name": "Rivanna Natural Designs"
+  }
 ]
