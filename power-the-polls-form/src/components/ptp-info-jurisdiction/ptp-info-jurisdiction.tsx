@@ -269,7 +269,7 @@ export class JurisdictionInfoComponent {
 
                 {this.specialInfo && (
                     <div class="special-info">
-                        <h2>Special Information</h2>
+                        <h2>Special instructions from your local elections office</h2>
                         <p>{this.specialInfo}</p>
                     </div>
                 )}
