@@ -162,7 +162,7 @@ export class PowerThePollsForm {
                                  state,
                                  county,
                                  city,
-                                 getCityTownVillageSuffix(cityTownVillage),
+                                 getCityTownVillageSuffix(cityTownVillage)
                               ) + "",
                         };
                      }
@@ -189,7 +189,7 @@ export class PowerThePollsForm {
                   <ptp-info-poll-worker
                      city={this.formData.city}
                      cityTownVillageSuffix={getCityTownVillageSuffix(
-                        this.formData.cityTownVillage || "",
+                        this.formData.cityTownVillage || ""
                      )}
                      county={this.formData.county}
                      state={this.formData.state}
@@ -244,7 +244,23 @@ export class PowerThePollsForm {
                            name="user_available_full_day"
                            value="Are you available to work a full day as a poll worker?"
                         />{" "}
-                        Are you available to work a full day as a poll worker?
+                        I am available to work a full day as a poll worker.
+                     </label>
+
+                     <label key="mobile_subscriber" class="checkbox">
+                        <input
+                           type="checkbox"
+                           name="user_mobile_subscriber"
+                           value="Yes"
+                        />{" "}
+                        I agree to receive occasional emails and/or SMS messages
+                        from Power the Polls and{" "}
+                        {this.partnerName
+                           ? `${this.partnerName} and accept their `
+                           : "accept their "}
+                        <PtpLink path="/privacy">Privacy Policy</PtpLink>. Msg &
+                        Data Rates May Apply. Text STOP to opt out. Text HELP
+                        for more info.
                      </label>
 
                      <input
@@ -282,17 +298,6 @@ export class PowerThePollsForm {
                         ) : null}
                         Sign Up To Get Started
                      </button>
-
-                     <p class="disclaimer">
-                        By signing up, you agree to receive occasional emails
-                        and/or text messages from Power the Polls and{" "}
-                        {this.partnerName
-                           ? `${this.partnerName} and accept our `
-                           : "accept our "}
-                        <PtpLink path="/privacy">Privacy Policy</PtpLink>. You
-                        can unsubscribe at any time. For texts, message and data
-                        rates may apply. Text HELP for Info. Text STOP to quit.
-                     </p>
                   </form>
                   <footer>
                      <p class="disclaimer">
