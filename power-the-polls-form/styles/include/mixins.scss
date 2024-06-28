@@ -59,6 +59,13 @@
          height: auto;
       }
 
+      // add a style here to make the checkbox input have auto width and display inline with the label having display block
+
+      input[type="checkbox"] {
+         width: auto;
+         display: inline-block;
+      }
+
       label {
          vertical-align: middle;
          margin: 1em 0;
@@ -66,6 +73,7 @@
             margin: 1em 0 0.5em 0;
          }
          font-size: 0.9rem;
+         display: block;
 
          &.checkbox {
             align-items: center;
