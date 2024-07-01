@@ -16,12 +16,12 @@
 
 ### Depends on
 
-- [question-section](../page-faq)
+- stencil-route-link
 
 ### Graph
 ```mermaid
 graph TD;
-  page-faq-application-status --> question-section
+  page-faq-application-status --> stencil-route-link
   style page-faq-application-status fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
