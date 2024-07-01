@@ -58,6 +58,7 @@ export class JurisdictionInfoComponent {
 
     @State() private specialInfo?: string;
 
+    //Special info
     private specialInfoMap: Record<string, string> = {
         "6155": "Call (912) 526-8226 to apply!", // Toombs County, GA
         "6240": "Please come into the elections office in person to apply at: 305 S Hightower St # 130, Thomaston, GA 30286", // Upson County, GA
