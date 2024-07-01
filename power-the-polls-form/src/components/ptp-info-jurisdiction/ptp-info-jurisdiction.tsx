@@ -59,8 +59,101 @@ export class JurisdictionInfoComponent {
     @State() private specialInfo?: string;
 
     private specialInfoMap: Record<string, string> = {
-        11703: "Special information for Kings County! Contact Sage Vousé.",
-        9132: "Special information for Schenectady County! Do some stuff, which is specific to this county. it is important stuff, and this message is notably longer than the kings county information because it is a test of how this looks in general, but especially on mobile.",
+        "6155": "Call (912) 526-8226 to apply!", // Toombs County, GA
+        "6240": "Please come into the elections office in person to apply at: 305 S Hightower St # 130, Thomaston, GA 30286", // Upson County, GA
+        "6203": "Please call (706) 638-4349 to apply!", // Walker County, GA
+        "6263": "Please apply online at: https://www.votewalton.gov/-No-Menu/Election-Worker-Application", // Walton County, GA
+        "6242": "Please call (229) 828-5775 to apply!", // Webster County, GA
+        "6279": "Please call (912) 568-0095 to apply!", // Wheeler County, GA
+        "6162": "Please call (706) 865-7812 or email elections@whitecounty.net to apply!", // White County, GA
+        "6138": "Please call (478) 946-2188 to apply!", // Wilkinson County, GA
+        "6243": "Please call (229) 776-8208 X1 to apply!", // Worth County, GA
+        "6569": "Please call (712) 374-2031 to apply!", // Fremont County, IA
+        "9047": "Please apply online at: https://www.mercercounty.org/boards-commissions/board-of-elections/board-worker-application", // Mercer County, NJ
+        "6216": "Call (229) 723-4522 to apply!", // Early County, GA
+        "9079": "Please call (505) 722-4469 to apply!", // McKinley County, NM
+        "9080": "Please call (575) 387-2448 to apply!", // Mora County, NM
+        "9085": "Please call (505) 334-9471 to apply!", // San Juan County, NM
+        "6662": "Please call (864) 942-8585 to apply!", // Greenwood County, SC
+        "10496":
+            "Learn more and apply online at https://www.governmentjobs.com/careers/kingcounty/jobs/4334979/elections-worker-temporary?keywords=Elections&pagetype=jobOpportunitiesJobs", // King County, WA
+        "9131": "Please call 518-548-4684 to apply!", // Hamilton County, NY
+        "8397": "Please call 651-266-2219 to apply!", // Ramsey County, MN
+        "10741": "Please email clerk@townofbangor.wi.gov to apply!", // Bangor (Town), WI
+        "10744": "Please call 920-758-2720 to apply!", // Eaton (Town), WI
+        "10775":
+            "Please call (715) 454-6677 or email clerk@townoffranzen.com to apply!", // Franzen, WI
+        "10789": "Please email hullclerk@tn.hull.wi.gov to apply!", // Hull (Town), WI
+        "6047": "Please call (860) 465-3016 or email registrars@windhamct.com to apply!", // Windham, CT
+        "6067": "If you apply, please include in the 'notes' section that Power the Polls sent you :)", // Clay County, FL
+        "6078": "Please call (863) 946-6005 to apply!", // Glades County, FL
+        "6089": "Please call (850) 997-3348 to apply!", // Jefferson County, FL
+        "6092": "Please call 239-533-6900 to apply!", // Lee County, FL
+        "6106": "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Osceola County, FL
+        "8358": "Please call 218-387-3643 to apply!", // Cook County, MN
+        "10518":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Yakima County, WA
+        "5810": "Consider 'adopting a precinct' online at: https://www.solanocounty.com/depts/rov/workers/adopt_a_poll.asp", // Solano County, CA
+        "6035": "Please call 203) 574-6751 to apply!", // Waterbury, CT
+        "9060": "Please apply online at: https://www.warrencountyvotes.com/home/showpublisheddocument/7523/638295895080430000", // Warren County, NJ
+        "9517": "Please apply online at: https://airtable.com/applaVr8VXLc8miLW/shrT58SwXF1dEEhJh", // Delaware County, PA
+        "9510": "Call (724) 852-5230 or email elections@co.greene.pa.us to apply!", // Greene County, PA
+        "9519": "Call (814) 643-3091 ext. 205 or email ariley@huntingdoncounty.net to apply!", // Huntingdon County, PA
+        "6194": "Please call (706) 628-5210 to apply!", // Harris County, GA
+        "6225": "Please call (706) 376-8911 to apply!", // Hart County, GA
+        "6175": "Please call (229) 671-2850 to apply!", // Lowndes County, GA
+        "6197": "Please call (229) 649-9838 to apply!", // Marion County, GA
+        "6132": "Please come to the elections office in person to apply at 337 Main St, Suite 101, Thomson, GA 30824!", // McDuffie County, GA
+        "6198": "Please call (770) 749-2103 to apply!", // Polk County, GA
+        "6251": "Apply online at: https://www.rockdalecountyga.gov/be-a-poll-worker/", // Rockdale County, GA
+        "6248": "Please call (229) 524-5256 to apply!", // Seminole County, GA
+        "6283": "Call (478) 862-3997 to apply!", // Taylor County, GA
+        "9547": "Please call (570) 389-5640 to apply!", // Columbia County, PA
+        "9561": "Please call (814) 333-7307 to apply!", // Crawford County, PA
+        "9567": "Call (570) 996-2226 to apply!", // Wyoming County, PA
+        "6247": "Apply online at: https://www.paulding.gov/1503/Poll-Workers", // Paulding County, GA
+        "6237": "Call (229) 838-6220, ext. 210 to apply!", // Stewart County, GA
+        "9063": "Please call (575) 533-6400 to apply!", // Catron County, NM
+        "6282": "Please apply online at: https://charltoncountyga.us/DocumentCenter/View/438/Charlton-County-Employment-Application", // Charlton County, GA
+        "6215": "Call (478) 374-3775 or email dodge.probatecourt@gmail.com to apply!", // Dodge County, GA
+        "9537": "Please call (814) 755-3537 ext. 1 to apply!", // Forest County, PA
+        "9910": "Email freda.ragan@taylorcounty.texas.gov and dan.murray@taylorcounty.texas.gov to apply!", // Taylor County, TX
+        "6178": "Please come to the office at 201 North Davis St, Room 142, Nashville, GA 31639 to apply!", // Berrien County, GA
+        "6209": "Please call (229) 768-2445 to apply!", // Clay County, GA
+        "6218": "Please come in person to the elections office at 201 Freeman St, Suite 9, Claxton, GA 30417 to apply!", // Evans County, GA
+        "10495":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Clark County, WA
+        "10502":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Columbia County, WA
+        "10515":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Cowlitz County, WA
+        "10485":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Douglas County, WA
+        "10498":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Ferry County, WA
+        "10503": "Please call HR at 360-679-7372 to apply!", // Island County, WA
+        "10487":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Kittitas County, WA
+        "10514":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Klickitat County, WA
+        "10505":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Lewis County, WA
+        "10516":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Lincoln County, WA
+        "10510":
+            "Learn more and apply online at https://www.governmentjobs.com/careers/piercecountywa/jobs/4411860/apply-in-5-minutes-to-be-a-part-of-election-history-as-an-elections-temporary-hir", // Pierce County, WA
+        "10517":
+            "Learn more and apply online at https://www.governmentjobs.com/careers/skagitwa/jobs/4325764/on-call-elections-technician?keywords=election&pagetype=jobOpportunitiesJobs", // Skagit County, WA
+        "10509":
+            "Learn more and apply online at https://www.governmentjobs.com/careers/spokanecountywa/jobs/4122864/election-worker-1-extra-help", // Spokane County, WA
+        "10488":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Stevens County, WA
+        "10497":
+            "Your county is fully staffed for 2024! Remember to thank your elections workers when you vote!", // Thurston County, WA
+        "10493":
+            "Learn more and apply online at https://www.governmentjobs.com/careers/whatcomcounty/jobs/4285511/temporary-elections-worker-on-call?page=2&pagetype=jobOpportunitiesJobs", // Whatcom County, WA
+        "6028": "Please call the Trumbull Registrars’ Office at: 203-452-5058 or 203-452-5059 to apply!", // Trumbull, CT
+        "9802": "Please call 423-753-1688 to apply!", // Washington County, TN
     };
 
     constructor() {
@@ -269,7 +362,10 @@ export class JurisdictionInfoComponent {
 
                 {this.specialInfo && (
                     <div class="special-info">
-                        <h2>Special instructions from your local elections office</h2>
+                        <h2>
+                            Special instructions from your local elections
+                            office
+                        </h2>
                         <p>{this.specialInfo}</p>
                     </div>
                 )}
