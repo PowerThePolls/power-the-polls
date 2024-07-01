@@ -363,8 +363,8 @@ export class JurisdictionInfoComponent {
                 {this.specialInfo && (
                     <div class="special-info">
                         <h2>
-                            Special instructions from your local elections
-                            office
+                            Special Instructions from Your Local Elections
+                            Office:
                         </h2>
                         <p>{this.specialInfo}</p>
                     </div>
