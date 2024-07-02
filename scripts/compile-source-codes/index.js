@@ -4,19 +4,35 @@ const Airtable = require("airtable");
 const axios = require("axios");
 const path = require("path");
 
-// Function to download an image
-const downloadImage = async (url, filepath) => {
-   const response = await axios({
-      url,
-      method: "GET",
-      responseType: "stream",
-   });
-   return new Promise((resolve, reject) => {
-      const writer = fs.createWriteStream(filepath);
-      response.data.pipe(writer);
-      writer.on("finish", resolve);
-      writer.on("error", reject);
-   });
+// Function to download an image with retry logic
+const downloadImage = async (url, filepath, retries = 3, delay = 1000) => {
+   for (let attempt = 1; attempt <= retries; attempt++) {
+      try {
+         const response = await axios({
+            url,
+            method: "GET",
+            responseType: "stream",
+         });
+         return new Promise((resolve, reject) => {
+            const writer = fs.createWriteStream(filepath);
+            response.data.pipe(writer);
+            writer.on("finish", resolve);
+            writer.on("error", reject);
+         });
+      } catch (error) {
+         if (attempt < retries) {
+            console.log(
+               `Retry ${attempt}/${retries} failed for ${url}. Retrying in ${delay}ms...`
+            );
+            await new Promise((resolve) => setTimeout(resolve, delay));
+         } else {
+            console.error(
+               `Failed to download logo from ${url} after ${retries} attempts.`
+            );
+            return null;
+         }
+      }
+   }
 };
 
 const getApprovedRecords = async () => {
@@ -34,32 +50,14 @@ const getApprovedRecords = async () => {
 };
 
 const getSourceCodes = (partner) => {
+   if (!partner.partnerId) {
+      return [];
+   }
    return (
       partner.additionalVanityUrls
          ? [partner.partnerId, ...partner.additionalVanityUrls]
          : [partner.partnerId]
    ).map((code) => code.toLowerCase());
-};
-
-const findDuplicates = (records, partnerList) => {
-   return records.reduce((result, record) => {
-      const duplicate = partnerList.find((partner) =>
-         getSourceCodes(partner).includes(
-            record.get("source_code").toLowerCase()
-         )
-      );
-      return duplicate ? [...result, duplicate] : result;
-   }, []);
-};
-
-const removeDuplicates = (records, duplicates) => {
-   return records.filter((record) => {
-      return !duplicates.find((duplicate) =>
-         getSourceCodes(duplicate).includes(
-            record.get("source_code").toLowerCase()
-         )
-      );
-   });
 };
 
 const writeFile = async (partnerList) => {
@@ -68,6 +66,7 @@ const writeFile = async (partnerList) => {
          "../../site/src/data/PartnerList.json",
          JSON.stringify(partnerList, null, 2)
       );
+      console.log("PartnerList.json file has been written successfully.");
    } catch (err) {
       console.error(err);
    }
@@ -83,12 +82,10 @@ const downloadLogos = async (records) => {
          const logoUrl = logoField[0].url;
          const sourceCode = record.get("source_code").toLowerCase();
          const filePath = path.join(downloadDir, `${sourceCode}.png`);
-         try {
-            await downloadImage(logoUrl, filePath);
-            return sourceCode; // Return source code if download is successful
-         } catch (error) {
-            console.error(`Failed to download logo for ${sourceCode}:`, error);
-            return null;
+         const downloadResult = await downloadImage(logoUrl, filePath);
+         if (downloadResult) {
+            console.log(`Successfully downloaded logo for ${sourceCode}`);
+            return sourceCode;
          }
       }
       return null;
@@ -99,46 +96,72 @@ const downloadLogos = async (records) => {
 };
 
 const run = async () => {
-   // get approved source codes from AirTable
-   const approvedRecords = await getApprovedRecords();
+   try {
+      // get approved source codes from AirTable
+      const approvedRecords = await getApprovedRecords();
 
-   // get source codes from JSON
-   const partnerList = require("../../site/src/data/PartnerList.json");
+      // get source codes from JSON
+      const partnerList = require("../../site/src/data/PartnerList.json");
+      const existingSourceCodesSet = new Set(
+         partnerList.flatMap(getSourceCodes)
+      );
 
-   // log duplicates and other errors
-   const duplicates = findDuplicates(approvedRecords, partnerList);
-   if (duplicates.length) {
-      console.log("Duplicates found: ");
-      console.log(duplicates);
-   }
+      // logics for adding new records or updating existing ones
+      let isUpdated = false;
+      const updatedPartnerList = await Promise.all(
+         partnerList.map(async (existingPartner) => {
+            const existingSourceCodes = getSourceCodes(existingPartner);
+            const matchingRecord = approvedRecords.find((record) =>
+               existingSourceCodes.includes(
+                  record.get("source_code").toLowerCase()
+               )
+            );
 
-   // find new records
-   const newRecords = removeDuplicates(approvedRecords, duplicates);
-   if (newRecords.length) {
-      console.log("New records:");
-      console.log(newRecords.map(({ fields }) => fields));
-
-      // download logos for new records
-      const downloadedLogos = await downloadLogos(newRecords);
-
-      // add new source codes to JSON
-      const newPartnerList = [
-         ...partnerList,
-         ...newRecords.map((record) => {
-            const sourceCode = record.get("source_code").toLowerCase();
-            const newPartner = {
-               partnerId: sourceCode,
-               name: record.get("organization"),
-            };
-            if (downloadedLogos.includes(sourceCode)) {
-               newPartner.logo = `${sourceCode}.png`;
+            if (matchingRecord) {
+               isUpdated = true;
+               const sourceCode = matchingRecord
+                  .get("source_code")
+                  .toLowerCase();
+               const newPartner = {
+                  ...existingPartner,
+                  partnerId: sourceCode,
+                  name: matchingRecord.get("organization"),
+               };
+               const downloadedLogos = await downloadLogos([matchingRecord]);
+               if (downloadedLogos.includes(sourceCode)) {
+                  newPartner.logo = `${sourceCode}.png`;
+               }
+               return newPartner;
+            } else {
+               return existingPartner;
             }
-            return newPartner;
-         }),
-      ];
+         })
+      );
 
-      // write the updated partner list to file once
-      await writeFile(newPartnerList);
+      // Add new records from approvedRecords that are not in the existing list
+      const newRecords = approvedRecords
+         .filter(
+            (record) =>
+               !existingSourceCodesSet.has(
+                  record.get("source_code").toLowerCase()
+               )
+         )
+         .map((record) => ({
+            partnerId: record.get("source_code").toLowerCase(),
+            name: record.get("organization"),
+            ...(record.get("logo") && record.get("logo").length > 0
+               ? { logo: `${record.get("source_code").toLowerCase()}.png` }
+               : {}),
+         }));
+
+      const finalPartnerList = [...updatedPartnerList, ...newRecords];
+
+      // Write the final partner list
+      await writeFile(finalPartnerList);
+
+      console.log("Script completed successfully.");
+   } catch (error) {
+      console.error("Script encountered an error:", error);
    }
 };
 
